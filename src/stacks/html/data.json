@@ -1,0 +1,2134 @@
+{
+  "id": "html",
+  "lessons": [
+    {
+      "id": "html-semantic-paragraph",
+      "number": "01",
+      "group": "Fundamental",
+      "difficulty": 1,
+      "stageStep": 1,
+      "stageSize": 13,
+      "title": "Wrap meaning in a tag",
+      "eyebrow": "Semantics",
+      "summary": "HTML is semantic: tags describe what content means. A paragraph is not just text on a new line; <p> tells the browser this content is a paragraph.",
+      "objective": "Inside body, create one paragraph element with any text inside it. Use an opening <p> tag and a matching closing </p> tag.",
+      "hint": "Use an opening p tag and a closing p tag around a short sentence of your own.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the semantics idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "A paragraph element with text exists in body",
+          "type": "html-element",
+          "tag": "body",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "p",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-paired-tags",
+      "number": "02",
+      "group": "Fundamental",
+      "difficulty": 2,
+      "stageStep": 2,
+      "stageSize": 13,
+      "title": "Close what you open",
+      "eyebrow": "Opening and closing tags",
+      "summary": "Paired tags must be closed in the right place. Closing tags tell the browser where an element ends.",
+      "objective": "Create two separate paragraph elements. Each paragraph must have its own opening <p> tag and closing </p> tag.",
+      "hint": "Write two sibling paragraphs, not one paragraph containing another paragraph.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the opening and closing tags idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Two paragraph elements with text exist",
+          "type": "html-element",
+          "tag": "p",
+          "min": 2,
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-nesting",
+      "number": "03",
+      "group": "Fundamental",
+      "difficulty": 3,
+      "stageStep": 3,
+      "stageSize": 13,
+      "title": "Nest tags correctly",
+      "eyebrow": "Nesting",
+      "summary": "Elements can live inside other elements. Correct nesting means the inner element opens and closes before the outer element closes.",
+      "objective": "Create one paragraph and use strong around one meaningful word or phrase inside it.",
+      "hint": "Keep the strong element inside the paragraph, then write your own sentence around it.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the nesting idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Strong text is nested inside a paragraph",
+          "type": "html-element",
+          "tag": "p",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "strong",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-emphasis",
+      "number": "04",
+      "group": "Fundamental",
+      "difficulty": 4,
+      "stageStep": 4,
+      "stageSize": 13,
+      "title": "Choose meaning over appearance",
+      "eyebrow": "Inline semantics",
+      "summary": "Semantic inline elements explain meaning. em means stressed emphasis; it is not just a way to make text italic.",
+      "objective": "Create a paragraph that uses em around one stressed word or phrase you choose.",
+      "hint": "Put the em element inside a paragraph, around the word or phrase that should be stressed.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the inline semantics idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Emphasis is nested inside a paragraph",
+          "type": "html-element",
+          "tag": "p",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "em",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-heading-paragraph",
+      "number": "05",
+      "group": "Fundamental",
+      "difficulty": 5,
+      "stageStep": 5,
+      "stageSize": 13,
+      "title": "Add a page heading",
+      "eyebrow": "Headings",
+      "summary": "Headings create a content outline. h1 is usually the main heading for the page or current view.",
+      "objective": "Create one h1 heading and one paragraph after it. The text can be yours, but both elements must contain something.",
+      "hint": "Place <h1> before <p>.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the headings idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Heading appears before paragraph in body",
+          "type": "html-element",
+          "tag": "body",
+          "children": [
+            {
+              "type": "html-order",
+              "tags": [
+                "h1",
+                "p"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Heading has text",
+          "type": "html-element",
+          "tag": "h1",
+          "minTextLength": 1
+        },
+        {
+          "label": "Paragraph has text",
+          "type": "html-element",
+          "tag": "p",
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-document-title",
+      "number": "06",
+      "group": "Fundamental",
+      "difficulty": 6,
+      "stageStep": 6,
+      "stageSize": 13,
+      "title": "Name the browser tab",
+      "eyebrow": "Document structure",
+      "summary": "head contains metadata for the browser. body contains the content people see on the page.",
+      "objective": "Change the title element in head to a page-specific title, then keep a visible h1 in body.",
+      "hint": "Edit the existing title in head, then add a visible heading in body. The title and heading text can be yours.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the document structure idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Title has text in head",
+          "type": "html-element",
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "title",
+              "minTextLength": 1
+            }
+          ]
+        },
+        {
+          "label": "Starter title was changed",
+          "type": "not-regex",
+          "pattern": "<title>\\s*CodeTrail\\s*<\\/title>",
+          "flags": "i"
+        },
+        {
+          "label": "Visible heading remains in body",
+          "type": "html-element",
+          "tag": "body",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "h1",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-attributes",
+      "number": "07",
+      "group": "Fundamental",
+      "difficulty": 7,
+      "stageStep": 7,
+      "stageSize": 13,
+      "title": "Add details with attributes",
+      "eyebrow": "Attributes",
+      "summary": "Attributes add extra information to an element. Some attributes configure behavior; others provide names or reusable hooks.",
+      "objective": "Create a section with a non-empty id and at least two class names. Add any text inside it.",
+      "hint": "Put id and class on the opening section tag. Separate multiple class names with spaces.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the attributes idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Section has a non-empty id",
+          "type": "html-element",
+          "tag": "section",
+          "attrs": {
+            "id": {
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "label": "Section has at least two classes",
+          "type": "html-element",
+          "tag": "section",
+          "attrs": {
+            "class": {
+              "minTokens": 2
+            }
+          }
+        },
+        {
+          "label": "Section contains text",
+          "type": "html-element",
+          "tag": "section",
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-comments",
+      "number": "08",
+      "group": "Fundamental",
+      "difficulty": 8,
+      "stageStep": 8,
+      "stageSize": 13,
+      "title": "Leave a useful source note",
+      "eyebrow": "Comments",
+      "summary": "Comments explain intent to people reading the source. They are not rendered as visible page content.",
+      "objective": "Add an HTML comment before a main element to describe the main content region.",
+      "hint": "Use HTML comment syntax before main. Comments start with <!-- and end with -->.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the comments idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "A comment exists before main",
+          "type": "regex",
+          "pattern": "<!--[\\s\\S]+?-->\\s*<main\\b",
+          "flags": "i",
+          "preserveComments": true
+        }
+      ]
+    },
+    {
+      "id": "html-entities",
+      "number": "09",
+      "group": "Fundamental",
+      "difficulty": 9,
+      "stageStep": 9,
+      "stageSize": 13,
+      "title": "Show reserved characters",
+      "eyebrow": "Entities",
+      "summary": "Some characters have special meaning in HTML source. Character references let you display them as text.",
+      "objective": "Inside a paragraph, display a less-than sign and an ampersand as text by using entities for < and &.",
+      "hint": "Use &lt; for a visible less-than sign and &amp; for a visible ampersand inside a paragraph.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the entities idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Less-than entity is used",
+          "type": "regex",
+          "pattern": "&lt;",
+          "flags": "i"
+        },
+        {
+          "label": "Ampersand entity is used",
+          "type": "regex",
+          "pattern": "&amp;",
+          "flags": "i"
+        },
+        {
+          "label": "Less-than entity is inside a paragraph",
+          "type": "regex",
+          "pattern": "<p\\b[^>]*>[\\s\\S]*&lt;[\\s\\S]*<\\/p>",
+          "flags": "i"
+        },
+        {
+          "label": "Ampersand entity is inside a paragraph",
+          "type": "regex",
+          "pattern": "<p\\b[^>]*>[\\s\\S]*&amp;[\\s\\S]*<\\/p>",
+          "flags": "i"
+        }
+      ]
+    },
+    {
+      "id": "html-link",
+      "number": "10",
+      "group": "Fundamental",
+      "difficulty": 10,
+      "stageStep": 10,
+      "stageSize": 13,
+      "title": "Create a meaningful link",
+      "eyebrow": "Links",
+      "summary": "Links connect documents. The href attribute stores the destination; the text should tell users where the link goes.",
+      "objective": "Create an anchor linking to https://developer.mozilla.org/. Put any visible text inside the link.",
+      "hint": "Use an a element with href=\"https://developer.mozilla.org/\".",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the links idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Anchor has the MDN URL",
+          "type": "html-element",
+          "tag": "a",
+          "attrs": {
+            "href": {
+              "value": "https://developer.mozilla.org/",
+              "mode": "url"
+            }
+          }
+        },
+        {
+          "label": "Link has visible text",
+          "type": "html-element",
+          "tag": "a",
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-image-alt",
+      "number": "11",
+      "group": "Fundamental",
+      "difficulty": 11,
+      "stageStep": 11,
+      "stageSize": 13,
+      "title": "Describe an image",
+      "eyebrow": "Images",
+      "summary": "Images need alternative text so their meaning remains available when the image cannot be seen or loaded.",
+      "objective": "Add an image with a non-empty src and a non-empty alt attribute.",
+      "hint": "The src points to the image file. The alt text should describe the image purpose in your own words.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the images idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Image source is set",
+          "type": "html-element",
+          "tag": "img",
+          "attrs": {
+            "src": {
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "label": "Image has non-empty alt text",
+          "type": "html-element",
+          "tag": "img",
+          "attrs": {
+            "alt": {
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "html-button",
+      "number": "12",
+      "group": "Fundamental",
+      "difficulty": 12,
+      "stageStep": 12,
+      "stageSize": 13,
+      "title": "Mark an action as a button",
+      "eyebrow": "Buttons",
+      "summary": "button represents an action. An explicit type prevents accidental form submission later.",
+      "objective": "Create a button with type=\"button\" and any visible text.",
+      "hint": "Use <button type=\"button\">Start lesson</button> or another clear label.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the buttons idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Button type is explicit",
+          "type": "html-element",
+          "tag": "button",
+          "attrs": {
+            "type": "button"
+          }
+        },
+        {
+          "label": "Button has visible text",
+          "type": "html-element",
+          "tag": "button",
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-lang-meta",
+      "number": "13",
+      "group": "Fundamental",
+      "difficulty": 13,
+      "stageStep": 13,
+      "stageSize": 13,
+      "title": "Describe the document",
+      "eyebrow": "Metadata",
+      "summary": "Document metadata helps browsers, search engines, translators, and assistive technology understand the page.",
+      "objective": "Make sure html has lang=\"en\", head has UTF-8 charset, and head has a responsive viewport meta tag.",
+      "hint": "Put lang on html and both meta elements inside head.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the metadata idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "English language is declared",
+          "type": "html-element",
+          "tag": "html",
+          "attrs": {
+            "lang": "en"
+          }
+        },
+        {
+          "label": "UTF-8 is declared in head",
+          "type": "html-element",
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "meta",
+              "attrs": {
+                "charset": "utf-8"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Responsive viewport exists in head",
+          "type": "html-element",
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "meta",
+              "attrs": {
+                "name": "viewport",
+                "content": {
+                  "value": "width=device-width",
+                  "mode": "contains"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-page-regions",
+      "number": "14",
+      "group": "Basic",
+      "difficulty": 14,
+      "stageStep": 1,
+      "stageSize": 13,
+      "title": "Create page regions",
+      "eyebrow": "Landmarks",
+      "summary": "Landmark elements divide a page into major regions. They make the structure easier for people and assistive technology to navigate.",
+      "objective": "Create header, main, and footer elements in that order inside body. Put a little text in each region.",
+      "hint": "Place the three elements as siblings inside body.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the landmarks idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Landmarks are in body order",
+          "type": "html-element",
+          "tag": "body",
+          "children": [
+            {
+              "type": "html-order",
+              "tags": [
+                "header",
+                "main",
+                "footer"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Each landmark contains text",
+          "type": "html-element",
+          "tag": "body",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "header",
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "main",
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "footer",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-navigation",
+      "number": "15",
+      "group": "Basic",
+      "difficulty": 15,
+      "stageStep": 2,
+      "stageSize": 13,
+      "title": "Build primary navigation",
+      "eyebrow": "Navigation",
+      "summary": "nav identifies a major set of navigation links. A label distinguishes this navigation from other nav regions.",
+      "objective": "Create a nav with a non-empty aria-label containing links to / and /lessons.",
+      "hint": "Give nav an aria-label that names this navigation region, then nest the two links inside it.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the navigation idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Labelled navigation contains both links",
+          "type": "html-element",
+          "tag": "nav",
+          "attrs": {
+            "aria-label": {
+              "minLength": 1
+            }
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "a",
+              "attrs": {
+                "href": "/"
+              },
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "a",
+              "attrs": {
+                "href": "/lessons"
+              },
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-main-article",
+      "number": "16",
+      "group": "Basic",
+      "difficulty": 16,
+      "stageStep": 3,
+      "stageSize": 13,
+      "title": "Wrap independent content",
+      "eyebrow": "Articles",
+      "summary": "article is for content that makes sense as a self-contained piece, such as a post, lesson, card, or news item.",
+      "objective": "Inside main, create an article with one h1 and one paragraph.",
+      "hint": "Nest article inside main, then nest h1 and p inside article.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the articles idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Main contains an article with heading and paragraph",
+          "type": "html-element",
+          "tag": "main",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "article",
+              "children": [
+                {
+                  "type": "html-element",
+                  "tag": "h1",
+                  "minTextLength": 1
+                },
+                {
+                  "type": "html-element",
+                  "tag": "p",
+                  "minTextLength": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-sections",
+      "number": "17",
+      "group": "Basic",
+      "difficulty": 17,
+      "stageStep": 4,
+      "stageSize": 13,
+      "title": "Split content into sections",
+      "eyebrow": "Sections",
+      "summary": "section groups a themed part of a document. A section normally needs a heading that explains its topic.",
+      "objective": "Create an article containing two section elements. Each section should have an h2.",
+      "hint": "Put two section elements inside article, and put an h2 in each section.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the sections idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Article contains two titled sections",
+          "type": "html-element",
+          "tag": "article",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "section",
+              "min": 2,
+              "children": [
+                {
+                  "type": "html-element",
+                  "tag": "h2",
+                  "minTextLength": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-aside",
+      "number": "18",
+      "group": "Basic",
+      "difficulty": 18,
+      "stageStep": 5,
+      "stageSize": 13,
+      "title": "Add supporting content",
+      "eyebrow": "Complementary content",
+      "summary": "aside represents related but secondary content, such as a tip, callout, sidebar, or related link list.",
+      "objective": "Inside main, add an article and an aside. The aside should contain a short tip.",
+      "hint": "Put both article and aside inside main.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the complementary content idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Main contains article and aside",
+          "type": "html-element",
+          "tag": "main",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "article"
+            },
+            {
+              "type": "html-element",
+              "tag": "aside",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-unordered-list",
+      "number": "19",
+      "group": "Basic",
+      "difficulty": 19,
+      "stageStep": 6,
+      "stageSize": 13,
+      "title": "Group related items",
+      "eyebrow": "Lists",
+      "summary": "Unordered lists group items where sequence does not matter.",
+      "objective": "Create a ul containing at least three li items for things someone can learn.",
+      "hint": "Nest three li elements inside one ul.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the lists idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Unordered list contains at least three items",
+          "type": "html-element",
+          "tag": "ul",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "li",
+              "min": 3,
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-ordered-list",
+      "number": "20",
+      "group": "Basic",
+      "difficulty": 20,
+      "stageStep": 7,
+      "stageSize": 13,
+      "title": "Describe ordered steps",
+      "eyebrow": "Lists",
+      "summary": "Ordered lists communicate sequence, ranking, or procedure. Source order matters.",
+      "objective": "Create an ol with at least three li items that describe steps in a process you choose.",
+      "hint": "Use one ol and put each step in its own li. Ordered lists communicate sequence through source order.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the lists idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Ordered list contains at least three written steps",
+          "type": "html-element",
+          "tag": "ol",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "li",
+              "min": 3,
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-description-list",
+      "number": "21",
+      "group": "Basic",
+      "difficulty": 21,
+      "stageStep": 8,
+      "stageSize": 13,
+      "title": "Define terms",
+      "eyebrow": "Lists",
+      "summary": "Description lists pair terms with descriptions, metadata names with values, or question-and-answer style content.",
+      "objective": "Create a dl with at least two dt terms and two dd descriptions.",
+      "hint": "Use dt for each term and dd for the description that follows it.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the lists idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Description list contains at least two terms and descriptions",
+          "type": "html-element",
+          "tag": "dl",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "dt",
+              "min": 2,
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "dd",
+              "min": 2,
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-figure",
+      "number": "22",
+      "group": "Basic",
+      "difficulty": 22,
+      "stageStep": 9,
+      "stageSize": 13,
+      "title": "Caption media",
+      "eyebrow": "Figures",
+      "summary": "figure groups self-contained media with an optional caption. figcaption explains the figure.",
+      "objective": "Create a figure containing an image with a non-empty src and a meaningful figcaption.",
+      "hint": "Nest img and figcaption inside figure.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the figures idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Figure contains the image and caption together",
+          "type": "html-element",
+          "tag": "figure",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "img",
+              "attrs": {
+                "src": {
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "html-element",
+              "tag": "figcaption",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-blockquote",
+      "number": "23",
+      "group": "Basic",
+      "difficulty": 23,
+      "stageStep": 10,
+      "stageSize": 13,
+      "title": "Quote another source",
+      "eyebrow": "Quotations",
+      "summary": "blockquote represents a longer quotation from another source. cite can point to the source URL.",
+      "objective": "Create a blockquote with cite=\"https://developer.mozilla.org/\" and at least one paragraph inside.",
+      "hint": "Nest a p element inside blockquote.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the quotations idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Blockquote has source and paragraph",
+          "type": "html-element",
+          "tag": "blockquote",
+          "attrs": {
+            "cite": {
+              "value": "https://developer.mozilla.org/",
+              "mode": "url"
+            }
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "p",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-time",
+      "number": "24",
+      "group": "Basic",
+      "difficulty": 24,
+      "stageStep": 11,
+      "stageSize": 13,
+      "title": "Make dates machine-readable",
+      "eyebrow": "Machine-readable text",
+      "summary": "time connects human-readable text with a standardized value software can parse.",
+      "objective": "Create a time element with a YYYY-MM-DD datetime value and visible date text.",
+      "hint": "Put datetime on the opening time tag.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the machine-readable text idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Machine date uses YYYY-MM-DD",
+          "type": "html-element",
+          "tag": "time",
+          "attrs": {
+            "datetime": {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            }
+          }
+        },
+        {
+          "label": "Visible date text exists",
+          "type": "html-element",
+          "tag": "time",
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-details",
+      "number": "25",
+      "group": "Basic",
+      "difficulty": 25,
+      "stageStep": 12,
+      "stageSize": 13,
+      "title": "Create native disclosure",
+      "eyebrow": "Interactive HTML",
+      "summary": "details and summary provide disclosure behavior without JavaScript.",
+      "objective": "Create details with a summary question and a paragraph answer.",
+      "hint": "Put summary first inside details, then a paragraph.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the interactive html idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Disclosure contains summary first and a paragraph answer",
+          "type": "html-element",
+          "tag": "details",
+          "children": [
+            {
+              "type": "html-order",
+              "tags": [
+                "summary",
+                "p"
+              ]
+            },
+            {
+              "type": "html-element",
+              "tag": "summary",
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "p",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-address",
+      "number": "26",
+      "group": "Basic",
+      "difficulty": 26,
+      "stageStep": 13,
+      "stageSize": 13,
+      "title": "Mark contact information",
+      "eyebrow": "Contact semantics",
+      "summary": "address represents contact information for the nearest article or page.",
+      "objective": "Create an address element containing a mailto link to hello@example.com.",
+      "hint": "Put an a element with href=\"mailto:hello@example.com\" inside address.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the contact semantics idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Address contains email link",
+          "type": "html-element",
+          "tag": "address",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "a",
+              "attrs": {
+                "href": "mailto:hello@example.com"
+              },
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-form-label",
+      "number": "27",
+      "group": "Intermediate",
+      "difficulty": 27,
+      "stageStep": 1,
+      "stageSize": 12,
+      "title": "Label a form control",
+      "eyebrow": "Forms",
+      "summary": "Labels give form controls an accessible name and a larger clickable target.",
+      "objective": "Create a text input and connect it to a visible label with matching for and id values.",
+      "hint": "Choose an id for the input, then use the same value in the label for attribute.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the forms idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Label is connected to the text input",
+          "type": "html-label-control",
+          "tag": "input",
+          "attrs": {
+            "type": "text"
+          }
+        }
+      ]
+    },
+    {
+      "id": "html-form-submit",
+      "number": "28",
+      "group": "Intermediate",
+      "difficulty": 28,
+      "stageStep": 2,
+      "stageSize": 12,
+      "title": "Submit a form",
+      "eyebrow": "Forms",
+      "summary": "form groups controls and defines where and how values are submitted.",
+      "objective": "Create a form that posts to a non-empty action URL with an email input and a submit button.",
+      "hint": "Put action and method on form, then nest the email input and submit button inside it.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the forms idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Signup form contains the email field and submit button",
+          "type": "html-element",
+          "tag": "form",
+          "attrs": {
+            "action": {
+              "minLength": 1
+            },
+            "method": "post"
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "input",
+              "attrs": {
+                "type": "email",
+                "name": {
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "html-element",
+              "tag": "button",
+              "attrs": {
+                "type": "submit"
+              },
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-input-types",
+      "number": "29",
+      "group": "Intermediate",
+      "difficulty": 29,
+      "stageStep": 3,
+      "stageSize": 12,
+      "title": "Choose input types",
+      "eyebrow": "Forms",
+      "summary": "Specific input types give browsers validation hints and better mobile keyboards.",
+      "objective": "Inside a form, add required email and password inputs. Give each input a non-empty name.",
+      "hint": "Use the email and password input types, add required, and include name values so the form can submit data.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the forms idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Form contains required email input",
+          "type": "html-element",
+          "tag": "form",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "input",
+              "attrs": {
+                "type": "email",
+                "name": {
+                  "minLength": 1
+                },
+                "required": true
+              }
+            }
+          ]
+        },
+        {
+          "label": "Form contains required password input",
+          "type": "html-element",
+          "tag": "form",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "input",
+              "attrs": {
+                "type": "password",
+                "name": {
+                  "minLength": 1
+                },
+                "required": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-textarea-select",
+      "number": "30",
+      "group": "Intermediate",
+      "difficulty": 30,
+      "stageStep": 4,
+      "stageSize": 12,
+      "title": "Collect longer and fixed answers",
+      "eyebrow": "Forms",
+      "summary": "textarea collects multi-line text. select limits users to known option values.",
+      "objective": "Create a labelled textarea with rows=\"4\" and a labelled select with at least two options.",
+      "hint": "Connect labels with for/id, give each control a name, and put option elements inside select.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the forms idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Textarea is labelled and has rows",
+          "type": "html-label-control",
+          "tag": "textarea",
+          "attrs": {
+            "name": {
+              "minLength": 1
+            },
+            "rows": "4"
+          }
+        },
+        {
+          "label": "Select is labelled and contains at least two options",
+          "type": "html-element",
+          "tag": "select",
+          "attrs": {
+            "id": {
+              "minLength": 1
+            },
+            "name": {
+              "minLength": 1
+            }
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "option",
+              "min": 2,
+              "minTextLength": 1
+            }
+          ]
+        },
+        {
+          "label": "Select has a connected label",
+          "type": "html-label-control",
+          "tag": "select",
+          "attrs": {
+            "name": {
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "html-fieldsets",
+      "number": "31",
+      "group": "Intermediate",
+      "difficulty": 31,
+      "stageStep": 5,
+      "stageSize": 12,
+      "title": "Group related choices",
+      "eyebrow": "Forms",
+      "summary": "fieldset groups related controls. legend gives the group an accessible name.",
+      "objective": "Group at least two radio buttons in a fieldset with a visible legend.",
+      "hint": "Place legend first, then add labelled radio inputs that share a meaningful name.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the forms idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Fieldset contains a legend and at least two labelled radios with the same name",
+          "type": "html-radio-group"
+        }
+      ]
+    },
+    {
+      "id": "html-checkbox",
+      "number": "32",
+      "group": "Intermediate",
+      "difficulty": 32,
+      "stageStep": 6,
+      "stageSize": 12,
+      "title": "Represent an agreement",
+      "eyebrow": "Forms",
+      "summary": "Checkboxes represent independent on/off choices and can be required before submission.",
+      "objective": "Create a required checkbox with a name, an id, and a visible label connected to it.",
+      "hint": "Choose an id for the checkbox, then use the same value in the label for attribute.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the forms idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Required checkbox has id and name",
+          "type": "html-element",
+          "tag": "input",
+          "attrs": {
+            "id": {
+              "minLength": 1
+            },
+            "type": "checkbox",
+            "name": {
+              "minLength": 1
+            },
+            "required": true
+          }
+        },
+        {
+          "label": "Checkbox label is connected",
+          "type": "html-label-control",
+          "tag": "input",
+          "attrs": {
+            "type": "checkbox",
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "html-validation",
+      "number": "33",
+      "group": "Intermediate",
+      "difficulty": 33,
+      "stageStep": 7,
+      "stageSize": 12,
+      "title": "Add native validation",
+      "eyebrow": "Forms",
+      "summary": "Native constraint attributes establish a useful first validation layer in the browser. Server validation is still required.",
+      "objective": "Create a named input with required, minlength, maxlength, and pattern constraints.",
+      "hint": "Put all constraints on one input. Use numeric minlength and maxlength values, and write a non-empty pattern.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the forms idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Input has native constraints",
+          "type": "html-element",
+          "tag": "input",
+          "attrs": {
+            "name": {
+              "minLength": 1
+            },
+            "required": true,
+            "minlength": {
+              "pattern": "^\\d+(\\.\\d+)?$"
+            },
+            "maxlength": {
+              "pattern": "^\\d+(\\.\\d+)?$"
+            },
+            "pattern": {
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "html-autocomplete",
+      "number": "34",
+      "group": "Intermediate",
+      "difficulty": 34,
+      "stageStep": 8,
+      "stageSize": 12,
+      "title": "Support autofill",
+      "eyebrow": "Forms",
+      "summary": "autocomplete tokens tell browsers what a field represents so they can fill it accurately.",
+      "objective": "Add a personal-name input and an email input with autocomplete=\"name\" and autocomplete=\"email\". Give both fields a non-empty name attribute.",
+      "hint": "Match each input purpose with the correct autocomplete token.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the forms idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Personal-name autofill token exists",
+          "type": "html-element",
+          "tag": "input",
+          "attrs": {
+            "name": {
+              "minLength": 1
+            },
+            "autocomplete": "name"
+          }
+        },
+        {
+          "label": "Email autofill token exists",
+          "type": "html-element",
+          "tag": "input",
+          "attrs": {
+            "type": "email",
+            "name": {
+              "minLength": 1
+            },
+            "autocomplete": "email"
+          }
+        }
+      ]
+    },
+    {
+      "id": "html-table",
+      "number": "35",
+      "group": "Intermediate",
+      "difficulty": 35,
+      "stageStep": 9,
+      "stageSize": 12,
+      "title": "Build a data table",
+      "eyebrow": "Tables",
+      "summary": "Tables express relationships in genuinely tabular data. They should not be used for page layout.",
+      "objective": "Create a table with at least two header cells and at least two data cells.",
+      "hint": "Use table, tr, th, and td.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the tables idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Table contains header and data rows",
+          "type": "html-element",
+          "tag": "table",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "tr",
+              "children": [
+                {
+                  "type": "html-element",
+                  "tag": "th",
+                  "min": 2,
+                  "minTextLength": 1
+                }
+              ]
+            },
+            {
+              "type": "html-element",
+              "tag": "tr",
+              "children": [
+                {
+                  "type": "html-element",
+                  "tag": "td",
+                  "min": 2,
+                  "minTextLength": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-table-scope",
+      "number": "36",
+      "group": "Intermediate",
+      "difficulty": 36,
+      "stageStep": 10,
+      "stageSize": 12,
+      "title": "Clarify table headers",
+      "eyebrow": "Tables",
+      "summary": "caption names a table. scope helps assistive technology connect headers to cells.",
+      "objective": "Create a table with a visible caption and at least two column headers that use scope=\"col\".",
+      "hint": "Put caption inside table, then add th elements with scope.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the tables idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Table contains caption and scoped column headers",
+          "type": "html-element",
+          "tag": "table",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "caption",
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "th",
+              "attrs": {
+                "scope": "col"
+              },
+              "min": 2,
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-audio",
+      "number": "37",
+      "group": "Intermediate",
+      "difficulty": 37,
+      "stageStep": 11,
+      "stageSize": 12,
+      "title": "Provide audio with fallback",
+      "eyebrow": "Media",
+      "summary": "audio embeds sound. source provides media candidates. Fallback text helps when the element is unsupported.",
+      "objective": "Create an audio element with controls, a source with type audio/mpeg, and fallback text.",
+      "hint": "Nest source and fallback text inside audio.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the media idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Audio element contains its MPEG source and fallback text",
+          "type": "html-element",
+          "tag": "audio",
+          "attrs": {
+            "controls": true
+          },
+          "minTextLength": 1,
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "source",
+              "attrs": {
+                "src": {
+                  "minLength": 1
+                },
+                "type": "audio/mpeg"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-video",
+      "number": "38",
+      "group": "Intermediate",
+      "difficulty": 38,
+      "stageStep": 12,
+      "stageSize": 12,
+      "title": "Add video captions",
+      "eyebrow": "Media",
+      "summary": "Videos need captions so spoken content is available without audio.",
+      "objective": "Create a video with controls, a source, and a captions track with srclang=\"en\".",
+      "hint": "Nest source and track inside video.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the media idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Video contains source and English captions track",
+          "type": "html-element",
+          "tag": "video",
+          "attrs": {
+            "controls": true
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "source",
+              "attrs": {
+                "src": {
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "html-element",
+              "tag": "track",
+              "attrs": {
+                "kind": "captions",
+                "src": {
+                  "minLength": 1
+                },
+                "srclang": "en"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-picture",
+      "number": "39",
+      "group": "Advanced",
+      "difficulty": 39,
+      "stageStep": 1,
+      "stageSize": 12,
+      "title": "Offer responsive image choices",
+      "eyebrow": "Responsive media",
+      "summary": "picture lets the browser choose from different image sources for different conditions.",
+      "objective": "Create a picture with a source for min-width screens and an img fallback with non-empty src and alt text.",
+      "hint": "Put source first and img last inside picture.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the responsive media idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Picture contains the wide source and fallback image",
+          "type": "html-element",
+          "tag": "picture",
+          "children": [
+            {
+              "type": "html-order",
+              "tags": [
+                "source",
+                "img"
+              ]
+            },
+            {
+              "type": "html-element",
+              "tag": "source",
+              "attrs": {
+                "media": {
+                  "value": "min-width",
+                  "mode": "contains"
+                },
+                "srcset": {
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "html-element",
+              "tag": "img",
+              "attrs": {
+                "src": {
+                  "minLength": 1
+                },
+                "alt": {
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-skip-link",
+      "number": "40",
+      "group": "Advanced",
+      "difficulty": 40,
+      "stageStep": 2,
+      "stageSize": 12,
+      "title": "Let keyboard users skip navigation",
+      "eyebrow": "Accessibility",
+      "summary": "Skip links help keyboard and assistive technology users bypass repeated navigation.",
+      "objective": "Create a skip link before header that points to the id of the main content.",
+      "hint": "Choose an id for main, then make the skip link href use # followed by that same id.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the accessibility idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Skip link targets main content",
+          "type": "html-reference",
+          "sourceTag": "a",
+          "sourceAttr": "href",
+          "targetTag": "main",
+          "sourcePrefix": "#",
+          "minTextLength": 1,
+          "ordered": true
+        },
+        {
+          "label": "Skip link appears before header and main",
+          "type": "html-element",
+          "tag": "body",
+          "children": [
+            {
+              "type": "html-order",
+              "tags": [
+                "a",
+                "header",
+                "main"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-aria-current",
+      "number": "41",
+      "group": "Advanced",
+      "difficulty": 41,
+      "stageStep": 3,
+      "stageSize": 12,
+      "title": "Mark the current page",
+      "eyebrow": "Accessibility",
+      "summary": "aria-current tells assistive technology which item in a set represents the current page or step.",
+      "objective": "Inside a nav, create a link to / and mark it with aria-current=\"page\".",
+      "hint": "Put aria-current on the anchor that represents the current page.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the accessibility idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Current page link is inside navigation",
+          "type": "html-element",
+          "tag": "nav",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "a",
+              "attrs": {
+                "href": "/",
+                "aria-current": "page"
+              },
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-aria-expanded",
+      "number": "42",
+      "group": "Advanced",
+      "difficulty": 42,
+      "stageStep": 4,
+      "stageSize": 12,
+      "title": "Expose control state",
+      "eyebrow": "Accessibility",
+      "summary": "ARIA can expose state and relationships when native HTML does not already provide them.",
+      "objective": "Create a button with aria-expanded=\"false\" and aria-controls pointing to a target element id.",
+      "hint": "Choose an id for the controlled content, then use the same value in the button aria-controls attribute.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the accessibility idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Button exposes collapsed state",
+          "type": "html-element",
+          "tag": "button",
+          "attrs": {
+            "aria-expanded": "false",
+            "aria-controls": {
+              "minLength": 1
+            }
+          },
+          "minTextLength": 1
+        },
+        {
+          "label": "Button controls an existing target",
+          "type": "html-reference",
+          "sourceTag": "button",
+          "sourceAttr": "aria-controls",
+          "targetTag": [
+            "div",
+            "nav"
+          ],
+          "sourceAttrs": {
+            "aria-expanded": "false"
+          }
+        }
+      ]
+    },
+    {
+      "id": "html-progress-meter",
+      "number": "43",
+      "group": "Advanced",
+      "difficulty": 43,
+      "stageStep": 5,
+      "stageSize": 12,
+      "title": "Represent measured values",
+      "eyebrow": "Status semantics",
+      "summary": "progress represents task completion. meter represents a scalar measurement within a known range.",
+      "objective": "Create progress and meter elements with numeric values, ranges, and fallback text.",
+      "hint": "Both elements should include fallback text between their tags.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the status semantics idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Progress has numeric value and max",
+          "type": "html-element",
+          "tag": "progress",
+          "attrs": {
+            "value": {
+              "pattern": "^\\d+(\\.\\d+)?$"
+            },
+            "max": {
+              "pattern": "^\\d+(\\.\\d+)?$"
+            }
+          },
+          "minTextLength": 1
+        },
+        {
+          "label": "Meter has numeric range and value",
+          "type": "html-element",
+          "tag": "meter",
+          "attrs": {
+            "min": {
+              "pattern": "^\\d+(\\.\\d+)?$"
+            },
+            "max": {
+              "pattern": "^\\d+(\\.\\d+)?$"
+            },
+            "value": {
+              "pattern": "^\\d+(\\.\\d+)?$"
+            }
+          },
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-template",
+      "number": "44",
+      "group": "Advanced",
+      "difficulty": 44,
+      "stageStep": 6,
+      "stageSize": 12,
+      "title": "Prepare inert reusable markup",
+      "eyebrow": "Templates",
+      "summary": "template stores markup that is not rendered immediately. Scripts can clone it later.",
+      "objective": "Create a template with a non-empty id containing an article with an h2.",
+      "hint": "Nest article and h2 inside template.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the templates idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Named template contains article card markup",
+          "type": "html-element",
+          "tag": "template",
+          "attrs": {
+            "id": {
+              "minLength": 1
+            }
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "article",
+              "children": [
+                {
+                  "type": "html-element",
+                  "tag": "h2",
+                  "minTextLength": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-dialog",
+      "number": "45",
+      "group": "Advanced",
+      "difficulty": 45,
+      "stageStep": 7,
+      "stageSize": 12,
+      "title": "Create a native dialog",
+      "eyebrow": "Dialogs",
+      "summary": "dialog represents modal or non-modal dialog content and provides native semantics.",
+      "objective": "Create an open dialog containing an h2 and a close button with type=\"button\".",
+      "hint": "Add open for preview and nest the heading and button.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the dialogs idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Open dialog contains its title and close button",
+          "type": "html-element",
+          "tag": "dialog",
+          "attrs": {
+            "open": true
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "h2",
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "button",
+              "attrs": {
+                "type": "button"
+              },
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-code-pre",
+      "number": "46",
+      "group": "Advanced",
+      "difficulty": 46,
+      "stageStep": 8,
+      "stageSize": 12,
+      "title": "Show code as code",
+      "eyebrow": "Code content",
+      "summary": "code marks computer code. pre preserves whitespace and line breaks for preformatted text.",
+      "objective": "Create a pre element containing a code element with any short code sample.",
+      "hint": "Nest code inside pre, not the other way around.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the code content idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Code block is nested correctly",
+          "type": "html-element",
+          "tag": "pre",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "code",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-description-meta",
+      "number": "47",
+      "group": "Advanced",
+      "difficulty": 47,
+      "stageStep": 9,
+      "stageSize": 12,
+      "title": "Summarize the page for search",
+      "eyebrow": "Metadata",
+      "summary": "A meta description summarizes page content for search engines and link previews.",
+      "objective": "Add a meta description in head with non-empty content that summarizes the page.",
+      "hint": "Put the meta tag inside head.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the metadata idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Meta description has content in head",
+          "type": "html-element",
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "meta",
+              "attrs": {
+                "name": "description",
+                "content": {
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-canonical",
+      "number": "48",
+      "group": "Advanced",
+      "difficulty": 48,
+      "stageStep": 10,
+      "stageSize": 12,
+      "title": "Declare the canonical URL",
+      "eyebrow": "Metadata",
+      "summary": "A canonical URL tells search engines which URL is the preferred version of a page.",
+      "objective": "Add a canonical link in head that points to an absolute http or https URL.",
+      "hint": "Put <link rel=\"canonical\" href=\"...\"> inside head.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the metadata idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Canonical URL exists in head",
+          "type": "html-element",
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "link",
+              "attrs": {
+                "rel": "canonical",
+                "href": {
+                  "pattern": "^https?:\\/\\/.+"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-safe-scripts",
+      "number": "49",
+      "group": "Advanced",
+      "difficulty": 49,
+      "stageStep": 11,
+      "stageSize": 12,
+      "title": "Load scripts without blocking",
+      "eyebrow": "Scripts",
+      "summary": "defer avoids blocking HTML parsing for classic scripts. Module scripts defer automatically. noscript explains what happens without scripting.",
+      "objective": "In head, load one deferred classic script and one module script. In body, add noscript fallback text.",
+      "hint": "Put both script tags in head and noscript in body.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the scripts idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Deferred classic script exists in head",
+          "type": "html-element",
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "script",
+              "attrs": {
+                "src": {
+                  "minLength": 1
+                },
+                "defer": true,
+                "type": {
+                  "optional": true,
+                  "notValue": "module"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Module script exists in head",
+          "type": "html-element",
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "script",
+              "attrs": {
+                "type": "module",
+                "src": {
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Script fallback exists in body",
+          "type": "html-element",
+          "tag": "body",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "noscript",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-full-page",
+      "number": "50",
+      "group": "Advanced",
+      "difficulty": 50,
+      "stageStep": 12,
+      "stageSize": 12,
+      "title": "Assemble an accessible page",
+      "eyebrow": "Capstone",
+      "summary": "A production page combines semantic structure, accessible navigation, meaningful content, metadata, and usable forms.",
+      "objective": "Build a complete page body with a skip link, header/nav, main article, labelled signup form, and footer.",
+      "hint": "Choose an id for main, point the skip link to that id, and nest the article and form inside main.",
+      "commonMistake": "Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.",
+      "bestPractice": "Build the smallest valid HTML that proves the capstone idea first, then personalize visible text once the semantic structure is correct.",
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "label": "Skip link targets main",
+          "type": "html-reference",
+          "sourceTag": "a",
+          "sourceAttr": "href",
+          "targetTag": "main",
+          "sourcePrefix": "#",
+          "ordered": true
+        },
+        {
+          "label": "Header contains labelled navigation with a link",
+          "type": "html-element",
+          "tag": "header",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "nav",
+              "attrs": {
+                "aria-label": {
+                  "minLength": 1
+                }
+              },
+              "children": [
+                {
+                  "type": "html-element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": {
+                      "minLength": 1
+                    }
+                  },
+                  "minTextLength": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Main target contains article and signup form",
+          "type": "html-element",
+          "tag": "main",
+          "attrs": {
+            "id": {
+              "minLength": 1
+            }
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "article",
+              "children": [
+                {
+                  "type": "html-element",
+                  "tag": "h1",
+                  "minTextLength": 1
+                },
+                {
+                  "type": "html-element",
+                  "tag": "p",
+                  "minTextLength": 1
+                }
+              ]
+            },
+            {
+              "type": "html-element",
+              "tag": "form",
+              "attrs": {
+                "action": {
+                  "minLength": 1
+                },
+                "method": "post"
+              },
+              "children": [
+                {
+                  "type": "html-label-control",
+                  "tag": "input",
+                  "attrs": {
+                    "type": "email",
+                    "name": {
+                      "minLength": 1
+                    }
+                  }
+                },
+                {
+                  "type": "html-element",
+                  "tag": "button",
+                  "attrs": {
+                    "type": "submit"
+                  },
+                  "minTextLength": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Footer exists",
+          "type": "html-element",
+          "tag": "footer",
+          "minTextLength": 1
+        }
+      ]
+    }
+  ]
+}

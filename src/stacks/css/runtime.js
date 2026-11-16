@@ -1,3 +1,5 @@
+// CSS check engine. Rules are parsed from the learner file, then confirmed against a hidden render.
+
 const stripCssComments = (code) => String(code).replace(/\/\*[\s\S]*?\*\//g, '')
 
 const normalizeSelector = (selector) => String(selector)
@@ -213,8 +215,11 @@ function extractPreviewBody(html) {
   return source.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? source
 }
 
+const canRenderPreview = (files) => typeof document !== 'undefined' && Boolean(document.body && files?.['/index.html'])
+
+// Hidden off-screen copy of the preview, used to read computed styles.
 function createPreviewHost(files, css) {
-  if (typeof document === 'undefined' || !document.body || !files?.['/index.html']) return null
+  if (!canRenderPreview(files)) return null
 
   const style = document.createElement('style')
   const host = document.createElement('div')
@@ -284,26 +289,52 @@ function readComputedValues(host, selector, property) {
   return values.length ? values : null
 }
 
-function computedValuesChanged(files, code, selector, property) {
-  const beforePreview = createPreviewHost(files, '')
-  if (!beforePreview) return true
+// Baseline values never change for a lesson, so they are computed once.
+const baselineCache = new WeakMap()
 
-  const afterPreview = createPreviewHost(files, code)
+function baselineValues(files, selector, property) {
+  let values = baselineCache.get(files)
+  if (!values) baselineCache.set(files, (values = new Map()))
 
-  try {
-    if (!afterPreview) return true
-
-    const beforeValues = readComputedValues(beforePreview.host, selector, property)
-    const afterValues = readComputedValues(afterPreview.host, selector, property)
-
-    if (beforeValues === null || afterValues === null) return true
-    if (beforeValues === false || afterValues === false) return false
-
-    return afterValues.some((value, index) => value !== beforeValues[index])
-  } finally {
-    afterPreview?.cleanup()
-    beforePreview.cleanup()
+  const key = `${selector}|${property}`
+  if (!values.has(key)) {
+    const preview = createPreviewHost(files, '')
+    try {
+      values.set(key, readComputedValues(preview.host, selector, property))
+    } finally {
+      preview.cleanup()
+    }
   }
+  return values.get(key)
+}
+
+// One render of the learner CSS is shared by every check in a pass.
+let currentRender = null
+
+function learnerHost(files, code) {
+  if (currentRender?.files === files && currentRender.code === code) return currentRender.preview.host
+
+  currentRender?.preview.cleanup()
+  const render = { files, code, preview: createPreviewHost(files, code) }
+  currentRender = render
+  setTimeout(() => {
+    if (currentRender !== render) return
+    render.preview.cleanup()
+    currentRender = null
+  })
+  return render.preview.host
+}
+
+function computedValuesChanged(files, code, selector, property) {
+  if (!canRenderPreview(files)) return true
+
+  const beforeValues = baselineValues(files, selector, property)
+  const afterValues = readComputedValues(learnerHost(files, code), selector, property)
+
+  if (beforeValues === null || afterValues === null) return true
+  if (beforeValues === false || afterValues === false) return false
+
+  return afterValues.some((value, index) => value !== beforeValues[index])
 }
 
 function declarationsAffectPreview(descriptor, code, context) {

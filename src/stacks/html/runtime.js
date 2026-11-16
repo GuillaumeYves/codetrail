@@ -1,3 +1,5 @@
+// HTML check engine. Lessons ship serializable descriptors that are turned into test functions here.
+
 const commentPatterns = {
   html: /<!--[\s\S]*?-->/g,
 }
@@ -136,18 +138,20 @@ function findHtmlElementsWithRegex(source, tag) {
   return matches
 }
 
-function createSourceTagIndexQueues(source) {
-  const queues = new Map()
+// Source offsets of every explicit open tag, grouped by tag name.
+function sourceTagPositions(source) {
+  const positions = new Map()
   const indexSource = maskHtmlComments(source)
   const pattern = /<([a-z][\w:-]*)\b(?:[^>"']|"[^"]*"|'[^']*')*>/gi
   let match
 
   while ((match = pattern.exec(indexSource))) {
     const tag = match[1].toLowerCase()
-    queues.set(tag, [...(queues.get(tag) ?? []), match.index])
+    if (!positions.has(tag)) positions.set(tag, [])
+    positions.get(tag).push(match.index)
   }
 
-  return queues
+  return positions
 }
 
 function isHtmlNestingBalanced(source) {
@@ -196,11 +200,6 @@ function domNodeContent(node) {
   return node.innerHTML ?? ''
 }
 
-function explicitSourceIndex(queues, tag) {
-  const queue = queues.get(tag.toLowerCase())
-  return queue?.shift()
-}
-
 function domElementsForTag(documentNode, tag, sourceIndexes) {
   const normalizedTag = tag.toLowerCase()
   const implicitDocumentTags = new Set(['html', 'head', 'body'])
@@ -215,26 +214,42 @@ function domElementsForTag(documentNode, tag, sourceIndexes) {
   return Array.from(documentNode.getElementsByTagName(normalizedTag))
 }
 
+// Checks query the same code many times per pass, so parsed documents are cached.
+const parseCache = new Map()
+const PARSE_CACHE_SIZE = 32
+
+function parseHtmlSource(source) {
+  if (parseCache.has(source)) return parseCache.get(source)
+
+  const parsed = canUseDomParser(source)
+    ? {
+        documentNode: new globalThis.DOMParser().parseFromString(source, 'text/html'),
+        positions: sourceTagPositions(source),
+      }
+    : null
+
+  if (parseCache.size >= PARSE_CACHE_SIZE) parseCache.delete(parseCache.keys().next().value)
+  parseCache.set(source, parsed)
+  return parsed
+}
+
 function findHtmlElementsWithDomParser(source, tag) {
-  const normalizedSource = String(source)
-  if (!canUseDomParser(normalizedSource)) return null
+  const parsed = parseHtmlSource(String(source))
+  if (!parsed) return null
 
-  const documentNode = new globalThis.DOMParser().parseFromString(normalizedSource, 'text/html')
-  const sourceIndexes = createSourceTagIndexQueues(normalizedSource)
-
-  return domElementsForTag(documentNode, tag, sourceIndexes)
-    .map((node, fallbackIndex) => ({
+  const positions = parsed.positions.get(tag.toLowerCase()) ?? []
+  return domElementsForTag(parsed.documentNode, tag, parsed.positions)
+    .map((node, index) => ({
       attrs: readDomAttributes(node),
       content: domNodeContent(node),
-      index: explicitSourceIndex(sourceIndexes, tag) ?? fallbackIndex,
+      index: positions[index] ?? index,
     }))
 }
 
+// DOM parsing is the most accurate; regex covers unbalanced markup and Node tests.
 function findHtmlElements(source, tag) {
-  const fallbackMatches = findHtmlElementsWithRegex(source, tag)
   const domMatches = findHtmlElementsWithDomParser(source, tag)
-
-  return domMatches?.length ? domMatches : fallbackMatches
+  return domMatches?.length ? domMatches : findHtmlElementsWithRegex(source, tag)
 }
 
 function htmlAttributeMatches(actual, condition) {
@@ -449,7 +464,8 @@ function testHtmlRadioGroupDescriptor(descriptor, code) {
     const groups = new Map()
     for (const radio of radios) {
       const name = normalizeHtmlAttribute(radio.attrs.name)
-      groups.set(name, [...(groups.get(name) ?? []), radio])
+      if (!groups.has(name)) groups.set(name, [])
+      groups.get(name).push(radio)
     }
 
     return [...groups.values()].some((group) => {

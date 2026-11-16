@@ -1,0 +1,497 @@
+{
+  "shared": {
+    "commonMistake": "Lisez d’abord la console sous l’aperçu. Une seule erreur rouge arrête le reste du script : corrigez la première erreur avant tout le reste.",
+    "bestPractice": "Côté {topic}, écrivez d’abord le plus petit code qui fonctionne, lancez-le, puis améliorez les noms et la structure une fois toutes les vérifications réussies.",
+    "runsCheck": "Votre code s’exécute sans erreur"
+  },
+  "lessons": {
+    "js-console-log": {
+      "title": "Dites bonjour",
+      "topic": "Console",
+      "summary": "console.log affiche une valeur dans la console sous l’aperçu. C’est le moyen le plus rapide de voir ce que fait votre code.",
+      "objective": "Affichez exactement le texte Hello, world! dans la console avec console.log.",
+      "hints": [
+        "En JavaScript, le texte se place entre guillemets, et console.log affiche tout ce que vous lui donnez.",
+        "Appelez console.log et placez le texte Hello, world! entre les parenthèses, entre guillemets.",
+        "`console.log('Hello, world!')`"
+      ],
+      "checks": ["Utilise console.log", "La console affiche Hello, world!"]
+    },
+    "js-const": {
+      "title": "Stockez une valeur",
+      "topic": "Variables",
+      "summary": "Une variable donne un nom à une valeur pour la réutiliser. const crée un nom qui désigne toujours la même valeur.",
+      "objective": "Déclarez une constante nommée name qui contient votre prénom sous forme de texte, puis affichez name dans la console.",
+      "hints": [
+        "Une variable est une étiquette posée sur une valeur. Déclarez-la une fois, puis utilisez son nom partout ensuite.",
+        "Écrivez const, le nom name, puis = et votre prénom entre guillemets. Passez ensuite name à console.log, sans guillemets.",
+        "`const name = 'Ada'` puis `console.log(name)`"
+      ],
+      "commonMistake": "console.log('name') affiche le mot name, pas la valeur. Les guillemets créent du texte ; sans guillemets, JavaScript utilise la variable.",
+      "checks": ["name est déclarée avec const", "name contient du texte", "La console affiche la valeur de name"]
+    },
+    "js-let": {
+      "title": "Changez une valeur",
+      "topic": "Variables",
+      "summary": "let crée une variable qui peut recevoir une nouvelle valeur plus tard. Utilisez-la seulement quand une valeur doit vraiment changer.",
+      "objective": "Déclarez score avec let et donnez-lui 0 au départ. Sur une ligne suivante, ajoutez 10 à score, puis affichez score.",
+      "hints": [
+        "Une const ne peut pas être réaffectée, donc un score qui change a besoin de l’autre mot-clé.",
+        "Commencez par let score = 0, puis réaffectez-la avec score = score + 10 ou la forme courte score += 10.",
+        "`let score = 0`, puis `score += 10`, puis `console.log(score)`"
+      ],
+      "bestPractice": "Utilisez const par défaut et let seulement quand la valeur doit changer, comme un score ou un compteur. Le lecteur voit ainsi tout de suite quelles valeurs bougent.",
+      "checks": ["score est déclarée avec let", "score commence à 0", "score est modifiée après sa déclaration", "La console affiche 10"]
+    },
+    "js-numbers": {
+      "title": "Faites le calcul",
+      "topic": "Nombres",
+      "summary": "JavaScript calcule avec +, -, * et /. Ranger les résultats dans des constantes bien nommées garde les calculs lisibles.",
+      "objective": "À partir de price et quantity, créez une constante nommée total égale à price multiplié par quantity, puis affichez total.",
+      "hints": [
+        "La multiplication utilise l’étoile, et les noms de variables fonctionnent dans les calculs.",
+        "Déclarez const total avec la valeur price * quantity, puis affichez-la.",
+        "`const total = price * quantity` puis `console.log(total)`"
+      ],
+      "checks": ["total est déclarée avec const", "total est calculée à partir de price et quantity", "total vaut 36", "La console affiche 36"]
+    },
+    "js-template-literals": {
+      "title": "Construisez une phrase",
+      "topic": "Chaînes",
+      "summary": "Les littéraux de gabarit utilisent des accents graves et ${} pour placer des valeurs dans du texte. Ils se lisent mieux qu’une concaténation avec +.",
+      "objective": "Créez une constante nommée greeting avec un littéral de gabarit qui utilise name pour produire Hello, Ada! Affichez ensuite greeting.",
+      "hints": [
+        "Les accents graves créent une chaîne qui peut contenir des valeurs dans ${ }.",
+        "Écrivez const greeting = suivi d’une chaîne entre accents graves qui contient ${name}.",
+        "``const greeting = `Hello, ${name}!` `` puis `console.log(greeting)`"
+      ],
+      "checks": ["greeting utilise un littéral de gabarit contenant name", "greeting vaut Hello, Ada!", "La console affiche Hello, Ada!"]
+    },
+    "js-string-methods": {
+      "title": "Nettoyez du texte",
+      "topic": "Chaînes",
+      "summary": "Les chaînes ont des méthodes intégrées. Les enchaîner nettoie le texte étape par étape, et la chaîne d’origine ne change jamais.",
+      "objective": "city contient des espaces en trop. Créez une constante nommée clean qui retire les espaces et met le texte en majuscules, puis affichez clean.",
+      "hints": [
+        "Une méthode s’appelle avec un point après une valeur. Chacune renvoie une nouvelle chaîne.",
+        "trim() retire les espaces autour du texte et toUpperCase() change la casse. Vous pouvez les enchaîner.",
+        "`const clean = city.trim().toUpperCase()`"
+      ],
+      "checks": ["Utilise trim()", "Utilise toUpperCase()", "clean vaut PARIS", "La console affiche PARIS"]
+    },
+    "js-comparisons": {
+      "title": "Comparez des valeurs",
+      "topic": "Booléens",
+      "summary": "Une comparaison répond par true ou false. Utilisez === pour comparer des valeurs, car == convertit les types de façon surprenante.",
+      "objective": "À partir de age, créez isAdult (true quand age vaut 18 ou plus) et isTwenty (true quand age vaut exactement 20, avec ===). Affichez les deux.",
+      "hints": [
+        "Une comparaison est une question à laquelle JavaScript répond par true ou false.",
+        "Utilisez >= pour « 18 ou plus » et === pour « exactement 20 ». Rangez chaque réponse dans une constante.",
+        "`const isAdult = age >= 18` et `const isTwenty = age === 20`"
+      ],
+      "commonMistake": "== convertit les types avant de comparer, donc \"20\" == 20 vaut true. === compare aussi le type, ce qui évite les surprises.",
+      "checks": ["Utilise >= pour isAdult", "isAdult vaut true", "Utilise === pour isTwenty", "isTwenty vaut true", "N’utilise pas =="]
+    },
+    "js-functions": {
+      "title": "Écrivez une fonction",
+      "topic": "Fonctions",
+      "summary": "Une fonction regroupe des étapes sous un nom. Les paramètres reçoivent les entrées, et return renvoie un résultat à l’appelant.",
+      "objective": "Écrivez une fonction nommée greet qui prend un nom et renvoie Hello, suivi du nom et d’un point d’exclamation. greet('Ada') renvoie Hello, Ada!",
+      "hints": [
+        "Une fonction reçoit des entrées par ses paramètres et renvoie une valeur avec return.",
+        "Déclarez function greet(name) et renvoyez un littéral de gabarit qui utilise name.",
+        "``function greet(name) { return `Hello, ${name}!` }``"
+      ],
+      "commonMistake": "console.log dans une fonction ne fait qu’afficher. C’est return qui rend la valeur au code qui a appelé la fonction.",
+      "checks": ["greet est déclarée comme une fonction", "greet renvoie une valeur", "greet('Ada') renvoie Hello, Ada!", "greet('Linus') renvoie Hello, Linus!"]
+    },
+    "js-if-else": {
+      "title": "Prenez une décision",
+      "topic": "Conditions",
+      "summary": "if exécute du code seulement quand une condition est vraie, et else couvre tous les autres cas. Dans une fonction, chaque branche peut renvoyer son propre résultat.",
+      "objective": "Écrivez une fonction nommée getAdvice qui prend une température. Renvoyez Stay cool quand elle dépasse 25, sinon renvoyez Enjoy the sun.",
+      "hints": [
+        "Choisissez la question à poser sur la température, puis la réponse pour chaque cas.",
+        "Dans la fonction, utilisez if (temperature > 25) pour renvoyer un texte, et else pour renvoyer l’autre.",
+        "`if (temperature > 25) { return 'Stay cool' } else { return 'Enjoy the sun' }`"
+      ],
+      "checks": ["Utilise une instruction if", "getAdvice(30) renvoie Stay cool", "getAdvice(18) renvoie Enjoy the sun", "getAdvice(25) renvoie Enjoy the sun"]
+    },
+    "js-arrow-functions": {
+      "title": "Utilisez une fonction plus courte",
+      "topic": "Fonctions",
+      "summary": "Les fonctions fléchées sont une façon compacte d’écrire de petites fonctions. Quand le corps est une seule expression, sa valeur est renvoyée automatiquement.",
+      "objective": "Créez une constante nommée double qui contient une fonction fléchée. Elle prend un nombre et renvoie ce nombre multiplié par 2.",
+      "hints": [
+        "Une fonction fléchée est une valeur : on peut la ranger dans une constante comme n’importe quelle autre valeur.",
+        "Écrivez const double = (number) => suivi du calcul. Une seule expression n’a pas besoin d’accolades.",
+        "`const double = (number) => number * 2`"
+      ],
+      "checks": ["double est déclarée avec const", "Utilise une fonction fléchée", "double(4) renvoie 8", "double(-3) renvoie -6"]
+    },
+    "js-arrays": {
+      "title": "Faites une liste",
+      "topic": "Tableaux",
+      "summary": "Un tableau contient une liste ordonnée de valeurs. Les positions commencent à 0, et length indique combien il y a d’éléments.",
+      "objective": "Créez un tableau constant nommé fruits avec au moins trois chaînes. Affichez le premier élément grâce à son indice, puis affichez la longueur.",
+      "hints": [
+        "Les tableaux utilisent des crochets, avec des éléments séparés par des virgules. La première position est 0, pas 1.",
+        "Déclarez const fruits avec trois chaînes. fruits[0] est le premier élément et fruits.length le nombre d’éléments.",
+        "`console.log(fruits[0])` et `console.log(fruits.length)`"
+      ],
+      "checks": ["fruits est déclaré avec const", "fruits est un tableau d’au moins trois éléments", "La console affiche le premier fruit", "La console affiche le nombre de fruits"]
+    },
+    "js-array-push": {
+      "title": "Ajoutez à une liste",
+      "topic": "Tableaux",
+      "summary": "push ajoute un élément à la fin d’un tableau. Le contenu d’un tableau const peut quand même changer : const empêche seulement le nom de désigner autre chose.",
+      "objective": "Ajoutez le texte Practice à la fin de tasks avec push, puis affichez la longueur de tasks.",
+      "hints": [
+        "Les tableaux ont des méthodes qui les modifient directement.",
+        "Appelez push sur tasks et passez-lui le texte Practice.",
+        "`tasks.push('Practice')` puis `console.log(tasks.length)`"
+      ],
+      "commonMistake": "tasks = [...] échoue sur un tableau const. push modifie le tableau existant au lieu de le remplacer.",
+      "checks": ["Utilise push", "tasks contient maintenant Read et Practice", "La console affiche 2"]
+    },
+    "js-for-loop": {
+      "title": "Répétez avec une boucle",
+      "topic": "Boucles",
+      "summary": "Une boucle for répète du code un nombre de fois défini. Elle a un départ, une condition pour continuer et un pas.",
+      "objective": "Utilisez une boucle for pour afficher les nombres de 1 à 5, un par ligne.",
+      "hints": [
+        "Une boucle a besoin de trois parties : où commencer, quand s’arrêter et comment passer à l’étape suivante.",
+        "Démarrez un compteur à 1, continuez tant qu’il vaut 5 ou moins, et ajoutez 1 à chaque tour. Affichez le compteur dans la boucle.",
+        "`for (let i = 1; i <= 5; i++) { console.log(i) }`"
+      ],
+      "commonMistake": "Une condition qui ne devient jamais fausse boucle à l’infini. Si l’aperçu arrête votre boucle, vérifiez que le compteur avance vers la fin.",
+      "checks": ["Utilise une boucle for avec un compteur", "La console affiche 1 à 5 dans l’ordre"]
+    },
+    "js-for-of": {
+      "title": "Parcourez chaque élément",
+      "topic": "Boucles",
+      "summary": "for...of parcourt chaque élément d’un tableau sans gérer d’indice. C’est la boucle la plus claire quand vous avez besoin de chaque valeur.",
+      "objective": "Utilisez une boucle for...of pour afficher chaque nom de names.",
+      "hints": [
+        "Quand vous voulez chaque élément et pas sa position, il existe une boucle faite pour ça.",
+        "Écrivez for (const name of names) et affichez name dans la boucle.",
+        "`for (const name of names) { console.log(name) }`"
+      ],
+      "checks": ["Utilise une boucle for...of", "La console affiche Ada, Grace et Linus dans l’ordre"]
+    },
+    "js-while": {
+      "title": "Bouclez jusqu’à la fin",
+      "topic": "Boucles",
+      "summary": "Une boucle while se répète tant que sa condition est vraie. Elle convient quand on ne connaît pas le nombre d’étapes à l’avance.",
+      "objective": "En partant de count = 3, utilisez une boucle while pour afficher 3, 2, 1, puis affichez Liftoff! après la boucle.",
+      "hints": [
+        "Chaque tour de boucle doit rapprocher la condition de false, sinon elle ne s’arrête jamais.",
+        "Bouclez tant que count > 0 : affichez count, puis diminuez-le avec count--. Affichez Liftoff! après l’accolade fermante.",
+        "`while (count > 0) { console.log(count); count-- }` puis `console.log('Liftoff!')`"
+      ],
+      "checks": ["Utilise une boucle while", "La console affiche 3, 2, 1, Liftoff!"]
+    },
+    "js-objects": {
+      "title": "Décrivez une chose",
+      "topic": "Objets",
+      "summary": "Un objet regroupe des valeurs liées sous des clés nommées. La notation pointée lit une valeur grâce à sa clé.",
+      "objective": "Créez un objet constant nommé book avec un title (texte), un author (texte) et pages (un nombre). Affichez le titre avec la notation pointée.",
+      "hints": [
+        "Les objets utilisent des accolades, avec des paires clé: valeur séparées par des virgules.",
+        "Écrivez const book = { title: ..., author: ..., pages: ... }, puis affichez book.title.",
+        "`const book = { title: 'Dune', author: 'Frank Herbert', pages: 412 }`"
+      ],
+      "checks": ["book.title est du texte", "book.author est du texte", "book.pages est un nombre", "Lit le titre avec la notation pointée", "La console affiche le titre"]
+    },
+    "js-object-update": {
+      "title": "Modifiez un objet",
+      "topic": "Objets",
+      "summary": "Les propriétés peuvent être modifiées ou ajoutées après la création d’un objet, même quand l’objet est une const.",
+      "objective": "Changez le role de user en mentor et ajoutez une nouvelle propriété active à true, sans réécrire l’objet.",
+      "hints": [
+        "Affecter une valeur à une propriété fonctionne comme pour une variable.",
+        "Utilisez user.role = ... pour changer le rôle, et user.active = ... pour ajouter une nouvelle clé.",
+        "`user.role = 'mentor'` et `user.active = true`"
+      ],
+      "checks": ["Modifie role avec la notation pointée", "user.role vaut mentor", "user.active vaut true", "user.name vaut toujours Ada"]
+    },
+    "js-cart-total": {
+      "title": "Additionnez un panier",
+      "topic": "Boucles",
+      "summary": "Les boucles et les objets vont bien ensemble. Une variable total accumule la somme pendant que la boucle visite chaque élément.",
+      "objective": "Écrivez une fonction nommée totalPrice qui prend un tableau d’articles et renvoie la somme de leurs propriétés price. Un tableau vide renvoie 0.",
+      "hints": [
+        "Démarrez un total à 0, puis ajoutez-y quelque chose pour chaque article.",
+        "Dans totalPrice, déclarez let total = 0, parcourez items avec for...of, ajoutez item.price, puis renvoyez total.",
+        "`let total = 0; for (const item of items) { total += item.price } return total`"
+      ],
+      "checks": ["Utilise une boucle", "totalPrice(cart) renvoie 47", "totalPrice([]) renvoie 0", "Fonctionne avec n’importe quels articles"]
+    },
+    "js-logical-operators": {
+      "title": "Combinez des conditions",
+      "topic": "Conditions",
+      "summary": "&& demande que les deux côtés soient vrais, alors que || n’en demande qu’un. Ils permettent d’exprimer toute une règle en une ligne.",
+      "objective": "Écrivez une fonction nommée canEnter qui prend age et hasTicket. Renvoyez true seulement quand age vaut 18 ou plus et que hasTicket vaut true.",
+      "hints": [
+        "La règle a deux parties qui doivent être vraies toutes les deux.",
+        "Renvoyez age >= 18 combiné avec hasTicket grâce à &&.",
+        "`return age >= 18 && hasTicket`"
+      ],
+      "checks": ["Utilise &&", "canEnter(20, true) vaut true", "canEnter(20, false) vaut false", "canEnter(16, true) vaut false"]
+    },
+    "js-default-params": {
+      "title": "Formatez un prix",
+      "topic": "Fonctions",
+      "summary": "Les paramètres par défaut donnent une valeur quand l’appelant n’en fournit pas. toFixed(2) affiche un nombre avec deux décimales.",
+      "objective": "Écrivez une fonction nommée formatPrice qui prend amount et currency, avec EUR comme valeur par défaut pour currency. Renvoyez le montant avec deux décimales, une espace, puis la devise, comme 5.00 EUR.",
+      "hints": [
+        "Un paramètre peut avoir une valeur de secours écrite directement dans la liste des paramètres.",
+        "Déclarez function formatPrice(amount, currency = 'EUR') et utilisez amount.toFixed(2) dans un littéral de gabarit.",
+        "``return `${amount.toFixed(2)} ${currency}` ``"
+      ],
+      "checks": ["currency vaut EUR par défaut", "formatPrice(5) renvoie 5.00 EUR", "formatPrice(3.5, 'USD') renvoie 3.50 USD"]
+    },
+    "js-map": {
+      "title": "Transformez chaque élément",
+      "topic": "Méthodes de tableau",
+      "summary": "map crée un nouveau tableau en appliquant une fonction à chaque élément. Le tableau d’origine reste inchangé.",
+      "objective": "Créez une constante nommée doubled qui utilise map sur numbers pour doubler chaque valeur.",
+      "hints": [
+        "map appelle votre fonction une fois par élément et rassemble ce qu’elle renvoie.",
+        "Appelez numbers.map avec une fonction fléchée qui renvoie le nombre multiplié par 2.",
+        "`const doubled = numbers.map((number) => number * 2)`"
+      ],
+      "checks": ["Utilise map", "doubled vaut [2, 4, 6, 8]", "numbers n’a pas changé"]
+    },
+    "js-filter": {
+      "title": "Gardez ce qui correspond",
+      "topic": "Méthodes de tableau",
+      "summary": "filter construit un nouveau tableau avec seulement les éléments pour lesquels votre fonction renvoie true.",
+      "objective": "Créez une constante nommée passing avec seulement les scores de 50 ou plus, grâce à filter.",
+      "hints": [
+        "filter pose une question à réponse oui ou non à chaque élément.",
+        "Appelez scores.filter avec une fonction fléchée qui renvoie score >= 50.",
+        "`const passing = scores.filter((score) => score >= 50)`"
+      ],
+      "checks": ["Utilise filter", "passing vaut [72, 90, 51]", "scores n’a pas changé"]
+    },
+    "js-find-includes": {
+      "title": "Cherchez dans une liste",
+      "topic": "Méthodes de tableau",
+      "summary": "find renvoie le premier élément qui correspond, ou undefined. includes indique si une valeur se trouve dans le tableau.",
+      "objective": "Créez admin avec le premier utilisateur dont le role vaut admin, grâce à find. Créez ensuite hasGuest, qui vaut true quand roles contient guest.",
+      "hints": [
+        "Une méthode renvoie un élément qui correspond, l’autre renvoie true ou false.",
+        "Utilisez users.find avec une fonction qui vérifie user.role === 'admin', et roles.includes('guest').",
+        "`const admin = users.find((user) => user.role === 'admin')` et `const hasGuest = roles.includes('guest')`"
+      ],
+      "checks": ["Utilise find", "admin est Grace", "Utilise includes", "hasGuest vaut false"]
+    },
+    "js-reduce": {
+      "title": "Réduisez à une seule valeur",
+      "topic": "Méthodes de tableau",
+      "summary": "reduce parcourt un tableau en transportant un résultat cumulé. Il transforme une liste en une seule valeur, comme un total.",
+      "objective": "Créez une constante nommée total qui utilise reduce pour additionner prices. Démarrez le total à 0.",
+      "hints": [
+        "reduce donne à votre fonction le résultat cumulé et l’élément courant.",
+        "Appelez prices.reduce avec (sum, price) => sum + price, et passez 0 en second argument.",
+        "`const total = prices.reduce((sum, price) => sum + price, 0)`"
+      ],
+      "commonMistake": "Sans valeur de départ, reduce utilise le premier élément et échoue sur un tableau vide. Passez toujours la valeur de départ.",
+      "checks": ["Utilise reduce", "Démarre le total à 0", "total vaut 43"]
+    },
+    "js-destructuring": {
+      "title": "Déballez des valeurs",
+      "topic": "Déstructuration",
+      "summary": "La déstructuration extrait des valeurs d’objets et de tableaux dans des variables, en une seule étape.",
+      "objective": "Depuis movie, déstructurez title et year dans des constantes. Depuis ranking, déstructurez les deux premiers éléments dans first et second.",
+      "hints": [
+        "La forme à gauche du = reproduit la forme de la valeur à droite.",
+        "Les accolades extraient les clés d’un objet par leur nom. Les crochets extraient les éléments d’un tableau par leur position.",
+        "`const { title, year } = movie` et `const [first, second] = ranking`"
+      ],
+      "checks": ["Déstructure un objet", "title vaut Arrival et year vaut 2016", "Déstructure un tableau", "first vaut Ada et second vaut Grace"]
+    },
+    "js-spread": {
+      "title": "Combinez et copiez",
+      "topic": "Syntaxe de décomposition",
+      "summary": "La syntaxe de décomposition ... copie les éléments d’un tableau ou les clés d’un objet dans un nouveau, sans toucher à l’original.",
+      "objective": "Créez allTags en décomposant frontend et backend dans un nouveau tableau. Créez ensuite updated, une copie de settings avec theme à dark.",
+      "hints": [
+        "Trois points dans des crochets ou des accolades copient le contenu d’un autre tableau ou objet.",
+        "Écrivez [...frontend, ...backend] pour le tableau, et { ...settings, theme: 'dark' } pour l’objet.",
+        "`const allTags = [...frontend, ...backend]` et `const updated = { ...settings, theme: 'dark' }`"
+      ],
+      "checks": ["Utilise la syntaxe de décomposition", "allTags contient les quatre tags dans l’ordre", "updated a theme à dark et garde fontSize", "settings n’a pas changé"]
+    },
+    "js-dom-select": {
+      "title": "Modifiez la page",
+      "topic": "DOM",
+      "summary": "Le DOM est la page telle que JavaScript la voit. querySelector trouve un élément avec un sélecteur CSS, et textContent change son texte.",
+      "objective": "Sélectionnez l’élément qui a l’id title et changez son texte en Hello, DOM!",
+      "hints": [
+        "JavaScript trouve les éléments avec les mêmes sélecteurs que le CSS.",
+        "Utilisez document.querySelector('#title') et modifiez son textContent.",
+        "`document.querySelector('#title').textContent = 'Hello, DOM!'`"
+      ],
+      "checks": ["Utilise querySelector", "Le titre affiche Hello, DOM!"]
+    },
+    "js-dom-class": {
+      "title": "Changez un style",
+      "topic": "DOM",
+      "summary": "classList ajoute et retire des classes CSS. Changer de classe garde l’apparence dans le CSS et le comportement dans JavaScript.",
+      "objective": "Sélectionnez la carte qui a l’id lesson-card et ajoutez-lui la classe highlight avec classList.",
+      "hints": [
+        "Les styles de highlight existent déjà. Votre code doit seulement ajouter la classe.",
+        "Sélectionnez la carte avec querySelector, puis appelez classList.add('highlight').",
+        "`document.querySelector('#lesson-card').classList.add('highlight')`"
+      ],
+      "commonMistake": "Modifier element.style mélange le design et le script. Ajouter une classe garde le design dans le CSS, où il est facile à changer.",
+      "checks": ["Utilise classList.add", "La carte a la classe highlight"]
+    },
+    "js-dom-events": {
+      "title": "Réagissez à un clic",
+      "topic": "Événements",
+      "summary": "addEventListener exécute une fonction quand quelque chose se produit, comme un clic. C’est ainsi que les pages deviennent interactives.",
+      "objective": "Quand on clique sur le bouton #add, augmentez count de 1 et affichez la nouvelle valeur dans #count.",
+      "hints": [
+        "Gardez le compte dans une variable, puis mettez la page à jour à chaque changement.",
+        "Appelez button.addEventListener('click', ...). Dans la fonction, ajoutez 1 à count et écrivez-le dans output.textContent.",
+        "`button.addEventListener('click', () => { count++; output.textContent = count })`"
+      ],
+      "checks": ["Utilise addEventListener", "Le compteur commence à 0", "Un clic affiche 1", "Un autre clic affiche 2"]
+    },
+    "js-dom-create": {
+      "title": "Construisez une liste",
+      "topic": "DOM",
+      "summary": "createElement fabrique un nouvel élément et append le place dans la page. Ensemble, ils transforment des données en balisage.",
+      "objective": "Pour chaque élément de skills, créez un li avec la compétence comme texte et ajoutez-le à la liste #skills.",
+      "hints": [
+        "Parcourez les données et créez un élément par entrée.",
+        "Dans une boucle for...of, appelez document.createElement('li'), définissez son textContent, puis list.append(item).",
+        "`const item = document.createElement('li'); item.textContent = skill; list.append(item)`"
+      ],
+      "checks": ["Utilise document.createElement", "La liste affiche HTML, CSS et JavaScript"]
+    },
+    "js-dom-input": {
+      "title": "Réagissez à la saisie",
+      "topic": "Événements",
+      "summary": "L’événement input se déclenche à chaque frappe. Lire la valeur du champ permet à la page de réagir pendant que la personne tape.",
+      "objective": "Quand quelqu’un tape dans #name, affichez dans #greeting Hello, suivi de son nom et d’un point d’exclamation.",
+      "hints": [
+        "Écoutez l’événement qui se déclenche pendant la saisie, puis lisez le contenu du champ.",
+        "Utilisez field.addEventListener('input', ...) et lisez field.value dans la fonction.",
+        "``field.addEventListener('input', () => { greeting.textContent = `Hello, ${field.value}!` })``"
+      ],
+      "checks": ["Écoute l’événement input", "Taper Ada affiche Hello, Ada!", "Taper Grace affiche Hello, Grace!"]
+    },
+    "js-dom-toggle": {
+      "title": "Ouvrez un menu",
+      "topic": "Événements",
+      "summary": "Une bascule alterne entre deux états. Mettre à jour aria-expanded en même temps que la classe garde le menu accessible, comme dans le cours HTML.",
+      "objective": "Quand on clique sur #menu-button, basculez la classe open sur #menu et réglez aria-expanded du bouton sur true ou false en conséquence.",
+      "hints": [
+        "La classe et la valeur d’aria-expanded doivent toujours être d’accord.",
+        "classList.toggle('open') renvoie true quand il a ajouté la classe. Passez cette valeur à setAttribute.",
+        "`const isOpen = menu.classList.toggle('open'); button.setAttribute('aria-expanded', isOpen)`"
+      ],
+      "checks": ["Utilise classList.toggle", "Le menu est fermé au départ", "Un clic ouvre le menu", "Le bouton indique aria-expanded=\"true\"", "Un second clic referme le menu", "Le bouton indique aria-expanded=\"false\""]
+    },
+    "js-form-submit": {
+      "title": "Gérez un formulaire",
+      "topic": "Formulaires",
+      "summary": "Par défaut, un formulaire envoyé recharge la page. preventDefault l’en empêche, pour que JavaScript utilise les données à la place.",
+      "objective": "Quand #task-form est envoyé, empêchez le rechargement, ajoutez le texte de #task comme nouveau li dans #tasks, puis videz le champ.",
+      "hints": [
+        "Écoutez le formulaire lui-même, pas le bouton, pour que la touche Entrée fonctionne aussi.",
+        "Dans un écouteur submit, appelez event.preventDefault(), créez un li à partir de input.value, ajoutez-le, puis remettez input.value à une chaîne vide.",
+        "`form.addEventListener('submit', (event) => { event.preventDefault(); ... })`"
+      ],
+      "checks": ["L’envoi ne recharge pas la page", "La tâche apparaît dans la liste", "Le champ est vidé"]
+    },
+    "js-classes": {
+      "title": "Créez une classe",
+      "topic": "Classes",
+      "summary": "Une classe est un plan pour des objets qui partagent un comportement. Le constructeur fixe l’état de départ, et les méthodes agissent dessus.",
+      "objective": "Créez une classe nommée Counter. Son constructeur met count à 0, et sa méthode increment ajoute 1 à count et renvoie la nouvelle valeur.",
+      "hints": [
+        "Dans une classe, this désigne l’objet en cours de création ou d’utilisation.",
+        "Dans class Counter, écrivez constructor() { this.count = 0 } et une méthode increment().",
+        "`increment() { this.count += 1; return this.count }`"
+      ],
+      "checks": ["Counter est une classe", "Un nouveau Counter commence à 0", "increment renvoie 1, puis 2", "Chaque compteur garde son propre compte"]
+    },
+    "js-errors": {
+      "title": "Gérez les erreurs",
+      "topic": "Erreurs",
+      "summary": "throw arrête une fonction quand quelque chose ne va pas, et try...catch permet à l’appelant de s’en remettre au lieu de planter.",
+      "objective": "Faites lever une Error à parseAge quand le texte n’est pas un nombre. Écrivez ensuite readAge, qui renvoie parseAge(text), ou null quand parseAge lève une erreur.",
+      "hints": [
+        "Number.isNaN indique quand une conversion en nombre a échoué.",
+        "Dans parseAge, faites throw new Error(...) quand Number.isNaN(age). Dans readAge, appelez parseAge dans try et renvoyez null dans catch.",
+        "`try { return parseAge(text) } catch { return null }`"
+      ],
+      "checks": ["parseAge('42') renvoie 42", "parseAge('abc') lève une Error", "Utilise try...catch", "readAge('7') renvoie 7", "readAge('abc') renvoie null"]
+    },
+    "js-json": {
+      "title": "Lisez et écrivez du JSON",
+      "topic": "JSON",
+      "summary": "JSON est le format texte que les programmes utilisent pour échanger des données. JSON.parse transforme du texte en valeurs, et JSON.stringify fait l’inverse.",
+      "objective": "Transformez text en un objet nommé data avec JSON.parse. Transformez ensuite settings en une chaîne JSON nommée output avec JSON.stringify.",
+      "hints": [
+        "Une méthode lit du texte JSON, l’autre en écrit.",
+        "Utilisez JSON.parse(text) pour data et JSON.stringify(settings) pour output.",
+        "`const data = JSON.parse(text)` et `const output = JSON.stringify(settings)`"
+      ],
+      "checks": ["Utilise JSON.parse", "data.name vaut Ada et data.level vaut 3", "Utilise JSON.stringify", "output est le texte JSON de settings"]
+    },
+    "js-closures": {
+      "title": "Mémorisez avec une fermeture",
+      "topic": "Fermetures",
+      "summary": "Une fonction garde l’accès aux variables qui l’entourent, même après le retour de la fonction extérieure. C’est ce qu’on appelle une fermeture.",
+      "objective": "Écrivez createCounter, qui garde un count privé et renvoie une fonction. Chaque appel de cette fonction ajoute 1 et renvoie le nouveau compte.",
+      "hints": [
+        "La fonction intérieure voit toujours les variables de la fonction qui l’a créée.",
+        "Dans createCounter, déclarez let count = 0, puis renvoyez une fonction fléchée qui ajoute 1 à count et le renvoie.",
+        "`function createCounter() { let count = 0; return () => { count += 1; return count } }`"
+      ],
+      "checks": ["createCounter renvoie une fonction", "Les appels renvoient 1, 2, puis 3", "Chaque compteur est indépendant"]
+    },
+    "js-promises": {
+      "title": "Attendez avec une promesse",
+      "topic": "Promesses",
+      "summary": "Une promesse représente une valeur qui arrivera plus tard. Envelopper setTimeout dans une promesse est la façon la plus simple d’en voir une à l’œuvre.",
+      "objective": "Écrivez wait(ms), qui renvoie une promesse résolue avec le texte done après ms millisecondes.",
+      "hints": [
+        "new Promise prend une fonction qui reçoit resolve. Appelez resolve quand le travail est fini.",
+        "Renvoyez new Promise, et à l’intérieur utilisez setTimeout pour appeler resolve('done') après ms.",
+        "`return new Promise((resolve) => setTimeout(() => resolve('done'), ms))`"
+      ],
+      "checks": ["Crée une promesse", "Utilise setTimeout", "wait renvoie une promesse", "wait(10) se résout avec done"]
+    },
+    "js-async-await": {
+      "title": "Attendez un résultat",
+      "topic": "Fonctions asynchrones",
+      "summary": "Une fonction async peut faire une pause avec await jusqu’à ce qu’une promesse aboutisse. Le code se lit toujours de haut en bas.",
+      "objective": "Écrivez une fonction async nommée showScore qui attend getScore(), affiche le score dans #score et le renvoie. Appelez ensuite showScore().",
+      "hints": [
+        "await ne fonctionne que dans une fonction marquée async.",
+        "Déclarez async function showScore(), puis const score = await getScore(). Changez le texte de #score et renvoyez score.",
+        "`const score = await getScore(); document.querySelector('#score').textContent = score; return score`"
+      ],
+      "checks": ["showScore est une fonction async", "Utilise await", "La page affiche 42", "showScore() se résout avec 42"]
+    },
+    "js-capstone": {
+      "title": "Construisez une liste de tâches",
+      "topic": "Projet final",
+      "summary": "Réunissez tout : événements, DOM, conditions et état dans une petite application.",
+      "objective": "Faites en sorte que le formulaire ajoute à #todos des tâches nettoyées et non vides, puis vide le champ. Gardez #summary à jour avec 1 task ou N tasks, comme le texte de départ. Un clic sur une tâche bascule la classe done.",
+      "hints": [
+        "Avancez par petites étapes : ajoutez d’abord les tâches, puis videz le champ, puis le résumé, puis le clic.",
+        "Dans l’écouteur submit : preventDefault, nettoyez la valeur avec trim, arrêtez-vous si elle est vide, créez un li avec son propre écouteur de clic, ajoutez-le, videz le champ et mettez le résumé à jour.",
+        "``const count = list.children.length; summary.textContent = count === 1 ? '1 task' : `${count} tasks` ``"
+      ],
+      "checks": ["L’envoi ne recharge pas la page", "La tâche est ajoutée sans espaces en trop", "Le champ est vidé", "Le résumé affiche 1 task", "Les tâches vides sont ignorées", "Le résumé affiche 2 tasks après une deuxième tâche", "Un clic sur une tâche la marque comme faite"]
+    }
+  }
+}

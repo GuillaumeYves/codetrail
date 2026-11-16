@@ -1,0 +1,171 @@
+{
+  "app": {
+    "title": "CodeTrail",
+    "lessonTitle": "{title} · CodeTrail",
+    "playgroundTitle": "Bac à sable · CodeTrail",
+    "loadingEditor": "Chargement de l’éditeur"
+  },
+  "loading": {
+    "label": "Chargement du cours",
+    "title": "Préparation du cours {course}",
+    "text": "Les leçons et les exigences du cours {course} sont en cours de chargement.",
+    "errorLabel": "Erreur de chargement",
+    "errorTitle": "Impossible de charger le cours {course}.",
+    "retry": "Réessayer"
+  },
+  "topbar": {
+    "openLessons": "Ouvrir les leçons",
+    "showLessons": "Afficher les leçons du cours",
+    "hideLessons": "Masquer les leçons du cours",
+    "playgroundSubtitle": "Bac à sable",
+    "playgroundInfo": "Bac à sable HTML, CSS et JavaScript",
+    "progress": "{done} sur {total} terminées",
+    "progressLabel": "Progression en {course}",
+    "loadingLessons": "Chargement des leçons {course}",
+    "courses": "Cours",
+    "coursesTitle": "Revenir aux cours",
+    "playground": "Bac à sable",
+    "playgroundTitle": "Ouvrir le bac à sable de code libre",
+    "resetAll": "Tout réinitialiser",
+    "resetAllTitle": "Réinitialiser toute la progression et le code enregistré",
+    "language": "Langue"
+  },
+  "picker": {
+    "label": "Choisir un cours CodeTrail",
+    "menu": "Choisir un langage"
+  },
+  "activities": {
+    "web": "Développement web"
+  },
+  "stacks": {
+    "html": {
+      "description": "Structure sémantique des pages"
+    },
+    "css": {
+      "description": "Style visuel et mise en page"
+    },
+    "js": {
+      "description": "Logique, données et pages interactives"
+    }
+  },
+  "stages": {
+    "fundamental": "Fondamentaux",
+    "basic": "Bases",
+    "intermediate": "Intermédiaire",
+    "advanced": "Avancé"
+  },
+  "sidebar": {
+    "title": "Cours essentiel {course}",
+    "nav": "Leçons {course}",
+    "close": "Fermer les leçons",
+    "locked": "Terminez les leçons précédentes pour débloquer ce défi"
+  },
+  "common": {
+    "live": "En direct",
+    "preview": "Aperçu",
+    "editorLabel": "Éditeur de {file}"
+  },
+  "editor": {
+    "placeholder": "Écrivez votre code ici",
+    "loopStopped": "Boucle arrêtée après 1 seconde. Vérifiez que sa condition peut devenir fausse."
+  },
+  "console": {
+    "title": "Console",
+    "clear": "Vider la console",
+    "empty": "Les sorties de console.log et les erreurs s’affichent ici."
+  },
+  "lesson": {
+    "panel": "Leçon",
+    "task": "À faire",
+    "requirements": "Votre code doit",
+    "passed": "Validé :",
+    "pending": "En attente :",
+    "showHint": "Besoin d’un indice ?",
+    "nextHint": "Afficher l’indice {current} sur {total}",
+    "hints": "Indices",
+    "mistake": "Erreur fréquente",
+    "practice": "Bonne pratique",
+    "solution": "Comparer avec la solution de référence",
+    "solutionNote": "Une façon propre de le résoudre. La vôtre peut être différente et tout aussi juste.",
+    "complete": "Valider le défi",
+    "next": "Défi suivant",
+    "shortcut": "Raccourci : Ctrl+Entrée (Cmd+Entrée sur Mac)",
+    "blocked": "Remplissez toutes les exigences pour continuer",
+    "editorPanel": "Éditeur",
+    "redo": "Refaire cette tâche",
+    "redoTitle": "Restaurer le code de départ de cette tâche",
+    "preview": "Aperçu {course}",
+    "checking": "Vérification de votre code"
+  },
+  "playground": {
+    "editorPanel": "Éditeur du bac à sable",
+    "files": "Fichiers du bac à sable",
+    "share": "Partager",
+    "shareTitle": "Copier un lien qui contient ce code",
+    "copied": "Copié",
+    "copyFailed": "Échec de la copie",
+    "reset": "Réinitialiser",
+    "confirmReset": "Confirmer",
+    "resetTitle": "Restaurer les fichiers de départ",
+    "invalidLink": "Ce lien de partage est illisible. Votre code enregistré est affiché à la place.",
+    "previewPanel": "Aperçu du bac à sable"
+  },
+  "confirm": {
+    "cancel": "Annuler",
+    "seconds": "{seconds} s",
+    "currentLesson": "la leçon en cours",
+    "all": {
+      "label": "Réinitialisation complète",
+      "title": "Tout réinitialiser ?",
+      "text": "Cette action efface tous les défis terminés et toutes les modifications enregistrées, dans tous les cours. Vous reviendrez à la première leçon {course}.",
+      "action": "Tout réinitialiser"
+    },
+    "redo": {
+      "label": "Réinitialiser la tâche",
+      "title": "Refaire cette tâche ?",
+      "text": "Le code de départ de « {lesson} » sera restauré. La tâche reste terminée si vous l’avez déjà réussie.",
+      "action": "Refaire la tâche"
+    }
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "version": "v{version}",
+    "open": "Ouvrir la FAQ",
+    "close": "Fermer la FAQ",
+    "closeDialog": "Fermer les questions fréquentes",
+    "items": [
+      {
+        "question": "Comment fonctionnent les défis ?",
+        "answer": "Lisez la consigne, modifiez le fichier et regardez l’aperçu se mettre à jour. Les exigences sont vérifiées pendant que vous tapez. Bloqué ? Les indices s’ouvrent un par un, d’un simple coup de pouce jusqu’à une réponse presque complète. Quand toutes les exigences sont remplies, validez le défi et comparez votre code avec la solution de référence."
+      },
+      {
+        "question": "À quoi sert le bac à sable ?",
+        "answer": "Le bac à sable est un espace libre HTML, CSS et JavaScript avec une console. Utilisez-le pour tester une idée en dehors d’une leçon. Le bouton Partager copie un lien qui contient votre code."
+      },
+      {
+        "question": "Mon code est-il envoyé quelque part ?",
+        "answer": "Non. Les leçons et le bac à sable fonctionnent entièrement dans votre navigateur. L’aperçu est un cadre isolé, sans accès au reste de la page. Un lien de partage contient le code directement dans l’URL."
+      },
+      {
+        "question": "Où ma progression est-elle enregistrée ?",
+        "answer": "Dans le stockage local de ce navigateur. Effacer les données du site ou changer de navigateur ou d’appareil repart de zéro."
+      },
+      {
+        "question": "Puis-je recommencer un défi ?",
+        "answer": "Le bouton au-dessus de l’éditeur restaure le code de départ de la tâche en cours et la garde terminée. Le bouton rouge de la barre du haut efface toute la progression et le code enregistré."
+      },
+      {
+        "question": "Y a-t-il des raccourcis clavier ?",
+        "answer": "Ctrl+Entrée (Cmd+Entrée sur Mac) valide le défi ou ouvre le suivant dès que toutes les exigences sont remplies. Dans l’éditeur, Tab indente ; appuyez d’abord sur Échap pour sortir de l’éditeur avec Tab."
+      },
+      {
+        "question": "Puis-je utiliser CodeTrail dans une autre langue ?",
+        "answer": "Oui. Utilisez le menu de langue dans la barre du haut. L’interface et toutes les leçons sont disponibles en anglais et en français, et votre choix est mémorisé dans ce navigateur."
+      },
+      {
+        "question": "Quels cours sont inclus ?",
+        "answer": "HTML (50 leçons), CSS (40 leçons) et JavaScript (40 leçons). Chaque cours débloque les leçons dans l’ordre, des fondamentaux jusqu’au projet final, et chaque leçon s’appuie sur les précédentes. Commencez par HTML, puis CSS, puis JavaScript."
+      }
+    ]
+  }
+}

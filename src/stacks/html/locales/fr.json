@@ -1,0 +1,608 @@
+{
+  "shared": {
+    "commonMistake": "Concentrez-vous d’abord sur l’élément sémantique et les attributs demandés. Votre texte visible peut être personnel, sauf si la consigne demande des valeurs exactes lisibles par une machine, comme des id, des URL, des noms ou des dates.",
+    "bestPractice": "Côté {topic}, construisez d’abord le plus petit HTML valide qui démontre l’idée, puis personnalisez le texte visible une fois la structure sémantique correcte."
+  },
+  "lessons": {
+    "html-semantic-paragraph": {
+      "title": "Donnez du sens avec une balise",
+      "topic": "Sémantique",
+      "summary": "Le HTML est sémantique : les balises décrivent ce que signifie le contenu. Un paragraphe n’est pas juste du texte sur une nouvelle ligne ; <p> indique au navigateur que ce contenu est un paragraphe.",
+      "objective": "Dans body, créez un élément paragraphe avec le texte de votre choix. Utilisez une balise ouvrante <p> et la balise fermante </p> correspondante.",
+      "hints": [
+        "Un paragraphe a besoin de deux balises : une qui l’ouvre et une qui le ferme, avec votre texte entre les deux.",
+        "Dans body, entourez une phrase de votre choix avec un élément p.",
+        "Cela ressemble à `<p>Votre phrase ici.</p>`."
+      ],
+      "checks": ["Un paragraphe avec du texte existe dans body"]
+    },
+    "html-paired-tags": {
+      "title": "Fermez ce que vous ouvrez",
+      "topic": "Balises ouvrantes et fermantes",
+      "summary": "Les balises en paire doivent être fermées au bon endroit. La balise fermante indique au navigateur où l’élément se termine.",
+      "objective": "Créez deux éléments paragraphe séparés. Chaque paragraphe doit avoir sa propre balise ouvrante <p> et sa balise fermante </p>.",
+      "hints": [
+        "Chaque paragraphe est un élément à part entière, donc chacun a besoin de sa propre paire de balises.",
+        "Écrivez deux paragraphes frères, l’un après l’autre, et non un paragraphe dans un autre.",
+        "`<p>Première idée.</p>` puis, à la ligne suivante, `<p>Deuxième idée.</p>`."
+      ],
+      "checks": ["Deux paragraphes avec du texte existent"]
+    },
+    "html-heading-paragraph": {
+      "title": "Ajoutez un titre de page",
+      "topic": "Titres",
+      "summary": "Les titres créent le plan du contenu. h1 est en général le titre principal de la page ou de la vue en cours.",
+      "objective": "Créez un titre h1 et un paragraphe après lui. Le texte est libre, mais les deux éléments doivent contenir quelque chose.",
+      "hints": [
+        "Un titre nomme le contenu qui le suit, donc il vient en premier.",
+        "Utilisez h1 pour le titre principal, puis ajoutez un élément p après lui.",
+        "`<h1>Votre titre</h1>` suivi de `<p>Votre phrase.</p>`."
+      ],
+      "checks": ["Le titre apparaît avant le paragraphe dans body", "Le titre contient du texte", "Le paragraphe contient du texte"]
+    },
+    "html-nesting": {
+      "title": "Imbriquez correctement",
+      "topic": "Imbrication",
+      "summary": "Un élément peut se trouver dans un autre. Une imbrication correcte veut dire que l’élément intérieur s’ouvre et se ferme avant que l’élément extérieur se ferme.",
+      "objective": "Créez un paragraphe et utilisez strong autour d’un mot ou d’une expression importante à l’intérieur.",
+      "hints": [
+        "Un élément peut se placer dans un autre. L’élément intérieur doit se fermer avant l’élément extérieur.",
+        "Écrivez d’abord un paragraphe, puis entourez un mot important avec strong à l’intérieur.",
+        "`<p>Ceci est <strong>important</strong>.</p>`"
+      ],
+      "checks": ["Le texte strong est imbriqué dans un paragraphe"]
+    },
+    "html-emphasis": {
+      "title": "Privilégiez le sens à l’apparence",
+      "topic": "Sémantique en ligne",
+      "summary": "Les éléments sémantiques en ligne expliquent le sens. em signifie une emphase ; ce n’est pas juste un moyen de mettre du texte en italique.",
+      "objective": "Créez un paragraphe qui utilise em autour d’un mot ou d’une expression accentuée de votre choix.",
+      "hints": [
+        "L’emphase change la façon dont une phrase sonne, comme quand on appuie sur un mot à l’oral.",
+        "Dans un paragraphe, entourez le mot ou l’expression accentuée avec em.",
+        "`<p>Lisez-le <em>attentivement</em>.</p>`"
+      ],
+      "checks": ["L’emphase est imbriquée dans un paragraphe"]
+    },
+    "html-attributes": {
+      "title": "Précisez avec des attributs",
+      "topic": "Attributs",
+      "summary": "Les attributs ajoutent des informations à un élément. Certains règlent un comportement, d’autres fournissent des noms ou des points d’accroche réutilisables.",
+      "objective": "Créez une section avec un id non vide et au moins deux noms de classe. Ajoutez du texte à l’intérieur.",
+      "hints": [
+        "Les attributs ajoutent des informations à un élément. Ils se placent toujours dans la balise ouvrante.",
+        "Donnez à la balise ouvrante section un id, et un attribut class avec deux noms séparés par une espace.",
+        "`<section id=\"intro\" class=\"panel featured\">Bienvenue !</section>`"
+      ],
+      "checks": ["La section a un id non vide", "La section a au moins deux classes", "La section contient du texte"]
+    },
+    "html-link": {
+      "title": "Créez un lien parlant",
+      "topic": "Liens",
+      "summary": "Les liens relient les documents. L’attribut href contient la destination ; le texte doit dire où mène le lien.",
+      "objective": "Créez une ancre qui pointe vers https://developer.mozilla.org/. Placez un texte visible dans le lien.",
+      "hints": [
+        "Les liens utilisent l’élément ancre, et la destination se place dans un attribut.",
+        "Utilisez un élément a et mettez l’adresse dans son attribut href. Le texte visible va entre les balises.",
+        "`<a href=\"https://developer.mozilla.org/\">Lire la documentation</a>`"
+      ],
+      "checks": ["L’ancre a l’URL de MDN", "Le lien a un texte visible"]
+    },
+    "html-image-alt": {
+      "title": "Décrivez une image",
+      "topic": "Images",
+      "summary": "Une image a besoin d’un texte alternatif pour que son sens reste disponible quand elle ne peut pas être vue ou chargée.",
+      "objective": "Ajoutez une image avec un attribut src non vide et un attribut alt non vide.",
+      "hints": [
+        "Les images n’ont pas de balise fermante. Tout ce dont elles ont besoin passe par les attributs.",
+        "Utilisez img avec src pour le fichier et alt pour décrire l’image aux personnes qui ne la voient pas.",
+        "`<img src=\"photo.png\" alt=\"Une étudiante en train de coder\">`"
+      ],
+      "checks": ["La source de l’image est définie", "L’image a un texte alternatif non vide"]
+    },
+    "html-button": {
+      "title": "Faites d’une action un bouton",
+      "topic": "Boutons",
+      "summary": "button représente une action. Un type explicite évite plus tard l’envoi accidentel d’un formulaire.",
+      "objective": "Créez un bouton avec type=\"button\" et un texte visible.",
+      "hints": [
+        "Un vrai élément button fonctionne au clavier et avec les lecteurs d’écran sans code supplémentaire.",
+        "Utilisez un élément button avec type=\"button\" et un libellé clair entre les balises.",
+        "`<button type=\"button\">Commencer la leçon</button>`"
+      ],
+      "checks": ["Le type du bouton est explicite", "Le bouton a un texte visible"]
+    },
+    "html-comments": {
+      "title": "Laissez une note utile",
+      "topic": "Commentaires",
+      "summary": "Les commentaires expliquent l’intention aux personnes qui lisent le code source. Ils ne s’affichent pas dans la page.",
+      "objective": "Ajoutez un commentaire HTML avant un élément main pour décrire la zone de contenu principal.",
+      "hints": [
+        "Les commentaires sont des notes pour les personnes qui lisent le code. Le navigateur ne les affiche pas.",
+        "Ajoutez un commentaire sur la ligne qui précède un élément main. Un commentaire commence par `<!--` et finit par `-->`.",
+        "`<!-- Contenu principal -->` suivi de `<main>Contenu du cours</main>`."
+      ],
+      "checks": ["Un commentaire existe avant main"]
+    },
+    "html-entities": {
+      "title": "Affichez des caractères réservés",
+      "topic": "Entités",
+      "summary": "Certains caractères ont un sens spécial dans le code HTML. Les références de caractères permettent de les afficher comme du texte.",
+      "objective": "Dans un paragraphe, affichez un signe inférieur à et une esperluette comme du texte, avec les entités de < et de &.",
+      "hints": [
+        "Certains caractères ont un sens spécial en HTML : il leur faut un code pour s’afficher comme du texte.",
+        "Dans un paragraphe, écrivez `&lt;` là où vous voulez un signe inférieur à et `&amp;` là où vous voulez une esperluette.",
+        "`<p>HTML &lt; CSS &amp; JavaScript</p>`"
+      ],
+      "checks": ["L’entité du signe inférieur à est utilisée", "L’entité de l’esperluette est utilisée", "L’entité du signe inférieur à est dans un paragraphe", "L’entité de l’esperluette est dans un paragraphe"]
+    },
+    "html-document-title": {
+      "title": "Nommez l’onglet du navigateur",
+      "topic": "Structure du document",
+      "summary": "head contient les métadonnées destinées au navigateur. body contient le contenu que les gens voient sur la page.",
+      "objective": "Remplacez le contenu de l’élément title dans head par un titre propre à la page, et gardez un h1 visible dans body.",
+      "hints": [
+        "Le titre s’affiche dans l’onglet du navigateur, pas sur la page. Il se trouve dans head.",
+        "Changez le texte de l’élément title existant dans head, puis ajoutez un h1 dans body.",
+        "`<title>Mon cours HTML</title>` dans head, et `<h1>Les essentiels du HTML</h1>` dans body."
+      ],
+      "checks": ["Le titre a du texte dans head", "Le titre de départ a été modifié", "Un titre visible reste dans body"]
+    },
+    "html-lang-meta": {
+      "title": "Décrivez le document",
+      "topic": "Métadonnées",
+      "summary": "Les métadonnées du document aident les navigateurs, les moteurs de recherche, les outils de traduction et les technologies d’assistance à comprendre la page.",
+      "objective": "Vérifiez que html a lang=\"en\" (la page d’exemple est en anglais), que head déclare le charset UTF-8 et que head contient une balise meta viewport adaptative.",
+      "hints": [
+        "Chaque page doit indiquer sa langue, l’encodage de son texte et la façon dont elle s’adapte aux téléphones.",
+        "Placez lang=\"en\" sur la balise html, puis ajoutez une meta charset et une meta viewport dans head.",
+        "`<html lang=\"en\">`, `<meta charset=\"UTF-8\">` et `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">`."
+      ],
+      "checks": ["La langue anglaise est déclarée", "UTF-8 est déclaré dans head", "Un viewport adaptatif existe dans head"]
+    },
+    "html-unordered-list": {
+      "title": "Regroupez des éléments liés",
+      "topic": "Listes",
+      "summary": "Une liste non ordonnée regroupe des éléments dont l’ordre n’a pas d’importance.",
+      "objective": "Créez un ul contenant au moins trois éléments li, pour des choses que l’on peut apprendre.",
+      "hints": [
+        "Utilisez une liste non ordonnée quand l’ordre des éléments n’a pas d’importance.",
+        "Écrivez un ul, puis placez chaque élément dans son propre li à l’intérieur.",
+        "`<ul><li>Sémantique</li><li>Formulaires</li><li>Accessibilité</li></ul>`"
+      ],
+      "checks": ["La liste non ordonnée contient au moins trois éléments"]
+    },
+    "html-ordered-list": {
+      "title": "Décrivez des étapes ordonnées",
+      "topic": "Listes",
+      "summary": "Une liste ordonnée exprime une suite, un classement ou une procédure. L’ordre dans le code compte.",
+      "objective": "Créez un ol avec au moins trois éléments li qui décrivent les étapes d’un processus de votre choix.",
+      "hints": [
+        "Quand des étapes doivent se suivre, le type de liste doit le dire.",
+        "Utilisez un ol et placez chaque étape dans son propre li, dans le bon ordre.",
+        "`<ol><li>Planifier</li><li>Construire</li><li>Tester</li></ol>`"
+      ],
+      "checks": ["La liste ordonnée contient au moins trois étapes rédigées"]
+    },
+    "html-description-list": {
+      "title": "Définissez des termes",
+      "topic": "Listes",
+      "summary": "Une liste de description associe des termes à des descriptions, des noms à des valeurs, ou des questions à des réponses.",
+      "objective": "Créez un dl avec au moins deux termes dt et deux descriptions dd.",
+      "hints": [
+        "Une liste de description associe chaque terme à son sens, comme un petit glossaire.",
+        "Dans un dl, écrivez un dt pour chaque terme, suivi d’un dd avec sa description.",
+        "`<dl><dt>HTML</dt><dd>Structure</dd><dt>CSS</dt><dd>Style</dd></dl>`"
+      ],
+      "checks": ["La liste de description contient au moins deux termes et deux descriptions"]
+    },
+    "html-code-pre": {
+      "title": "Affichez du code comme du code",
+      "topic": "Contenu de code",
+      "summary": "code marque du code informatique. pre conserve les espaces et les retours à la ligne d’un texte préformaté.",
+      "objective": "Créez un élément pre qui contient un élément code avec un court extrait de code.",
+      "hints": [
+        "Le code a besoin de deux choses : une balise qui le marque comme code, et une qui garde ses espaces.",
+        "Utilisez pre à l’extérieur pour garder les espaces, et code à l’intérieur pour marquer le contenu comme du code.",
+        "`<pre><code>const ready = true;</code></pre>`"
+      ],
+      "checks": ["Le bloc de code est correctement imbriqué"]
+    },
+    "html-blockquote": {
+      "title": "Citez une autre source",
+      "topic": "Citations",
+      "summary": "blockquote représente une citation longue tirée d’une autre source. cite peut pointer vers l’URL de la source.",
+      "objective": "Créez un blockquote avec cite=\"https://developer.mozilla.org/\" et au moins un paragraphe à l’intérieur.",
+      "hints": [
+        "Une longue citation a son propre élément de bloc, et sa source peut être indiquée dans un attribut.",
+        "Utilisez blockquote avec un attribut cite égal à l’URL de la source, puis placez un p à l’intérieur.",
+        "`<blockquote cite=\"https://developer.mozilla.org/\"><p>Votre citation.</p></blockquote>`"
+      ],
+      "checks": ["La citation a une source et un paragraphe"]
+    },
+    "html-figure": {
+      "title": "Légendez un média",
+      "topic": "Figures",
+      "summary": "figure regroupe un média autonome avec une légende facultative. figcaption explique la figure.",
+      "objective": "Créez une figure contenant une image avec un src non vide et une figcaption parlante.",
+      "hints": [
+        "Une figure regroupe une image avec la légende qui l’explique.",
+        "Placez un img et un figcaption dans un même élément figure.",
+        "`<figure><img src=\"photo.png\" alt=\"Un bureau\"><figcaption>Votre légende</figcaption></figure>`"
+      ],
+      "checks": ["La figure contient l’image et la légende ensemble"]
+    },
+    "html-time": {
+      "title": "Rendez les dates lisibles par une machine",
+      "topic": "Texte lisible par machine",
+      "summary": "time relie un texte lisible par un humain à une valeur standardisée que les logiciels savent lire.",
+      "objective": "Créez un élément time avec une valeur datetime au format AAAA-MM-JJ et une date visible.",
+      "hints": [
+        "Les gens écrivent les dates de mille façons. Les machines ont besoin d’un format exact.",
+        "Entourez la date visible avec un élément time et ajoutez un attribut datetime au format AAAA-MM-JJ.",
+        "`<time datetime=\"2026-06-22\">22 juin 2026</time>`"
+      ],
+      "checks": ["La date machine utilise le format AAAA-MM-JJ", "Une date visible existe"]
+    },
+    "html-page-regions": {
+      "title": "Créez les zones de la page",
+      "topic": "Repères",
+      "summary": "Les éléments repères découpent une page en grandes zones. La structure devient plus facile à parcourir, pour les gens comme pour les technologies d’assistance.",
+      "objective": "Créez les éléments header, main et footer dans cet ordre dans body. Mettez un peu de texte dans chaque zone.",
+      "hints": [
+        "La plupart des pages partagent les mêmes grandes zones : un haut de page, le contenu principal et un bas de page.",
+        "Dans body, ajoutez header, puis main, puis footer, côte à côte, chacun avec un peu de texte.",
+        "`<header>Nom du site</header>`, `<main>Contenu</main>` et `<footer>Contact</footer>`."
+      ],
+      "checks": ["Les repères sont dans l’ordre dans body", "Chaque repère contient du texte"]
+    },
+    "html-navigation": {
+      "title": "Construisez la navigation principale",
+      "topic": "Navigation",
+      "summary": "nav identifie un ensemble important de liens de navigation. Un libellé distingue cette navigation des autres zones nav.",
+      "objective": "Créez un nav avec un aria-label non vide, contenant des liens vers / et vers /lessons.",
+      "hints": [
+        "Une zone de navigation regroupe les liens principaux d’un site, et un libellé dit de quelle navigation il s’agit.",
+        "Créez un nav avec un aria-label, puis placez un lien vers / et un lien vers /lessons à l’intérieur.",
+        "`<nav aria-label=\"Principale\"><a href=\"/\">Accueil</a><a href=\"/lessons\">Leçons</a></nav>`"
+      ],
+      "checks": ["La navigation libellée contient les deux liens"]
+    },
+    "html-main-article": {
+      "title": "Encadrez un contenu autonome",
+      "topic": "Articles",
+      "summary": "article sert pour un contenu qui a du sens seul, comme un billet, une leçon, une carte ou une actualité.",
+      "objective": "Dans main, créez un article avec un h1 et un paragraphe.",
+      "hints": [
+        "Un article est un contenu qui a du sens seul, comme un billet de blog. Il a sa place dans la zone principale.",
+        "Placez un article dans main, puis un h1 et un p dans l’article.",
+        "`<main><article><h1>Titre</h1><p>Texte.</p></article></main>`"
+      ],
+      "checks": ["main contient un article avec un titre et un paragraphe"]
+    },
+    "html-sections": {
+      "title": "Découpez le contenu en sections",
+      "topic": "Sections",
+      "summary": "section regroupe une partie thématique d’un document. Une section a normalement besoin d’un titre qui annonce son sujet.",
+      "objective": "Créez un article contenant deux éléments section. Chaque section doit avoir un h2.",
+      "hints": [
+        "Un long contenu se suit mieux quand il est découpé en parties thématiques, chacune avec son titre.",
+        "Dans un article, ajoutez deux éléments section, et commencez chaque section par un h2.",
+        "`<article><section><h2>Partie un</h2></section><section><h2>Partie deux</h2></section></article>`"
+      ],
+      "checks": ["L’article contient deux sections titrées"]
+    },
+    "html-aside": {
+      "title": "Ajoutez un contenu annexe",
+      "topic": "Contenu complémentaire",
+      "summary": "aside représente un contenu lié mais secondaire, comme une astuce, un encadré, une barre latérale ou une liste de liens connexes.",
+      "objective": "Dans main, ajoutez un article et un aside. L’aside doit contenir une courte astuce.",
+      "hints": [
+        "Un contenu annexe, comme une astuce, se rapporte au contenu principal sans en faire partie.",
+        "Dans main, ajoutez un article pour le contenu et un aside à côté pour l’astuce.",
+        "`<main><article><h1>Leçon</h1></article><aside>Astuce : lisez les noms des balises à voix haute.</aside></main>`"
+      ],
+      "checks": ["main contient un article et un aside"]
+    },
+    "html-address": {
+      "title": "Indiquez des coordonnées",
+      "topic": "Coordonnées",
+      "summary": "address représente les coordonnées de contact de l’article ou de la page la plus proche.",
+      "objective": "Créez un élément address contenant un lien mailto vers hello@example.com.",
+      "hints": [
+        "Les coordonnées ont leur propre élément, et les liens d’e-mail utilisent un type d’URL particulier.",
+        "Placez un élément a dans address, avec un href qui commence par mailto: suivi de l’adresse e-mail.",
+        "`<address><a href=\"mailto:hello@example.com\">hello@example.com</a></address>`"
+      ],
+      "checks": ["address contient un lien d’e-mail"]
+    },
+    "html-table": {
+      "title": "Construisez un tableau de données",
+      "topic": "Tableaux",
+      "summary": "Les tableaux expriment les relations dans des données réellement tabulaires. Ils ne servent pas à la mise en page.",
+      "objective": "Créez un tableau avec au moins deux cellules d’en-tête et au moins deux cellules de données.",
+      "hints": [
+        "Un tableau se construit ligne par ligne. Chaque ligne contient des cellules, et les cellules d’en-tête nomment les données.",
+        "Dans table, ajoutez un tr avec des cellules d’en-tête th, puis un autre tr avec des cellules de données td.",
+        "`<table><tr><th>Nom</th><th>Score</th></tr><tr><td>Ada</td><td>95</td></tr></table>`"
+      ],
+      "checks": ["Le tableau contient une ligne d’en-tête et une ligne de données"]
+    },
+    "html-table-scope": {
+      "title": "Clarifiez les en-têtes",
+      "topic": "Tableaux",
+      "summary": "caption nomme un tableau. scope aide les technologies d’assistance à relier les en-têtes aux cellules.",
+      "objective": "Créez un tableau avec une légende visible et au moins deux en-têtes de colonne qui utilisent scope=\"col\".",
+      "hints": [
+        "Une légende nomme le tableau, et scope indique quelles cellules un en-tête décrit.",
+        "Placez caption en premier dans table, puis ajoutez des cellules th avec scope=\"col\" dans la première ligne.",
+        "`<table><caption>Résultats</caption><tr><th scope=\"col\">Nom</th><th scope=\"col\">Score</th></tr></table>`"
+      ],
+      "checks": ["Le tableau contient une légende et des en-têtes de colonne avec scope"]
+    },
+    "html-form-label": {
+      "title": "Étiquetez un champ",
+      "topic": "Formulaires",
+      "summary": "Un label donne un nom accessible à un champ et agrandit la zone cliquable.",
+      "objective": "Créez un champ texte et reliez-le à un label visible grâce à des valeurs for et id identiques.",
+      "hints": [
+        "Un label se relie à son champ grâce à des valeurs identiques : cliquer sur le label donne le focus au champ.",
+        "Donnez un id au champ, puis utilisez la même valeur dans l’attribut for du label.",
+        "`<label for=\"name\">Nom</label><input id=\"name\" name=\"name\" type=\"text\">`"
+      ],
+      "checks": ["Le label est relié au champ texte"]
+    },
+    "html-form-submit": {
+      "title": "Envoyez un formulaire",
+      "topic": "Formulaires",
+      "summary": "form regroupe des champs et définit où et comment leurs valeurs sont envoyées.",
+      "objective": "Créez un formulaire qui envoie en post vers une URL d’action non vide, avec un champ e-mail et un bouton d’envoi.",
+      "hints": [
+        "Un formulaire doit savoir où et comment envoyer ses données, et il lui faut un bouton pour les envoyer.",
+        "Ajoutez action et method=\"post\" au formulaire, puis placez un champ e-mail et un bouton d’envoi à l’intérieur.",
+        "`<form action=\"/signup\" method=\"post\"><input type=\"email\" name=\"email\"><button type=\"submit\">S’inscrire</button></form>`"
+      ],
+      "checks": ["Le formulaire d’inscription contient le champ e-mail et le bouton d’envoi"]
+    },
+    "html-input-types": {
+      "title": "Choisissez les types de champ",
+      "topic": "Formulaires",
+      "summary": "Les types de champ précis donnent au navigateur des indices de validation et de meilleurs claviers sur mobile.",
+      "objective": "Dans un formulaire, ajoutez des champs e-mail et mot de passe obligatoires. Donnez à chaque champ un name non vide.",
+      "hints": [
+        "Le type d’un champ change le clavier sur téléphone et la façon dont le navigateur le valide.",
+        "Dans un formulaire, ajoutez un champ email et un champ password, chacun avec un name et l’attribut required.",
+        "`<input type=\"email\" name=\"email\" required>` et `<input type=\"password\" name=\"password\" required>`"
+      ],
+      "checks": ["Le formulaire contient un champ e-mail obligatoire", "Le formulaire contient un champ mot de passe obligatoire"]
+    },
+    "html-checkbox": {
+      "title": "Recueillez un accord",
+      "topic": "Formulaires",
+      "summary": "Une case à cocher représente un choix indépendant, activé ou non, et peut être obligatoire avant l’envoi.",
+      "objective": "Créez une case à cocher obligatoire avec un name, un id et un label visible qui lui est relié.",
+      "hints": [
+        "Une case à cocher est un champ comme les autres : elle se relie à son label de la même façon.",
+        "Créez un input avec type=\"checkbox\", un name, un id et required, puis un label dont le for correspond à l’id.",
+        "`<input id=\"terms\" type=\"checkbox\" name=\"terms\" required><label for=\"terms\">J’accepte</label>`"
+      ],
+      "checks": ["La case obligatoire a un id et un name", "Le label de la case est relié"]
+    },
+    "html-textarea-select": {
+      "title": "Recueillez des réponses longues ou fermées",
+      "topic": "Formulaires",
+      "summary": "textarea recueille du texte sur plusieurs lignes. select limite la réponse à des options connues.",
+      "objective": "Créez un textarea étiqueté avec rows=\"4\" et un select étiqueté avec au moins deux options.",
+      "hints": [
+        "Un texte long a besoin d’un champ sur plusieurs lignes, et une liste fixe de choix tient dans un menu déroulant.",
+        "Ajoutez un textarea avec rows=\"4\" et un select contenant des éléments option. Donnez aux deux un label, un id et un name.",
+        "`<label for=\"bio\">Bio</label><textarea id=\"bio\" name=\"bio\" rows=\"4\"></textarea>`, puis la même structure avec select et deux éléments option."
+      ],
+      "checks": ["Le textarea est étiqueté et a des rows", "Le select est étiqueté et contient au moins deux options", "Le select a un label relié"]
+    },
+    "html-fieldsets": {
+      "title": "Regroupez des choix liés",
+      "topic": "Formulaires",
+      "summary": "fieldset regroupe des champs liés. legend donne au groupe un nom accessible.",
+      "objective": "Regroupez au moins deux boutons radio dans un fieldset avec une legend visible.",
+      "hints": [
+        "Des boutons radio qui répondent à la même question vont ensemble, sous une légende commune.",
+        "Entourez les radios d’un fieldset, commencez-le par une legend, et donnez le même name à chaque radio.",
+        "`<fieldset><legend>Thème</legend><label><input type=\"radio\" name=\"theme\" value=\"light\">Clair</label> ...</fieldset>`"
+      ],
+      "checks": ["Le fieldset contient une legend et au moins deux radios étiquetées avec le même name"]
+    },
+    "html-validation": {
+      "title": "Ajoutez la validation native",
+      "topic": "Formulaires",
+      "summary": "Les attributs de contrainte natifs forment une première couche de validation utile dans le navigateur. La validation côté serveur reste indispensable.",
+      "objective": "Créez un champ nommé avec les contraintes required, minlength, maxlength et pattern.",
+      "hints": [
+        "Le navigateur peut vérifier un champ avant l’envoi du formulaire, grâce à des attributs sur le champ.",
+        "Sur un champ nommé, ajoutez required, minlength, maxlength et un pattern.",
+        "`<input name=\"username\" required minlength=\"3\" maxlength=\"20\" pattern=\"[A-Za-z]+\">`"
+      ],
+      "checks": ["Le champ a des contraintes natives"]
+    },
+    "html-autocomplete": {
+      "title": "Facilitez le remplissage automatique",
+      "topic": "Formulaires",
+      "summary": "Les jetons autocomplete indiquent au navigateur ce que représente un champ pour qu’il le remplisse correctement.",
+      "objective": "Ajoutez un champ de nom et un champ e-mail avec autocomplete=\"name\" et autocomplete=\"email\". Donnez aux deux champs un attribut name non vide.",
+      "hints": [
+        "Le navigateur peut remplir les formulaires à la place des gens, à condition que chaque champ dise ce qu’il attend.",
+        "Ajoutez autocomplete=\"name\" au champ du nom et autocomplete=\"email\" au champ e-mail. Les deux ont besoin d’un name.",
+        "`<input name=\"name\" autocomplete=\"name\">` et `<input type=\"email\" name=\"email\" autocomplete=\"email\">`"
+      ],
+      "checks": ["Le jeton de remplissage du nom existe", "Le jeton de remplissage de l’e-mail existe"]
+    },
+    "html-audio": {
+      "title": "Proposez un audio avec repli",
+      "topic": "Médias",
+      "summary": "audio intègre du son. source propose des fichiers candidats. Un texte de repli aide quand l’élément n’est pas pris en charge.",
+      "objective": "Créez un élément audio avec controls, une source de type audio/mpeg et un texte de repli.",
+      "hints": [
+        "Les éléments média laissent le navigateur choisir un fichier qu’il sait lire, et affichent un message sinon.",
+        "Ajoutez controls à audio, puis placez à l’intérieur une source avec type=\"audio/mpeg\" et un texte de repli.",
+        "`<audio controls><source src=\"lesson.mp3\" type=\"audio/mpeg\">L’audio n’est pas pris en charge.</audio>`"
+      ],
+      "checks": ["L’élément audio contient sa source MPEG et un texte de repli"]
+    },
+    "html-video": {
+      "title": "Ajoutez des sous-titres à une vidéo",
+      "topic": "Médias",
+      "summary": "Une vidéo a besoin de sous-titres pour que la parole reste accessible sans le son.",
+      "objective": "Créez une vidéo avec controls, une source et une piste de sous-titres avec srclang=\"en\".",
+      "hints": [
+        "Les sous-titres rendent une vidéo utilisable par les personnes qui ne l’entendent pas. Ils viennent d’un fichier de piste.",
+        "Dans une vidéo avec controls, ajoutez une source, puis un track avec kind=\"captions\" et srclang=\"en\".",
+        "`<video controls><source src=\"lesson.mp4\" type=\"video/mp4\"><track kind=\"captions\" src=\"captions.vtt\" srclang=\"en\"></video>`"
+      ],
+      "checks": ["La vidéo contient une source et une piste de sous-titres en anglais"]
+    },
+    "html-picture": {
+      "title": "Proposez des images adaptatives",
+      "topic": "Médias adaptatifs",
+      "summary": "picture laisse le navigateur choisir parmi plusieurs sources d’image selon les conditions.",
+      "objective": "Créez un picture avec une source pour les écrans min-width et une image de repli img avec un src et un alt non vides.",
+      "hints": [
+        "L’élément picture laisse le navigateur choisir une image différente selon l’écran.",
+        "Dans picture, placez d’abord une source avec une media query et un srcset, puis un img comme image de repli.",
+        "`<picture><source media=\"(min-width: 700px)\" srcset=\"wide.webp\"><img src=\"small.jpg\" alt=\"Un espace de travail\"></picture>`"
+      ],
+      "checks": ["picture contient la source large et l’image de repli"]
+    },
+    "html-description-meta": {
+      "title": "Résumez la page pour la recherche",
+      "topic": "Métadonnées",
+      "summary": "Une meta description résume le contenu de la page pour les moteurs de recherche et les aperçus de liens.",
+      "objective": "Ajoutez dans head une meta description avec un content non vide qui résume la page.",
+      "hints": [
+        "Les moteurs de recherche et les aperçus de liens affichent un court résumé de la page. Il se trouve dans head.",
+        "Ajoutez dans head un élément meta avec name=\"description\" et votre résumé dans content.",
+        "`<meta name=\"description\" content=\"Apprenez les bases pratiques du HTML\">`"
+      ],
+      "checks": ["La meta description a un contenu dans head"]
+    },
+    "html-canonical": {
+      "title": "Déclarez l’URL canonique",
+      "topic": "Métadonnées",
+      "summary": "Une URL canonique indique aux moteurs de recherche quelle URL est la version préférée d’une page.",
+      "objective": "Ajoutez dans head un lien canonique qui pointe vers une URL absolue en http ou https.",
+      "hints": [
+        "Quand une même page a plusieurs adresses, un lien indique aux moteurs de recherche laquelle est la vraie.",
+        "Ajoutez dans head un élément link avec rel=\"canonical\" et une URL https complète dans href.",
+        "`<link rel=\"canonical\" href=\"https://example.com/lessons/html\">`"
+      ],
+      "checks": ["Une URL canonique existe dans head"]
+    },
+    "html-skip-link": {
+      "title": "Laissez le clavier sauter la navigation",
+      "topic": "Accessibilité",
+      "summary": "Les liens d’évitement permettent aux personnes au clavier ou utilisant une technologie d’assistance de passer la navigation répétée.",
+      "objective": "Créez un lien d’évitement avant header qui pointe vers l’id du contenu principal.",
+      "hints": [
+        "Les personnes au clavier ne devraient pas devoir traverser tout l’en-tête sur chaque page.",
+        "Donnez un id à main, puis ajoutez avant header un lien dont le href est # suivi de cet id.",
+        "`<a href=\"#content\">Aller au contenu</a>` avant header, et `<main id=\"content\">` après."
+      ],
+      "checks": ["Le lien d’évitement cible le contenu principal", "Le lien d’évitement apparaît avant header et main"]
+    },
+    "html-aria-current": {
+      "title": "Signalez la page en cours",
+      "topic": "Accessibilité",
+      "summary": "aria-current indique aux technologies d’assistance quel élément d’un ensemble correspond à la page ou à l’étape en cours.",
+      "objective": "Dans un nav, créez un lien vers / et marquez-le avec aria-current=\"page\".",
+      "hints": [
+        "Dans une navigation, on doit savoir quel lien correspond à la page où l’on se trouve.",
+        "Dans un nav, ajoutez un lien vers / avec l’attribut aria-current à la valeur page.",
+        "`<nav><a href=\"/\" aria-current=\"page\">Accueil</a></nav>`"
+      ],
+      "checks": ["Le lien de la page en cours est dans la navigation"]
+    },
+    "html-details": {
+      "title": "Créez un dépliant natif",
+      "topic": "HTML interactif",
+      "summary": "details et summary affichent et masquent du contenu sans JavaScript.",
+      "objective": "Créez un details avec une question dans summary et une réponse dans un paragraphe.",
+      "hints": [
+        "Le HTML a un élément intégré qui affiche et masque du contenu sans aucun JavaScript.",
+        "Dans details, placez d’abord un summary avec la question, puis un p avec la réponse.",
+        "`<details><summary>Qu’est-ce que le HTML ?</summary><p>Il structure le contenu web.</p></details>`"
+      ],
+      "checks": ["Le dépliant contient d’abord summary, puis une réponse en paragraphe"]
+    },
+    "html-aria-expanded": {
+      "title": "Exposez l’état d’un contrôle",
+      "topic": "Accessibilité",
+      "summary": "ARIA peut exposer des états et des relations quand le HTML natif ne les fournit pas déjà.",
+      "objective": "Créez un bouton avec aria-expanded=\"false\" et un aria-controls qui pointe vers l’id d’un élément cible.",
+      "hints": [
+        "Un bouton qui affiche ou masque du contenu doit dire si ce contenu est ouvert, et lequel il contrôle.",
+        "Donnez un id à l’élément contrôlé. Sur le bouton, mettez aria-expanded=\"false\" et aria-controls avec cet id.",
+        "`<button type=\"button\" aria-expanded=\"false\" aria-controls=\"menu\">Menu</button><nav id=\"menu\">Liens</nav>`"
+      ],
+      "checks": ["Le bouton expose l’état replié", "Le bouton contrôle une cible existante"]
+    },
+    "html-dialog": {
+      "title": "Créez une boîte de dialogue native",
+      "topic": "Boîtes de dialogue",
+      "summary": "dialog représente une boîte de dialogue, modale ou non, avec une sémantique native.",
+      "objective": "Créez un dialog ouvert contenant un h2 et un bouton de fermeture avec type=\"button\".",
+      "hints": [
+        "Le HTML a un élément natif pour les boîtes de dialogue. L’attribut open l’affiche tout de suite.",
+        "Créez un dialog avec l’attribut open, puis placez un h2 et un bouton avec type=\"button\" à l’intérieur.",
+        "`<dialog open><h2>Leçon terminée</h2><button type=\"button\">Fermer</button></dialog>`"
+      ],
+      "checks": ["Le dialog ouvert contient son titre et un bouton de fermeture"]
+    },
+    "html-progress-meter": {
+      "title": "Représentez des valeurs mesurées",
+      "topic": "Sémantique d’état",
+      "summary": "progress représente l’avancement d’une tâche. meter représente une mesure dans une plage connue.",
+      "objective": "Créez des éléments progress et meter avec des valeurs numériques, des plages et un texte de repli.",
+      "hints": [
+        "progress montre l’avancement d’une tâche. meter montre une mesure dans une plage connue.",
+        "Ajoutez un progress avec value et max, et un meter avec min, max et value. Placez un texte de repli dans chacun.",
+        "`<progress value=\"30\" max=\"50\">30 sur 50</progress>` et `<meter min=\"0\" max=\"100\" value=\"75\">75 %</meter>`"
+      ],
+      "checks": ["progress a une valeur et un max numériques", "meter a une plage et une valeur numériques"]
+    },
+    "html-template": {
+      "title": "Préparez un balisage réutilisable",
+      "topic": "Modèles",
+      "summary": "template stocke un balisage qui n’est pas affiché tout de suite. Un script peut le cloner plus tard.",
+      "objective": "Créez un template avec un id non vide contenant un article avec un h2.",
+      "hints": [
+        "Un template contient un balisage qui n’est pas affiché, prêt à être copié plus tard avec JavaScript.",
+        "Donnez un id à un élément template, puis placez un article avec un h2 à l’intérieur.",
+        "`<template id=\"lesson-card\"><article><h2>Titre de la leçon</h2></article></template>`"
+      ],
+      "checks": ["Le template nommé contient le balisage d’une carte article"]
+    },
+    "html-safe-scripts": {
+      "title": "Chargez les scripts sans bloquer",
+      "topic": "Scripts",
+      "summary": "defer évite qu’un script classique bloque la lecture du HTML. Les scripts module sont différés automatiquement. noscript explique ce qui se passe sans JavaScript.",
+      "objective": "Dans head, chargez un script classique différé et un script module. Dans body, ajoutez un texte de repli noscript.",
+      "hints": [
+        "Les scripts dans head peuvent empêcher la page de s’afficher. Certains attributs laissent la page se charger d’abord.",
+        "Dans head, ajoutez un script avec defer et un avec type=\"module\". Dans body, ajoutez un message noscript.",
+        "`<script src=\"app.js\" defer></script>` et `<script type=\"module\" src=\"main.js\"></script>` dans head, `<noscript>JavaScript est nécessaire.</noscript>` dans body."
+      ],
+      "checks": ["Un script classique différé existe dans head", "Un script module existe dans head", "Un texte de repli pour les scripts existe dans body"]
+    },
+    "html-full-page": {
+      "title": "Assemblez une page accessible",
+      "topic": "Projet final",
+      "summary": "Une vraie page combine structure sémantique, navigation accessible, contenu parlant, métadonnées et formulaires utilisables.",
+      "objective": "Construisez un body complet avec un lien d’évitement, un header avec nav, un article dans main, un formulaire d’inscription étiqueté et un footer.",
+      "hints": [
+        "Construisez-la dans l’ordre où un visiteur la découvre : lien d’évitement, en-tête, contenu principal, puis pied de page.",
+        "Donnez un id à main pour le lien d’évitement. Dans main, placez un article et un formulaire avec un champ e-mail étiqueté.",
+        "Commencez par `<a href=\"#content\">Aller au contenu</a>`, puis `<header><nav aria-label=\"Principale\">...</nav></header>`, `<main id=\"content\">...</main>` et `<footer>`."
+      ],
+      "checks": ["Le lien d’évitement cible main", "header contient une navigation libellée avec un lien", "La cible main contient un article et un formulaire d’inscription", "footer existe"]
+    }
+  }
+}

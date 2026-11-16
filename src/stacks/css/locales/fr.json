@@ -1,0 +1,489 @@
+{
+  "shared": {
+    "commonMistake": "Les exigences CSS cherchent le sélecteur et la déclaration qui modifient l’aperçu. Des règles en plus ne posent pas de problème, mais styler la mauvaise classe ou écrire la propriété hors de la bonne règle ne valide pas l’étape.",
+    "bestPractice": "Côté {topic}, commencez par la plus petite règle qui change l’aperçu, puis ajustez les valeurs une fois que l’élément ciblé réagit clairement.",
+    "semicolonCheck": "Chaque déclaration CSS se termine par un point-virgule"
+  },
+  "lessons": {
+    "css-text-color": {
+      "title": "Colorez une cible précise",
+      "topic": "Sélecteurs",
+      "summary": "Un sélecteur de classe stylise chaque élément qui porte cette classe. Commencez par changer une cible bien visible de l’aperçu.",
+      "objective": "Ciblez .hero-title et donnez-lui une couleur de texte visible.",
+      "hints": [
+        "Une règle CSS a deux parties : un sélecteur qui choisit les éléments, et des déclarations qui les stylisent.",
+        "Sélectionnez le titre avec .hero-title et définissez sa propriété color.",
+        "`.hero-title { color: #1d4ed8; }`"
+      ],
+      "checks": ["Le titre principal a une déclaration color"]
+    },
+    "css-card-background": {
+      "title": "Peignez la surface d’un composant",
+      "topic": "Couleurs",
+      "summary": "background-color change la surface peinte derrière le contenu et le padding d’un élément.",
+      "objective": "Ciblez .preview-card et définissez background-color pour que les cartes deviennent des blocs distincts.",
+      "hints": [
+        "Chaque carte peut recevoir une couleur de fond pour se détacher de la page.",
+        "Ciblez .preview-card et définissez background-color.",
+        "`.preview-card { background-color: #f8fafc; }`"
+      ],
+      "checks": ["Les cartes ont une couleur de fond"]
+    },
+    "css-font-size": {
+      "title": "Agrandissez le titre principal",
+      "topic": "Typographie",
+      "summary": "font-size contrôle la taille du texte. Les valeurs en rem sont prévisibles, car elles dépendent de la taille de police racine.",
+      "objective": "Agrandissez .hero-title en définissant font-size.",
+      "hints": [
+        "La taille du texte dépend d’une seule propriété, et l’unité rem suit les réglages du lecteur.",
+        "Ciblez .hero-title et donnez à font-size une valeur plus grande.",
+        "`.hero-title { font-size: 3rem; }`"
+      ],
+      "checks": ["Le titre principal a une taille de police"]
+    },
+    "css-font-weight": {
+      "title": "Renforcez un texte important",
+      "topic": "Typographie",
+      "summary": "font-weight contrôle la graisse du texte. Les valeurs numériques comme 700 sont pratiques dans un design system.",
+      "objective": "Mettez .stat-value en gras avec font-weight.",
+      "hints": [
+        "Le gras est une graisse, pas une taille. Les nombres de 100 à 900 règlent l’épaisseur des lettres.",
+        "Ciblez .stat-value et donnez à font-weight une valeur épaisse.",
+        "`.stat-value { font-weight: 800; }`"
+      ],
+      "checks": ["La statistique a une graisse marquée"]
+    },
+    "css-line-height": {
+      "title": "Rendez le texte plus lisible",
+      "topic": "Typographie",
+      "summary": "line-height contrôle le rythme vertical d’un texte sur plusieurs lignes.",
+      "objective": "Définissez line-height sur .intro-copy pour aérer le paragraphe.",
+      "hints": [
+        "L’espace entre les lignes rend un long texte plus facile à lire.",
+        "Ciblez .intro-copy et définissez line-height. Un nombre sans unité suit la taille de la police.",
+        "`.intro-copy { line-height: 1.6; }`"
+      ],
+      "checks": ["L’introduction a un interligne lisible"]
+    },
+    "css-text-align": {
+      "title": "Centrez le contenu principal",
+      "topic": "Alignement",
+      "summary": "text-align aligne le texte et le contenu en ligne à l’intérieur d’un bloc.",
+      "objective": "Centrez le texte de .hero avec text-align.",
+      "hints": [
+        "L’alignement se règle sur le conteneur et s’applique au texte qu’il contient.",
+        "Ciblez .hero et définissez text-align.",
+        "`.hero { text-align: center; }`"
+      ],
+      "checks": ["Le texte principal est centré"]
+    },
+    "css-badge-style": {
+      "title": "Stylisez une petite étiquette",
+      "topic": "Étiquettes",
+      "summary": "Les petites étiquettes d’interface changent souvent la casse pour distinguer les métadonnées du texte courant.",
+      "objective": "Ciblez .badge et utilisez text-transform pour mettre l’étiquette en majuscules.",
+      "hints": [
+        "Le CSS peut changer l’apparence du texte sans toucher au texte du HTML.",
+        "Ciblez .badge et utilisez text-transform.",
+        "`.badge { text-transform: uppercase; }`"
+      ],
+      "checks": ["Le texte de l’étiquette passe en majuscules"]
+    },
+    "css-grouped-selectors": {
+      "title": "Partagez une déclaration",
+      "topic": "Sélecteurs",
+      "summary": "Une liste de sélecteurs permet à des éléments proches de partager une déclaration sans dupliquer les règles.",
+      "objective": "Utilisez un seul sélecteur groupé pour .section-title et .card-title, puis définissez leur couleur.",
+      "hints": [
+        "Quand deux sélecteurs ont besoin des mêmes styles, une seule règle peut viser les deux.",
+        "Listez .section-title et .card-title séparés par une virgule, puis ajoutez color.",
+        "`.section-title, .card-title { color: #334155; }`"
+      ],
+      "checks": ["Les titres de section et de carte partagent une règle de couleur"]
+    },
+    "css-descendant-selector": {
+      "title": "Ciblez des éléments selon leur contexte",
+      "topic": "Sélecteurs",
+      "summary": "Un sélecteur descendant stylise des éléments seulement quand ils se trouvent dans un ancêtre précis.",
+      "objective": "Utilisez un sélecteur descendant pour définir color uniquement sur les li à l’intérieur de .feature-list.",
+      "hints": [
+        "Une espace entre deux sélecteurs veut dire « à l’intérieur de ». Elle limite une règle à une zone de la page.",
+        "Écrivez .feature-list suivi d’une espace et de li, puis définissez color.",
+        "`.feature-list li { color: #0f766e; }`"
+      ],
+      "checks": ["Les éléments de la liste sont ciblés par leur contexte"]
+    },
+    "css-padding": {
+      "title": "Ajoutez de l’espace intérieur",
+      "topic": "Modèle de boîte",
+      "summary": "padding crée de l’espace entre la bordure d’un élément et son contenu.",
+      "objective": "Ajoutez du padding à .preview-card pour éloigner le contenu du bord visible de la carte.",
+      "hints": [
+        "Le padding est l’espace à l’intérieur d’un élément, entre son contenu et son bord.",
+        "Ciblez .preview-card et donnez une longueur à padding.",
+        "`.preview-card { padding: 1.25rem; }`"
+      ],
+      "checks": ["Les cartes ont du padding"]
+    },
+    "css-margin": {
+      "title": "Séparez les sections",
+      "topic": "Modèle de boîte",
+      "summary": "margin crée de l’espace à l’extérieur d’un élément.",
+      "objective": "Ajoutez une marge à .content-shell pour séparer les sections du contenu voisin.",
+      "hints": [
+        "La marge est l’espace à l’extérieur d’un élément. Elle repousse le reste du contenu.",
+        "Ciblez .content-shell et définissez margin. Une valeur comme 2rem auto ajoute de l’espace au-dessus et en dessous.",
+        "`.content-shell { margin: 2rem auto; }`"
+      ],
+      "checks": ["Le conteneur principal a une marge"]
+    },
+    "css-border": {
+      "title": "Tracez le contour d’un composant",
+      "topic": "Bordures",
+      "summary": "La propriété raccourcie border définit l’épaisseur, le style et la couleur en une seule déclaration.",
+      "objective": "Donnez une bordure à .preview-card.",
+      "hints": [
+        "Une bordure a besoin d’une épaisseur, d’un style et d’une couleur. La forme raccourcie règle les trois d’un coup.",
+        "Ciblez .preview-card et définissez border avec une épaisseur, solid et une couleur.",
+        "`.preview-card { border: 1px solid #cbd5e1; }`"
+      ],
+      "checks": ["Les cartes ont une bordure pleine"]
+    },
+    "css-border-color": {
+      "title": "Mettez en avant la carte vedette",
+      "topic": "Bordures",
+      "summary": "La couleur de bordure peut faire ressortir un composant sans changer son contenu.",
+      "objective": "Ciblez .featured-card et définissez border-color. La carte a déjà une bordure transparente dans l’aperçu.",
+      "hints": [
+        "Quand un élément a déjà une bordure, vous pouvez n’en changer qu’une partie.",
+        "Ciblez .featured-card et définissez seulement border-color. L’épaisseur et le style sont déjà là.",
+        "`.featured-card { border-color: #2563eb; }`"
+      ],
+      "checks": ["La carte vedette a une couleur de bordure"]
+    },
+    "css-radius": {
+      "title": "Adoucissez les coins",
+      "topic": "Bordures",
+      "summary": "border-radius arrondit les coins d’une boîte. On le voit souvent sur les cartes, les champs et les boutons.",
+      "objective": "Définissez border-radius sur .preview-card. L’aperçu donne déjà aux cartes une surface et une bordure visibles.",
+      "hints": [
+        "Les coins arrondis viennent d’une seule propriété appliquée au bord de l’élément.",
+        "Ciblez .preview-card et donnez une longueur à border-radius.",
+        "`.preview-card { border-radius: 0.75rem; }`"
+      ],
+      "checks": ["Les cartes ont des coins arrondis"]
+    },
+    "css-shadow": {
+      "title": "Détachez les cartes de la page",
+      "topic": "Effets",
+      "summary": "box-shadow crée de la profondeur quand on l’utilise avec subtilité.",
+      "objective": "Ajoutez box-shadow aux surfaces visibles de .preview-card.",
+      "hints": [
+        "Une ombre ajoute de la profondeur. Elle a besoin de décalages, d’un flou et d’une couleur.",
+        "Ciblez .preview-card et définissez box-shadow avec une couleur douce et transparente.",
+        "`.preview-card { box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14); }`"
+      ],
+      "checks": ["Les cartes ont une ombre"]
+    },
+    "css-max-width": {
+      "title": "Limitez la largeur de lecture",
+      "topic": "Mise en page",
+      "summary": "max-width garde un long contenu lisible sur les grands écrans. Des marges latérales auto centrent un bloc de largeur fixe.",
+      "objective": "Définissez max-width sur .content-shell et centrez-le avec margin.",
+      "hints": [
+        "Les lignes très longues sont difficiles à lire. Limitez la largeur, puis centrez le bloc.",
+        "Sur .content-shell, définissez max-width, puis utilisez margin avec auto à gauche et à droite.",
+        "`.content-shell { max-width: 72rem; margin: 2rem auto; }`"
+      ],
+      "checks": ["Le conteneur principal a une largeur maximale", "Le conteneur principal est centré avec margin"]
+    },
+    "css-display-flex": {
+      "title": "Alignez les outils en ligne",
+      "topic": "Flexbox",
+      "summary": "Flexbox dispose les enfants le long d’un axe. C’est idéal pour les barres d’outils.",
+      "objective": "Définissez display: flex sur .toolbar.",
+      "hints": [
+        "Flexbox aligne les enfants d’un élément sur une ligne.",
+        "Ciblez .toolbar et changez sa valeur display.",
+        "`.toolbar { display: flex; }`"
+      ],
+      "checks": ["La barre d’outils utilise flex"]
+    },
+    "css-gap": {
+      "title": "Espacez les enfants flex",
+      "topic": "Flexbox",
+      "summary": "gap crée un espace régulier entre les enfants d’un conteneur flex ou grid.",
+      "objective": "Ajoutez gap à la barre .toolbar en flex.",
+      "hints": [
+        "Les éléments flex se touchent par défaut. Une propriété ajoute un espace égal entre eux.",
+        "Ciblez .toolbar et donnez une longueur à gap.",
+        "`.toolbar { gap: 0.75rem; }`"
+      ],
+      "checks": ["La barre d’outils a un espacement"]
+    },
+    "css-justify-content": {
+      "title": "Répartissez les actions",
+      "topic": "Flexbox",
+      "summary": "justify-content règle la répartition de l’espace le long de l’axe principal.",
+      "objective": "Utilisez justify-content sur la barre .toolbar en flex pour répartir ses enfants.",
+      "hints": [
+        "Dans une ligne flex, l’espace libre peut être réparti de plusieurs façons.",
+        "Ciblez .toolbar et donnez à justify-content la valeur space-between, center ou flex-end.",
+        "`.toolbar { justify-content: space-between; }`"
+      ],
+      "checks": ["La barre d’outils règle l’alignement sur l’axe principal"]
+    },
+    "css-nav-list": {
+      "title": "Mettez la navigation à l’horizontale",
+      "topic": "Listes",
+      "summary": "En HTML, une navigation reste une liste, mais le CSS contrôle sa disposition visuelle.",
+      "objective": "Retirez les puces de .nav-list et faites-en une ligne flex.",
+      "hints": [
+        "Une navigation est souvent une liste stylée en ligne : sans puces, avec les éléments côte à côte.",
+        "Sur .nav-list, retirez les puces avec list-style, puis faites-en un conteneur flex.",
+        "`.nav-list { list-style: none; display: flex; }`"
+      ],
+      "checks": ["La navigation retire les puces", "La liste de navigation utilise flex"]
+    },
+    "css-card-grid": {
+      "title": "Créez une grille de cartes",
+      "topic": "Grille",
+      "summary": "CSS Grid dispose le contenu en lignes et en colonnes.",
+      "objective": "Définissez display: grid sur .card-grid.",
+      "hints": [
+        "Grid place les enfants en lignes et en colonnes. Comme flexbox, tout commence par la propriété display.",
+        "Ciblez .card-grid et donnez à display la valeur grid.",
+        "`.card-grid { display: grid; }`"
+      ],
+      "checks": ["La grille de cartes utilise CSS Grid"]
+    },
+    "css-grid-columns": {
+      "title": "Définissez les colonnes",
+      "topic": "Grille",
+      "summary": "grid-template-columns définit les pistes de colonnes d’une grille.",
+      "objective": "Définissez grid-template-columns sur la grille .card-grid avec repeat().",
+      "hints": [
+        "Une grille doit savoir combien de colonnes créer et quelle largeur leur donner.",
+        "Définissez grid-template-columns sur .card-grid. repeat() évite d’écrire plusieurs fois la même taille.",
+        "`.card-grid { grid-template-columns: repeat(3, 1fr); }`"
+      ],
+      "checks": ["La grille définit des colonnes répétées"]
+    },
+    "css-pricing-grid": {
+      "title": "Disposez les offres tarifaires",
+      "topic": "Grille",
+      "summary": "Un conteneur grid avec gap est la base des mises en page de cartes répétées.",
+      "objective": "Définissez display: grid et gap sur .pricing-grid.",
+      "hints": [
+        "Pratiquez les deux étapes d’une grille en même temps : la créer, puis espacer ses éléments.",
+        "Dans une seule règle .pricing-grid, donnez à display la valeur grid et ajoutez gap.",
+        "`.pricing-grid { display: grid; gap: 1rem; }`"
+      ],
+      "checks": ["La zone des tarifs utilise une grille", "La grille des tarifs a un espacement"]
+    },
+    "css-pricing-card": {
+      "title": "Écrivez une règle de carte réutilisable",
+      "topic": "Composants",
+      "summary": "Des classes de composant réutilisables permettent à un balisage répété de partager le même traitement visuel.",
+      "objective": "Stylisez .pricing-card avec padding et border.",
+      "hints": [
+        "Un composant, c’est quelques propriétés qui travaillent ensemble. Combinez espace intérieur et contour.",
+        "Dans une seule règle .pricing-card, définissez padding et border.",
+        "`.pricing-card { padding: 1rem; border: 1px solid #cbd5e1; }`"
+      ],
+      "checks": ["La carte tarifaire a du padding et une bordure"]
+    },
+    "css-link-button": {
+      "title": "Faites d’un lien une action",
+      "topic": "Composants",
+      "summary": "Un lien peut prendre l’apparence d’un bouton tout en gardant la sémantique d’une ancre.",
+      "objective": "Stylisez .cta-button avec display: inline-block et retirez text-decoration.",
+      "hints": [
+        "Les liens sont en ligne et soulignés. Ressembler à un bouton demande de changer les deux.",
+        "Sur .cta-button, donnez à display la valeur inline-block et à text-decoration la valeur none.",
+        "`.cta-button { display: inline-block; text-decoration: none; }`"
+      ],
+      "checks": ["Le bouton d’action se comporte comme une boîte de bouton", "Le bouton d’action retire le soulignement"]
+    },
+    "css-hover-state": {
+      "title": "Ajoutez un état de survol",
+      "topic": "États",
+      "summary": "Les pseudo-classes stylisent des états interactifs sans changer le HTML.",
+      "objective": "Créez une règle .cta-button:hover qui change background-color.",
+      "hints": [
+        "Une pseudo-classe applique des styles seulement dans un certain état, par exemple quand le pointeur survole un élément.",
+        "Écrivez une règle .cta-button:hover et changez background-color à l’intérieur.",
+        "`.cta-button:hover { background-color: #1d4ed8; }`"
+      ],
+      "checks": ["Le survol du bouton d’action change la couleur de fond"]
+    },
+    "css-focus-state": {
+      "title": "Montrez le focus clavier",
+      "topic": "États",
+      "summary": "Les styles de focus aident les personnes au clavier à voir quel contrôle est actif.",
+      "objective": "Créez une règle .field:focus avec un outline.",
+      "hints": [
+        "Les personnes au clavier doivent voir quel champ est actif. L’état focus existe pour ça.",
+        "Écrivez une règle .field:focus et définissez un outline.",
+        "`.field:focus { outline: 3px solid #2563eb; }`"
+      ],
+      "checks": ["Les champs ayant le focus ont un contour"]
+    },
+    "css-custom-property": {
+      "title": "Définissez une couleur réutilisable",
+      "topic": "Propriétés personnalisées",
+      "summary": "Les propriétés personnalisées stockent des valeurs réutilisables, que l’on peut lire ailleurs avec var().",
+      "objective": "Définissez --accent sur :root.",
+      "hints": [
+        "Une propriété personnalisée stocke une valeur une fois pour la réutiliser partout. Son nom commence par deux tirets.",
+        "Dans une règle :root, déclarez --accent avec une couleur.",
+        "`:root { --accent: #2563eb; }`"
+      ],
+      "checks": ["La racine définit une propriété personnalisée accent"]
+    },
+    "css-use-variable": {
+      "title": "Utilisez une propriété personnalisée",
+      "topic": "Propriétés personnalisées",
+      "summary": "var() lit une propriété personnalisée pour que des composants liés partagent une même valeur de design.",
+      "objective": "Définissez le background-color de .cta-button avec var(--accent).",
+      "hints": [
+        "Une valeur stockée se relit avec une fonction qui prend le nom de la propriété personnalisée.",
+        "Sur .cta-button, définissez background-color avec var() et --accent à l’intérieur.",
+        "`.cta-button { background-color: var(--accent); }`"
+      ],
+      "checks": ["Le bouton d’action utilise la variable accent"]
+    },
+    "css-transition": {
+      "title": "Adoucissez les changements d’état",
+      "topic": "Mouvement",
+      "summary": "transition adoucit le changement d’une propriété, comme une couleur au survol.",
+      "objective": "Ajoutez transition à .cta-button pour animer le changement de couleur au survol qui existe déjà.",
+      "hints": [
+        "Une transition anime le passage d’un état à l’autre au lieu de sauter.",
+        "Ajoutez transition sur .cta-button lui-même, pas dans la règle de survol, avec une propriété et une durée.",
+        "`.cta-button { transition: background-color 180ms ease; }`"
+      ],
+      "checks": ["Le bouton d’action a une transition"]
+    },
+    "css-nth-child": {
+      "title": "Stylisez un élément répété",
+      "topic": "Sélecteurs",
+      "summary": "Les pseudo-classes structurelles ciblent des éléments selon leur position parmi leurs frères.",
+      "objective": "Utilisez .timeline-item:nth-child(2) pour styliser le deuxième élément de la chronologie.",
+      "hints": [
+        "Certaines pseudo-classes choisissent des éléments selon leur position parmi leurs frères.",
+        "Écrivez .timeline-item:nth-child(2) et définissez background-color.",
+        "`.timeline-item:nth-child(2) { background-color: #dbeafe; }`"
+      ],
+      "checks": ["Le deuxième élément de la chronologie a un style ciblé"]
+    },
+    "css-table-stripes": {
+      "title": "Rayez les lignes d’un tableau",
+      "topic": "Sélecteurs",
+      "summary": "Les sélecteurs structurels sont utiles pour des données répétées, comme les lignes d’un tableau.",
+      "objective": "Utilisez .metrics-table tr:nth-child(even) pour définir un background-color.",
+      "hints": [
+        "nth-child accepte aussi des mots-clés : une seule règle peut styliser une ligne sur deux.",
+        "Ciblez .metrics-table tr:nth-child(even) et définissez background-color.",
+        "`.metrics-table tr:nth-child(even) { background-color: #f1f5f9; }`"
+      ],
+      "checks": ["Les lignes paires ont une couleur de fond"]
+    },
+    "css-pseudo-element": {
+      "title": "Ajoutez une décoration générée",
+      "topic": "Pseudo-éléments",
+      "summary": "Les pseudo-éléments créent des morceaux purement décoratifs d’un composant sans changer le HTML.",
+      "objective": "Créez .quote::before avec une déclaration content.",
+      "hints": [
+        "Les pseudo-éléments ajoutent une décoration absente du HTML. Ils n’apparaissent que s’ils ont un content.",
+        "Écrivez une règle .quote::before avec une déclaration content.",
+        "`.quote::before { content: \"“\"; }`"
+      ],
+      "checks": ["La citation a un contenu généré avant elle"]
+    },
+    "css-sticky-header": {
+      "title": "Gardez la navigation visible",
+      "topic": "Positionnement",
+      "summary": "position: sticky laisse un élément dans le flux normal jusqu’à ce qu’il atteigne un décalage donné.",
+      "objective": "Rendez .site-header collant et fixez-le en haut.",
+      "hints": [
+        "Un élément collant défile normalement jusqu’à atteindre un bord, puis y reste.",
+        "Sur .site-header, donnez à position la valeur sticky et à top la valeur 0.",
+        "`.site-header { position: sticky; top: 0; }`"
+      ],
+      "checks": ["L’en-tête du site reste collé en haut"]
+    },
+    "css-absolute-badge": {
+      "title": "Placez une étiquette dans une carte",
+      "topic": "Positionnement",
+      "summary": "Un enfant en position absolue se place par rapport à l’ancêtre positionné le plus proche.",
+      "objective": "Donnez position: relative à .featured-card et position: absolute à .badge.",
+      "hints": [
+        "Un élément absolu se place par rapport à son parent positionné le plus proche.",
+        "Donnez position: relative à .featured-card, puis position: absolute à .badge avec top et right.",
+        "`.featured-card { position: relative; }` et `.badge { position: absolute; top: 1rem; right: 1rem; }`"
+      ],
+      "checks": ["La carte vedette crée un contexte de positionnement", "L’étiquette est en position absolue"]
+    },
+    "css-media-card-grid": {
+      "title": "Empilez les cartes sur petit écran",
+      "topic": "CSS adaptatif",
+      "summary": "Les media queries permettent à la mise en page de s’adapter à la largeur de l’écran.",
+      "objective": "Dans une media query max-width, réglez les colonnes de la grille .card-grid existante sur 1fr.",
+      "hints": [
+        "Une media query n’applique ses règles que si l’écran remplit une condition, comme une petite largeur.",
+        "Écrivez @media (max-width: 700px) et placez une règle .card-grid à l’intérieur.",
+        "`@media (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }`"
+      ],
+      "checks": ["La media query pour petit écran empile la grille de cartes"]
+    },
+    "css-media-nav": {
+      "title": "Réorganisez la navigation",
+      "topic": "CSS adaptatif",
+      "summary": "Une navigation adaptative change souvent de direction quand l’espace horizontal manque.",
+      "objective": "Dans une media query max-width, réglez le flex-direction de la liste .nav-list existante sur column.",
+      "hints": [
+        "Sur un écran étroit, une ligne de liens tient souvent mieux en colonne.",
+        "Dans une media query max-width, définissez flex-direction sur .nav-list.",
+        "`@media (max-width: 700px) { .nav-list { flex-direction: column; } }`"
+      ],
+      "checks": ["La media query pour petit écran empile les liens de navigation"]
+    },
+    "css-keyframes": {
+      "title": "Définissez une petite animation",
+      "topic": "Animation",
+      "summary": "@keyframes définit les étapes d’une animation, et animation les applique à un élément.",
+      "objective": "Créez @keyframes pulse et utilisez animation sur .badge.",
+      "hints": [
+        "Une animation a deux parties : des keyframes qui décrivent le changement, et une propriété qui les joue.",
+        "Définissez @keyframes pulse avec des étapes from et to, puis définissez animation sur .badge avec le nom pulse.",
+        "`@keyframes pulse { from { opacity: 0.65; } to { opacity: 1; } }` et `.badge { animation: pulse 1s infinite alternate; }`"
+      ],
+      "checks": ["Les keyframes pulse sont définies", "L’étiquette utilise animation"]
+    },
+    "css-reduced-motion": {
+      "title": "Respectez les préférences de mouvement",
+      "topic": "Accessibilité",
+      "summary": "prefers-reduced-motion permet d’éviter les animations inutiles à ceux qui le demandent.",
+      "objective": "Dans une media query prefers-reduced-motion, réglez l’animation de .badge sur none.",
+      "hints": [
+        "Certaines personnes se sentent mal face aux mouvements à l’écran. Leur système peut demander aux sites de les réduire.",
+        "Écrivez @media (prefers-reduced-motion: reduce) et désactivez l’animation de .badge à l’intérieur.",
+        "`@media (prefers-reduced-motion: reduce) { .badge { animation: none; } }`"
+      ],
+      "checks": ["La media query de mouvement réduit désactive l’animation de l’étiquette"]
+    },
+    "css-capstone": {
+      "title": "Stylisez la page d’aperçu",
+      "topic": "Projet final",
+      "summary": "Une passe CSS complète combine valeurs réutilisables, mise en page, styles de composants, états et comportement adaptatif.",
+      "objective": "Combinez variables, mise en page, cartes, état de survol et media query adaptative pour styliser la page d’aperçu.",
+      "hints": [
+        "Avancez une exigence à la fois en suivant la liste. Commencez par la variable.",
+        "Définissez --accent sur :root, centrez .lab-page, faites de .card-grid une grille, ajoutez une règle de survol et terminez par une media query max-width.",
+        "Réutilisez ce que vous avez appris : `:root { --accent: #2563eb; }`, `.card-grid { display: grid; }`, une règle `:hover` et `@media (max-width: 700px) { ... }`."
+      ],
+      "checks": ["La variable accent est définie", "La page est centrée avec une largeur maximale", "La grille de cartes a des colonnes et un espacement", "Les cartes ont un style de composant", "Le bouton a un état de survol", "La media query pour petit écran empile les cartes"]
+    }
+  }
+}

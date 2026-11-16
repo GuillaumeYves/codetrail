@@ -1,13 +1,20 @@
 import { createCheckFromDescriptor, createRegexCheck, createTokenCheck as createRuntimeTokenCheck } from './runtime.js'
 
+// Stage ids are translated in the UI (stages.<id>).
 const stageRanges = [
-  { group: 'Fundamental', start: 0, size: 13 },
-  { group: 'Basic', start: 13, size: 13 },
-  { group: 'Intermediate', start: 26, size: 12 },
-  { group: 'Advanced', start: 38, size: 12 },
+  { group: 'fundamental', start: 0, size: 13 },
+  { group: 'basic', start: 13, size: 13 },
+  { group: 'intermediate', start: 26, size: 12 },
+  { group: 'advanced', start: 38, size: 12 },
 ]
 
-const stageForIndex = (index) => stageRanges.find(({ start, size }) => index >= start && index < start + size)?.group ?? 'Advanced'
+// English text shared by every lesson unless a lesson overrides it. {topic} is the lesson topic.
+export const htmlSharedText = {
+  commonMistake: 'Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.',
+  bestPractice: 'Build the smallest valid HTML that proves the {topic} idea first, then personalize visible text once the semantic structure is correct.',
+}
+
+const stageForIndex = (index) => stageRanges.find(({ start, size }) => index >= start && index < start + size)?.group ?? 'advanced'
 const stageProgressForIndex = (index) => {
   const range = stageRanges.find(({ start, size }) => index >= start && index < start + size) ?? stageRanges.at(-1)
   return {
@@ -18,7 +25,6 @@ const stageProgressForIndex = (index) => {
 }
 
 const feedbackNote = 'The page preview renders your HTML automatically. Fix malformed tags or nesting if the browser output looks different from the task.'
-const defaultCommonMistake = 'HTML checks focus on the required element, attributes, and meaningful text. Extra words or punctuation are usually fine, but missing tags, broken nesting, or mismatched attributes change the document meaning.'
 const machineReadablePattern = /\b(?:id|href|src|srcset|name|type|datetime|aria-[\w-]+|for|rel|method|action|charset|content|value|pattern|minlength|maxlength|scope|srclang|autocomplete|controls|required|open)\b/i
 
 const createLearningSteps = (spec) => spec.learningSteps ?? [
@@ -54,7 +60,7 @@ export function createHtmlLessons(specs) {
     group: stageForIndex(index),
     ...stageProgressForIndex(index),
     title: spec.title,
-    eyebrow: spec.topic,
+    topic: spec.topic,
     summary: spec.summary ?? spec.concept,
     objective: spec.objective,
     concept: spec.concept,
@@ -65,7 +71,8 @@ export function createHtmlLessons(specs) {
       { term: 'index.html', text: spec.fileNote ?? 'This lesson runs from index.html. Write valid HTML here and the browser preview updates automatically.' },
       { term: 'Live feedback', text: feedbackNote },
     ],
-    commonMistake: spec.mistake ?? defaultCommonMistake,
+    // Left undefined to use the shared text.
+    commonMistake: spec.mistake,
     bestPractice: spec.bestPractice,
     checks: [
       ...(spec.checks ?? []).map(([label, pattern]) => createCheck(label, pattern, spec.preserveComments)),

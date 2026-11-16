@@ -888,13 +888,4 @@ const specs = [
   },
 ]
 
-const focusedMistake = 'Focus on the semantic element and the required attributes first. Your visible text can be personal unless the task asks for exact machine-readable values such as ids, URLs, names, or dates.'
-const focusedBestPractice = (lesson) => `Build the smallest valid HTML that proves the ${lesson.topic.toLowerCase()} idea first, then personalize visible text once the semantic structure is correct.`
-
-export const htmlLessons = createHtmlLessons(
-  specs.map((lesson) => ({
-    ...lesson,
-    mistake: lesson.mistake ?? focusedMistake,
-    bestPractice: lesson.bestPractice ?? focusedBestPractice(lesson),
-  })),
-)
+export const htmlLessons = createHtmlLessons(specs)

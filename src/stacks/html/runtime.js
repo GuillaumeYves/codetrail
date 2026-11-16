@@ -556,17 +556,10 @@ export function createRegexTest(language, patternOrPatterns, preserveComments = 
   return test
 }
 
-const firstUsefulTerm = (lesson) => lesson.notes?.find((note) => note.term && !note.term.includes('.'))?.term
-
-export const createBestPractice = (lesson) => {
-  const anchor = firstUsefulTerm(lesson) ?? lesson.eyebrow ?? lesson.title
-  return `Use ${anchor} intentionally, keep the requested behavior visible in the code, and prefer the smallest readable solution before adding extra abstractions.`
-}
-
+// Turns serialized descriptors (already labelled in the active language) into runnable checks.
 export function hydrateLessons(language, lessons) {
   return lessons.map((lesson) => ({
     ...lesson,
-    bestPractice: lesson.bestPractice ?? createBestPractice(lesson),
     checks: lesson.checks.map((check) => (
       typeof check.test === 'function' ? check : createCheckFromDescriptor(language, check)
     )),

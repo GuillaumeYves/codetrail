@@ -1,0 +1,152 @@
+{
+  "app": {
+    "title": "CodeTrail",
+    "lessonTitle": "{title} · CodeTrail",
+    "playgroundTitle": "Playground · CodeTrail",
+    "loadingEditor": "Loading editor"
+  },
+  "loading": {
+    "label": "Loading course",
+    "title": "Preparing {course}",
+    "text": "The {course} lessons and requirements are being loaded.",
+    "errorLabel": "Load error",
+    "errorTitle": "Unable to load the {course} course.",
+    "retry": "Try again"
+  },
+  "topbar": {
+    "openLessons": "Open lessons",
+    "showLessons": "Show course lessons",
+    "hideLessons": "Hide course lessons",
+    "playgroundSubtitle": "Playground",
+    "playgroundInfo": "HTML, CSS, and JavaScript sandbox",
+    "progress": "{done} of {total} complete",
+    "progressLabel": "{course} progress",
+    "loadingLessons": "Loading {course} lessons",
+    "courses": "Courses",
+    "coursesTitle": "Back to the courses",
+    "playground": "Playground",
+    "playgroundTitle": "Open the free code playground",
+    "resetAll": "Reset all progress",
+    "resetAllTitle": "Reset all progress and saved code",
+    "language": "Language"
+  },
+  "picker": {
+    "label": "Choose CodeTrail course",
+    "menu": "Choose stack"
+  },
+  "activities": {
+    "web": "Web development"
+  },
+  "stacks": {
+    "html": { "description": "Semantic page structure" },
+    "css": { "description": "Visual styling and layout" }
+  },
+  "stages": {
+    "fundamental": "Fundamental",
+    "basic": "Basic",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "sidebar": {
+    "title": "{course} essentials course",
+    "nav": "{course} lessons",
+    "close": "Close lessons",
+    "locked": "Complete the previous lessons to unlock this challenge"
+  },
+  "common": {
+    "live": "Live",
+    "preview": "Preview",
+    "editorLabel": "{file} editor"
+  },
+  "lesson": {
+    "panel": "Lesson",
+    "task": "What to do",
+    "requirements": "Your code must",
+    "passed": "Passed:",
+    "pending": "Pending:",
+    "showHint": "Need a hint?",
+    "hideHint": "Hide hint",
+    "mistake": "Common mistake",
+    "practice": "Good practice",
+    "solution": "Compare with the reference solution",
+    "solutionNote": "One clean way to solve it. Yours can differ and still be right.",
+    "complete": "Complete challenge",
+    "next": "Next challenge",
+    "shortcut": "Shortcut: Ctrl+Enter (Cmd+Enter on Mac)",
+    "blocked": "Complete every requirement to continue",
+    "editorPanel": "Editor",
+    "redo": "Redo this task",
+    "redoTitle": "Restore this task's starter code",
+    "preview": "{course} preview"
+  },
+  "playground": {
+    "editorPanel": "Playground editor",
+    "files": "Playground files",
+    "share": "Share",
+    "shareTitle": "Copy a link that contains this code",
+    "copied": "Copied",
+    "copyFailed": "Copy failed",
+    "reset": "Reset",
+    "confirmReset": "Confirm reset",
+    "resetTitle": "Restore the starter files",
+    "invalidLink": "That share link could not be read. Showing your saved code.",
+    "previewPanel": "Playground preview",
+    "console": "Console",
+    "clearConsole": "Clear console",
+    "consoleEmpty": "console.log output and errors appear here."
+  },
+  "confirm": {
+    "cancel": "Cancel",
+    "seconds": "{seconds}s",
+    "currentLesson": "the current lesson",
+    "all": {
+      "label": "Destructive reset",
+      "title": "Reset all data?",
+      "text": "This clears every completed challenge and every saved editor change in every course. You will return to the first {course} lesson.",
+      "action": "Reset all data"
+    },
+    "redo": {
+      "label": "Task reset",
+      "title": "Redo this task?",
+      "text": "This restores the starter code for \"{lesson}\". The task stays marked as completed if you already finished it.",
+      "action": "Redo task"
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "version": "v{version}",
+    "open": "Open FAQ",
+    "close": "Close FAQ",
+    "closeDialog": "Close frequently asked questions",
+    "items": [
+      {
+        "question": "How do the challenges work?",
+        "answer": "Read the task, edit the file, and watch the preview update. Requirements are checked as you type. When all of them pass, complete the challenge and compare your code with the reference solution."
+      },
+      {
+        "question": "What is the playground for?",
+        "answer": "The playground is a free HTML, CSS, and JavaScript sandbox with a console. Use it to test an idea outside a lesson. The Share button copies a link that contains your code."
+      },
+      {
+        "question": "Is my code sent anywhere?",
+        "answer": "No. Lessons and the playground run entirely in your browser. The preview is a sandboxed frame with no access to the rest of the page. A shared playground link holds the code inside the URL itself."
+      },
+      {
+        "question": "Where is my progress saved?",
+        "answer": "In this browser's local storage. Clearing site data or switching browsers or devices starts fresh."
+      },
+      {
+        "question": "Can I reset a challenge?",
+        "answer": "The redo button above the editor restores the current task's starter code and keeps it completed. The red reset button in the top bar clears all progress and saved code."
+      },
+      {
+        "question": "Are there keyboard shortcuts?",
+        "answer": "Ctrl+Enter (Cmd+Enter on Mac) completes the challenge or opens the next one once every requirement passes. In the editor, Tab indents; press Escape first to move focus out with Tab."
+      },
+      {
+        "question": "Which courses are included?",
+        "answer": "An HTML course with 50 lessons and a CSS course with 40 lessons. Each course unlocks lessons in order, from fundamentals to a capstone."
+      }
+    ]
+  }
+}

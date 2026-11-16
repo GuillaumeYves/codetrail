@@ -17,10 +17,7 @@ const compactDescriptor = (descriptor) => Object.fromEntries(
   Object.entries(descriptor).filter(([, value]) => value !== undefined && value !== false),
 )
 
-const semicolonDescriptor = {
-  type: 'css-semicolon-termination',
-  label: 'Every CSS declaration ends with a semicolon',
-}
+const semicolonDescriptor = { type: 'css-semicolon-termination' }
 
 function eachSimpleBlock(source, callback) {
   const pattern = /([^{}]+)\{([^{}]*)\}/g
@@ -397,18 +394,13 @@ export function createCheckFromDescriptor(descriptor, context) {
   }
 }
 
-export const createBestPractice = (lesson) => (
-  `Use the ${lesson.eyebrow.toLowerCase()} rule deliberately, keep the selector tied to the preview markup, and make one visible change before tuning values.`
-)
-
-const createSemicolonCheck = () => createCheckFromDescriptor(semicolonDescriptor)
-
-export function hydrateLessons(_language, lessons) {
+// Turns serialized descriptors into runnable checks. Every lesson also gets the semicolon check.
+export function hydrateLessons(_language, lessons, shared = {}) {
+  const semicolonCheck = createCheckFromDescriptor({ ...semicolonDescriptor, label: shared.semicolonCheck })
   return lessons.map((lesson) => ({
     ...lesson,
-    bestPractice: lesson.bestPractice ?? createBestPractice(lesson),
     checks: [
-      createSemicolonCheck(),
+      semicolonCheck,
       ...lesson.checks.map((check) => (
         typeof check.test === 'function' ? check : createCheckFromDescriptor(check, lesson)
       )),

@@ -12,14 +12,14 @@ const cssLessons = cssTrack.lessons
 const htmlSourceLessons = htmlStackSource.lessons
 const cssSourceLessons = cssStackSource.lessons
 
-const stages = ['Fundamental', 'Basic', 'Intermediate', 'Advanced']
-const expectedStageSizes = { Fundamental: 13, Basic: 13, Intermediate: 12, Advanced: 12 }
-const expectedCssStageSizes = { Fundamental: 10, Basic: 10, Intermediate: 10, Advanced: 10 }
+const stages = ['fundamental', 'basic', 'intermediate', 'advanced']
+const expectedStageSizes = { fundamental: 13, basic: 13, intermediate: 12, advanced: 12 }
+const expectedCssStageSizes = { fundamental: 10, basic: 10, intermediate: 10, advanced: 10 }
 const expectedStageAnchors = {
-  Fundamental: ['html-semantic-paragraph', 'html-lang-meta'],
-  Basic: ['html-page-regions', 'html-address'],
-  Intermediate: ['html-form-label', 'html-video'],
-  Advanced: ['html-picture', 'html-full-page'],
+  fundamental: ['html-semantic-paragraph', 'html-lang-meta'],
+  basic: ['html-page-regions', 'html-address'],
+  intermediate: ['html-form-label', 'html-video'],
+  advanced: ['html-picture', 'html-full-page'],
 }
 const progressionEdges = [
   ['html-semantic-paragraph', 'html-heading-paragraph'],

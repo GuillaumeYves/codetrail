@@ -1,7 +1,9 @@
 import { useMemo } from 'react'
 import { Check, Lock, X } from 'lucide-react'
+import { useI18n } from '../i18n/index.js'
 
 export default function LessonSidebar({ open, trackName, lessons, activeId, completed, unlocked, onSelect, onClose }) {
+  const { t } = useI18n()
   // Lessons grouped by stage, keeping their course index.
   const groups = useMemo(() => {
     const byGroup = new Map()
@@ -14,18 +16,18 @@ export default function LessonSidebar({ open, trackName, lessons, activeId, comp
 
   return (
     <>
-      {open && <button className="sidebar-scrim" type="button" onClick={onClose} aria-label="Close lessons" />}
+      {open && <button className="sidebar-scrim" type="button" onClick={onClose} aria-label={t('sidebar.close')} />}
       <aside className={open ? 'sidebar open' : 'sidebar'} inert={!open}>
         <div className="sidebar-heading">
-          <h2>{trackName} essentials course</h2>
-          <button className="close-menu" type="button" onClick={onClose} aria-label="Close lessons">
+          <h2>{t('sidebar.title', { course: trackName })}</h2>
+          <button className="close-menu" type="button" onClick={onClose} aria-label={t('sidebar.close')}>
             <X />
           </button>
         </div>
-        <nav aria-label={`${trackName} lessons`}>
+        <nav aria-label={t('sidebar.nav', { course: trackName })}>
           {groups.map(([group, items]) => (
             <div className="lesson-group" key={group}>
-              <p>{group}</p>
+              <p>{t(`stages.${group}`)}</p>
               {items.map(({ lesson, index }) => {
                 const done = completed.has(lesson.id)
                 const open = unlocked[index]
@@ -38,13 +40,13 @@ export default function LessonSidebar({ open, trackName, lessons, activeId, comp
                     onClick={() => onSelect(lesson.id)}
                     disabled={!open}
                     aria-current={lesson.id === activeId ? 'step' : undefined}
-                    title={open ? lesson.title : 'Complete the previous lessons to unlock this challenge'}>
+                    title={open ? lesson.title : t('sidebar.locked')}>
                     <span className="lesson-number">
                       {done ? <Check size={14} /> : open ? lesson.number : <Lock size={12} />}
                     </span>
                     <span>
                       <b>{lesson.title}</b>
-                      <small>{lesson.eyebrow}</small>
+                      <small>{lesson.topic}</small>
                     </span>
                   </button>
                 )

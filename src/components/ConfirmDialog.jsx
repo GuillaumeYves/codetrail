@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { RotateCcw } from 'lucide-react'
+import { useI18n } from '../i18n/index.js'
 
 const GLOBAL_RESET_DELAY = 3
 
 // Reset confirmation. The global reset stays locked for a few seconds to avoid accidents.
 export default function ConfirmDialog({ type, lessonTitle, trackName, onCancel, onConfirm }) {
+  const { t } = useI18n()
   const isGlobal = type === 'all'
   const [remaining, setRemaining] = useState(isGlobal ? GLOBAL_RESET_DELAY : 0)
 
@@ -22,10 +24,7 @@ export default function ConfirmDialog({ type, lessonTitle, trackName, onCancel, 
     return () => clearTimeout(timer)
   }, [remaining])
 
-  const title = isGlobal ? 'Reset all data?' : 'Redo this task?'
-  const description = isGlobal
-    ? `This clears every completed challenge and every saved editor change in every course. You will return to the first ${trackName} lesson.`
-    : `This restores the starter code for "${lessonTitle}". The task stays marked as completed if you already finished it.`
+  const copy = isGlobal ? 'confirm.all' : 'confirm.redo'
 
   return (
     <div
@@ -43,9 +42,9 @@ export default function ConfirmDialog({ type, lessonTitle, trackName, onCancel, 
           <RotateCcw size={18} />
         </div>
         <div className="confirm-copy">
-          <span>{isGlobal ? 'DESTRUCTIVE RESET' : 'TASK RESET'}</span>
-          <h2 id="reset-confirm-title">{title}</h2>
-          <p id="reset-confirm-description">{description}</p>
+          <span>{t(`${copy}.label`)}</span>
+          <h2 id="reset-confirm-title">{t(`${copy}.title`)}</h2>
+          <p id="reset-confirm-description">{t(`${copy}.text`, { course: trackName, lesson: lessonTitle })}</p>
         </div>
 
         {isGlobal && (
@@ -58,10 +57,10 @@ export default function ConfirmDialog({ type, lessonTitle, trackName, onCancel, 
 
         <div className="confirm-actions">
           <button className="confirm-cancel" type="button" onClick={onCancel} autoFocus>
-            Cancel
+            {t('confirm.cancel')}
           </button>
           <button className="confirm-reset" type="button" onClick={onConfirm} disabled={remaining > 0}>
-            {remaining > 0 ? `${remaining}s` : isGlobal ? 'Reset all data' : 'Redo task'}
+            {remaining > 0 ? t('confirm.seconds', { seconds: remaining }) : t(`${copy}.action`)}
           </button>
         </div>
       </section>

@@ -4,6 +4,8 @@ import StackPicker from './components/StackPicker.jsx'
 import LessonSidebar from './components/LessonSidebar.jsx'
 import ConfirmDialog from './components/ConfirmDialog.jsx'
 import Faq from './components/Faq.jsx'
+import LanguageSelect from './components/LanguageSelect.jsx'
+import { useI18n } from './i18n/index.js'
 import { loadStack, stackIds, stacks } from './stacks/registry.js'
 import {
   completeLesson,
@@ -40,18 +42,23 @@ function navigate(hash) {
   window.dispatchEvent(new HashChangeEvent('hashchange'))
 }
 
-const PanelFallback = () => <div className="panel-loading">Loading editor</div>
+function PanelFallback() {
+  const { t } = useI18n()
+  return <div className="panel-loading">{t('app.loadingEditor')}</div>
+}
 
 function LoadingState({ trackName, error, onRetry }) {
+  const { t } = useI18n()
+  const course = { course: trackName }
   return (
     <div className="loading-state">
       <section>
-        <span>{error ? 'LOAD ERROR' : 'LOADING COURSE'}</span>
-        <h1>{error ? `Unable to load the ${trackName} course.` : `Preparing ${trackName}`}</h1>
-        <p>{error ?? `The ${trackName} lessons and requirements are being loaded.`}</p>
+        <span>{t(error ? 'loading.errorLabel' : 'loading.label')}</span>
+        <h1>{t(error ? 'loading.errorTitle' : 'loading.title', course)}</h1>
+        <p>{error ?? t('loading.text', course)}</p>
         {error && (
           <button className="retry-button" type="button" onClick={onRetry}>
-            Try again
+            {t('loading.retry')}
           </button>
         )}
       </section>
@@ -60,6 +67,7 @@ function LoadingState({ trackName, error, onRetry }) {
 }
 
 export default function App() {
+  const { t, locale } = useI18n()
   const hash = useSyncExternalStore(subscribeToHash, readHash, () => '')
   const playgroundMatch = hash.match(PLAYGROUND_ROUTE)
   const inPlayground = Boolean(playgroundMatch)
@@ -91,11 +99,12 @@ export default function App() {
   const completedCount = lessons.filter((item) => completed.has(item.id)).length
   const percentage = lessons.length ? Math.round((completedCount / lessons.length) * 100) : 0
 
-  // Every course loads in parallel; results are cached by the registry.
+  // Every course loads in parallel and reloads its text when the language changes.
+  // The previous language stays on screen until the new text arrives.
   useEffect(() => {
     let live = true
     for (const id of stackIds) {
-      loadStack(id).then(
+      loadStack(id, locale).then(
         (loaded) => {
           if (!live) return
           setTracks((current) => (current[id] === loaded ? current : { ...current, [id]: loaded }))
@@ -107,13 +116,15 @@ export default function App() {
     return () => {
       live = false
     }
-  }, [retryCount])
+  }, [retryCount, locale])
 
   useEffect(() => saveProgress(progress), [progress])
 
   useEffect(() => {
-    document.title = inPlayground ? 'Playground · CodeTrail' : lesson ? `${lesson.title} · CodeTrail` : 'CodeTrail'
-  }, [inPlayground, lesson])
+    document.title = inPlayground
+      ? t('app.playgroundTitle')
+      : lesson ? t('app.lessonTitle', { title: lesson.title }) : t('app.title')
+  }, [inPlayground, lesson, t])
 
   useEffect(() => {
     if (!sidebarOpen) return undefined
@@ -176,20 +187,20 @@ export default function App() {
     setRetryCount((value) => value + 1)
   }
 
-  const sidebarLabel = sidebarOpen ? 'Hide course lessons' : 'Show course lessons'
+  const sidebarLabel = t(sidebarOpen ? 'topbar.hideLessons' : 'topbar.showLessons')
 
   return (
     <div className="app-shell">
       <header className="topbar">
         {!inPlayground && (
-          <button className="mobile-menu" type="button" onClick={() => setSidebarOpen(true)} aria-label="Open lessons">
+          <button className="mobile-menu" type="button" onClick={() => setSidebarOpen(true)} aria-label={t('topbar.openLessons')}>
             <Menu />
           </button>
         )}
         <div className="brand-cell">
           <StackPicker
             activeStackId={stackId}
-            subtitle={inPlayground ? 'Playground' : undefined}
+            subtitle={inPlayground ? t('topbar.playgroundSubtitle') : undefined}
             onSelect={selectStack}
           />
           {!inPlayground && (
@@ -206,11 +217,21 @@ export default function App() {
 
         <div className="top-progress">
           {inPlayground ? (
-            <span>HTML, CSS, and JavaScript sandbox</span>
+            <span>{t('topbar.playgroundInfo')}</span>
           ) : (
             <>
-              <span>{lesson ? `${completedCount} of ${lessons.length} complete` : `Loading ${trackName} lessons`}</span>
-              <div className="progress-track" role="progressbar" aria-label={`${trackName} progress`} aria-valuenow={percentage} aria-valuemin={0} aria-valuemax={100}>
+              <span>
+                {lesson
+                  ? t('topbar.progress', { done: completedCount, total: lessons.length })
+                  : t('topbar.loadingLessons', { course: trackName })}
+              </span>
+              <div
+                className="progress-track"
+                role="progressbar"
+                aria-label={t('topbar.progressLabel', { course: trackName })}
+                aria-valuenow={percentage}
+                aria-valuemin={0}
+                aria-valuemax={100}>
                 <i style={{ width: `${percentage}%` }} />
               </div>
               <strong>{lesson ? `${percentage}%` : '...'}</strong>
@@ -219,21 +240,22 @@ export default function App() {
         </div>
 
         <div className="top-actions">
+          <LanguageSelect />
           <button
             className={inPlayground ? 'mode-button active' : 'mode-button'}
             type="button"
             onClick={() => navigate(inPlayground ? '' : '#/playground')}
-            title={inPlayground ? 'Back to the courses' : 'Open the free code playground'}>
+            title={t(inPlayground ? 'topbar.coursesTitle' : 'topbar.playgroundTitle')}>
             {inPlayground ? <BookOpen size={16} /> : <FlaskConical size={16} />}
-            <span>{inPlayground ? 'Courses' : 'Playground'}</span>
+            <span>{t(inPlayground ? 'topbar.courses' : 'topbar.playground')}</span>
           </button>
           {!inPlayground && (
             <button
               className="nav-reset"
               type="button"
               onClick={() => requestReset('all')}
-              aria-label="Reset all progress"
-              title="Reset all progress and saved code">
+              aria-label={t('topbar.resetAll')}
+              title={t('topbar.resetAllTitle')}>
               <RotateCcw size={16} />
             </button>
           )}
@@ -279,7 +301,7 @@ export default function App() {
       {resetType && (
         <ConfirmDialog
           type={resetType}
-          lessonTitle={lesson?.title ?? 'current lesson'}
+          lessonTitle={lesson?.title ?? t('confirm.currentLesson')}
           trackName={trackName}
           onCancel={cancelReset}
           onConfirm={confirmReset}

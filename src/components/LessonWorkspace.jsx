@@ -2,6 +2,7 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowRight, Check, Circle, Eye, Lightbulb, RotateCcw } from 'lucide-react'
 import CodeEditor from './CodeEditor.jsx'
 import Preview from './Preview.jsx'
+import { useI18n } from '../i18n/index.js'
 import htmlBaseCss from '../stacks/html/preview.css?raw'
 
 const SAVE_DELAY = 300
@@ -15,6 +16,7 @@ function previewInput(lesson, code) {
 }
 
 function TaskBrief({ lesson, results }) {
+  const { t } = useI18n()
   const [showHint, setShowHint] = useState(false)
   const hint = useRef(null)
   const passed = results.filter((result) => result.passed).length
@@ -26,20 +28,20 @@ function TaskBrief({ lesson, results }) {
   return (
     <div className="objective-card">
       <div className="task-section">
-        <span>WHAT TO DO</span>
+        <span>{t('lesson.task')}</span>
         <p>{lesson.objective}</p>
       </div>
       <div className="task-section task-requirements">
         <div className="requirement-heading">
-          <span>YOUR CODE MUST</span>
+          <span>{t('lesson.requirements')}</span>
           <strong>{passed}/{results.length}</strong>
         </div>
         <ul className="requirement-list" aria-live="polite">
-          {results.map((result) => (
-            <li className={result.passed ? 'requirement-item passed' : 'requirement-item'} key={result.label}>
+          {results.map((result, index) => (
+            <li className={result.passed ? 'requirement-item passed' : 'requirement-item'} key={index}>
               {result.passed ? <Check size={15} /> : <Circle size={13} />}
               <span>
-                <span className="sr-only">{result.passed ? 'Passed: ' : 'Pending: '}</span>
+                <span className="sr-only">{t(result.passed ? 'lesson.passed' : 'lesson.pending')} </span>
                 {result.label}
               </span>
             </li>
@@ -49,7 +51,7 @@ function TaskBrief({ lesson, results }) {
       <div className="task-section hint-section">
         <button className="hint-button" type="button" aria-expanded={showHint} onClick={() => setShowHint((value) => !value)}>
           <Lightbulb size={17} />
-          {showHint ? 'Hide hint' : 'Need a hint?'}
+          {t(showHint ? 'lesson.hideHint' : 'lesson.showHint')}
         </button>
         {showHint && <p className="hint-copy" ref={hint}>{lesson.hint}</p>}
       </div>
@@ -58,6 +60,7 @@ function TaskBrief({ lesson, results }) {
 }
 
 export default function LessonWorkspace({ lesson, savedCode, completed, trackName, onSave, onComplete, onNext, onRedo }) {
+  const { t } = useI18n()
   const [code, setCode] = useState(savedCode ?? lesson.code)
   // Checks run on a deferred copy so typing never waits on them.
   const checkedCode = useDeferredValue(code)
@@ -95,12 +98,13 @@ export default function LessonWorkspace({ lesson, savedCode, completed, trackNam
   }, [allPassed, completed, onComplete, onNext])
 
   const fileName = (lesson.file ?? '/index.html').slice(1)
+  const previewTitle = t('lesson.preview', { course: trackName })
 
   return (
     <div className="workspace">
-      <section className="lesson-panel" aria-label="Lesson">
+      <section className="lesson-panel" aria-label={t('lesson.panel')}>
         <div className="lesson-scroll">
-          <p className="eyebrow">{lesson.eyebrow} · {lesson.number}</p>
+          <p className="eyebrow">{lesson.topic} · {lesson.number}</p>
           <h1>{lesson.title}</h1>
           <p className="lesson-summary">{lesson.summary}</p>
 
@@ -109,22 +113,22 @@ export default function LessonWorkspace({ lesson, savedCode, completed, trackNam
           <div className="lesson-guidance">
             {lesson.commonMistake && (
               <div className="common-mistake">
-                <span>COMMON MISTAKE</span>
+                <span>{t('lesson.mistake')}</span>
                 <p>{lesson.commonMistake}</p>
               </div>
             )}
             {lesson.bestPractice && (
               <div className="best-practice-card">
-                <span>GOOD PRACTICE</span>
+                <span>{t('lesson.practice')}</span>
                 <p>{lesson.bestPractice}</p>
               </div>
             )}
             {completed && lesson.solution && (
               <details className="solution-card">
                 <summary>
-                  <Eye size={15} /> Compare with the reference solution
+                  <Eye size={15} /> {t('lesson.solution')}
                 </summary>
-                <p>One clean way to solve it. Yours can differ and still be right.</p>
+                <p>{t('lesson.solutionNote')}</p>
                 <pre><code>{lesson.solution.trim()}</code></pre>
               </details>
             )}
@@ -137,42 +141,42 @@ export default function LessonWorkspace({ lesson, savedCode, completed, trackNam
               className="complete-button"
               type="button"
               onClick={completed ? onNext : onComplete}
-              title="Shortcut: Ctrl+Enter (Cmd+Enter on Mac)">
-              {completed ? 'Next challenge' : 'Complete challenge'}
+              title={t('lesson.shortcut')}>
+              {t(completed ? 'lesson.next' : 'lesson.complete')}
               <ArrowRight size={18} />
               <kbd>Ctrl ↵</kbd>
             </button>
           ) : (
-            <p>Complete every requirement to continue</p>
+            <p>{t('lesson.blocked')}</p>
           )}
         </div>
       </section>
 
-      <section className="code-panel" aria-label="Editor">
+      <section className="code-panel" aria-label={t('lesson.editorPanel')}>
         <div className="panel-bar">
           <div className="panel-title">
             <span className="status-dot" /> {fileName}
           </div>
-          <button className="task-redo" type="button" onClick={onRedo} aria-label="Redo this task" title="Restore this task's starter code">
+          <button className="task-redo" type="button" onClick={onRedo} aria-label={t('lesson.redo')} title={t('lesson.redoTitle')}>
             <RotateCcw size={12} />
           </button>
         </div>
         <CodeEditor
           value={code}
           language={lesson.file === '/styles.css' ? 'css' : 'html'}
-          label={`${fileName} editor`}
+          label={t('common.editorLabel', { file: fileName })}
           onChange={setCode}
         />
       </section>
 
-      <section className="preview-panel" aria-label="Preview">
+      <section className="preview-panel" aria-label={t('common.preview')}>
         <div className="panel-bar">
           <div className="panel-title">
-            <span className="status-dot preview-dot" /> {trackName} preview
+            <span className="status-dot preview-dot" /> {previewTitle}
           </div>
-          <span className="live-label">LIVE</span>
+          <span className="live-label">{t('common.live')}</span>
         </div>
-        <Preview {...previewInput(lesson, code)} title={`${trackName} preview`} />
+        <Preview {...previewInput(lesson, code)} title={previewTitle} />
       </section>
     </div>
   )

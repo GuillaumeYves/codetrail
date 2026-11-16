@@ -1,20 +1,16 @@
 {
   "id": "css",
+  "locales": [
+    "en"
+  ],
   "lessons": [
     {
       "id": "css-text-color",
       "number": "01",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 1,
       "stageStep": 1,
       "stageSize": 10,
-      "title": "Color one clear target",
-      "eyebrow": "Selectors",
-      "summary": "A class selector styles every element with that class. Start by changing one obvious preview target.",
-      "objective": "Target .hero-title and give it a visible text color.",
-      "hint": "Write a .hero-title rule and add a color declaration.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest selectors rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".hero-title {\n  color: #1d4ed8;\n}\n",
       "file": "/styles.css",
@@ -24,7 +20,6 @@
       },
       "checks": [
         {
-          "label": "Hero title has a color declaration",
           "type": "css-rule",
           "selector": ".hero-title",
           "declarations": {
@@ -38,17 +33,10 @@
     {
       "id": "css-card-background",
       "number": "02",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 2,
       "stageStep": 2,
       "stageSize": 10,
-      "title": "Paint a component surface",
-      "eyebrow": "Colors",
-      "summary": "background-color changes the painted surface behind an element content area and padding.",
-      "objective": "Target .preview-card and set a background-color so the cards become distinct blocks.",
-      "hint": "Use background-color on .preview-card.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest colors rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".preview-card {\n  background-color: #f8fafc;\n}\n",
       "file": "/styles.css",
@@ -58,7 +46,6 @@
       },
       "checks": [
         {
-          "label": "Preview cards have a background color",
           "type": "css-rule",
           "selector": ".preview-card",
           "declarations": {
@@ -72,17 +59,10 @@
     {
       "id": "css-font-size",
       "number": "03",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 3,
       "stageStep": 3,
       "stageSize": 10,
-      "title": "Scale the main heading",
-      "eyebrow": "Typography",
-      "summary": "font-size controls text scale. rem values are predictable because they are based on the root font size.",
-      "objective": "Make .hero-title larger by setting font-size.",
-      "hint": "A value like 3rem or 48px will make the heading visibly larger.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest typography rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".hero-title {\n  font-size: 3rem;\n}\n",
       "file": "/styles.css",
@@ -92,7 +72,6 @@
       },
       "checks": [
         {
-          "label": "Hero title has a font size",
           "type": "css-rule",
           "selector": ".hero-title",
           "declarations": {
@@ -106,17 +85,10 @@
     {
       "id": "css-font-weight",
       "number": "04",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 4,
       "stageStep": 4,
       "stageSize": 10,
-      "title": "Strengthen important text",
-      "eyebrow": "Typography",
-      "summary": "font-weight controls the weight of text. Numeric values such as 700 are useful in design systems.",
-      "objective": "Make .stat-value visually bold with font-weight.",
-      "hint": "Target .stat-value and use font-weight.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest typography rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".stat-value {\n  font-weight: 800;\n}\n",
       "file": "/styles.css",
@@ -126,7 +98,6 @@
       },
       "checks": [
         {
-          "label": "Stat value has a strong font weight",
           "type": "css-rule",
           "selector": ".stat-value",
           "declarations": {
@@ -140,17 +111,10 @@
     {
       "id": "css-line-height",
       "number": "05",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 5,
       "stageStep": 5,
       "stageSize": 10,
-      "title": "Make body copy easier to read",
-      "eyebrow": "Typography",
-      "summary": "line-height controls the vertical rhythm inside multi-line text.",
-      "objective": "Set line-height on .intro-copy so the paragraph breathes.",
-      "hint": "Use a unitless value such as 1.6.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest typography rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".intro-copy {\n  line-height: 1.7;\n}\n",
       "file": "/styles.css",
@@ -160,7 +124,6 @@
       },
       "checks": [
         {
-          "label": "Intro copy has readable line height",
           "type": "css-rule",
           "selector": ".intro-copy",
           "declarations": {
@@ -174,17 +137,10 @@
     {
       "id": "css-text-align",
       "number": "06",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 6,
       "stageStep": 6,
       "stageSize": 10,
-      "title": "Center the hero content",
-      "eyebrow": "Alignment",
-      "summary": "text-align aligns inline content and text inside a block.",
-      "objective": "Center the text inside .hero with text-align.",
-      "hint": "The value should be center.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest alignment rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".hero {\n  text-align: center;\n}\n",
       "file": "/styles.css",
@@ -194,7 +150,6 @@
       },
       "checks": [
         {
-          "label": "Hero text is centered",
           "type": "css-rule",
           "selector": ".hero",
           "declarations": {
@@ -206,17 +161,10 @@
     {
       "id": "css-badge-style",
       "number": "07",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 7,
       "stageStep": 7,
       "stageSize": 10,
-      "title": "Style a small label",
-      "eyebrow": "Inline UI",
-      "summary": "Small interface labels often use casing rules to separate metadata from body copy.",
-      "objective": "Target .badge and use text-transform to make the badge uppercase.",
-      "hint": "Use text-transform: uppercase on .badge.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest inline ui rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".badge {\n  text-transform: uppercase;\n}\n",
       "file": "/styles.css",
@@ -226,7 +174,6 @@
       },
       "checks": [
         {
-          "label": "Badge text is transformed to uppercase",
           "type": "css-rule",
           "selector": ".badge",
           "declarations": {
@@ -238,17 +185,10 @@
     {
       "id": "css-descendant-selector",
       "number": "08",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 8,
       "stageStep": 8,
       "stageSize": 10,
-      "title": "Target list items in context",
-      "eyebrow": "Selectors",
-      "summary": "A descendant selector styles elements only when they appear inside a specific ancestor.",
-      "objective": "Use a descendant selector to set color on only the li elements inside .feature-list.",
-      "hint": "Write .feature-list li and add color.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest selectors rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".feature-list li {\n  color: #0f766e;\n}\n",
       "file": "/styles.css",
@@ -258,7 +198,6 @@
       },
       "checks": [
         {
-          "label": "Feature list items are targeted by context",
           "type": "css-rule",
           "selector": ".feature-list li",
           "declarations": {
@@ -272,17 +211,10 @@
     {
       "id": "css-grouped-selectors",
       "number": "09",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 9,
       "stageStep": 9,
       "stageSize": 10,
-      "title": "Share one declaration",
-      "eyebrow": "Selectors",
-      "summary": "Selector lists let related elements share a declaration without duplicating rules.",
-      "objective": "Use one grouped selector for .section-title and .card-title, then set their color.",
-      "hint": "Separate selectors with a comma before the declaration block.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest selectors rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".section-title,\n.card-title {\n  color: #334155;\n}\n",
       "file": "/styles.css",
@@ -292,7 +224,6 @@
       },
       "checks": [
         {
-          "label": "Section and card titles share one color rule",
           "type": "css-rule",
           "selectors": [
             ".section-title",
@@ -309,17 +240,10 @@
     {
       "id": "css-border-color",
       "number": "10",
-      "group": "Fundamental",
+      "group": "fundamental",
       "difficulty": 10,
       "stageStep": 10,
       "stageSize": 10,
-      "title": "Outline the featured card",
-      "eyebrow": "Borders",
-      "summary": "Border color can highlight a component without changing its content.",
-      "objective": "Target .featured-card and set border-color. The card already has a transparent border in the preview.",
-      "hint": "Use only border-color on .featured-card; the base preview already provides the border width and style.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest borders rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".featured-card {\n  border-color: #2563eb;\n}\n",
       "file": "/styles.css",
@@ -329,7 +253,6 @@
       },
       "checks": [
         {
-          "label": "Featured card has a border color",
           "type": "css-rule",
           "selector": ".featured-card",
           "declarations": {
@@ -343,17 +266,10 @@
     {
       "id": "css-padding",
       "number": "11",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 11,
       "stageStep": 1,
       "stageSize": 10,
-      "title": "Add internal space",
-      "eyebrow": "Box model",
-      "summary": "padding creates space between an element border and its content.",
-      "objective": "Add padding to .preview-card so card content moves away from the visible card edge.",
-      "hint": "The preview already gives the card a surface; use padding with a length value.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest box model rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".preview-card {\n  padding: 1.25rem;\n}\n",
       "file": "/styles.css",
@@ -363,7 +279,6 @@
       },
       "checks": [
         {
-          "label": "Preview cards have padding",
           "type": "css-rule",
           "selector": ".preview-card",
           "declarations": {
@@ -377,17 +292,10 @@
     {
       "id": "css-margin",
       "number": "12",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 12,
       "stageStep": 2,
       "stageSize": 10,
-      "title": "Separate page sections",
-      "eyebrow": "Box model",
-      "summary": "margin creates space outside an element.",
-      "objective": "Add margin to .content-shell so sections are separated from nearby content.",
-      "hint": "Use margin with a length or auto value.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest box model rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".content-shell {\n  margin: 2rem auto;\n}\n",
       "file": "/styles.css",
@@ -397,7 +305,6 @@
       },
       "checks": [
         {
-          "label": "Content shell has margin",
           "type": "css-rule",
           "selector": ".content-shell",
           "declarations": {
@@ -409,17 +316,10 @@
     {
       "id": "css-border",
       "number": "13",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 13,
       "stageStep": 3,
       "stageSize": 10,
-      "title": "Draw a component boundary",
-      "eyebrow": "Borders",
-      "summary": "The border shorthand sets width, style, and color in one declaration.",
-      "objective": "Give .preview-card a border.",
-      "hint": "Use a border value that includes solid.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest borders rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".preview-card {\n  border: 1px solid #cbd5e1;\n}\n",
       "file": "/styles.css",
@@ -429,7 +329,6 @@
       },
       "checks": [
         {
-          "label": "Preview cards have a solid border",
           "type": "css-rule",
           "selector": ".preview-card",
           "declarations": {
@@ -443,17 +342,10 @@
     {
       "id": "css-radius",
       "number": "14",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 14,
       "stageStep": 4,
       "stageSize": 10,
-      "title": "Soften component corners",
-      "eyebrow": "Borders",
-      "summary": "border-radius rounds box corners and is common for cards, inputs, and buttons.",
-      "objective": "Set border-radius on .preview-card. The preview already gives cards a visible surface and border.",
-      "hint": "Use border-radius with a length value; the fixed card surface will show the rounded corners.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest borders rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".preview-card {\n  border-radius: 0.75rem;\n}\n",
       "file": "/styles.css",
@@ -463,7 +355,6 @@
       },
       "checks": [
         {
-          "label": "Preview cards have rounded corners",
           "type": "css-rule",
           "selector": ".preview-card",
           "declarations": {
@@ -477,17 +368,10 @@
     {
       "id": "css-shadow",
       "number": "15",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 15,
       "stageStep": 5,
       "stageSize": 10,
-      "title": "Lift cards from the page",
-      "eyebrow": "Effects",
-      "summary": "box-shadow creates depth when used subtly.",
-      "objective": "Add box-shadow to the visible .preview-card surfaces.",
-      "hint": "A shadow value needs lengths and a color.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest effects rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".preview-card {\n  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);\n}\n",
       "file": "/styles.css",
@@ -497,7 +381,6 @@
       },
       "checks": [
         {
-          "label": "Preview cards have a shadow",
           "type": "css-rule",
           "selector": ".preview-card",
           "declarations": {
@@ -511,17 +394,10 @@
     {
       "id": "css-display-flex",
       "number": "16",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 16,
       "stageStep": 6,
       "stageSize": 10,
-      "title": "Turn tools into a row",
-      "eyebrow": "Flexbox",
-      "summary": "Flexbox arranges children along one axis and is ideal for toolbars.",
-      "objective": "Set display: flex on .toolbar.",
-      "hint": "Use display: flex.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest flexbox rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".toolbar {\n  display: flex;\n}\n",
       "file": "/styles.css",
@@ -531,7 +407,6 @@
       },
       "checks": [
         {
-          "label": "Toolbar uses flex layout",
           "type": "css-rule",
           "selector": ".toolbar",
           "declarations": {
@@ -543,17 +418,10 @@
     {
       "id": "css-gap",
       "number": "17",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 17,
       "stageStep": 7,
       "stageSize": 10,
-      "title": "Space flex children",
-      "eyebrow": "Flexbox",
-      "summary": "gap creates consistent space between flex or grid children.",
-      "objective": "Add gap to the flex .toolbar.",
-      "hint": "The preview already makes the toolbar a flex row; add a length value for gap.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest flexbox rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".toolbar {\n  gap: 0.75rem;\n}\n",
       "file": "/styles.css",
@@ -563,7 +431,6 @@
       },
       "checks": [
         {
-          "label": "Toolbar has a gap",
           "type": "css-rule",
           "selector": ".toolbar",
           "declarations": {
@@ -577,17 +444,10 @@
     {
       "id": "css-justify-content",
       "number": "18",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 18,
       "stageStep": 8,
       "stageSize": 10,
-      "title": "Distribute toolbar actions",
-      "eyebrow": "Flexbox",
-      "summary": "justify-content controls spacing along the main flex axis.",
-      "objective": "Use justify-content on the flex .toolbar to distribute its children.",
-      "hint": "The preview already makes .toolbar flex; use a value like space-between, center, or flex-end.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest flexbox rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".toolbar {\n  justify-content: space-between;\n}\n",
       "file": "/styles.css",
@@ -597,7 +457,6 @@
       },
       "checks": [
         {
-          "label": "Toolbar controls main-axis alignment",
           "type": "css-rule",
           "selector": ".toolbar",
           "declarations": {
@@ -609,17 +468,10 @@
     {
       "id": "css-nav-list",
       "number": "19",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 19,
       "stageStep": 9,
       "stageSize": 10,
-      "title": "Make navigation horizontal",
-      "eyebrow": "Lists",
-      "summary": "Navigation lists are still lists in HTML, but CSS controls their visual layout.",
-      "objective": "Remove bullets from .nav-list and make it a flex row.",
-      "hint": "Use list-style: none and display: flex on .nav-list.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest lists rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".nav-list {\n  list-style: none;\n  display: flex;\n}\n",
       "file": "/styles.css",
@@ -629,7 +481,6 @@
       },
       "checks": [
         {
-          "label": "Navigation removes list bullets",
           "type": "css-rule",
           "selector": ".nav-list",
           "declarations": {
@@ -637,7 +488,6 @@
           }
         },
         {
-          "label": "Navigation list uses flex layout",
           "type": "css-rule",
           "selector": ".nav-list",
           "declarations": {
@@ -649,17 +499,10 @@
     {
       "id": "css-max-width",
       "number": "20",
-      "group": "Basic",
+      "group": "basic",
       "difficulty": 20,
       "stageStep": 10,
       "stageSize": 10,
-      "title": "Constrain reading width",
-      "eyebrow": "Layout",
-      "summary": "max-width keeps long content readable on wide screens. Auto side margins center fixed-width blocks.",
-      "objective": "Set max-width on .content-shell and center it with margin.",
-      "hint": "Use max-width and margin: auto or a two-value margin with auto.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest layout rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".content-shell {\n  max-width: 72rem;\n  margin: 2rem auto;\n}\n",
       "file": "/styles.css",
@@ -669,7 +512,6 @@
       },
       "checks": [
         {
-          "label": "Content shell has a max width",
           "type": "css-rule",
           "selector": ".content-shell",
           "declarations": {
@@ -679,7 +521,6 @@
           }
         },
         {
-          "label": "Content shell is centered with margin",
           "type": "css-rule",
           "selector": ".content-shell",
           "declarations": {
@@ -693,17 +534,10 @@
     {
       "id": "css-card-grid",
       "number": "21",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 21,
       "stageStep": 1,
       "stageSize": 10,
-      "title": "Create a card grid",
-      "eyebrow": "Grid",
-      "summary": "CSS Grid arranges content in rows and columns.",
-      "objective": "Set display: grid on .card-grid.",
-      "hint": "Use display: grid.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest grid rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".card-grid {\n  display: grid;\n}\n",
       "file": "/styles.css",
@@ -713,7 +547,6 @@
       },
       "checks": [
         {
-          "label": "Card grid uses CSS Grid",
           "type": "css-rule",
           "selector": ".card-grid",
           "declarations": {
@@ -725,17 +558,10 @@
     {
       "id": "css-grid-columns",
       "number": "22",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 22,
       "stageStep": 2,
       "stageSize": 10,
-      "title": "Define card columns",
-      "eyebrow": "Grid",
-      "summary": "grid-template-columns defines the column tracks in a grid.",
-      "objective": "Set grid-template-columns on the grid .card-grid using repeat().",
-      "hint": "The preview already makes .card-grid a grid; use repeat(3, 1fr) or repeat(auto-fit, minmax(...)).",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest grid rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".card-grid {\n  grid-template-columns: repeat(3, 1fr);\n}\n",
       "file": "/styles.css",
@@ -745,7 +571,6 @@
       },
       "checks": [
         {
-          "label": "Card grid defines repeated columns",
           "type": "css-rule",
           "selector": ".card-grid",
           "declarations": {
@@ -759,17 +584,10 @@
     {
       "id": "css-pricing-grid",
       "number": "23",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 23,
       "stageStep": 3,
       "stageSize": 10,
-      "title": "Lay out pricing cards",
-      "eyebrow": "Grid",
-      "summary": "A grid container plus gap is the foundation for repeated card layouts.",
-      "objective": "Set display: grid and gap on .pricing-grid.",
-      "hint": "Target .pricing-grid with display and gap.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest grid rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".pricing-grid {\n  display: grid;\n  gap: 1rem;\n}\n",
       "file": "/styles.css",
@@ -779,7 +597,6 @@
       },
       "checks": [
         {
-          "label": "Pricing area uses grid layout",
           "type": "css-rule",
           "selector": ".pricing-grid",
           "declarations": {
@@ -787,7 +604,6 @@
           }
         },
         {
-          "label": "Pricing grid has a gap",
           "type": "css-rule",
           "selector": ".pricing-grid",
           "declarations": {
@@ -801,17 +617,10 @@
     {
       "id": "css-pricing-card",
       "number": "24",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 24,
       "stageStep": 4,
       "stageSize": 10,
-      "title": "Build a reusable card rule",
-      "eyebrow": "Components",
-      "summary": "Reusable component classes let repeated markup share the same visual treatment.",
-      "objective": "Style .pricing-card with padding and border.",
-      "hint": "Put padding and border in the same .pricing-card rule.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest components rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".pricing-card {\n  padding: 1rem;\n  border: 1px solid #cbd5e1;\n}\n",
       "file": "/styles.css",
@@ -821,7 +630,6 @@
       },
       "checks": [
         {
-          "label": "Pricing card has padding and border",
           "type": "css-rule",
           "selector": ".pricing-card",
           "declarations": {
@@ -838,17 +646,10 @@
     {
       "id": "css-link-button",
       "number": "25",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 25,
       "stageStep": 5,
       "stageSize": 10,
-      "title": "Make a link feel actionable",
-      "eyebrow": "Components",
-      "summary": "Links can be styled as buttons while keeping anchor semantics.",
-      "objective": "Style .cta-button with display: inline-block and remove text-decoration.",
-      "hint": "Use display: inline-block and text-decoration: none.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest components rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".cta-button {\n  display: inline-block;\n  text-decoration: none;\n}\n",
       "file": "/styles.css",
@@ -858,7 +659,6 @@
       },
       "checks": [
         {
-          "label": "Call-to-action behaves like a button box",
           "type": "css-rule",
           "selector": ".cta-button",
           "declarations": {
@@ -866,7 +666,6 @@
           }
         },
         {
-          "label": "Call-to-action removes underline decoration",
           "type": "css-rule",
           "selector": ".cta-button",
           "declarations": {
@@ -878,17 +677,10 @@
     {
       "id": "css-hover-state",
       "number": "26",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 26,
       "stageStep": 6,
       "stageSize": 10,
-      "title": "Add a hover state",
-      "eyebrow": "States",
-      "summary": "Pseudo-classes style interactive states without changing the HTML.",
-      "objective": "Create a .cta-button:hover rule that changes background-color.",
-      "hint": "Write .cta-button:hover and add background-color.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest states rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".cta-button:hover {\n  background-color: #1d4ed8;\n}\n",
       "file": "/styles.css",
@@ -898,7 +690,6 @@
       },
       "checks": [
         {
-          "label": "Call-to-action hover changes background color",
           "type": "css-rule",
           "selector": ".cta-button:hover",
           "declarations": {
@@ -912,17 +703,10 @@
     {
       "id": "css-focus-state",
       "number": "27",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 27,
       "stageStep": 7,
       "stageSize": 10,
-      "title": "Show keyboard focus",
-      "eyebrow": "States",
-      "summary": "Focus styles help keyboard users see which control is active.",
-      "objective": "Create a .field:focus rule with an outline.",
-      "hint": "Use outline on .field:focus.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest states rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".field:focus {\n  outline: 3px solid #2563eb;\n}\n",
       "file": "/styles.css",
@@ -932,7 +716,6 @@
       },
       "checks": [
         {
-          "label": "Focused fields have an outline",
           "type": "css-rule",
           "selector": ".field:focus",
           "declarations": {
@@ -946,17 +729,10 @@
     {
       "id": "css-custom-property",
       "number": "28",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 28,
       "stageStep": 8,
       "stageSize": 10,
-      "title": "Define a reusable color",
-      "eyebrow": "Custom properties",
-      "summary": "Custom properties store reusable values that can be referenced elsewhere with var().",
-      "objective": "Define --accent on :root.",
-      "hint": "Use :root and create --accent.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest custom properties rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ":root {\n  --accent: #2563eb;\n}\n",
       "file": "/styles.css",
@@ -966,7 +742,6 @@
       },
       "checks": [
         {
-          "label": "Root defines an accent custom property",
           "type": "css-rule",
           "selector": ":root",
           "declarations": {
@@ -980,17 +755,10 @@
     {
       "id": "css-use-variable",
       "number": "29",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 29,
       "stageStep": 9,
       "stageSize": 10,
-      "title": "Use a custom property",
-      "eyebrow": "Custom properties",
-      "summary": "var() reads a custom property so related components can share a design token.",
-      "objective": "Set .cta-button background-color with var(--accent).",
-      "hint": "Use background-color: var(--accent) on .cta-button.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest custom properties rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": ":root {\n  --accent: #2563eb;\n}\n",
       "solution": ":root {\n  --accent: #2563eb;\n}\n\n.cta-button {\n  background-color: var(--accent);\n}\n",
       "file": "/styles.css",
@@ -1000,7 +768,6 @@
       },
       "checks": [
         {
-          "label": "Call-to-action uses the accent variable",
           "type": "css-rule",
           "selector": ".cta-button",
           "declarations": {
@@ -1014,17 +781,10 @@
     {
       "id": "css-transition",
       "number": "30",
-      "group": "Intermediate",
+      "group": "intermediate",
       "difficulty": 30,
       "stageStep": 10,
       "stageSize": 10,
-      "title": "Smooth state changes",
-      "eyebrow": "Motion",
-      "summary": "transition smooths property changes such as hover colors.",
-      "objective": "Add transition to .cta-button so its existing hover color change animates.",
-      "hint": "The fixed preview already has a hover color change; add transition with a duration such as 180ms.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest motion rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".cta-button {\n  transition: background-color 180ms ease, transform 180ms ease;\n}\n",
       "file": "/styles.css",
@@ -1034,7 +794,6 @@
       },
       "checks": [
         {
-          "label": "Call-to-action has a transition",
           "type": "css-rule",
           "selector": ".cta-button",
           "declarations": {
@@ -1046,17 +805,10 @@
     {
       "id": "css-nth-child",
       "number": "31",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 31,
       "stageStep": 1,
       "stageSize": 10,
-      "title": "Style one repeated item",
-      "eyebrow": "Selectors",
-      "summary": "Structural pseudo-classes target elements based on their position among siblings.",
-      "objective": "Use .timeline-item:nth-child(2) to style the second timeline item.",
-      "hint": "Write .timeline-item:nth-child(2) and change background-color.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest selectors rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".timeline-item:nth-child(2) {\n  background-color: #dbeafe;\n}\n",
       "file": "/styles.css",
@@ -1066,7 +818,6 @@
       },
       "checks": [
         {
-          "label": "Second timeline item has a targeted style",
           "type": "css-rule",
           "selector": ".timeline-item:nth-child(2)",
           "declarations": {
@@ -1080,17 +831,10 @@
     {
       "id": "css-media-card-grid",
       "number": "32",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 32,
       "stageStep": 2,
       "stageSize": 10,
-      "title": "Stack cards on small screens",
-      "eyebrow": "Responsive CSS",
-      "summary": "Media queries let layout respond to viewport width.",
-      "objective": "Inside a max-width media query, set the existing .card-grid columns to 1fr.",
-      "hint": "The preview starts as a three-column grid; use @media (max-width: 700px) and put .card-grid inside it.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest responsive css rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": "@media (max-width: 700px) {\n  .card-grid {\n    grid-template-columns: 1fr;\n  }\n}\n",
       "file": "/styles.css",
@@ -1100,7 +844,6 @@
       },
       "checks": [
         {
-          "label": "Small-screen media query stacks the card grid",
           "type": "css-media-rule",
           "queryContains": "max-width",
           "selector": ".card-grid",
@@ -1113,17 +856,10 @@
     {
       "id": "css-media-nav",
       "number": "33",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 33,
       "stageStep": 3,
       "stageSize": 10,
-      "title": "Reflow navigation",
-      "eyebrow": "Responsive CSS",
-      "summary": "Responsive navigation often changes direction when horizontal space is limited.",
-      "objective": "Inside a max-width media query, set the existing .nav-list flex-direction to column.",
-      "hint": "The preview starts with a flex navigation row; put .nav-list inside a max-width media query.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest responsive css rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": "@media (max-width: 700px) {\n  .nav-list {\n    flex-direction: column;\n  }\n}\n",
       "file": "/styles.css",
@@ -1133,7 +869,6 @@
       },
       "checks": [
         {
-          "label": "Small-screen media query stacks navigation links",
           "type": "css-media-rule",
           "queryContains": "max-width",
           "selector": ".nav-list",
@@ -1146,17 +881,10 @@
     {
       "id": "css-sticky-header",
       "number": "34",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 34,
       "stageStep": 4,
       "stageSize": 10,
-      "title": "Keep navigation visible",
-      "eyebrow": "Positioning",
-      "summary": "position: sticky keeps an element in normal flow until it reaches an offset.",
-      "objective": "Make .site-header sticky and pin it to the top.",
-      "hint": "Use position: sticky and top: 0.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest positioning rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".site-header {\n  position: sticky;\n  top: 0;\n}\n",
       "file": "/styles.css",
@@ -1166,7 +894,6 @@
       },
       "checks": [
         {
-          "label": "Site header is sticky at the top",
           "type": "css-rule",
           "selector": ".site-header",
           "declarations": {
@@ -1184,17 +911,10 @@
     {
       "id": "css-absolute-badge",
       "number": "35",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 35,
       "stageStep": 5,
       "stageSize": 10,
-      "title": "Place a badge inside a card",
-      "eyebrow": "Positioning",
-      "summary": "Absolute children position against the nearest positioned ancestor.",
-      "objective": "Make .featured-card position: relative and .badge position: absolute.",
-      "hint": "Set position on both selectors.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest positioning rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".featured-card {\n  position: relative;\n}\n\n.badge {\n  position: absolute;\n  top: 1rem;\n  right: 1rem;\n}\n",
       "file": "/styles.css",
@@ -1204,7 +924,6 @@
       },
       "checks": [
         {
-          "label": "Featured card creates a positioning context",
           "type": "css-rule",
           "selector": ".featured-card",
           "declarations": {
@@ -1212,7 +931,6 @@
           }
         },
         {
-          "label": "Badge is absolutely positioned",
           "type": "css-rule",
           "selector": ".badge",
           "declarations": {
@@ -1224,17 +942,10 @@
     {
       "id": "css-pseudo-element",
       "number": "36",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 36,
       "stageStep": 6,
       "stageSize": 10,
-      "title": "Add generated decoration",
-      "eyebrow": "Pseudo-elements",
-      "summary": "Pseudo-elements create style-only pieces of a component without changing HTML.",
-      "objective": "Create .quote::before with a content declaration.",
-      "hint": "Use .quote::before and content.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest pseudo-elements rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".quote::before {\n  content: \"“\";\n}\n",
       "file": "/styles.css",
@@ -1244,7 +955,6 @@
       },
       "checks": [
         {
-          "label": "Quote has generated before content",
           "type": "css-rule",
           "selector": ".quote::before",
           "declarations": {
@@ -1256,17 +966,10 @@
     {
       "id": "css-keyframes",
       "number": "37",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 37,
       "stageStep": 7,
       "stageSize": 10,
-      "title": "Define a small animation",
-      "eyebrow": "Animation",
-      "summary": "@keyframes defines animation steps; animation applies them to an element.",
-      "objective": "Create @keyframes pulse and use animation on .badge.",
-      "hint": "Name the keyframes pulse and apply animation to .badge.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest animation rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": "@keyframes pulse {\n  from { opacity: 0.65; }\n  to { opacity: 1; }\n}\n\n.badge {\n  animation: pulse 1s ease-in-out infinite alternate;\n}\n",
       "file": "/styles.css",
@@ -1276,13 +979,11 @@
       },
       "checks": [
         {
-          "label": "Pulse keyframes are defined",
           "type": "css-at-rule",
           "name": "keyframes",
           "queryContains": "pulse"
         },
         {
-          "label": "Badge uses animation",
           "type": "css-rule",
           "selector": ".badge",
           "declarations": {
@@ -1296,17 +997,10 @@
     {
       "id": "css-reduced-motion",
       "number": "38",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 38,
       "stageStep": 8,
       "stageSize": 10,
-      "title": "Respect motion preferences",
-      "eyebrow": "Accessibility",
-      "summary": "prefers-reduced-motion lets users avoid unnecessary animation.",
-      "objective": "Inside a prefers-reduced-motion media query, set .badge animation to none.",
-      "hint": "Use @media (prefers-reduced-motion: reduce).",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest accessibility rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": ".badge {\n  animation: pulse 1s infinite;\n}\n",
       "solution": ".badge {\n  animation: pulse 1s infinite;\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .badge {\n    animation: none;\n  }\n}\n",
       "file": "/styles.css",
@@ -1316,7 +1010,6 @@
       },
       "checks": [
         {
-          "label": "Reduced-motion media query disables badge animation",
           "type": "css-media-rule",
           "queryContains": "prefers-reduced-motion:reduce",
           "selector": ".badge",
@@ -1329,17 +1022,10 @@
     {
       "id": "css-table-stripes",
       "number": "39",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 39,
       "stageStep": 9,
       "stageSize": 10,
-      "title": "Stripe table rows",
-      "eyebrow": "Selectors",
-      "summary": "Structural selectors are useful for repeated data, such as table rows.",
-      "objective": "Use .metrics-table tr:nth-child(even) to set a background-color.",
-      "hint": "Target even rows and add background-color.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest selectors rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ".metrics-table tr:nth-child(even) {\n  background-color: #f1f5f9;\n}\n",
       "file": "/styles.css",
@@ -1349,7 +1035,6 @@
       },
       "checks": [
         {
-          "label": "Even metric rows have a background color",
           "type": "css-rule",
           "selector": ".metrics-table tr:nth-child(even)",
           "declarations": {
@@ -1363,17 +1048,10 @@
     {
       "id": "css-capstone",
       "number": "40",
-      "group": "Advanced",
+      "group": "advanced",
       "difficulty": 40,
       "stageStep": 10,
       "stageSize": 10,
-      "title": "Style the preview page",
-      "eyebrow": "Capstone",
-      "summary": "A complete CSS pass combines reusable values, layout rules, component styles, states, and responsive behavior.",
-      "objective": "Combine variables, layout, cards, hover state, and a responsive media query to style the fixed preview page.",
-      "hint": "Define --accent, center .lab-page, make .card-grid a grid, add a hover state, and include a max-width media query.",
-      "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
-      "bestPractice": "Start with the smallest capstone rule that changes the preview, then adjust values once the target element clearly responds.",
       "code": "/* Write the CSS for this challenge below. */\n",
       "solution": ":root {\n  --accent: #2563eb;\n}\n\n.lab-page {\n  max-width: 72rem;\n  margin: 0 auto;\n}\n\n.card-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 1rem;\n}\n\n.preview-card {\n  padding: 1rem;\n  border: 1px solid #cbd5e1;\n  border-radius: 0.75rem;\n}\n\n.cta-button:hover {\n  background-color: var(--accent);\n}\n\n@media (max-width: 700px) {\n  .card-grid {\n    grid-template-columns: 1fr;\n  }\n}\n",
       "file": "/styles.css",
@@ -1383,7 +1061,6 @@
       },
       "checks": [
         {
-          "label": "Accent variable is defined",
           "type": "css-rule",
           "selector": ":root",
           "declarations": {
@@ -1393,7 +1070,6 @@
           }
         },
         {
-          "label": "Lab page is centered with a max width",
           "type": "css-rule",
           "selector": ".lab-page",
           "declarations": {
@@ -1406,7 +1082,6 @@
           }
         },
         {
-          "label": "Card grid uses columns and gap",
           "type": "css-rule",
           "selector": ".card-grid",
           "declarations": {
@@ -1420,7 +1095,6 @@
           }
         },
         {
-          "label": "Cards have component styling",
           "type": "css-rule",
           "selector": ".preview-card",
           "declarations": {
@@ -1436,7 +1110,6 @@
           }
         },
         {
-          "label": "Button has a hover state",
           "type": "css-rule",
           "selector": ".cta-button:hover",
           "declarations": {
@@ -1444,7 +1117,6 @@
           }
         },
         {
-          "label": "Small-screen media query stacks cards",
           "type": "css-media-rule",
           "queryContains": "max-width",
           "selector": ".card-grid",

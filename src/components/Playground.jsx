@@ -3,6 +3,7 @@ import { Check, Eraser, Link2, RotateCcw } from 'lucide-react'
 import CodeEditor from './CodeEditor.jsx'
 import Preview from './Preview.jsx'
 import { PLAYGROUND_TEMPLATE, decodeShare, encodeShare, loadPlayground, savePlayground } from '../core/playground.js'
+import { useI18n } from '../i18n/index.js'
 
 const FILES = [
   { id: 'html', name: 'index.html', language: 'html' },
@@ -13,9 +14,10 @@ const MAX_LOGS = 200
 const SAVE_DELAY = 300
 const STATUS_TIME = 2500
 
-const shareLabels = { copied: 'Copied', failed: 'Copy failed' }
+const shareKeys = { copied: 'playground.copied', failed: 'playground.copyFailed' }
 
 export default function Playground({ shared }) {
+  const { t } = useI18n()
   const [files, setFiles] = useState(loadPlayground)
   const [activeFile, setActiveFile] = useState('html')
   const [revision, setRevision] = useState(0)
@@ -109,11 +111,14 @@ export default function Playground({ shared }) {
     setRevision((value) => value + 1)
   }
 
+  const shareLabel = t(shareKeys[status] ?? 'playground.share')
+  const resetLabel = t(confirmReset ? 'playground.confirmReset' : 'playground.reset')
+
   return (
     <div className="playground">
-      <section className="code-panel" aria-label="Playground editor">
+      <section className="code-panel" aria-label={t('playground.editorPanel')}>
         <div className="panel-bar">
-          <div className="file-tabs" role="tablist" aria-label="Playground files">
+          <div className="file-tabs" role="tablist" aria-label={t('playground.files')}>
             {FILES.map((file) => (
               <button
                 key={file.id}
@@ -129,23 +134,23 @@ export default function Playground({ shared }) {
             ))}
           </div>
           <div className="panel-actions">
-            <button type="button" onClick={share} title="Copy a link that contains this code" aria-label={shareLabels[status] ?? 'Share'}>
+            <button type="button" onClick={share} title={t('playground.shareTitle')} aria-label={shareLabel}>
               {status === 'copied' ? <Check size={13} /> : <Link2 size={13} />}
-              <span>{shareLabels[status] ?? 'Share'}</span>
+              <span>{shareLabel}</span>
             </button>
             <button
               className={confirmReset ? 'danger' : ''}
               type="button"
               onClick={reset}
-              title="Restore the starter files"
-              aria-label={confirmReset ? 'Confirm reset' : 'Reset'}>
+              title={t('playground.resetTitle')}
+              aria-label={resetLabel}>
               <RotateCcw size={13} />
-              <span>{confirmReset ? 'Confirm reset' : 'Reset'}</span>
+              <span>{resetLabel}</span>
             </button>
           </div>
         </div>
         {status === 'invalid' && (
-          <p className="playground-notice" role="status">That share link could not be read. Showing your saved code.</p>
+          <p className="playground-notice" role="status">{t('playground.invalidLink')}</p>
         )}
         {FILES.map((file) => (
           // Editors stay mounted so each file keeps its undo history.
@@ -156,17 +161,22 @@ export default function Playground({ shared }) {
             role="tabpanel"
             aria-labelledby={`tab-${file.id}`}
             hidden={activeFile !== file.id}>
-            <CodeEditor value={files[file.id]} language={file.language} label={`${file.name} editor`} onChange={edit(file.id)} />
+            <CodeEditor
+              value={files[file.id]}
+              language={file.language}
+              label={t('common.editorLabel', { file: file.name })}
+              onChange={edit(file.id)}
+            />
           </div>
         ))}
       </section>
 
-      <section className="preview-panel" aria-label="Playground preview">
+      <section className="preview-panel" aria-label={t('playground.previewPanel')}>
         <div className="panel-bar">
           <div className="panel-title">
-            <span className="status-dot preview-dot" /> Preview
+            <span className="status-dot preview-dot" /> {t('common.preview')}
           </div>
-          <span className="live-label">LIVE</span>
+          <span className="live-label">{t('common.live')}</span>
         </div>
         <Preview
           key={revision}
@@ -174,21 +184,21 @@ export default function Playground({ shared }) {
           css={files.css}
           js={files.js}
           delay={400}
-          title="Playground preview"
+          title={t('playground.previewPanel')}
           onLog={addLog}
           onReload={clearLogs}
         />
         <div className="console">
           <div className="console-bar">
             <span>
-              Console {logs.length > 0 && <b>{logs.length}</b>}
+              {t('playground.console')} {logs.length > 0 && <b>{logs.length}</b>}
             </span>
-            <button type="button" onClick={clearLogs} aria-label="Clear console" title="Clear console">
+            <button type="button" onClick={clearLogs} aria-label={t('playground.clearConsole')} title={t('playground.clearConsole')}>
               <Eraser size={13} />
             </button>
           </div>
           <div className="console-list" ref={consoleList} role="log">
-            {logs.length === 0 && <p className="console-empty">console.log output and errors appear here.</p>}
+            {logs.length === 0 && <p className="console-empty">{t('playground.consoleEmpty')}</p>}
             {logs.map((log) => (
               <pre key={log.id} className={`log log-${log.level}`}>{log.text}</pre>
             ))}

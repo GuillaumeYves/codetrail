@@ -1,0 +1,420 @@
+{
+  "shared": {
+    "commonMistake": "CSS requirements look for the selector and declaration that affect the preview. Extra rules are fine, but styling the wrong class or writing the property outside the right rule will not complete the step.",
+    "bestPractice": "Start with the smallest {topic} rule that changes the preview, then adjust values once the target element clearly responds.",
+    "semicolonCheck": "Every CSS declaration ends with a semicolon"
+  },
+  "lessons": {
+    "css-text-color": {
+      "title": "Color one clear target",
+      "topic": "Selectors",
+      "summary": "A class selector styles every element with that class. Start by changing one obvious preview target.",
+      "objective": "Target .hero-title and give it a visible text color.",
+      "hint": "Write a .hero-title rule and add a color declaration.",
+      "checks": [
+        "Hero title has a color declaration"
+      ]
+    },
+    "css-card-background": {
+      "title": "Paint a component surface",
+      "topic": "Colors",
+      "summary": "background-color changes the painted surface behind an element content area and padding.",
+      "objective": "Target .preview-card and set a background-color so the cards become distinct blocks.",
+      "hint": "Use background-color on .preview-card.",
+      "checks": [
+        "Preview cards have a background color"
+      ]
+    },
+    "css-font-size": {
+      "title": "Scale the main heading",
+      "topic": "Typography",
+      "summary": "font-size controls text scale. rem values are predictable because they are based on the root font size.",
+      "objective": "Make .hero-title larger by setting font-size.",
+      "hint": "A value like 3rem or 48px will make the heading visibly larger.",
+      "checks": [
+        "Hero title has a font size"
+      ]
+    },
+    "css-font-weight": {
+      "title": "Strengthen important text",
+      "topic": "Typography",
+      "summary": "font-weight controls the weight of text. Numeric values such as 700 are useful in design systems.",
+      "objective": "Make .stat-value visually bold with font-weight.",
+      "hint": "Target .stat-value and use font-weight.",
+      "checks": [
+        "Stat value has a strong font weight"
+      ]
+    },
+    "css-line-height": {
+      "title": "Make body copy easier to read",
+      "topic": "Typography",
+      "summary": "line-height controls the vertical rhythm inside multi-line text.",
+      "objective": "Set line-height on .intro-copy so the paragraph breathes.",
+      "hint": "Use a unitless value such as 1.6.",
+      "checks": [
+        "Intro copy has readable line height"
+      ]
+    },
+    "css-text-align": {
+      "title": "Center the hero content",
+      "topic": "Alignment",
+      "summary": "text-align aligns inline content and text inside a block.",
+      "objective": "Center the text inside .hero with text-align.",
+      "hint": "The value should be center.",
+      "checks": [
+        "Hero text is centered"
+      ]
+    },
+    "css-badge-style": {
+      "title": "Style a small label",
+      "topic": "Inline UI",
+      "summary": "Small interface labels often use casing rules to separate metadata from body copy.",
+      "objective": "Target .badge and use text-transform to make the badge uppercase.",
+      "hint": "Use text-transform: uppercase on .badge.",
+      "checks": [
+        "Badge text is transformed to uppercase"
+      ]
+    },
+    "css-descendant-selector": {
+      "title": "Target list items in context",
+      "topic": "Selectors",
+      "summary": "A descendant selector styles elements only when they appear inside a specific ancestor.",
+      "objective": "Use a descendant selector to set color on only the li elements inside .feature-list.",
+      "hint": "Write .feature-list li and add color.",
+      "checks": [
+        "Feature list items are targeted by context"
+      ]
+    },
+    "css-grouped-selectors": {
+      "title": "Share one declaration",
+      "topic": "Selectors",
+      "summary": "Selector lists let related elements share a declaration without duplicating rules.",
+      "objective": "Use one grouped selector for .section-title and .card-title, then set their color.",
+      "hint": "Separate selectors with a comma before the declaration block.",
+      "checks": [
+        "Section and card titles share one color rule"
+      ]
+    },
+    "css-border-color": {
+      "title": "Outline the featured card",
+      "topic": "Borders",
+      "summary": "Border color can highlight a component without changing its content.",
+      "objective": "Target .featured-card and set border-color. The card already has a transparent border in the preview.",
+      "hint": "Use only border-color on .featured-card; the base preview already provides the border width and style.",
+      "checks": [
+        "Featured card has a border color"
+      ]
+    },
+    "css-padding": {
+      "title": "Add internal space",
+      "topic": "Box model",
+      "summary": "padding creates space between an element border and its content.",
+      "objective": "Add padding to .preview-card so card content moves away from the visible card edge.",
+      "hint": "The preview already gives the card a surface; use padding with a length value.",
+      "checks": [
+        "Preview cards have padding"
+      ]
+    },
+    "css-margin": {
+      "title": "Separate page sections",
+      "topic": "Box model",
+      "summary": "margin creates space outside an element.",
+      "objective": "Add margin to .content-shell so sections are separated from nearby content.",
+      "hint": "Use margin with a length or auto value.",
+      "checks": [
+        "Content shell has margin"
+      ]
+    },
+    "css-border": {
+      "title": "Draw a component boundary",
+      "topic": "Borders",
+      "summary": "The border shorthand sets width, style, and color in one declaration.",
+      "objective": "Give .preview-card a border.",
+      "hint": "Use a border value that includes solid.",
+      "checks": [
+        "Preview cards have a solid border"
+      ]
+    },
+    "css-radius": {
+      "title": "Soften component corners",
+      "topic": "Borders",
+      "summary": "border-radius rounds box corners and is common for cards, inputs, and buttons.",
+      "objective": "Set border-radius on .preview-card. The preview already gives cards a visible surface and border.",
+      "hint": "Use border-radius with a length value; the fixed card surface will show the rounded corners.",
+      "checks": [
+        "Preview cards have rounded corners"
+      ]
+    },
+    "css-shadow": {
+      "title": "Lift cards from the page",
+      "topic": "Effects",
+      "summary": "box-shadow creates depth when used subtly.",
+      "objective": "Add box-shadow to the visible .preview-card surfaces.",
+      "hint": "A shadow value needs lengths and a color.",
+      "checks": [
+        "Preview cards have a shadow"
+      ]
+    },
+    "css-display-flex": {
+      "title": "Turn tools into a row",
+      "topic": "Flexbox",
+      "summary": "Flexbox arranges children along one axis and is ideal for toolbars.",
+      "objective": "Set display: flex on .toolbar.",
+      "hint": "Use display: flex.",
+      "checks": [
+        "Toolbar uses flex layout"
+      ]
+    },
+    "css-gap": {
+      "title": "Space flex children",
+      "topic": "Flexbox",
+      "summary": "gap creates consistent space between flex or grid children.",
+      "objective": "Add gap to the flex .toolbar.",
+      "hint": "The preview already makes the toolbar a flex row; add a length value for gap.",
+      "checks": [
+        "Toolbar has a gap"
+      ]
+    },
+    "css-justify-content": {
+      "title": "Distribute toolbar actions",
+      "topic": "Flexbox",
+      "summary": "justify-content controls spacing along the main flex axis.",
+      "objective": "Use justify-content on the flex .toolbar to distribute its children.",
+      "hint": "The preview already makes .toolbar flex; use a value like space-between, center, or flex-end.",
+      "checks": [
+        "Toolbar controls main-axis alignment"
+      ]
+    },
+    "css-nav-list": {
+      "title": "Make navigation horizontal",
+      "topic": "Lists",
+      "summary": "Navigation lists are still lists in HTML, but CSS controls their visual layout.",
+      "objective": "Remove bullets from .nav-list and make it a flex row.",
+      "hint": "Use list-style: none and display: flex on .nav-list.",
+      "checks": [
+        "Navigation removes list bullets",
+        "Navigation list uses flex layout"
+      ]
+    },
+    "css-max-width": {
+      "title": "Constrain reading width",
+      "topic": "Layout",
+      "summary": "max-width keeps long content readable on wide screens. Auto side margins center fixed-width blocks.",
+      "objective": "Set max-width on .content-shell and center it with margin.",
+      "hint": "Use max-width and margin: auto or a two-value margin with auto.",
+      "checks": [
+        "Content shell has a max width",
+        "Content shell is centered with margin"
+      ]
+    },
+    "css-card-grid": {
+      "title": "Create a card grid",
+      "topic": "Grid",
+      "summary": "CSS Grid arranges content in rows and columns.",
+      "objective": "Set display: grid on .card-grid.",
+      "hint": "Use display: grid.",
+      "checks": [
+        "Card grid uses CSS Grid"
+      ]
+    },
+    "css-grid-columns": {
+      "title": "Define card columns",
+      "topic": "Grid",
+      "summary": "grid-template-columns defines the column tracks in a grid.",
+      "objective": "Set grid-template-columns on the grid .card-grid using repeat().",
+      "hint": "The preview already makes .card-grid a grid; use repeat(3, 1fr) or repeat(auto-fit, minmax(...)).",
+      "checks": [
+        "Card grid defines repeated columns"
+      ]
+    },
+    "css-pricing-grid": {
+      "title": "Lay out pricing cards",
+      "topic": "Grid",
+      "summary": "A grid container plus gap is the foundation for repeated card layouts.",
+      "objective": "Set display: grid and gap on .pricing-grid.",
+      "hint": "Target .pricing-grid with display and gap.",
+      "checks": [
+        "Pricing area uses grid layout",
+        "Pricing grid has a gap"
+      ]
+    },
+    "css-pricing-card": {
+      "title": "Build a reusable card rule",
+      "topic": "Components",
+      "summary": "Reusable component classes let repeated markup share the same visual treatment.",
+      "objective": "Style .pricing-card with padding and border.",
+      "hint": "Put padding and border in the same .pricing-card rule.",
+      "checks": [
+        "Pricing card has padding and border"
+      ]
+    },
+    "css-link-button": {
+      "title": "Make a link feel actionable",
+      "topic": "Components",
+      "summary": "Links can be styled as buttons while keeping anchor semantics.",
+      "objective": "Style .cta-button with display: inline-block and remove text-decoration.",
+      "hint": "Use display: inline-block and text-decoration: none.",
+      "checks": [
+        "Call-to-action behaves like a button box",
+        "Call-to-action removes underline decoration"
+      ]
+    },
+    "css-hover-state": {
+      "title": "Add a hover state",
+      "topic": "States",
+      "summary": "Pseudo-classes style interactive states without changing the HTML.",
+      "objective": "Create a .cta-button:hover rule that changes background-color.",
+      "hint": "Write .cta-button:hover and add background-color.",
+      "checks": [
+        "Call-to-action hover changes background color"
+      ]
+    },
+    "css-focus-state": {
+      "title": "Show keyboard focus",
+      "topic": "States",
+      "summary": "Focus styles help keyboard users see which control is active.",
+      "objective": "Create a .field:focus rule with an outline.",
+      "hint": "Use outline on .field:focus.",
+      "checks": [
+        "Focused fields have an outline"
+      ]
+    },
+    "css-custom-property": {
+      "title": "Define a reusable color",
+      "topic": "Custom properties",
+      "summary": "Custom properties store reusable values that can be referenced elsewhere with var().",
+      "objective": "Define --accent on :root.",
+      "hint": "Use :root and create --accent.",
+      "checks": [
+        "Root defines an accent custom property"
+      ]
+    },
+    "css-use-variable": {
+      "title": "Use a custom property",
+      "topic": "Custom properties",
+      "summary": "var() reads a custom property so related components can share a design token.",
+      "objective": "Set .cta-button background-color with var(--accent).",
+      "hint": "Use background-color: var(--accent) on .cta-button.",
+      "checks": [
+        "Call-to-action uses the accent variable"
+      ]
+    },
+    "css-transition": {
+      "title": "Smooth state changes",
+      "topic": "Motion",
+      "summary": "transition smooths property changes such as hover colors.",
+      "objective": "Add transition to .cta-button so its existing hover color change animates.",
+      "hint": "The fixed preview already has a hover color change; add transition with a duration such as 180ms.",
+      "checks": [
+        "Call-to-action has a transition"
+      ]
+    },
+    "css-nth-child": {
+      "title": "Style one repeated item",
+      "topic": "Selectors",
+      "summary": "Structural pseudo-classes target elements based on their position among siblings.",
+      "objective": "Use .timeline-item:nth-child(2) to style the second timeline item.",
+      "hint": "Write .timeline-item:nth-child(2) and change background-color.",
+      "checks": [
+        "Second timeline item has a targeted style"
+      ]
+    },
+    "css-media-card-grid": {
+      "title": "Stack cards on small screens",
+      "topic": "Responsive CSS",
+      "summary": "Media queries let layout respond to viewport width.",
+      "objective": "Inside a max-width media query, set the existing .card-grid columns to 1fr.",
+      "hint": "The preview starts as a three-column grid; use @media (max-width: 700px) and put .card-grid inside it.",
+      "checks": [
+        "Small-screen media query stacks the card grid"
+      ]
+    },
+    "css-media-nav": {
+      "title": "Reflow navigation",
+      "topic": "Responsive CSS",
+      "summary": "Responsive navigation often changes direction when horizontal space is limited.",
+      "objective": "Inside a max-width media query, set the existing .nav-list flex-direction to column.",
+      "hint": "The preview starts with a flex navigation row; put .nav-list inside a max-width media query.",
+      "checks": [
+        "Small-screen media query stacks navigation links"
+      ]
+    },
+    "css-sticky-header": {
+      "title": "Keep navigation visible",
+      "topic": "Positioning",
+      "summary": "position: sticky keeps an element in normal flow until it reaches an offset.",
+      "objective": "Make .site-header sticky and pin it to the top.",
+      "hint": "Use position: sticky and top: 0.",
+      "checks": [
+        "Site header is sticky at the top"
+      ]
+    },
+    "css-absolute-badge": {
+      "title": "Place a badge inside a card",
+      "topic": "Positioning",
+      "summary": "Absolute children position against the nearest positioned ancestor.",
+      "objective": "Make .featured-card position: relative and .badge position: absolute.",
+      "hint": "Set position on both selectors.",
+      "checks": [
+        "Featured card creates a positioning context",
+        "Badge is absolutely positioned"
+      ]
+    },
+    "css-pseudo-element": {
+      "title": "Add generated decoration",
+      "topic": "Pseudo-elements",
+      "summary": "Pseudo-elements create style-only pieces of a component without changing HTML.",
+      "objective": "Create .quote::before with a content declaration.",
+      "hint": "Use .quote::before and content.",
+      "checks": [
+        "Quote has generated before content"
+      ]
+    },
+    "css-keyframes": {
+      "title": "Define a small animation",
+      "topic": "Animation",
+      "summary": "@keyframes defines animation steps; animation applies them to an element.",
+      "objective": "Create @keyframes pulse and use animation on .badge.",
+      "hint": "Name the keyframes pulse and apply animation to .badge.",
+      "checks": [
+        "Pulse keyframes are defined",
+        "Badge uses animation"
+      ]
+    },
+    "css-reduced-motion": {
+      "title": "Respect motion preferences",
+      "topic": "Accessibility",
+      "summary": "prefers-reduced-motion lets users avoid unnecessary animation.",
+      "objective": "Inside a prefers-reduced-motion media query, set .badge animation to none.",
+      "hint": "Use @media (prefers-reduced-motion: reduce).",
+      "checks": [
+        "Reduced-motion media query disables badge animation"
+      ]
+    },
+    "css-table-stripes": {
+      "title": "Stripe table rows",
+      "topic": "Selectors",
+      "summary": "Structural selectors are useful for repeated data, such as table rows.",
+      "objective": "Use .metrics-table tr:nth-child(even) to set a background-color.",
+      "hint": "Target even rows and add background-color.",
+      "checks": [
+        "Even metric rows have a background color"
+      ]
+    },
+    "css-capstone": {
+      "title": "Style the preview page",
+      "topic": "Capstone",
+      "summary": "A complete CSS pass combines reusable values, layout rules, component styles, states, and responsive behavior.",
+      "objective": "Combine variables, layout, cards, hover state, and a responsive media query to style the fixed preview page.",
+      "hint": "Define --accent, center .lab-page, make .card-grid a grid, add a hover state, and include a max-width media query.",
+      "checks": [
+        "Accent variable is defined",
+        "Lab page is centered with a max width",
+        "Card grid uses columns and gap",
+        "Cards have component styling",
+        "Button has a hover state",
+        "Small-screen media query stacks cards"
+      ]
+    }
+  }
+}

@@ -3,12 +3,13 @@ import { Check, ChevronDown } from 'lucide-react'
 import cssIcon from 'devicon/icons/css3/css3-original.svg'
 import htmlIcon from 'devicon/icons/html5/html5-original.svg'
 import { stackIds, stacks } from '../stacks/registry.js'
+import { useI18n } from '../i18n/index.js'
 
 const stackIcons = { html: htmlIcon, css: cssIcon }
 
-// Stacks grouped by activity for the picker menu.
+// Stacks grouped by activity id (translated as activities.<id>) for the picker menu.
 const stackGroups = stackIds.reduce((groups, id) => {
-  const activity = stacks[id].activity ?? 'Web development'
+  const activity = stacks[id].activity ?? 'web'
   const group = groups.find((item) => item.activity === activity)
   if (group) group.ids.push(id)
   else groups.push({ activity, ids: [id] })
@@ -24,6 +25,7 @@ function StackLogo({ stackId }) {
 }
 
 export default function StackPicker({ activeStackId, subtitle, onSelect }) {
+  const { t } = useI18n()
   const [open, setOpen] = useState(false)
   const picker = useRef(null)
 
@@ -59,7 +61,7 @@ export default function StackPicker({ activeStackId, subtitle, onSelect }) {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls="stack-picker-menu"
-        aria-label="Choose CodeTrail course">
+        aria-label={t('picker.label')}>
         <StackLogo stackId={activeStackId} />
         <span className="brand-copy">
           <b>CodeTrail</b>
@@ -69,10 +71,10 @@ export default function StackPicker({ activeStackId, subtitle, onSelect }) {
       </button>
 
       {open && (
-        <div className="stack-menu" id="stack-picker-menu" role="listbox" aria-label="Choose stack">
+        <div className="stack-menu" id="stack-picker-menu" role="listbox" aria-label={t('picker.menu')}>
           {stackGroups.map((group) => (
             <section className="stack-menu-group" key={group.activity}>
-              <p>{group.activity}</p>
+              <p>{t(`activities.${group.activity}`)}</p>
               <div className="stack-menu-options">
                 {group.ids.map((id) => {
                   const selected = id === activeStackId
@@ -87,7 +89,7 @@ export default function StackPicker({ activeStackId, subtitle, onSelect }) {
                       <StackLogo stackId={id} />
                       <span className="stack-option-copy">
                         <strong>{stacks[id].name}</strong>
-                        <small>{stacks[id].description}</small>
+                        <small>{t(`stacks.${id}.description`)}</small>
                       </span>
                       {selected && <Check className="stack-option-check" size={15} aria-hidden="true" />}
                     </button>

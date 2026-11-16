@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
-import { Check, ChevronDown } from 'lucide-react'
 import cssIcon from 'devicon/icons/css3/css3-original.svg'
 import htmlIcon from 'devicon/icons/html5/html5-original.svg'
 import jsIcon from 'devicon/icons/javascript/javascript-original.svg'
+import Dropdown from './Dropdown.jsx'
 import { stackIds, stacks } from '../stacks/registry.js'
 import { useI18n } from '../i18n/index.js'
 
@@ -27,80 +26,31 @@ function StackLogo({ stackId }) {
 
 export default function StackPicker({ activeStackId, subtitle, onSelect }) {
   const { t } = useI18n()
-  const [open, setOpen] = useState(false)
-  const picker = useRef(null)
-
-  useEffect(() => {
-    if (!open) return undefined
-
-    const closeOnOutside = (event) => {
-      if (!picker.current?.contains(event.target)) setOpen(false)
-    }
-    const closeOnEscape = (event) => {
-      if (event.key === 'Escape') setOpen(false)
-    }
-
-    document.addEventListener('pointerdown', closeOnOutside)
-    window.addEventListener('keydown', closeOnEscape)
-    return () => {
-      document.removeEventListener('pointerdown', closeOnOutside)
-      window.removeEventListener('keydown', closeOnEscape)
-    }
-  }, [open])
-
-  const choose = (id) => {
-    setOpen(false)
-    onSelect(id)
-  }
+  const groups = stackGroups.map((group) => ({
+    id: group.activity,
+    title: t(`activities.${group.activity}`),
+    options: group.ids.map((id) => ({
+      id,
+      name: stacks[id].name,
+      description: t(`stacks.${id}.description`),
+      icon: <StackLogo stackId={id} />,
+    })),
+  }))
 
   return (
-    <div className="language-selector" ref={picker}>
-      <button
-        className="brand"
-        type="button"
-        onClick={() => setOpen((value) => !value)}
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        aria-controls="stack-picker-menu"
-        aria-label={t('picker.label')}>
-        <StackLogo stackId={activeStackId} />
-        <span className="brand-copy">
-          <b>CodeTrail</b>
-          <span className="brand-stack-name">{subtitle ?? stacks[activeStackId]?.name}</span>
-        </span>
-        <ChevronDown className={`stack-picker-chevron ${open ? 'rotated' : ''}`} size={15} aria-hidden="true" />
-      </button>
-
-      {open && (
-        <div className="stack-menu" id="stack-picker-menu" role="listbox" aria-label={t('picker.menu')}>
-          {stackGroups.map((group) => (
-            <section className="stack-menu-group" key={group.activity}>
-              <p>{t(`activities.${group.activity}`)}</p>
-              <div className="stack-menu-options">
-                {group.ids.map((id) => {
-                  const selected = id === activeStackId
-                  return (
-                    <button
-                      className={`stack-option ${selected ? 'active' : ''}`}
-                      key={id}
-                      type="button"
-                      role="option"
-                      aria-selected={selected}
-                      onClick={() => choose(id)}>
-                      <StackLogo stackId={id} />
-                      <span className="stack-option-copy">
-                        <strong>{stacks[id].name}</strong>
-                        <small>{t(`stacks.${id}.description`)}</small>
-                      </span>
-                      {selected && <Check className="stack-option-check" size={15} aria-hidden="true" />}
-                    </button>
-                  )
-                })}
-              </div>
-            </section>
-          ))}
-        </div>
-      )}
-    </div>
+    <Dropdown
+      className="stack-picker"
+      buttonClass="brand"
+      label={t('picker.label')}
+      menuLabel={t('picker.menu')}
+      groups={groups}
+      value={activeStackId}
+      onSelect={onSelect}>
+      <StackLogo stackId={activeStackId} />
+      <span className="brand-copy">
+        <b>CodeTrail</b>
+        <span className="brand-stack-name">{subtitle ?? stacks[activeStackId]?.name}</span>
+      </span>
+    </Dropdown>
   )
 }

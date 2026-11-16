@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { RotateCcw } from 'lucide-react'
 import { useI18n } from '../i18n/index.js'
+import { rem } from './rem.js'
 
 const GLOBAL_RESET_DELAY = 3
 
@@ -39,7 +40,7 @@ export default function ConfirmDialog({ type, lessonTitle, trackName, onCancel, 
         aria-labelledby="reset-confirm-title"
         aria-describedby="reset-confirm-description">
         <div className="confirm-icon">
-          <RotateCcw size={18} />
+          <RotateCcw size={rem(18)} />
         </div>
         <div className="confirm-copy">
           <span>{t(`${copy}.label`)}</span>

@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { Check, Lock, X } from 'lucide-react'
 import { useI18n } from '../i18n/index.js'
+import { rem } from './rem.js'
 
 export default function LessonSidebar({ open, trackName, lessons, activeId, completed, unlocked, onSelect, onClose }) {
   const { t } = useI18n()
@@ -16,12 +17,18 @@ export default function LessonSidebar({ open, trackName, lessons, activeId, comp
 
   return (
     <>
-      {open && <button className="sidebar-scrim" type="button" onClick={onClose} aria-label={t('sidebar.close')} />}
+      <button
+        className={open ? 'sidebar-scrim open' : 'sidebar-scrim'}
+        type="button"
+        onClick={onClose}
+        aria-label={t('sidebar.close')}
+        inert={!open}
+      />
       <aside className={open ? 'sidebar open' : 'sidebar'} inert={!open}>
         <div className="sidebar-heading">
           <h2>{t('sidebar.title', { course: trackName })}</h2>
           <button className="close-menu" type="button" onClick={onClose} aria-label={t('sidebar.close')}>
-            <X />
+            <X size={rem(20)} />
           </button>
         </div>
         <nav aria-label={t('sidebar.nav', { course: trackName })}>
@@ -42,7 +49,7 @@ export default function LessonSidebar({ open, trackName, lessons, activeId, comp
                     aria-current={lesson.id === activeId ? 'step' : undefined}
                     title={open ? lesson.title : t('sidebar.locked')}>
                     <span className="lesson-number">
-                      {done ? <Check size={14} /> : open ? lesson.number : <Lock size={12} />}
+                      {done ? <Check size={rem(14)} /> : open ? lesson.number : <Lock size={rem(12)} />}
                     </span>
                     <span>
                       <b>{lesson.title}</b>

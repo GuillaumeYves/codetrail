@@ -7,6 +7,7 @@ import useConsoleLogs from './useConsoleLogs.js'
 import { PLAYGROUND_TEMPLATE, decodeShare, encodeShare, loadPlayground, savePlayground } from '../core/playground.js'
 import { protectLoops } from '../core/loopGuard.js'
 import { useI18n } from '../i18n/index.js'
+import { rem } from './rem.js'
 
 const FILES = [
   { id: 'html', name: 'index.html', language: 'html' },
@@ -125,7 +126,7 @@ export default function Playground({ shared }) {
           </div>
           <div className="panel-actions">
             <button type="button" onClick={share} title={t('playground.shareTitle')} aria-label={shareLabel}>
-              {status === 'copied' ? <Check size={13} /> : <Link2 size={13} />}
+              {status === 'copied' ? <Check size={rem(13)} /> : <Link2 size={rem(13)} />}
               <span>{shareLabel}</span>
             </button>
             <button
@@ -134,7 +135,7 @@ export default function Playground({ shared }) {
               onClick={reset}
               title={t('playground.resetTitle')}
               aria-label={resetLabel}>
-              <RotateCcw size={13} />
+              <RotateCcw size={rem(13)} />
               <span>{resetLabel}</span>
             </button>
           </div>

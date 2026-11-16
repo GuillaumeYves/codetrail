@@ -20,16 +20,16 @@ import { tags as t } from '@lezer/highlight'
 const languages = { html, css, javascript }
 
 const theme = EditorView.theme({
-  '&': { height: '100%', color: '#e6edf3', backgroundColor: '#0d1117', fontSize: '14px' },
+  '&': { height: '100%', color: '#e6edf3', backgroundColor: '#0d1117', fontSize: '0.9375rem' },
   '.cm-scroller': { fontFamily: '"JetBrains Mono", Consolas, monospace', lineHeight: '1.65' },
-  '.cm-content': { padding: '12px 0', caretColor: '#58a6ff' },
+  '.cm-content': { padding: '0.75rem 0', caretColor: '#58a6ff' },
   '.cm-cursor, .cm-dropCursor': { borderLeftColor: '#58a6ff' },
   '&.cm-focused': { outline: 'none' },
   '&.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground, .cm-selectionBackground, .cm-content ::selection': {
     backgroundColor: '#264f78',
   },
   '.cm-gutters': { backgroundColor: '#0d1117', color: '#484f58', border: 'none' },
-  '.cm-lineNumbers .cm-gutterElement': { padding: '0 12px 0 16px' },
+  '.cm-lineNumbers .cm-gutterElement': { padding: '0 0.75rem 0 1rem' },
   '.cm-activeLine': { backgroundColor: 'rgba(22, 27, 34, .7)' },
   '.cm-activeLineGutter': { backgroundColor: 'transparent', color: '#8b949e' },
   '.cm-matchingBracket': { backgroundColor: 'rgba(63, 185, 80, .18)', outline: '1px solid rgba(63, 185, 80, .4)' },

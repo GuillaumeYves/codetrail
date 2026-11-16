@@ -4,6 +4,7 @@ import CodeEditor from './CodeEditor.jsx'
 import Preview from './Preview.jsx'
 import Console from './Console.jsx'
 import useConsoleLogs from './useConsoleLogs.js'
+import { rem } from './rem.js'
 import { protectLoops } from '../core/loopGuard.js'
 import { codeSpans } from '../core/codeSpans.js'
 import { useI18n } from '../i18n/index.js'
@@ -82,7 +83,7 @@ function TaskBrief({ lesson, results }) {
         <ul className="requirement-list" aria-live="polite">
           {results.map((result, index) => (
             <li className={result.passed ? 'requirement-item passed' : 'requirement-item'} key={index}>
-              {result.passed ? <Check size={15} /> : <Circle size={13} />}
+              {result.passed ? <Check size={rem(15)} /> : <Circle size={rem(13)} />}
               <span>
                 <span className="sr-only">{t(result.passed ? 'lesson.passed' : 'lesson.pending')} </span>
                 {result.label}
@@ -104,7 +105,7 @@ function TaskBrief({ lesson, results }) {
           )}
           {shown < hints.length && (
             <button className="hint-button" type="button" onClick={() => setShown((value) => value + 1)}>
-              <Lightbulb size={17} />
+              <Lightbulb size={rem(17)} />
               {shown ? t('lesson.nextHint', { current: shown + 1, total: hints.length }) : t('lesson.showHint')}
             </button>
           )}
@@ -182,7 +183,7 @@ export default function LessonWorkspace({ lesson, savedCode, completed, trackNam
             {completed && lesson.solution && (
               <details className="solution-card">
                 <summary>
-                  <Eye size={15} /> {t('lesson.solution')}
+                  <Eye size={rem(15)} /> {t('lesson.solution')}
                 </summary>
                 <p>{t('lesson.solutionNote')}</p>
                 <pre><code>{lesson.solution.trim()}</code></pre>
@@ -199,7 +200,7 @@ export default function LessonWorkspace({ lesson, savedCode, completed, trackNam
               onClick={completed ? onNext : onComplete}
               title={t('lesson.shortcut')}>
               {t(completed ? 'lesson.next' : 'lesson.complete')}
-              <ArrowRight size={18} />
+              <ArrowRight size={rem(18)} />
               <kbd>Ctrl ↵</kbd>
             </button>
           ) : (
@@ -214,7 +215,7 @@ export default function LessonWorkspace({ lesson, savedCode, completed, trackNam
             <span className="status-dot" /> {fileName}
           </div>
           <button className="task-redo" type="button" onClick={onRedo} aria-label={t('lesson.redo')} title={t('lesson.redoTitle')}>
-            <RotateCcw size={12} />
+            <RotateCcw size={rem(12)} />
           </button>
         </div>
         <CodeEditor

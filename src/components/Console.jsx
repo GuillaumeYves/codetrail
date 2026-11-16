@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Eraser } from 'lucide-react'
 import { useI18n } from '../i18n/index.js'
+import { rem } from './rem.js'
 
 export default function Console({ logs, onClear, className = '' }) {
   const { t } = useI18n()
@@ -18,7 +19,7 @@ export default function Console({ logs, onClear, className = '' }) {
           {t('console.title')} {logs.length > 0 && <b>{logs.length}</b>}
         </span>
         <button type="button" onClick={onClear} aria-label={t('console.clear')} title={t('console.clear')}>
-          <Eraser size={13} />
+          <Eraser size={rem(13)} />
         </button>
       </div>
       <div className="console-list" ref={list} role="log">

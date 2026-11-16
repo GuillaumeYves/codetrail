@@ -5,6 +5,7 @@ import LessonSidebar from './components/LessonSidebar.jsx'
 import ConfirmDialog from './components/ConfirmDialog.jsx'
 import Faq from './components/Faq.jsx'
 import LanguageSelect from './components/LanguageSelect.jsx'
+import { rem } from './components/rem.js'
 import { useI18n } from './i18n/index.js'
 import { loadStack, stackIds, stacks } from './stacks/registry.js'
 import {
@@ -194,7 +195,7 @@ export default function App() {
       <header className="topbar">
         {!inPlayground && (
           <button className="mobile-menu" type="button" onClick={() => setSidebarOpen(true)} aria-label={t('topbar.openLessons')}>
-            <Menu />
+            <Menu size={rem(20)} />
           </button>
         )}
         <div className="brand-cell">
@@ -210,7 +211,7 @@ export default function App() {
               onClick={() => setSidebarOpen((value) => !value)}
               aria-label={sidebarLabel}
               title={sidebarLabel}>
-              {sidebarOpen ? <PanelLeftClose size={18} /> : <PanelLeftOpen size={18} />}
+              {sidebarOpen ? <PanelLeftClose size={rem(18)} /> : <PanelLeftOpen size={rem(18)} />}
             </button>
           )}
         </div>
@@ -246,7 +247,7 @@ export default function App() {
             type="button"
             onClick={() => navigate(inPlayground ? '' : '#/playground')}
             title={t(inPlayground ? 'topbar.coursesTitle' : 'topbar.playgroundTitle')}>
-            {inPlayground ? <BookOpen size={16} /> : <FlaskConical size={16} />}
+            {inPlayground ? <BookOpen size={rem(16)} /> : <FlaskConical size={rem(16)} />}
             <span>{t(inPlayground ? 'topbar.courses' : 'topbar.playground')}</span>
           </button>
           {!inPlayground && (
@@ -256,7 +257,7 @@ export default function App() {
               onClick={() => requestReset('all')}
               aria-label={t('topbar.resetAll')}
               title={t('topbar.resetAllTitle')}>
-              <RotateCcw size={16} />
+              <RotateCcw size={rem(16)} />
             </button>
           )}
         </div>

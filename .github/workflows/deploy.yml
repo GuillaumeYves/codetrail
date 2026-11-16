@@ -1,4 +1,4 @@
-name: Deploy CodeTrail
+name: Build and deploy
 
 on:
   push:
@@ -10,12 +10,18 @@ permissions:
   contents: read
 
 concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # Only cancel superseded pull request runs, never a deploy in progress.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      deploy: ${{ steps.pages.outputs.enabled }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -35,15 +41,27 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
+      # Deploys only when Pages uses GitHub Actions, so an unconfigured repo still passes.
+      - name: Check GitHub Pages
+        id: pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type 2>/dev/null)" = "workflow" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice title=Deploy skipped::Set Settings > Pages > Source to GitHub Actions to publish the site."
+          fi
       - name: Upload Pages artifact
-        if: github.event_name != 'pull_request'
+        if: steps.pages.outputs.enabled == 'true'
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
   deploy:
-    if: github.event_name != 'pull_request'
     needs: build
+    if: needs.build.outputs.deploy == 'true'
     runs-on: ubuntu-latest
     permissions:
       pages: write

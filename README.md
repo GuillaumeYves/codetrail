@@ -1,83 +1,91 @@
 # CodeTrail
 
-CodeTrail is a browser practice app for learning web fundamentals by writing real code against live checks.
+Learn HTML and CSS by writing real code. Every lesson checks your work as you type and shows the result in a live preview, so you always know what to fix next.
 
-- **HTML Essentials**: 50 lessons on semantic structure, forms, media, accessibility, and metadata.
-- **CSS Essentials**: 40 lessons on selectors, the box model, flexbox, grid, responsive design, and motion.
-- **Playground**: a free HTML, CSS, and JavaScript sandbox with a console and shareable links.
+**[Start learning at guillaumeyves.github.io/codetrail](https://guillaumeyves.github.io/codetrail/)**
 
-Everything runs in the browser. There is no backend and no account; progress lives in local storage.
+No account, no install, no ads. It runs entirely in your browser.
 
-## How learning works
+![A CodeTrail lesson with the task, the editor, and the live preview](docs/lesson.png)
 
-1. Each lesson gives one focused task and a list of requirements.
-2. Requirements are checked as you type. HTML checks parse the document structure; CSS checks parse your rules and confirm they actually change the rendered preview.
-3. When every requirement passes, complete the challenge (or press `Ctrl+Enter` / `Cmd+Enter`).
-4. After completing, compare your code with a reference solution, then move on.
+## What's inside
 
-Lessons unlock in order, from fundamentals to a capstone. Completed lessons stay open for review.
+| | |
+| --- | --- |
+| **HTML course** | 50 lessons, from your first paragraph to an accessible page with landmarks, forms, tables, media, and metadata. |
+| **CSS course** | 40 lessons on selectors, typography, the box model, flexbox, grid, states, custom properties, responsive layouts, and motion. |
+| **Playground** | A free HTML, CSS, and JavaScript sandbox with a console. Try an idea, then share it with a link. |
 
-## Run locally
+Each course goes through four stages: Fundamental, Basic, Intermediate, and Advanced. It ends with a capstone that brings everything together.
 
-Requires Node `^20.19.0` or `>=22.12.0` (see `.nvmrc`).
+## How a lesson works
+
+1. **Read the task.** Each lesson asks for one focused thing and lists exactly what your code must do.
+2. **Write the code.** Requirements tick off as you type. HTML checks read the structure of your document. CSS checks confirm your rules really change the page, not just that the text looks right.
+3. **Watch the preview.** It updates live as you type. CSS changes apply instantly without reloading the page.
+4. **Compare and move on.** Once every requirement passes, complete the challenge. A reference solution then appears so you can compare approaches. Yours can differ and still be right.
+
+Every lesson also points out a common mistake and a good habit to build, so you learn the clean way to write it from the start.
+
+Lessons unlock in order. Finished lessons stay open, so you can revisit them anytime.
+
+## The playground
+
+![The playground with the editor, the live preview, and the console](docs/playground.png)
+
+- Three files: `index.html`, `styles.css`, and `script.js`.
+- `console.log` output and errors show up in the built-in console.
+- **Share** copies a link that contains your code. Anyone who opens it sees exactly what you wrote.
+- Your work is saved automatically.
+
+## Your code stays yours
+
+- Nothing you write is sent to a server. There is no backend.
+- Progress and saved code live in your browser's local storage. Clearing site data, or switching to another browser or device, starts fresh.
+- The preview runs in a sandboxed frame, cut off from the rest of the page.
+- A shared playground link carries the code inside the link itself.
+
+## Keyboard shortcuts
+
+| Shortcut | Action |
+| --- | --- |
+| `Ctrl` + `Enter` (`Cmd` + `Enter` on Mac) | Complete the challenge, or open the next one |
+| `Tab` | Indent in the editor |
+| `Esc`, then `Tab` | Leave the editor with the keyboard |
+| `Esc` | Close menus and dialogs |
+
+## Run it on your machine
+
+You need [Node.js](https://nodejs.org/) 20.19+ or 22.12+.
 
 ```bash
+git clone https://github.com/GuillaumeYves/codetrail.git
+cd codetrail
 npm install
 npm run dev
 ```
 
-## Quality checks
+`npm run check` runs the linter, the test suite, and a production build.
 
-```bash
-npm run check   # lint, tests, production build
-```
+## Contributing
 
-Lesson data (`src/stacks/*/data.json`) is generated from the lesson sources automatically before `dev`, `test`, and `build`. Run `npm run generate:stacks` to regenerate it by hand.
+Ideas, bug reports, and fixes are welcome. Open an issue to discuss a change before starting on anything large.
 
-## Project structure
+### Translating CodeTrail
 
-```text
-src/
-  App.jsx                  # Shell: routing, course state, top bar
-  components/
-    CodeEditor.jsx         # CodeMirror 6 editor
-    Preview.jsx            # Sandboxed live preview frame
-    LessonWorkspace.jsx    # Task, checks, editor, and preview for one lesson
-    Playground.jsx         # Free sandbox with console and share links
-    LessonSidebar.jsx, StackPicker.jsx, ConfirmDialog.jsx, Faq.jsx
-  core/
-    progress.js            # Pure progress and storage helpers
-    preview.js             # Builds the preview document
-    playground.js          # Playground storage and share link encoding
-  stacks/
-    registry.js            # Loads and caches course data at runtime
-    sourceRegistry.js      # Build-time lesson sources
-    html/                  # meta, lessons, factory, check runtime, preview styles
-    css/                   # meta, lessons, factory, check runtime
-scripts/
-  generateStackJson.mjs    # Serializes lesson sources to data.json
-tests/                     # node:test suites
-```
+All text lives in JSON files, so you can translate CodeTrail without touching any code.
 
-### Preview
+1. Copy `src/i18n/locales/en.json` to a file named after your language code, such as `fr.json`. This covers the interface.
+2. Copy `src/stacks/html/locales/en.json` and `src/stacks/css/locales/en.json` the same way. These cover the lessons.
+3. Translate the values only. Keep the keys and any `{placeholders}` as they are.
+4. Run `npm test`. It flags unknown keys and placeholders that don't match.
 
-The preview is an `iframe` with `srcdoc` and `sandbox="allow-scripts allow-forms allow-modals"`. It has an opaque origin, so learner code cannot read the app's storage. A small runtime inside the frame:
+Partial translations are fine. Anything you haven't translated yet falls back to English. Once a second language exists, a language menu appears in the top bar. Visitors whose browser prefers that language get it automatically.
 
-- swaps CSS in place without reloading, so the page keeps its scroll position,
-- restores scroll after markup changes rebuild the document,
-- forwards `console` output and uncaught errors to the playground console,
-- blocks navigation away from the preview and real form submissions.
+### Writing lessons
 
-### Adding a course
+Lessons are defined in `src/stacks/<course>/lessons.js`. Each one has a task, its checks, a starter file, and a reference solution. The tests make sure every reference solution passes its own checks. The English text in `locales/en.json` is generated from these files, so edit the lessons rather than the JSON.
 
-Create `src/stacks/<id>/` with `meta.js`, `lessons.js`, `source.js`, and a `runtime.js` that exports `hydrateLessons`. Register it in `registry.js` and `sourceRegistry.js`. Every check must expose a serializable descriptor so it survives the JSON build step. The tests verify that each canonical solution passes and each starter fails.
+## Built with
 
-## Deploying to GitHub Pages
-
-The workflow in `.github/workflows/deploy.yml` lints, tests, and builds every push and pull request, and deploys `main` to GitHub Pages.
-
-1. Push the repository to GitHub.
-2. Open **Settings > Pages** and set **Source** to **GitHub Actions**.
-3. Push to `main`, or run the workflow from the **Actions** tab.
-
-The build uses a relative base path and hash routes (`#/playground`), so it works from a project subpath with no server configuration.
+[React](https://react.dev/), [Vite](https://vite.dev/), and [CodeMirror](https://codemirror.net/).

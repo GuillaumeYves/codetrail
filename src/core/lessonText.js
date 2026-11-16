@@ -1,6 +1,10 @@
 // Lesson text lives in locales/<lang>.json, keyed by lesson id. data.json only holds structure.
 import { format } from '../i18n/format.js'
 
+// List fields merge item by item, so one missing hint or label falls back on its own.
+const LIST_FIELDS = ['checks', 'hints']
+const mergeList = (english = [], translated = []) => english.map((item, index) => translated[index] || item)
+
 // Overlays a translation on the English text field by field, so partial translations work.
 export function mergeLessonText(english, translation) {
   if (!translation) return english
@@ -8,10 +12,9 @@ export function mergeLessonText(english, translation) {
   const lessons = {}
   for (const [id, text] of Object.entries(english.lessons)) {
     const translated = translation.lessons?.[id] ?? {}
-    lessons[id] = {
-      ...text,
-      ...translated,
-      checks: text.checks.map((label, index) => translated.checks?.[index] || label),
+    lessons[id] = { ...text, ...translated }
+    for (const field of LIST_FIELDS) {
+      if (text[field]) lessons[id][field] = mergeList(text[field], translated[field])
     }
   }
   return { shared: { ...english.shared, ...translation.shared }, lessons }

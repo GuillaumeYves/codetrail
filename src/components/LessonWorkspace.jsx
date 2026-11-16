@@ -2,28 +2,71 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowRight, Check, Circle, Eye, Lightbulb, RotateCcw } from 'lucide-react'
 import CodeEditor from './CodeEditor.jsx'
 import Preview from './Preview.jsx'
+import Console from './Console.jsx'
+import useConsoleLogs from './useConsoleLogs.js'
+import { protectLoops } from '../core/loopGuard.js'
+import { codeSpans } from '../core/codeSpans.js'
 import { useI18n } from '../i18n/index.js'
 import htmlBaseCss from '../stacks/html/preview.css?raw'
+import jsBaseCss from '../stacks/js/preview.css?raw'
 
 const SAVE_DELAY = 300
+const CHECK_DELAY = 350
+const EDITOR_LANGUAGES = { '/styles.css': 'css', '/script.js': 'javascript' }
 
 // Maps a lesson and the learner code to preview inputs.
-function previewInput(lesson, code) {
+function previewInput(lesson, code, script) {
   if (lesson.file === '/styles.css') {
     return { html: lesson.files['/index.html'], baseCss: lesson.files['/base.css'] ?? '', css: code }
   }
+  if (lesson.file === '/script.js') return { html: lesson.files['/index.html'], baseCss: jsBaseCss, js: script }
   return { html: code, baseCss: htmlBaseCss, css: '' }
+}
+
+// Sync checks read a deferred copy of the code. Async ones (JavaScript) run after a pause
+// and remember which code they checked, so completion never trusts stale results.
+function useCheckResults(lesson, code, loopMessage) {
+  const deferred = useDeferredValue(code)
+  const syncPassed = useMemo(
+    () => (lesson.evaluate ? null : lesson.checks.map((check) => check.test(deferred))),
+    [lesson, deferred],
+  )
+  const [report, setReport] = useState(null)
+
+  useEffect(() => {
+    if (!lesson.evaluate) return undefined
+    let active = true
+    const timer = setTimeout(() => {
+      lesson.evaluate(code, { loopMessage }).then((passed) => {
+        if (active) setReport({ lesson, code, passed })
+      })
+    }, CHECK_DELAY)
+    return () => {
+      active = false
+      clearTimeout(timer)
+    }
+  }, [lesson, code, loopMessage])
+
+  if (syncPassed) return { passed: syncPassed, current: true }
+  const fresh = report?.lesson === lesson
+  return { passed: fresh ? report.passed : lesson.checks.map(() => false), current: fresh && report.code === code }
+}
+
+function CodeText({ text }) {
+  return codeSpans(text).map((part, index) => (part.code ? <code key={index}>{part.text}</code> : part.text))
 }
 
 function TaskBrief({ lesson, results }) {
   const { t } = useI18n()
-  const [showHint, setShowHint] = useState(false)
-  const hint = useRef(null)
+  // Hints reveal one at a time, from a nudge to a near answer.
+  const [shown, setShown] = useState(0)
+  const latestHint = useRef(null)
+  const hints = lesson.hints ?? []
   const passed = results.filter((result) => result.passed).length
 
   useEffect(() => {
-    if (showHint) hint.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-  }, [showHint])
+    if (shown) latestHint.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+  }, [shown])
 
   return (
     <div className="objective-card">
@@ -48,13 +91,25 @@ function TaskBrief({ lesson, results }) {
           ))}
         </ul>
       </div>
-      <div className="task-section hint-section">
-        <button className="hint-button" type="button" aria-expanded={showHint} onClick={() => setShowHint((value) => !value)}>
-          <Lightbulb size={17} />
-          {t(showHint ? 'lesson.hideHint' : 'lesson.showHint')}
-        </button>
-        {showHint && <p className="hint-copy" ref={hint}>{lesson.hint}</p>}
-      </div>
+      {hints.length > 0 && (
+        <div className="task-section hint-section">
+          {shown > 0 && (
+            <ol className="hint-list" aria-label={t('lesson.hints')} aria-live="polite">
+              {hints.slice(0, shown).map((hint, index) => (
+                <li key={index} ref={index === shown - 1 ? latestHint : undefined}>
+                  <span><CodeText text={hint} /></span>
+                </li>
+              ))}
+            </ol>
+          )}
+          {shown < hints.length && (
+            <button className="hint-button" type="button" onClick={() => setShown((value) => value + 1)}>
+              <Lightbulb size={17} />
+              {shown ? t('lesson.nextHint', { current: shown + 1, total: hints.length }) : t('lesson.showHint')}
+            </button>
+          )}
+        </div>
+      )}
     </div>
   )
 }
@@ -62,13 +117,14 @@ function TaskBrief({ lesson, results }) {
 export default function LessonWorkspace({ lesson, savedCode, completed, trackName, onSave, onComplete, onNext, onRedo }) {
   const { t } = useI18n()
   const [code, setCode] = useState(savedCode ?? lesson.code)
-  // Checks run on a deferred copy so typing never waits on them.
-  const checkedCode = useDeferredValue(code)
-  const results = useMemo(
-    () => lesson.checks.map((check) => ({ label: check.label, passed: check.test(checkedCode) })),
-    [lesson, checkedCode],
-  )
-  const allPassed = results.every((result) => result.passed)
+  const loopMessage = t('editor.loopStopped')
+  const checked = useCheckResults(lesson, code, loopMessage)
+  const results = lesson.checks.map((check, index) => ({ label: check.label, passed: Boolean(checked.passed[index]) }))
+  const resultsPass = results.every((result) => result.passed)
+  const allPassed = checked.current && resultsPass
+  const isScript = lesson.file === '/script.js'
+  const script = useMemo(() => (isScript ? protectLoops(code, loopMessage) : ''), [isScript, code, loopMessage])
+  const { logs, addLog, clearLogs } = useConsoleLogs()
   const pendingSave = useRef(null)
 
   // Debounced save, flushed when the lesson unmounts.
@@ -147,7 +203,7 @@ export default function LessonWorkspace({ lesson, savedCode, completed, trackNam
               <kbd>Ctrl ↵</kbd>
             </button>
           ) : (
-            <p>{t('lesson.blocked')}</p>
+            <p>{t(resultsPass ? 'lesson.checking' : 'lesson.blocked')}</p>
           )}
         </div>
       </section>
@@ -163,20 +219,27 @@ export default function LessonWorkspace({ lesson, savedCode, completed, trackNam
         </div>
         <CodeEditor
           value={code}
-          language={lesson.file === '/styles.css' ? 'css' : 'html'}
+          language={EDITOR_LANGUAGES[lesson.file] ?? 'html'}
           label={t('common.editorLabel', { file: fileName })}
+          placeholder={t('editor.placeholder')}
           onChange={setCode}
         />
       </section>
 
-      <section className="preview-panel" aria-label={t('common.preview')}>
+      <section className={`preview-panel${lesson.consoleOnly ? ' console-only' : ''}`} aria-label={t('common.preview')}>
         <div className="panel-bar">
           <div className="panel-title">
             <span className="status-dot preview-dot" /> {previewTitle}
           </div>
           <span className="live-label">{t('common.live')}</span>
         </div>
-        <Preview {...previewInput(lesson, code)} title={previewTitle} />
+        <Preview
+          {...previewInput(lesson, code, script)}
+          title={previewTitle}
+          onLog={isScript ? addLog : undefined}
+          onReload={isScript ? clearLogs : undefined}
+        />
+        {isScript && <Console logs={logs} onClear={clearLogs} />}
       </section>
     </div>
   )

@@ -1,0 +1,1529 @@
+{
+  "id": "js",
+  "locales": [
+    "en"
+  ],
+  "lessons": [
+    {
+      "id": "js-console-log",
+      "number": "01",
+      "group": "fundamental",
+      "difficulty": 1,
+      "stageStep": 1,
+      "stageSize": 10,
+      "code": "",
+      "solution": "console.log('Hello, world!')\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "console.log"
+        },
+        {
+          "type": "js-log",
+          "text": "Hello, world!"
+        }
+      ]
+    },
+    {
+      "id": "js-const",
+      "number": "02",
+      "group": "fundamental",
+      "difficulty": 2,
+      "stageStep": 2,
+      "stageSize": 10,
+      "code": "",
+      "solution": "const name = 'Ada'\nconsole.log(name)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "declares": "name",
+          "kind": "const"
+        },
+        {
+          "type": "js-value",
+          "expression": "name",
+          "kind": "string",
+          "minLength": 1
+        },
+        {
+          "type": "js-log",
+          "expression": "name"
+        }
+      ]
+    },
+    {
+      "id": "js-let",
+      "number": "03",
+      "group": "fundamental",
+      "difficulty": 3,
+      "stageStep": 3,
+      "stageSize": 10,
+      "code": "",
+      "solution": "let score = 0\nscore += 10\nconsole.log(score)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "declares": "score",
+          "kind": "let"
+        },
+        {
+          "type": "js-syntax",
+          "node": "VariableDeclaration",
+          "text": "^let\\s+score\\s*=\\s*0\\b"
+        },
+        {
+          "type": "js-syntax",
+          "node": "AssignmentExpression",
+          "text": "^score\\s*(\\+=|=)"
+        },
+        {
+          "type": "js-log",
+          "text": "10"
+        }
+      ]
+    },
+    {
+      "id": "js-numbers",
+      "number": "04",
+      "group": "fundamental",
+      "difficulty": 4,
+      "stageStep": 4,
+      "stageSize": 10,
+      "code": "const price = 12\nconst quantity = 3\n",
+      "solution": "const price = 12\nconst quantity = 3\nconst total = price * quantity\nconsole.log(total)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "declares": "total",
+          "kind": "const"
+        },
+        {
+          "type": "js-syntax",
+          "node": "VariableDeclaration",
+          "text": "^const\\s+total\\s*=\\s*(price\\s*\\*\\s*quantity|quantity\\s*\\*\\s*price)\\b"
+        },
+        {
+          "type": "js-value",
+          "expression": "total",
+          "equals": 36
+        },
+        {
+          "type": "js-log",
+          "text": "36"
+        }
+      ]
+    },
+    {
+      "id": "js-template-literals",
+      "number": "05",
+      "group": "fundamental",
+      "difficulty": 5,
+      "stageStep": 5,
+      "stageSize": 10,
+      "code": "const name = 'Ada'\n",
+      "solution": "const name = 'Ada'\nconst greeting = `Hello, ${name}!`\nconsole.log(greeting)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "TemplateString",
+          "text": "\\$\\{\\s*name\\s*\\}"
+        },
+        {
+          "type": "js-value",
+          "expression": "greeting",
+          "equals": "Hello, Ada!"
+        },
+        {
+          "type": "js-log",
+          "text": "Hello, Ada!"
+        }
+      ]
+    },
+    {
+      "id": "js-string-methods",
+      "number": "06",
+      "group": "fundamental",
+      "difficulty": 6,
+      "stageStep": 6,
+      "stageSize": 10,
+      "code": "const city = '  paris  '\n",
+      "solution": "const city = '  paris  '\nconst clean = city.trim().toUpperCase()\nconsole.log(clean)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "trim"
+        },
+        {
+          "type": "js-syntax",
+          "calls": "toUpperCase"
+        },
+        {
+          "type": "js-value",
+          "expression": "clean",
+          "equals": "PARIS"
+        },
+        {
+          "type": "js-log",
+          "text": "PARIS"
+        }
+      ]
+    },
+    {
+      "id": "js-comparisons",
+      "number": "07",
+      "group": "fundamental",
+      "difficulty": 7,
+      "stageStep": 7,
+      "stageSize": 10,
+      "code": "const age = 20\n",
+      "solution": "const age = 20\nconst isAdult = age >= 18\nconst isTwenty = age === 20\nconsole.log(isAdult, isTwenty)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "CompareOp",
+          "text": "^>=$"
+        },
+        {
+          "type": "js-value",
+          "expression": "isAdult",
+          "equals": true
+        },
+        {
+          "type": "js-syntax",
+          "node": "CompareOp",
+          "text": "^===$"
+        },
+        {
+          "type": "js-value",
+          "expression": "isTwenty",
+          "equals": true
+        },
+        {
+          "type": "js-syntax",
+          "node": "CompareOp",
+          "text": "^==$",
+          "absent": true
+        }
+      ]
+    },
+    {
+      "id": "js-functions",
+      "number": "08",
+      "group": "fundamental",
+      "difficulty": 8,
+      "stageStep": 8,
+      "stageSize": 10,
+      "code": "",
+      "solution": "function greet(name) {\n  return `Hello, ${name}!`\n}\n\nconsole.log(greet('Ada'))\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "declares": "greet",
+          "kind": "function"
+        },
+        {
+          "type": "js-syntax",
+          "node": "ReturnStatement"
+        },
+        {
+          "type": "js-value",
+          "expression": "greet('Ada')",
+          "equals": "Hello, Ada!"
+        },
+        {
+          "type": "js-value",
+          "expression": "greet('Linus')",
+          "equals": "Hello, Linus!"
+        }
+      ]
+    },
+    {
+      "id": "js-if-else",
+      "number": "09",
+      "group": "fundamental",
+      "difficulty": 9,
+      "stageStep": 9,
+      "stageSize": 10,
+      "code": "",
+      "solution": "function getAdvice(temperature) {\n  if (temperature > 25) {\n    return 'Stay cool'\n  } else {\n    return 'Enjoy the sun'\n  }\n}\n\nconsole.log(getAdvice(30))\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "IfStatement"
+        },
+        {
+          "type": "js-value",
+          "expression": "getAdvice(30)",
+          "equals": "Stay cool"
+        },
+        {
+          "type": "js-value",
+          "expression": "getAdvice(18)",
+          "equals": "Enjoy the sun"
+        },
+        {
+          "type": "js-value",
+          "expression": "getAdvice(25)",
+          "equals": "Enjoy the sun"
+        }
+      ]
+    },
+    {
+      "id": "js-arrow-functions",
+      "number": "10",
+      "group": "fundamental",
+      "difficulty": 10,
+      "stageStep": 10,
+      "stageSize": 10,
+      "code": "",
+      "solution": "const double = (number) => number * 2\n\nconsole.log(double(4))\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "declares": "double",
+          "kind": "const"
+        },
+        {
+          "type": "js-syntax",
+          "node": "ArrowFunction"
+        },
+        {
+          "type": "js-value",
+          "expression": "double(4)",
+          "equals": 8
+        },
+        {
+          "type": "js-value",
+          "expression": "double(-3)",
+          "equals": -6
+        }
+      ]
+    },
+    {
+      "id": "js-arrays",
+      "number": "11",
+      "group": "basic",
+      "difficulty": 11,
+      "stageStep": 1,
+      "stageSize": 10,
+      "code": "",
+      "solution": "const fruits = ['apple', 'banana', 'cherry']\nconsole.log(fruits[0])\nconsole.log(fruits.length)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "declares": "fruits",
+          "kind": "const"
+        },
+        {
+          "type": "js-value",
+          "expression": "fruits",
+          "kind": "array",
+          "minLength": 3
+        },
+        {
+          "type": "js-log",
+          "expression": "fruits[0]"
+        },
+        {
+          "type": "js-log",
+          "expression": "fruits.length"
+        }
+      ]
+    },
+    {
+      "id": "js-array-push",
+      "number": "12",
+      "group": "basic",
+      "difficulty": 12,
+      "stageStep": 2,
+      "stageSize": 10,
+      "code": "const tasks = ['Read']\n",
+      "solution": "const tasks = ['Read']\ntasks.push('Practice')\nconsole.log(tasks.length)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "push"
+        },
+        {
+          "type": "js-value",
+          "expression": "tasks",
+          "equals": [
+            "Read",
+            "Practice"
+          ]
+        },
+        {
+          "type": "js-log",
+          "text": "2"
+        }
+      ]
+    },
+    {
+      "id": "js-for-loop",
+      "number": "13",
+      "group": "basic",
+      "difficulty": 13,
+      "stageStep": 3,
+      "stageSize": 10,
+      "code": "",
+      "solution": "for (let i = 1; i <= 5; i++) {\n  console.log(i)\n}\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "ForSpec"
+        },
+        {
+          "type": "js-log",
+          "lines": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js-for-of",
+      "number": "14",
+      "group": "basic",
+      "difficulty": 14,
+      "stageStep": 4,
+      "stageSize": 10,
+      "code": "const names = ['Ada', 'Grace', 'Linus']\n",
+      "solution": "const names = ['Ada', 'Grace', 'Linus']\nfor (const name of names) {\n  console.log(name)\n}\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "ForOfSpec"
+        },
+        {
+          "type": "js-log",
+          "lines": [
+            "Ada",
+            "Grace",
+            "Linus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js-while",
+      "number": "15",
+      "group": "basic",
+      "difficulty": 15,
+      "stageStep": 5,
+      "stageSize": 10,
+      "code": "let count = 3\n",
+      "solution": "let count = 3\nwhile (count > 0) {\n  console.log(count)\n  count--\n}\nconsole.log('Liftoff!')\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "WhileStatement"
+        },
+        {
+          "type": "js-log",
+          "lines": [
+            "3",
+            "2",
+            "1",
+            "Liftoff!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js-objects",
+      "number": "16",
+      "group": "basic",
+      "difficulty": 16,
+      "stageStep": 6,
+      "stageSize": 10,
+      "code": "",
+      "solution": "const book = {\n  title: 'Dune',\n  author: 'Frank Herbert',\n  pages: 412,\n}\n\nconsole.log(book.title)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-value",
+          "expression": "book.title",
+          "kind": "string",
+          "minLength": 1
+        },
+        {
+          "type": "js-value",
+          "expression": "book.author",
+          "kind": "string",
+          "minLength": 1
+        },
+        {
+          "type": "js-value",
+          "expression": "book.pages",
+          "kind": "number"
+        },
+        {
+          "type": "js-syntax",
+          "node": "MemberExpression",
+          "text": "^book\\.title$"
+        },
+        {
+          "type": "js-log",
+          "expression": "book.title"
+        }
+      ]
+    },
+    {
+      "id": "js-object-update",
+      "number": "17",
+      "group": "basic",
+      "difficulty": 17,
+      "stageStep": 7,
+      "stageSize": 10,
+      "code": "const user = { name: 'Ada', role: 'student' }\n",
+      "solution": "const user = { name: 'Ada', role: 'student' }\nuser.role = 'mentor'\nuser.active = true\n\nconsole.log(user)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "AssignmentExpression",
+          "text": "^user\\.role\\s*="
+        },
+        {
+          "type": "js-value",
+          "expression": "user.role",
+          "equals": "mentor"
+        },
+        {
+          "type": "js-value",
+          "expression": "user.active",
+          "equals": true
+        },
+        {
+          "type": "js-value",
+          "expression": "user.name",
+          "equals": "Ada"
+        }
+      ]
+    },
+    {
+      "id": "js-cart-total",
+      "number": "18",
+      "group": "basic",
+      "difficulty": 18,
+      "stageStep": 8,
+      "stageSize": 10,
+      "code": "const cart = [\n  { name: 'Pen', price: 2 },\n  { name: 'Book', price: 15 },\n  { name: 'Bag', price: 30 },\n]\n",
+      "solution": "const cart = [\n  { name: 'Pen', price: 2 },\n  { name: 'Book', price: 15 },\n  { name: 'Bag', price: 30 },\n]\n\nfunction totalPrice(items) {\n  let total = 0\n  for (const item of items) {\n    total += item.price\n  }\n  return total\n}\n\nconsole.log(totalPrice(cart))\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "ForStatement"
+        },
+        {
+          "type": "js-value",
+          "expression": "totalPrice(cart)",
+          "equals": 47
+        },
+        {
+          "type": "js-value",
+          "expression": "totalPrice([])",
+          "equals": 0
+        },
+        {
+          "type": "js-value",
+          "expression": "totalPrice([{ price: 5 }, { price: 7 }])",
+          "equals": 12
+        }
+      ]
+    },
+    {
+      "id": "js-logical-operators",
+      "number": "19",
+      "group": "basic",
+      "difficulty": 19,
+      "stageStep": 9,
+      "stageSize": 10,
+      "code": "",
+      "solution": "function canEnter(age, hasTicket) {\n  return age >= 18 && hasTicket\n}\n\nconsole.log(canEnter(20, true))\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "LogicOp",
+          "text": "^&&$"
+        },
+        {
+          "type": "js-value",
+          "expression": "canEnter(20, true)",
+          "equals": true
+        },
+        {
+          "type": "js-value",
+          "expression": "canEnter(20, false)",
+          "equals": false
+        },
+        {
+          "type": "js-value",
+          "expression": "canEnter(16, true)",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "js-default-params",
+      "number": "20",
+      "group": "basic",
+      "difficulty": 20,
+      "stageStep": 10,
+      "stageSize": 10,
+      "code": "",
+      "solution": "function formatPrice(amount, currency = 'EUR') {\n  return `${amount.toFixed(2)} ${currency}`\n}\n\nconsole.log(formatPrice(5))\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "ParamList",
+          "text": "currency\\s*=\\s*['\"`]EUR['\"`]"
+        },
+        {
+          "type": "js-value",
+          "expression": "formatPrice(5)",
+          "equals": "5.00 EUR"
+        },
+        {
+          "type": "js-value",
+          "expression": "formatPrice(3.5, 'USD')",
+          "equals": "3.50 USD"
+        }
+      ]
+    },
+    {
+      "id": "js-map",
+      "number": "21",
+      "group": "intermediate",
+      "difficulty": 21,
+      "stageStep": 1,
+      "stageSize": 10,
+      "code": "const numbers = [1, 2, 3, 4]\n",
+      "solution": "const numbers = [1, 2, 3, 4]\nconst doubled = numbers.map((number) => number * 2)\nconsole.log(doubled)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "map"
+        },
+        {
+          "type": "js-value",
+          "expression": "doubled",
+          "equals": [
+            2,
+            4,
+            6,
+            8
+          ]
+        },
+        {
+          "type": "js-value",
+          "expression": "numbers",
+          "equals": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js-filter",
+      "number": "22",
+      "group": "intermediate",
+      "difficulty": 22,
+      "stageStep": 2,
+      "stageSize": 10,
+      "code": "const scores = [72, 45, 90, 38, 51]\n",
+      "solution": "const scores = [72, 45, 90, 38, 51]\nconst passing = scores.filter((score) => score >= 50)\nconsole.log(passing)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "filter"
+        },
+        {
+          "type": "js-value",
+          "expression": "passing",
+          "equals": [
+            72,
+            90,
+            51
+          ]
+        },
+        {
+          "type": "js-value",
+          "expression": "scores",
+          "equals": [
+            72,
+            45,
+            90,
+            38,
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js-find-includes",
+      "number": "23",
+      "group": "intermediate",
+      "difficulty": 23,
+      "stageStep": 3,
+      "stageSize": 10,
+      "code": "const users = [\n  { name: 'Ada', role: 'editor' },\n  { name: 'Grace', role: 'admin' },\n  { name: 'Linus', role: 'viewer' },\n]\nconst roles = ['editor', 'admin', 'viewer']\n",
+      "solution": "const users = [\n  { name: 'Ada', role: 'editor' },\n  { name: 'Grace', role: 'admin' },\n  { name: 'Linus', role: 'viewer' },\n]\nconst roles = ['editor', 'admin', 'viewer']\n\nconst admin = users.find((user) => user.role === 'admin')\nconst hasGuest = roles.includes('guest')\nconsole.log(admin.name, hasGuest)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "find"
+        },
+        {
+          "type": "js-value",
+          "expression": "admin.name",
+          "equals": "Grace"
+        },
+        {
+          "type": "js-syntax",
+          "calls": "includes"
+        },
+        {
+          "type": "js-value",
+          "expression": "hasGuest",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "js-reduce",
+      "number": "24",
+      "group": "intermediate",
+      "difficulty": 24,
+      "stageStep": 4,
+      "stageSize": 10,
+      "code": "const prices = [4, 8, 15, 16]\n",
+      "solution": "const prices = [4, 8, 15, 16]\nconst total = prices.reduce((sum, price) => sum + price, 0)\nconsole.log(total)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "reduce"
+        },
+        {
+          "type": "js-syntax",
+          "node": "CallExpression",
+          "text": "reduce\\s*\\([\\s\\S]*,\\s*0\\s*\\)$"
+        },
+        {
+          "type": "js-value",
+          "expression": "total",
+          "equals": 43
+        }
+      ]
+    },
+    {
+      "id": "js-destructuring",
+      "number": "25",
+      "group": "intermediate",
+      "difficulty": 25,
+      "stageStep": 5,
+      "stageSize": 10,
+      "code": "const movie = { title: 'Arrival', year: 2016, director: 'Denis Villeneuve' }\nconst ranking = ['Ada', 'Grace', 'Linus']\n",
+      "solution": "const movie = { title: 'Arrival', year: 2016, director: 'Denis Villeneuve' }\nconst ranking = ['Ada', 'Grace', 'Linus']\n\nconst { title, year } = movie\nconst [first, second] = ranking\nconsole.log(title, year, first, second)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "ObjectPattern"
+        },
+        {
+          "type": "js-value",
+          "expression": "[title, year]",
+          "equals": [
+            "Arrival",
+            2016
+          ]
+        },
+        {
+          "type": "js-syntax",
+          "node": "ArrayPattern"
+        },
+        {
+          "type": "js-value",
+          "expression": "[first, second]",
+          "equals": [
+            "Ada",
+            "Grace"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js-spread",
+      "number": "26",
+      "group": "intermediate",
+      "difficulty": 26,
+      "stageStep": 6,
+      "stageSize": 10,
+      "code": "const frontend = ['html', 'css']\nconst backend = ['node', 'sql']\nconst settings = { theme: 'light', fontSize: 16 }\n",
+      "solution": "const frontend = ['html', 'css']\nconst backend = ['node', 'sql']\nconst settings = { theme: 'light', fontSize: 16 }\n\nconst allTags = [...frontend, ...backend]\nconst updated = { ...settings, theme: 'dark' }\nconsole.log(allTags, updated)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "Spread",
+          "min": 3
+        },
+        {
+          "type": "js-value",
+          "expression": "allTags",
+          "equals": [
+            "html",
+            "css",
+            "node",
+            "sql"
+          ]
+        },
+        {
+          "type": "js-value",
+          "expression": "updated",
+          "equals": {
+            "theme": "dark",
+            "fontSize": 16
+          }
+        },
+        {
+          "type": "js-value",
+          "expression": "settings",
+          "equals": {
+            "theme": "light",
+            "fontSize": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": "js-dom-select",
+      "number": "27",
+      "group": "intermediate",
+      "difficulty": 27,
+      "stageStep": 7,
+      "stageSize": 10,
+      "code": "",
+      "solution": "document.querySelector('#title').textContent = 'Hello, DOM!'\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>JavaScript practice</title>\n</head>\n<body>\n  <main class=\"card\">\n    <h1 id=\"title\">Welcome</h1>\n    <p class=\"subtitle\">This page reacts to your script.</p>\n  </main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "querySelector"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#title",
+          "text": "Hello, DOM!"
+        }
+      ]
+    },
+    {
+      "id": "js-dom-class",
+      "number": "28",
+      "group": "intermediate",
+      "difficulty": 28,
+      "stageStep": 8,
+      "stageSize": 10,
+      "code": "",
+      "solution": "document.querySelector('#lesson-card').classList.add('highlight')\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>JavaScript practice</title>\n</head>\n<body>\n  <article class=\"card\" id=\"lesson-card\">\n    <h2>Today's lesson</h2>\n    <p class=\"subtitle\">Classes switch styles on and off.</p>\n  </article>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "classList.add"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#lesson-card",
+          "hasClass": "highlight"
+        }
+      ]
+    },
+    {
+      "id": "js-dom-events",
+      "number": "29",
+      "group": "intermediate",
+      "difficulty": 29,
+      "stageStep": 9,
+      "stageSize": 10,
+      "code": "const button = document.querySelector('#add')\nconst output = document.querySelector('#count')\nlet count = 0\n",
+      "solution": "const button = document.querySelector('#add')\nconst output = document.querySelector('#count')\nlet count = 0\n\nbutton.addEventListener('click', () => {\n  count++\n  output.textContent = count\n})\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>JavaScript practice</title>\n</head>\n<body>\n  <main class=\"card\">\n    <p>Clicks: <output id=\"count\">0</output></p>\n    <button id=\"add\" type=\"button\">Add one</button>\n  </main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "addEventListener"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#count",
+          "text": "0"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#count",
+          "text": "1",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#add"
+            }
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#count",
+          "text": "2",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#add"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js-dom-create",
+      "number": "30",
+      "group": "intermediate",
+      "difficulty": 30,
+      "stageStep": 10,
+      "stageSize": 10,
+      "code": "const skills = ['HTML', 'CSS', 'JavaScript']\nconst list = document.querySelector('#skills')\n",
+      "solution": "const skills = ['HTML', 'CSS', 'JavaScript']\nconst list = document.querySelector('#skills')\n\nfor (const skill of skills) {\n  const item = document.createElement('li')\n  item.textContent = skill\n  list.append(item)\n}\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>JavaScript practice</title>\n</head>\n<body>\n  <main class=\"card\">\n    <h2>Skills</h2>\n    <ul id=\"skills\"></ul>\n  </main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "document.createElement"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#skills li",
+          "texts": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js-dom-input",
+      "number": "31",
+      "group": "advanced",
+      "difficulty": 31,
+      "stageStep": 1,
+      "stageSize": 10,
+      "code": "const field = document.querySelector('#name')\nconst greeting = document.querySelector('#greeting')\n",
+      "solution": "const field = document.querySelector('#name')\nconst greeting = document.querySelector('#greeting')\n\nfield.addEventListener('input', () => {\n  greeting.textContent = `Hello, ${field.value}!`\n})\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>JavaScript practice</title>\n</head>\n<body>\n  <main class=\"card\">\n    <label for=\"name\">Your name</label>\n    <input id=\"name\" type=\"text\" autocomplete=\"off\">\n    <p id=\"greeting\">Hello, stranger!</p>\n  </main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "CallExpression",
+          "text": "addEventListener\\s*\\(\\s*['\"`]input['\"`]"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#greeting",
+          "text": "Hello, Ada!",
+          "actions": [
+            {
+              "type": "input",
+              "selector": "#name",
+              "value": "Ada"
+            }
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#greeting",
+          "text": "Hello, Grace!",
+          "actions": [
+            {
+              "type": "input",
+              "selector": "#name",
+              "value": "Grace"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "js-dom-toggle",
+      "number": "32",
+      "group": "advanced",
+      "difficulty": 32,
+      "stageStep": 2,
+      "stageSize": 10,
+      "code": "const button = document.querySelector('#menu-button')\nconst menu = document.querySelector('#menu')\n",
+      "solution": "const button = document.querySelector('#menu-button')\nconst menu = document.querySelector('#menu')\n\nbutton.addEventListener('click', () => {\n  const isOpen = menu.classList.toggle('open')\n  button.setAttribute('aria-expanded', isOpen)\n})\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>JavaScript practice</title>\n</head>\n<body>\n  <main class=\"card\">\n    <button id=\"menu-button\" type=\"button\" aria-expanded=\"false\" aria-controls=\"menu\">Menu</button>\n    <ul id=\"menu\" class=\"menu\">\n      <li>Home</li>\n      <li>Lessons</li>\n      <li>About</li>\n    </ul>\n  </main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "classList.toggle"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#menu",
+          "lacksClass": "open"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#menu",
+          "hasClass": "open",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#menu-button"
+            }
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#menu-button",
+          "attrs": {
+            "aria-expanded": "true"
+          }
+        },
+        {
+          "type": "js-dom",
+          "selector": "#menu",
+          "lacksClass": "open",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#menu-button"
+            }
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#menu-button",
+          "attrs": {
+            "aria-expanded": "false"
+          }
+        }
+      ]
+    },
+    {
+      "id": "js-form-submit",
+      "number": "33",
+      "group": "advanced",
+      "difficulty": 33,
+      "stageStep": 3,
+      "stageSize": 10,
+      "code": "const form = document.querySelector('#task-form')\nconst input = document.querySelector('#task')\nconst list = document.querySelector('#tasks')\n",
+      "solution": "const form = document.querySelector('#task-form')\nconst input = document.querySelector('#task')\nconst list = document.querySelector('#tasks')\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault()\n  const item = document.createElement('li')\n  item.textContent = input.value\n  list.append(item)\n  input.value = ''\n})\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>JavaScript practice</title>\n</head>\n<body>\n  <main class=\"card\">\n    <form id=\"task-form\">\n      <label for=\"task\">New task</label>\n      <input id=\"task\" name=\"task\" type=\"text\" autocomplete=\"off\">\n      <button type=\"submit\">Add</button>\n    </form>\n    <ul id=\"tasks\"></ul>\n  </main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "checks": [
+        {
+          "type": "js-dom",
+          "selector": "#task-form",
+          "prevented": true,
+          "actions": [
+            {
+              "type": "input",
+              "selector": "#task",
+              "value": "Write tests"
+            },
+            {
+              "type": "submit",
+              "selector": "#task-form"
+            }
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#tasks li",
+          "texts": [
+            "Write tests"
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#task",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "js-classes",
+      "number": "34",
+      "group": "advanced",
+      "difficulty": 34,
+      "stageStep": 4,
+      "stageSize": 10,
+      "code": "",
+      "solution": "class Counter {\n  constructor() {\n    this.count = 0\n  }\n\n  increment() {\n    this.count += 1\n    return this.count\n  }\n}\n\nconst counter = new Counter()\nconsole.log(counter.increment())\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "declares": "Counter",
+          "kind": "class"
+        },
+        {
+          "type": "js-value",
+          "expression": "new Counter().count",
+          "equals": 0
+        },
+        {
+          "type": "js-value",
+          "expression": "(() => { const counter = new Counter(); return [counter.increment(), counter.increment()] })()",
+          "equals": [
+            1,
+            2
+          ]
+        },
+        {
+          "type": "js-value",
+          "expression": "(() => { new Counter().increment(); return new Counter().count })()",
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "id": "js-errors",
+      "number": "35",
+      "group": "advanced",
+      "difficulty": 35,
+      "stageStep": 5,
+      "stageSize": 10,
+      "code": "function parseAge(text) {\n  const age = Number(text)\n  return age\n}\n",
+      "solution": "function parseAge(text) {\n  const age = Number(text)\n  if (Number.isNaN(age)) {\n    throw new Error(`Not a number: ${text}`)\n  }\n  return age\n}\n\nfunction readAge(text) {\n  try {\n    return parseAge(text)\n  } catch {\n    return null\n  }\n}\n\nconsole.log(readAge('42'), readAge('abc'))\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-value",
+          "expression": "parseAge('42')",
+          "equals": 42
+        },
+        {
+          "type": "js-value",
+          "expression": "parseAge('abc')",
+          "throws": "Error"
+        },
+        {
+          "type": "js-syntax",
+          "node": "TryStatement"
+        },
+        {
+          "type": "js-value",
+          "expression": "readAge('7')",
+          "equals": 7
+        },
+        {
+          "type": "js-value",
+          "expression": "readAge('abc')",
+          "equals": null
+        }
+      ]
+    },
+    {
+      "id": "js-json",
+      "number": "36",
+      "group": "advanced",
+      "difficulty": 36,
+      "stageStep": 6,
+      "stageSize": 10,
+      "code": "const text = '{\"name\":\"Ada\",\"level\":3}'\nconst settings = { theme: 'dark', compact: true }\n",
+      "solution": "const text = '{\"name\":\"Ada\",\"level\":3}'\nconst settings = { theme: 'dark', compact: true }\n\nconst data = JSON.parse(text)\nconst output = JSON.stringify(settings)\nconsole.log(data.name, output)\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "calls": "JSON.parse"
+        },
+        {
+          "type": "js-value",
+          "expression": "[data.name, data.level]",
+          "equals": [
+            "Ada",
+            3
+          ]
+        },
+        {
+          "type": "js-syntax",
+          "calls": "JSON.stringify"
+        },
+        {
+          "type": "js-value",
+          "expression": "output",
+          "equals": "{\"theme\":\"dark\",\"compact\":true}"
+        }
+      ]
+    },
+    {
+      "id": "js-closures",
+      "number": "37",
+      "group": "advanced",
+      "difficulty": 37,
+      "stageStep": 7,
+      "stageSize": 10,
+      "code": "",
+      "solution": "function createCounter() {\n  let count = 0\n  return () => {\n    count += 1\n    return count\n  }\n}\n\nconst next = createCounter()\nconsole.log(next(), next())\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-value",
+          "expression": "typeof createCounter()",
+          "equals": "function"
+        },
+        {
+          "type": "js-value",
+          "expression": "(() => { const next = createCounter(); return [next(), next(), next()] })()",
+          "equals": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "type": "js-value",
+          "expression": "(() => { const first = createCounter(); first(); first(); return createCounter()() })()",
+          "equals": 1
+        }
+      ]
+    },
+    {
+      "id": "js-promises",
+      "number": "38",
+      "group": "advanced",
+      "difficulty": 38,
+      "stageStep": 8,
+      "stageSize": 10,
+      "code": "",
+      "solution": "function wait(ms) {\n  return new Promise((resolve) => {\n    setTimeout(() => resolve('done'), ms)\n  })\n}\n\nwait(500).then((result) => console.log(result))\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "consoleOnly": true,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "NewExpression",
+          "text": "^new\\s+Promise\\b"
+        },
+        {
+          "type": "js-syntax",
+          "calls": "setTimeout"
+        },
+        {
+          "type": "js-value",
+          "expression": "wait(10) instanceof Promise",
+          "equals": true
+        },
+        {
+          "type": "js-value",
+          "expression": "wait(10)",
+          "equals": "done"
+        }
+      ]
+    },
+    {
+      "id": "js-async-await",
+      "number": "39",
+      "group": "advanced",
+      "difficulty": 39,
+      "stageStep": 9,
+      "stageSize": 10,
+      "code": "function getScore() {\n  return new Promise((resolve) => setTimeout(() => resolve(42), 50))\n}\n",
+      "solution": "function getScore() {\n  return new Promise((resolve) => setTimeout(() => resolve(42), 50))\n}\n\nasync function showScore() {\n  const score = await getScore()\n  document.querySelector('#score').textContent = score\n  return score\n}\n\nshowScore()\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>JavaScript practice</title>\n</head>\n<body>\n  <main class=\"card\">\n    <h1>Your score</h1>\n    <p class=\"big\" id=\"score\">...</p>\n  </main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "wait": 150,
+      "checks": [
+        {
+          "type": "js-syntax",
+          "node": "FunctionDeclaration",
+          "text": "^async\\s+function\\s+showScore\\b"
+        },
+        {
+          "type": "js-syntax",
+          "node": "AwaitExpression"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#score",
+          "text": "42"
+        },
+        {
+          "type": "js-value",
+          "expression": "showScore()",
+          "equals": 42
+        }
+      ]
+    },
+    {
+      "id": "js-capstone",
+      "number": "40",
+      "group": "advanced",
+      "difficulty": 40,
+      "stageStep": 10,
+      "stageSize": 10,
+      "code": "const form = document.querySelector('#todo-form')\nconst input = document.querySelector('#todo')\nconst list = document.querySelector('#todos')\nconst summary = document.querySelector('#summary')\n",
+      "solution": "const form = document.querySelector('#todo-form')\nconst input = document.querySelector('#todo')\nconst list = document.querySelector('#todos')\nconst summary = document.querySelector('#summary')\n\nfunction updateSummary() {\n  const count = list.children.length\n  summary.textContent = count === 1 ? '1 task' : `${count} tasks`\n}\n\nform.addEventListener('submit', (event) => {\n  event.preventDefault()\n  const text = input.value.trim()\n  if (!text) return\n\n  const item = document.createElement('li')\n  item.textContent = text\n  item.addEventListener('click', () => item.classList.toggle('done'))\n  list.append(item)\n  input.value = ''\n  updateSummary()\n})\n",
+      "file": "/script.js",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>JavaScript practice</title>\n</head>\n<body>\n  <main class=\"card\">\n    <h1>Today</h1>\n    <form id=\"todo-form\">\n      <label for=\"todo\">Task</label>\n      <input id=\"todo\" type=\"text\" autocomplete=\"off\">\n      <button type=\"submit\">Add</button>\n    </form>\n    <ul id=\"todos\"></ul>\n    <p id=\"summary\" class=\"subtitle\">0 tasks</p>\n  </main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+      },
+      "checks": [
+        {
+          "type": "js-dom",
+          "selector": "#todo-form",
+          "prevented": true,
+          "actions": [
+            {
+              "type": "input",
+              "selector": "#todo",
+              "value": "  Read the docs  "
+            },
+            {
+              "type": "submit",
+              "selector": "#todo-form"
+            }
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#todos li",
+          "texts": [
+            "Read the docs"
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#todo",
+          "value": ""
+        },
+        {
+          "type": "js-dom",
+          "selector": "#summary",
+          "text": "1 task"
+        },
+        {
+          "type": "js-dom",
+          "selector": "#todos li",
+          "count": 1,
+          "actions": [
+            {
+              "type": "input",
+              "selector": "#todo",
+              "value": "   "
+            },
+            {
+              "type": "submit",
+              "selector": "#todo-form"
+            }
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#summary",
+          "text": "2 tasks",
+          "actions": [
+            {
+              "type": "input",
+              "selector": "#todo",
+              "value": "Practice"
+            },
+            {
+              "type": "submit",
+              "selector": "#todo-form"
+            }
+          ]
+        },
+        {
+          "type": "js-dom",
+          "selector": "#todos li",
+          "hasClass": "done",
+          "actions": [
+            {
+              "type": "click",
+              "selector": "#todos li"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

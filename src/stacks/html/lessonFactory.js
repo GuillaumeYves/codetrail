@@ -65,7 +65,7 @@ export function createHtmlLessons(specs) {
     objective: spec.objective,
     concept: spec.concept,
     learningSteps: createLearningSteps(spec),
-    hint: spec.hint,
+    hints: spec.hints,
     notes: [
       { term: spec.term, text: spec.termNote },
       { term: 'index.html', text: spec.fileNote ?? 'This lesson runs from index.html. Write valid HTML here and the browser preview updates automatically.' },

@@ -7,6 +7,7 @@ import {
   highlightActiveLineGutter,
   keymap,
   lineNumbers,
+  placeholder as placeholderText,
 } from '@codemirror/view'
 import { defaultKeymap, history, historyKeymap, indentWithTab } from '@codemirror/commands'
 import { HighlightStyle, bracketMatching, indentOnInput, syntaxHighlighting } from '@codemirror/language'
@@ -66,9 +67,10 @@ const baseExtensions = [
 ]
 
 // Uncontrolled CodeMirror editor. Change its key to load a different document.
-export default function CodeEditor({ value, language = 'html', label, onChange }) {
+export default function CodeEditor({ value, language = 'html', label, placeholder, onChange }) {
   const host = useRef(null)
-  const initialValue = useRef(value)
+  // Latest text, so a rebuild (new language or label) keeps the learner's edits.
+  const doc = useRef(value)
   const latestOnChange = useRef(onChange)
 
   useEffect(() => {
@@ -79,19 +81,22 @@ export default function CodeEditor({ value, language = 'html', label, onChange }
     const view = new EditorView({
       parent: host.current,
       state: EditorState.create({
-        doc: initialValue.current,
+        doc: doc.current,
         extensions: [
           baseExtensions,
           languages[language](),
           EditorView.contentAttributes.of({ 'aria-label': label }),
+          placeholder ? placeholderText(placeholder) : [],
           EditorView.updateListener.of((update) => {
-            if (update.docChanged) latestOnChange.current?.(update.state.doc.toString())
+            if (!update.docChanged) return
+            doc.current = update.state.doc.toString()
+            latestOnChange.current?.(doc.current)
           }),
         ],
       }),
     })
     return () => view.destroy()
-  }, [language, label])
+  }, [language, label, placeholder])
 
   return <div className="code-editor" ref={host} />
 }

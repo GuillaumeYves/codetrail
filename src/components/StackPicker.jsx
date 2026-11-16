@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { Check, ChevronDown } from 'lucide-react'
 import cssIcon from 'devicon/icons/css3/css3-original.svg'
 import htmlIcon from 'devicon/icons/html5/html5-original.svg'
+import jsIcon from 'devicon/icons/javascript/javascript-original.svg'
 import { stackIds, stacks } from '../stacks/registry.js'
 import { useI18n } from '../i18n/index.js'
 
-const stackIcons = { html: htmlIcon, css: cssIcon }
+const stackIcons = { html: htmlIcon, css: cssIcon, js: jsIcon }
 
 // Stacks grouped by activity id (translated as activities.<id>) for the picker menu.
 const stackGroups = stackIds.reduce((groups, id) => {

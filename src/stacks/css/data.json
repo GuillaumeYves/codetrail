@@ -11,7 +11,7 @@
       "difficulty": 1,
       "stageStep": 1,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".hero-title {\n  color: #1d4ed8;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -37,7 +37,7 @@
       "difficulty": 2,
       "stageStep": 2,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".preview-card {\n  background-color: #f8fafc;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -63,7 +63,7 @@
       "difficulty": 3,
       "stageStep": 3,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".hero-title {\n  font-size: 3rem;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -89,7 +89,7 @@
       "difficulty": 4,
       "stageStep": 4,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".stat-value {\n  font-weight: 800;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -115,7 +115,7 @@
       "difficulty": 5,
       "stageStep": 5,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".intro-copy {\n  line-height: 1.7;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -141,7 +141,7 @@
       "difficulty": 6,
       "stageStep": 6,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".hero {\n  text-align: center;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -165,7 +165,7 @@
       "difficulty": 7,
       "stageStep": 7,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".badge {\n  text-transform: uppercase;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -183,39 +183,13 @@
       ]
     },
     {
-      "id": "css-descendant-selector",
+      "id": "css-grouped-selectors",
       "number": "08",
       "group": "fundamental",
       "difficulty": 8,
       "stageStep": 8,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": ".feature-list li {\n  color: #0f766e;\n}\n",
-      "file": "/styles.css",
-      "files": {
-        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ""
-      },
-      "checks": [
-        {
-          "type": "css-rule",
-          "selector": ".feature-list li",
-          "declarations": {
-            "color": {
-              "pattern": "^(#[0-9a-f]{3,8}|[a-z]+|rgb\\(|hsl\\()"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "css-grouped-selectors",
-      "number": "09",
-      "group": "fundamental",
-      "difficulty": 9,
-      "stageStep": 9,
-      "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".section-title,\n.card-title {\n  color: #334155;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -238,25 +212,25 @@
       ]
     },
     {
-      "id": "css-border-color",
-      "number": "10",
+      "id": "css-descendant-selector",
+      "number": "09",
       "group": "fundamental",
-      "difficulty": 10,
-      "stageStep": 10,
+      "difficulty": 9,
+      "stageStep": 9,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": ".featured-card {\n  border-color: #2563eb;\n}\n",
+      "code": "",
+      "solution": ".feature-list li {\n  color: #0f766e;\n}\n",
       "file": "/styles.css",
       "files": {
         "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ".featured-card {\n  border: 2px solid transparent;\n}\n"
+        "/base.css": ""
       },
       "checks": [
         {
           "type": "css-rule",
-          "selector": ".featured-card",
+          "selector": ".feature-list li",
           "declarations": {
-            "border-color": {
+            "color": {
               "pattern": "^(#[0-9a-f]{3,8}|[a-z]+|rgb\\(|hsl\\()"
             }
           }
@@ -265,12 +239,12 @@
     },
     {
       "id": "css-padding",
-      "number": "11",
-      "group": "basic",
-      "difficulty": 11,
-      "stageStep": 1,
+      "number": "10",
+      "group": "fundamental",
+      "difficulty": 10,
+      "stageStep": 10,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".preview-card {\n  padding: 1.25rem;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -291,12 +265,12 @@
     },
     {
       "id": "css-margin",
-      "number": "12",
+      "number": "11",
       "group": "basic",
-      "difficulty": 12,
-      "stageStep": 2,
+      "difficulty": 11,
+      "stageStep": 1,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".content-shell {\n  margin: 2rem auto;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -315,12 +289,12 @@
     },
     {
       "id": "css-border",
-      "number": "13",
+      "number": "12",
       "group": "basic",
-      "difficulty": 13,
-      "stageStep": 3,
+      "difficulty": 12,
+      "stageStep": 2,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".preview-card {\n  border: 1px solid #cbd5e1;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -340,13 +314,39 @@
       ]
     },
     {
+      "id": "css-border-color",
+      "number": "13",
+      "group": "basic",
+      "difficulty": 13,
+      "stageStep": 3,
+      "stageSize": 10,
+      "code": "",
+      "solution": ".featured-card {\n  border-color: #2563eb;\n}\n",
+      "file": "/styles.css",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
+        "/base.css": ".featured-card {\n  border: 2px solid transparent;\n}\n"
+      },
+      "checks": [
+        {
+          "type": "css-rule",
+          "selector": ".featured-card",
+          "declarations": {
+            "border-color": {
+              "pattern": "^(#[0-9a-f]{3,8}|[a-z]+|rgb\\(|hsl\\()"
+            }
+          }
+        }
+      ]
+    },
+    {
       "id": "css-radius",
       "number": "14",
       "group": "basic",
       "difficulty": 14,
       "stageStep": 4,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".preview-card {\n  border-radius: 0.75rem;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -372,7 +372,7 @@
       "difficulty": 15,
       "stageStep": 5,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".preview-card {\n  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);\n}\n",
       "file": "/styles.css",
       "files": {
@@ -392,118 +392,13 @@
       ]
     },
     {
-      "id": "css-display-flex",
+      "id": "css-max-width",
       "number": "16",
       "group": "basic",
       "difficulty": 16,
       "stageStep": 6,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": ".toolbar {\n  display: flex;\n}\n",
-      "file": "/styles.css",
-      "files": {
-        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ""
-      },
-      "checks": [
-        {
-          "type": "css-rule",
-          "selector": ".toolbar",
-          "declarations": {
-            "display": "flex"
-          }
-        }
-      ]
-    },
-    {
-      "id": "css-gap",
-      "number": "17",
-      "group": "basic",
-      "difficulty": 17,
-      "stageStep": 7,
-      "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": ".toolbar {\n  gap: 0.75rem;\n}\n",
-      "file": "/styles.css",
-      "files": {
-        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ".toolbar {\n  display: flex;\n}\n"
-      },
-      "checks": [
-        {
-          "type": "css-rule",
-          "selector": ".toolbar",
-          "declarations": {
-            "gap": {
-              "pattern": "^-?\\d*\\.?\\d+(px|rem|em|%|vh|vw)$"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "css-justify-content",
-      "number": "18",
-      "group": "basic",
-      "difficulty": 18,
-      "stageStep": 8,
-      "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": ".toolbar {\n  justify-content: space-between;\n}\n",
-      "file": "/styles.css",
-      "files": {
-        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ".toolbar {\n  display: flex;\n}\n"
-      },
-      "checks": [
-        {
-          "type": "css-rule",
-          "selector": ".toolbar",
-          "declarations": {
-            "justify-content": true
-          }
-        }
-      ]
-    },
-    {
-      "id": "css-nav-list",
-      "number": "19",
-      "group": "basic",
-      "difficulty": 19,
-      "stageStep": 9,
-      "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": ".nav-list {\n  list-style: none;\n  display: flex;\n}\n",
-      "file": "/styles.css",
-      "files": {
-        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ""
-      },
-      "checks": [
-        {
-          "type": "css-rule",
-          "selector": ".nav-list",
-          "declarations": {
-            "list-style": "none"
-          }
-        },
-        {
-          "type": "css-rule",
-          "selector": ".nav-list",
-          "declarations": {
-            "display": "flex"
-          }
-        }
-      ]
-    },
-    {
-      "id": "css-max-width",
-      "number": "20",
-      "group": "basic",
-      "difficulty": 20,
-      "stageStep": 10,
-      "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".content-shell {\n  max-width: 72rem;\n  margin: 2rem auto;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -532,13 +427,118 @@
       ]
     },
     {
+      "id": "css-display-flex",
+      "number": "17",
+      "group": "basic",
+      "difficulty": 17,
+      "stageStep": 7,
+      "stageSize": 10,
+      "code": "",
+      "solution": ".toolbar {\n  display: flex;\n}\n",
+      "file": "/styles.css",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
+        "/base.css": ""
+      },
+      "checks": [
+        {
+          "type": "css-rule",
+          "selector": ".toolbar",
+          "declarations": {
+            "display": "flex"
+          }
+        }
+      ]
+    },
+    {
+      "id": "css-gap",
+      "number": "18",
+      "group": "basic",
+      "difficulty": 18,
+      "stageStep": 8,
+      "stageSize": 10,
+      "code": "",
+      "solution": ".toolbar {\n  gap: 0.75rem;\n}\n",
+      "file": "/styles.css",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
+        "/base.css": ".toolbar {\n  display: flex;\n}\n"
+      },
+      "checks": [
+        {
+          "type": "css-rule",
+          "selector": ".toolbar",
+          "declarations": {
+            "gap": {
+              "pattern": "^-?\\d*\\.?\\d+(px|rem|em|%|vh|vw)$"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "css-justify-content",
+      "number": "19",
+      "group": "basic",
+      "difficulty": 19,
+      "stageStep": 9,
+      "stageSize": 10,
+      "code": "",
+      "solution": ".toolbar {\n  justify-content: space-between;\n}\n",
+      "file": "/styles.css",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
+        "/base.css": ".toolbar {\n  display: flex;\n}\n"
+      },
+      "checks": [
+        {
+          "type": "css-rule",
+          "selector": ".toolbar",
+          "declarations": {
+            "justify-content": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "css-nav-list",
+      "number": "20",
+      "group": "basic",
+      "difficulty": 20,
+      "stageStep": 10,
+      "stageSize": 10,
+      "code": "",
+      "solution": ".nav-list {\n  list-style: none;\n  display: flex;\n}\n",
+      "file": "/styles.css",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
+        "/base.css": ""
+      },
+      "checks": [
+        {
+          "type": "css-rule",
+          "selector": ".nav-list",
+          "declarations": {
+            "list-style": "none"
+          }
+        },
+        {
+          "type": "css-rule",
+          "selector": ".nav-list",
+          "declarations": {
+            "display": "flex"
+          }
+        }
+      ]
+    },
+    {
       "id": "css-card-grid",
       "number": "21",
       "group": "intermediate",
       "difficulty": 21,
       "stageStep": 1,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".card-grid {\n  display: grid;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -562,7 +562,7 @@
       "difficulty": 22,
       "stageStep": 2,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".card-grid {\n  grid-template-columns: repeat(3, 1fr);\n}\n",
       "file": "/styles.css",
       "files": {
@@ -588,7 +588,7 @@
       "difficulty": 23,
       "stageStep": 3,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".pricing-grid {\n  display: grid;\n  gap: 1rem;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -621,7 +621,7 @@
       "difficulty": 24,
       "stageStep": 4,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".pricing-card {\n  padding: 1rem;\n  border: 1px solid #cbd5e1;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -650,7 +650,7 @@
       "difficulty": 25,
       "stageStep": 5,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".cta-button {\n  display: inline-block;\n  text-decoration: none;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -681,7 +681,7 @@
       "difficulty": 26,
       "stageStep": 6,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".cta-button:hover {\n  background-color: #1d4ed8;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -707,7 +707,7 @@
       "difficulty": 27,
       "stageStep": 7,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".field:focus {\n  outline: 3px solid #2563eb;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -733,7 +733,7 @@
       "difficulty": 28,
       "stageStep": 8,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ":root {\n  --accent: #2563eb;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -785,7 +785,7 @@
       "difficulty": 30,
       "stageStep": 10,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".cta-button {\n  transition: background-color 180ms ease, transform 180ms ease;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -809,7 +809,7 @@
       "difficulty": 31,
       "stageStep": 1,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".timeline-item:nth-child(2) {\n  background-color: #dbeafe;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -829,51 +829,51 @@
       ]
     },
     {
-      "id": "css-media-card-grid",
+      "id": "css-table-stripes",
       "number": "32",
       "group": "advanced",
       "difficulty": 32,
       "stageStep": 2,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": "@media (max-width: 700px) {\n  .card-grid {\n    grid-template-columns: 1fr;\n  }\n}\n",
+      "code": "",
+      "solution": ".metrics-table tr:nth-child(even) {\n  background-color: #f1f5f9;\n}\n",
       "file": "/styles.css",
       "files": {
         "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ".card-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}\n"
+        "/base.css": ""
       },
       "checks": [
         {
-          "type": "css-media-rule",
-          "queryContains": "max-width",
-          "selector": ".card-grid",
+          "type": "css-rule",
+          "selector": ".metrics-table tr:nth-child(even)",
           "declarations": {
-            "grid-template-columns": "1fr"
+            "background-color": {
+              "pattern": "^(#[0-9a-f]{3,8}|[a-z]+|rgb\\(|hsl\\()"
+            }
           }
         }
       ]
     },
     {
-      "id": "css-media-nav",
+      "id": "css-pseudo-element",
       "number": "33",
       "group": "advanced",
       "difficulty": 33,
       "stageStep": 3,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": "@media (max-width: 700px) {\n  .nav-list {\n    flex-direction: column;\n  }\n}\n",
+      "code": "",
+      "solution": ".quote::before {\n  content: \"“\";\n}\n",
       "file": "/styles.css",
       "files": {
         "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ".nav-list {\n  display: flex;\n}\n"
+        "/base.css": ""
       },
       "checks": [
         {
-          "type": "css-media-rule",
-          "queryContains": "max-width",
-          "selector": ".nav-list",
+          "type": "css-rule",
+          "selector": ".quote::before",
           "declarations": {
-            "flex-direction": "column"
+            "content": true
           }
         }
       ]
@@ -885,7 +885,7 @@
       "difficulty": 34,
       "stageStep": 4,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".site-header {\n  position: sticky;\n  top: 0;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -915,7 +915,7 @@
       "difficulty": 35,
       "stageStep": 5,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ".featured-card {\n  position: relative;\n}\n\n.badge {\n  position: absolute;\n  top: 1rem;\n  right: 1rem;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -940,37 +940,63 @@
       ]
     },
     {
-      "id": "css-pseudo-element",
+      "id": "css-media-card-grid",
       "number": "36",
       "group": "advanced",
       "difficulty": 36,
       "stageStep": 6,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": ".quote::before {\n  content: \"“\";\n}\n",
+      "code": "",
+      "solution": "@media (max-width: 700px) {\n  .card-grid {\n    grid-template-columns: 1fr;\n  }\n}\n",
       "file": "/styles.css",
       "files": {
         "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ""
+        "/base.css": ".card-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}\n"
       },
       "checks": [
         {
-          "type": "css-rule",
-          "selector": ".quote::before",
+          "type": "css-media-rule",
+          "queryContains": "max-width",
+          "selector": ".card-grid",
           "declarations": {
-            "content": true
+            "grid-template-columns": "1fr"
+          }
+        }
+      ]
+    },
+    {
+      "id": "css-media-nav",
+      "number": "37",
+      "group": "advanced",
+      "difficulty": 37,
+      "stageStep": 7,
+      "stageSize": 10,
+      "code": "",
+      "solution": "@media (max-width: 700px) {\n  .nav-list {\n    flex-direction: column;\n  }\n}\n",
+      "file": "/styles.css",
+      "files": {
+        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
+        "/base.css": ".nav-list {\n  display: flex;\n}\n"
+      },
+      "checks": [
+        {
+          "type": "css-media-rule",
+          "queryContains": "max-width",
+          "selector": ".nav-list",
+          "declarations": {
+            "flex-direction": "column"
           }
         }
       ]
     },
     {
       "id": "css-keyframes",
-      "number": "37",
+      "number": "38",
       "group": "advanced",
-      "difficulty": 37,
-      "stageStep": 7,
+      "difficulty": 38,
+      "stageStep": 8,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": "@keyframes pulse {\n  from { opacity: 0.65; }\n  to { opacity: 1; }\n}\n\n.badge {\n  animation: pulse 1s ease-in-out infinite alternate;\n}\n",
       "file": "/styles.css",
       "files": {
@@ -996,10 +1022,10 @@
     },
     {
       "id": "css-reduced-motion",
-      "number": "38",
+      "number": "39",
       "group": "advanced",
-      "difficulty": 38,
-      "stageStep": 8,
+      "difficulty": 39,
+      "stageStep": 9,
       "stageSize": 10,
       "code": ".badge {\n  animation: pulse 1s infinite;\n}\n",
       "solution": ".badge {\n  animation: pulse 1s infinite;\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .badge {\n    animation: none;\n  }\n}\n",
@@ -1020,39 +1046,13 @@
       ]
     },
     {
-      "id": "css-table-stripes",
-      "number": "39",
-      "group": "advanced",
-      "difficulty": 39,
-      "stageStep": 9,
-      "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
-      "solution": ".metrics-table tr:nth-child(even) {\n  background-color: #f1f5f9;\n}\n",
-      "file": "/styles.css",
-      "files": {
-        "/index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Preview Lab</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <nav class=\"nav\">\n      <a class=\"brand-link\" href=\"#\">CodeTrail Studio</a>\n      <ul class=\"nav-list\">\n        <li><a href=\"#\">Work</a></li>\n        <li><a href=\"#\">Pricing</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n    </nav>\n  </header>\n\n  <main class=\"lab-page\">\n    <section class=\"hero\">\n      <p class=\"eyebrow-label\">CSS preview target</p>\n      <h1 class=\"hero-title\">Design the interface with CSS</h1>\n      <p class=\"intro-copy\">Every lesson edits styles.css while this HTML stays fixed, so the preview makes each CSS change visible.</p>\n      <a class=\"cta-button\" href=\"#\">Launch style pass</a>\n      <span class=\"badge\">New</span>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Cards and layout</h2>\n      <div class=\"card-grid\">\n        <article class=\"preview-card featured-card\">\n          <span class=\"card-kicker\">Featured</span>\n          <h3 class=\"card-title\">Visual system</h3>\n          <p>Use selectors, spacing, and color to make this card read as a polished component.</p>\n          <span class=\"stat-value\">42%</span>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Workflow</span>\n          <h3 class=\"card-title\">Fast iteration</h3>\n          <p>Changes in styles.css update this preview immediately.</p>\n        </article>\n        <article class=\"preview-card\">\n          <span class=\"card-kicker\">Review</span>\n          <h3 class=\"card-title\">Clear outcomes</h3>\n          <p>Requirement checks focus on CSS behavior, not copied formatting.</p>\n        </article>\n      </div>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Lists, actions, and forms</h2>\n      <ul class=\"feature-list\">\n        <li>Selector targeting</li>\n        <li>Box model practice</li>\n        <li>Responsive layout</li>\n      </ul>\n      <div class=\"toolbar\">\n        <button class=\"ghost-button\" type=\"button\">Filter</button>\n        <button class=\"ghost-button\" type=\"button\">Sort</button>\n        <a class=\"cta-button secondary-action\" href=\"#\">Save view</a>\n      </div>\n      <form class=\"signup-form\">\n        <label>Name <input class=\"field\" name=\"name\" placeholder=\"Ada Lovelace\"></label>\n        <label>Email <input class=\"field\" type=\"email\" name=\"email\" placeholder=\"ada@example.com\"></label>\n      </form>\n    </section>\n\n    <section class=\"content-shell\">\n      <h2 class=\"section-title\">Data and status</h2>\n      <table class=\"metrics-table\">\n        <tr><th>Metric</th><th>Status</th></tr>\n        <tr><td>Contrast</td><td>Ready</td></tr>\n        <tr><td>Spacing</td><td>Review</td></tr>\n      </table>\n      <blockquote class=\"quote\">Good CSS makes state, hierarchy, and layout obvious.</blockquote>\n      <div class=\"timeline\">\n        <article class=\"timeline-item\">Plan</article>\n        <article class=\"timeline-item\">Style</article>\n        <article class=\"timeline-item\">Refine</article>\n      </div>\n    </section>\n\n    <section class=\"pricing-grid\">\n      <article class=\"pricing-card\">\n        <h2>Starter</h2>\n        <p>For the first styling pass.</p>\n      </article>\n      <article class=\"pricing-card\">\n        <h2>Studio</h2>\n        <p>For a complete visual system.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-        "/base.css": ""
-      },
-      "checks": [
-        {
-          "type": "css-rule",
-          "selector": ".metrics-table tr:nth-child(even)",
-          "declarations": {
-            "background-color": {
-              "pattern": "^(#[0-9a-f]{3,8}|[a-z]+|rgb\\(|hsl\\()"
-            }
-          }
-        }
-      ]
-    },
-    {
       "id": "css-capstone",
       "number": "40",
       "group": "advanced",
       "difficulty": 40,
       "stageStep": 10,
       "stageSize": 10,
-      "code": "/* Write the CSS for this challenge below. */\n",
+      "code": "",
       "solution": ":root {\n  --accent: #2563eb;\n}\n\n.lab-page {\n  max-width: 72rem;\n  margin: 0 auto;\n}\n\n.card-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 1rem;\n}\n\n.preview-card {\n  padding: 1rem;\n  border: 1px solid #cbd5e1;\n  border-radius: 0.75rem;\n}\n\n.cta-button:hover {\n  background-color: var(--accent);\n}\n\n@media (max-width: 700px) {\n  .card-grid {\n    grid-template-columns: 1fr;\n  }\n}\n",
       "file": "/styles.css",
       "files": {

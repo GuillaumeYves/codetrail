@@ -112,7 +112,8 @@ const cardGridColumnsBase = '.card-grid {\n  display: grid;\n  grid-template-col
 const navFlexBase = '.nav-list {\n  display: flex;\n}\n'
 const ctaHoverBase = '.cta-button:hover {\n  background-color: #1d4ed8;\n}\n'
 
-const starter = '/* Write the CSS for this challenge below. */\n'
+// Starts empty; the editor shows a translated placeholder instead.
+const starter = ''
 const rule = (selector, declarations) => ({ type: 'css-rule', selector, declarations })
 const ruleWithSelectors = (selectors, declarations) => ({ type: 'css-rule', selectors, declarations })
 const mediaRule = (queryContains, selector, declarations) => ({
@@ -136,7 +137,11 @@ const specs = [
     topic: 'Selectors',
     objective: 'Target .hero-title and give it a visible text color.',
     concept: 'A class selector styles every element with that class. Start by changing one obvious preview target.',
-    hint: 'Write a .hero-title rule and add a color declaration.',
+    hints: [
+      'A CSS rule has two parts: a selector that picks elements, and declarations that style them.',
+      'Select the title with .hero-title and set its color property.',
+      '`.hero-title { color: #1d4ed8; }`',
+    ],
     code: starter,
     solution: '.hero-title {\n  color: #1d4ed8;\n}\n',
     checks: [
@@ -149,7 +154,11 @@ const specs = [
     topic: 'Colors',
     objective: 'Target .preview-card and set a background-color so the cards become distinct blocks.',
     concept: 'background-color changes the painted surface behind an element content area and padding.',
-    hint: 'Use background-color on .preview-card.',
+    hints: [
+      'Each card can get a surface color so it stands out from the page.',
+      'Target .preview-card and set background-color.',
+      '`.preview-card { background-color: #f8fafc; }`',
+    ],
     code: starter,
     solution: '.preview-card {\n  background-color: #f8fafc;\n}\n',
     checks: [
@@ -162,7 +171,11 @@ const specs = [
     topic: 'Typography',
     objective: 'Make .hero-title larger by setting font-size.',
     concept: 'font-size controls text scale. rem values are predictable because they are based on the root font size.',
-    hint: 'A value like 3rem or 48px will make the heading visibly larger.',
+    hints: [
+      'Text size comes from one property, and rem units follow the reader\'s own settings.',
+      'Target .hero-title and set font-size to a larger value.',
+      '`.hero-title { font-size: 3rem; }`',
+    ],
     code: starter,
     solution: '.hero-title {\n  font-size: 3rem;\n}\n',
     checks: [
@@ -175,7 +188,11 @@ const specs = [
     topic: 'Typography',
     objective: 'Make .stat-value visually bold with font-weight.',
     concept: 'font-weight controls the weight of text. Numeric values such as 700 are useful in design systems.',
-    hint: 'Target .stat-value and use font-weight.',
+    hints: [
+      'Bold is a weight, not a size. Numbers from 100 to 900 control how thick the letters are.',
+      'Target .stat-value and set font-weight to a heavy value.',
+      '`.stat-value { font-weight: 800; }`',
+    ],
     code: starter,
     solution: '.stat-value {\n  font-weight: 800;\n}\n',
     checks: [
@@ -188,7 +205,11 @@ const specs = [
     topic: 'Typography',
     objective: 'Set line-height on .intro-copy so the paragraph breathes.',
     concept: 'line-height controls the vertical rhythm inside multi-line text.',
-    hint: 'Use a unitless value such as 1.6.',
+    hints: [
+      'The space between lines makes long text easier to read.',
+      'Target .intro-copy and set line-height. Numbers without a unit scale with the font size.',
+      '`.intro-copy { line-height: 1.6; }`',
+    ],
     code: starter,
     solution: '.intro-copy {\n  line-height: 1.7;\n}\n',
     checks: [
@@ -201,7 +222,11 @@ const specs = [
     topic: 'Alignment',
     objective: 'Center the text inside .hero with text-align.',
     concept: 'text-align aligns inline content and text inside a block.',
-    hint: 'The value should be center.',
+    hints: [
+      'Alignment is set on the container and applies to the text inside it.',
+      'Target .hero and set text-align.',
+      '`.hero { text-align: center; }`',
+    ],
     code: starter,
     solution: '.hero {\n  text-align: center;\n}\n',
     checks: [
@@ -214,24 +239,15 @@ const specs = [
     topic: 'Inline UI',
     objective: 'Target .badge and use text-transform to make the badge uppercase.',
     concept: 'Small interface labels often use casing rules to separate metadata from body copy.',
-    hint: 'Use text-transform: uppercase on .badge.',
+    hints: [
+      'CSS can change how text looks without changing the text in the HTML.',
+      'Target .badge and use text-transform.',
+      '`.badge { text-transform: uppercase; }`',
+    ],
     code: starter,
     solution: '.badge {\n  text-transform: uppercase;\n}\n',
     checks: [
       ['Badge text is transformed to uppercase', rule('.badge', { 'text-transform': 'uppercase' })],
-    ],
-  },
-  {
-    id: 'descendant-selector',
-    title: 'Target list items in context',
-    topic: 'Selectors',
-    objective: 'Use a descendant selector to set color on only the li elements inside .feature-list.',
-    concept: 'A descendant selector styles elements only when they appear inside a specific ancestor.',
-    hint: 'Write .feature-list li and add color.',
-    code: starter,
-    solution: '.feature-list li {\n  color: #0f766e;\n}\n',
-    checks: [
-      ['Feature list items are targeted by context', rule('.feature-list li', { color: colorValue })],
     ],
   },
   {
@@ -240,7 +256,11 @@ const specs = [
     topic: 'Selectors',
     objective: 'Use one grouped selector for .section-title and .card-title, then set their color.',
     concept: 'Selector lists let related elements share a declaration without duplicating rules.',
-    hint: 'Separate selectors with a comma before the declaration block.',
+    hints: [
+      'When two selectors need the same styles, one rule can target both.',
+      'List .section-title and .card-title separated by a comma, then add color.',
+      '`.section-title, .card-title { color: #334155; }`',
+    ],
     code: starter,
     solution: '.section-title,\n.card-title {\n  color: #334155;\n}\n',
     checks: [
@@ -248,17 +268,20 @@ const specs = [
     ],
   },
   {
-    id: 'border-color',
-    title: 'Outline the featured card',
-    topic: 'Borders',
-    objective: 'Target .featured-card and set border-color. The card already has a transparent border in the preview.',
-    concept: 'Border color can highlight a component without changing its content.',
-    hint: 'Use only border-color on .featured-card; the base preview already provides the border width and style.',
+    id: 'descendant-selector',
+    title: 'Target list items in context',
+    topic: 'Selectors',
+    objective: 'Use a descendant selector to set color on only the li elements inside .feature-list.',
+    concept: 'A descendant selector styles elements only when they appear inside a specific ancestor.',
+    hints: [
+      'A space between two selectors means "inside". It narrows a rule to one area of the page.',
+      'Write .feature-list followed by a space and li, then set color.',
+      '`.feature-list li { color: #0f766e; }`',
+    ],
     code: starter,
-    files: previewFiles(featuredBorderBase),
-    solution: '.featured-card {\n  border-color: #2563eb;\n}\n',
+    solution: '.feature-list li {\n  color: #0f766e;\n}\n',
     checks: [
-      ['Featured card has a border color', rule('.featured-card', { 'border-color': colorValue })],
+      ['Feature list items are targeted by context', rule('.feature-list li', { color: colorValue })],
     ],
   },
   {
@@ -267,7 +290,11 @@ const specs = [
     topic: 'Box model',
     objective: 'Add padding to .preview-card so card content moves away from the visible card edge.',
     concept: 'padding creates space between an element border and its content.',
-    hint: 'The preview already gives the card a surface; use padding with a length value.',
+    hints: [
+      'Padding is the space inside an element, between its content and its edge.',
+      'Target .preview-card and set padding to a length.',
+      '`.preview-card { padding: 1.25rem; }`',
+    ],
     code: starter,
     files: previewFiles(cardSurfaceBase),
     solution: '.preview-card {\n  padding: 1.25rem;\n}\n',
@@ -281,7 +308,11 @@ const specs = [
     topic: 'Box model',
     objective: 'Add margin to .content-shell so sections are separated from nearby content.',
     concept: 'margin creates space outside an element.',
-    hint: 'Use margin with a length or auto value.',
+    hints: [
+      'Margin is the space outside an element. It pushes other content away.',
+      'Target .content-shell and set margin. A value like 2rem auto adds space above and below.',
+      '`.content-shell { margin: 2rem auto; }`',
+    ],
     code: starter,
     solution: '.content-shell {\n  margin: 2rem auto;\n}\n',
     checks: [
@@ -294,11 +325,33 @@ const specs = [
     topic: 'Borders',
     objective: 'Give .preview-card a border.',
     concept: 'The border shorthand sets width, style, and color in one declaration.',
-    hint: 'Use a border value that includes solid.',
+    hints: [
+      'A border needs a width, a style, and a color. The shorthand sets all three at once.',
+      'Target .preview-card and set border with a width, solid, and a color.',
+      '`.preview-card { border: 1px solid #cbd5e1; }`',
+    ],
     code: starter,
     solution: '.preview-card {\n  border: 1px solid #cbd5e1;\n}\n',
     checks: [
       ['Preview cards have a solid border', rule('.preview-card', { border: { contains: 'solid' } })],
+    ],
+  },
+  {
+    id: 'border-color',
+    title: 'Outline the featured card',
+    topic: 'Borders',
+    objective: 'Target .featured-card and set border-color. The card already has a transparent border in the preview.',
+    concept: 'Border color can highlight a component without changing its content.',
+    hints: [
+      'When an element already has a border, you can change just one part of it.',
+      'Target .featured-card and set only border-color. The width and style are already there.',
+      '`.featured-card { border-color: #2563eb; }`',
+    ],
+    code: starter,
+    files: previewFiles(featuredBorderBase),
+    solution: '.featured-card {\n  border-color: #2563eb;\n}\n',
+    checks: [
+      ['Featured card has a border color', rule('.featured-card', { 'border-color': colorValue })],
     ],
   },
   {
@@ -307,7 +360,11 @@ const specs = [
     topic: 'Borders',
     objective: 'Set border-radius on .preview-card. The preview already gives cards a visible surface and border.',
     concept: 'border-radius rounds box corners and is common for cards, inputs, and buttons.',
-    hint: 'Use border-radius with a length value; the fixed card surface will show the rounded corners.',
+    hints: [
+      'Rounded corners come from one property applied to the edge of the element.',
+      'Target .preview-card and set border-radius to a length.',
+      '`.preview-card { border-radius: 0.75rem; }`',
+    ],
     code: starter,
     files: previewFiles(cardSurfaceBase),
     solution: '.preview-card {\n  border-radius: 0.75rem;\n}\n',
@@ -321,7 +378,11 @@ const specs = [
     topic: 'Effects',
     objective: 'Add box-shadow to the visible .preview-card surfaces.',
     concept: 'box-shadow creates depth when used subtly.',
-    hint: 'A shadow value needs lengths and a color.',
+    hints: [
+      'A shadow adds depth. It needs offsets, a blur, and a color.',
+      'Target .preview-card and set box-shadow with a soft, transparent color.',
+      '`.preview-card { box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14); }`',
+    ],
     code: starter,
     files: previewFiles(cardSurfaceBase),
     solution: '.preview-card {\n  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);\n}\n',
@@ -330,12 +391,34 @@ const specs = [
     ],
   },
   {
+    id: 'max-width',
+    title: 'Constrain reading width',
+    topic: 'Layout',
+    objective: 'Set max-width on .content-shell and center it with margin.',
+    concept: 'max-width keeps long content readable on wide screens. Auto side margins center fixed-width blocks.',
+    hints: [
+      'Very long lines are hard to read. Limit the width, then center the block.',
+      'On .content-shell, set max-width, then use margin with auto on the left and right.',
+      '`.content-shell { max-width: 72rem; margin: 2rem auto; }`',
+    ],
+    code: starter,
+    solution: '.content-shell {\n  max-width: 72rem;\n  margin: 2rem auto;\n}\n',
+    checks: [
+      ['Content shell has a max width', rule('.content-shell', { 'max-width': lengthValue })],
+      ['Content shell is centered with margin', rule('.content-shell', { margin: { contains: 'auto' } })],
+    ],
+  },
+  {
     id: 'display-flex',
     title: 'Turn tools into a row',
     topic: 'Flexbox',
     objective: 'Set display: flex on .toolbar.',
     concept: 'Flexbox arranges children along one axis and is ideal for toolbars.',
-    hint: 'Use display: flex.',
+    hints: [
+      'Flexbox lines up the children of an element in a row.',
+      'Target .toolbar and change its display value.',
+      '`.toolbar { display: flex; }`',
+    ],
     code: starter,
     solution: '.toolbar {\n  display: flex;\n}\n',
     checks: [
@@ -348,7 +431,11 @@ const specs = [
     topic: 'Flexbox',
     objective: 'Add gap to the flex .toolbar.',
     concept: 'gap creates consistent space between flex or grid children.',
-    hint: 'The preview already makes the toolbar a flex row; add a length value for gap.',
+    hints: [
+      'Flex items touch by default. One property adds even space between them.',
+      'Target .toolbar and set gap to a length.',
+      '`.toolbar { gap: 0.75rem; }`',
+    ],
     code: starter,
     files: previewFiles(toolbarFlexBase),
     solution: '.toolbar {\n  gap: 0.75rem;\n}\n',
@@ -362,7 +449,11 @@ const specs = [
     topic: 'Flexbox',
     objective: 'Use justify-content on the flex .toolbar to distribute its children.',
     concept: 'justify-content controls spacing along the main flex axis.',
-    hint: 'The preview already makes .toolbar flex; use a value like space-between, center, or flex-end.',
+    hints: [
+      'In a flex row, the free space can be shared out in different ways.',
+      'Target .toolbar and set justify-content to space-between, center, or flex-end.',
+      '`.toolbar { justify-content: space-between; }`',
+    ],
     code: starter,
     files: previewFiles(toolbarFlexBase),
     solution: '.toolbar {\n  justify-content: space-between;\n}\n',
@@ -376,7 +467,11 @@ const specs = [
     topic: 'Lists',
     objective: 'Remove bullets from .nav-list and make it a flex row.',
     concept: 'Navigation lists are still lists in HTML, but CSS controls their visual layout.',
-    hint: 'Use list-style: none and display: flex on .nav-list.',
+    hints: [
+      'Navigation is often a list styled as a row: no bullets, items side by side.',
+      'On .nav-list, remove the bullets with list-style, then make it a flex container.',
+      '`.nav-list { list-style: none; display: flex; }`',
+    ],
     code: starter,
     solution: '.nav-list {\n  list-style: none;\n  display: flex;\n}\n',
     checks: [
@@ -385,26 +480,16 @@ const specs = [
     ],
   },
   {
-    id: 'max-width',
-    title: 'Constrain reading width',
-    topic: 'Layout',
-    objective: 'Set max-width on .content-shell and center it with margin.',
-    concept: 'max-width keeps long content readable on wide screens. Auto side margins center fixed-width blocks.',
-    hint: 'Use max-width and margin: auto or a two-value margin with auto.',
-    code: starter,
-    solution: '.content-shell {\n  max-width: 72rem;\n  margin: 2rem auto;\n}\n',
-    checks: [
-      ['Content shell has a max width', rule('.content-shell', { 'max-width': lengthValue })],
-      ['Content shell is centered with margin', rule('.content-shell', { margin: { contains: 'auto' } })],
-    ],
-  },
-  {
     id: 'card-grid',
     title: 'Create a card grid',
     topic: 'Grid',
     objective: 'Set display: grid on .card-grid.',
     concept: 'CSS Grid arranges content in rows and columns.',
-    hint: 'Use display: grid.',
+    hints: [
+      'Grid places children in rows and columns. Like flexbox, it starts with the display property.',
+      'Target .card-grid and set display to grid.',
+      '`.card-grid { display: grid; }`',
+    ],
     code: starter,
     solution: '.card-grid {\n  display: grid;\n}\n',
     checks: [
@@ -417,7 +502,11 @@ const specs = [
     topic: 'Grid',
     objective: 'Set grid-template-columns on the grid .card-grid using repeat().',
     concept: 'grid-template-columns defines the column tracks in a grid.',
-    hint: 'The preview already makes .card-grid a grid; use repeat(3, 1fr) or repeat(auto-fit, minmax(...)).',
+    hints: [
+      'A grid needs to know how many columns to create and how wide they are.',
+      'Set grid-template-columns on .card-grid. repeat() saves you from writing the same size several times.',
+      '`.card-grid { grid-template-columns: repeat(3, 1fr); }`',
+    ],
     code: starter,
     files: previewFiles(cardGridBase),
     solution: '.card-grid {\n  grid-template-columns: repeat(3, 1fr);\n}\n',
@@ -431,7 +520,11 @@ const specs = [
     topic: 'Grid',
     objective: 'Set display: grid and gap on .pricing-grid.',
     concept: 'A grid container plus gap is the foundation for repeated card layouts.',
-    hint: 'Target .pricing-grid with display and gap.',
+    hints: [
+      'Practice both steps of a grid at once: create it, then space its items.',
+      'In one .pricing-grid rule, set display to grid and add gap.',
+      '`.pricing-grid { display: grid; gap: 1rem; }`',
+    ],
     code: starter,
     solution: '.pricing-grid {\n  display: grid;\n  gap: 1rem;\n}\n',
     checks: [
@@ -445,7 +538,11 @@ const specs = [
     topic: 'Components',
     objective: 'Style .pricing-card with padding and border.',
     concept: 'Reusable component classes let repeated markup share the same visual treatment.',
-    hint: 'Put padding and border in the same .pricing-card rule.',
+    hints: [
+      'A component is a few properties working together. Combine inner space and an edge.',
+      'In one .pricing-card rule, set padding and border.',
+      '`.pricing-card { padding: 1rem; border: 1px solid #cbd5e1; }`',
+    ],
     code: starter,
     solution: '.pricing-card {\n  padding: 1rem;\n  border: 1px solid #cbd5e1;\n}\n',
     checks: [
@@ -458,7 +555,11 @@ const specs = [
     topic: 'Components',
     objective: 'Style .cta-button with display: inline-block and remove text-decoration.',
     concept: 'Links can be styled as buttons while keeping anchor semantics.',
-    hint: 'Use display: inline-block and text-decoration: none.',
+    hints: [
+      'Links are inline and underlined. Looking like a button means changing both.',
+      'On .cta-button, set display to inline-block and text-decoration to none.',
+      '`.cta-button { display: inline-block; text-decoration: none; }`',
+    ],
     code: starter,
     solution: '.cta-button {\n  display: inline-block;\n  text-decoration: none;\n}\n',
     checks: [
@@ -472,7 +573,11 @@ const specs = [
     topic: 'States',
     objective: 'Create a .cta-button:hover rule that changes background-color.',
     concept: 'Pseudo-classes style interactive states without changing the HTML.',
-    hint: 'Write .cta-button:hover and add background-color.',
+    hints: [
+      'A pseudo-class applies styles only in a certain state, like when the pointer is over an element.',
+      'Write a .cta-button:hover rule and change background-color inside it.',
+      '`.cta-button:hover { background-color: #1d4ed8; }`',
+    ],
     code: starter,
     solution: '.cta-button:hover {\n  background-color: #1d4ed8;\n}\n',
     checks: [
@@ -485,7 +590,11 @@ const specs = [
     topic: 'States',
     objective: 'Create a .field:focus rule with an outline.',
     concept: 'Focus styles help keyboard users see which control is active.',
-    hint: 'Use outline on .field:focus.',
+    hints: [
+      'Keyboard users need to see which field is active. The focus state exists for that.',
+      'Write a .field:focus rule and set an outline.',
+      '`.field:focus { outline: 3px solid #2563eb; }`',
+    ],
     code: starter,
     solution: '.field:focus {\n  outline: 3px solid #2563eb;\n}\n',
     checks: [
@@ -498,7 +607,11 @@ const specs = [
     topic: 'Custom properties',
     objective: 'Define --accent on :root.',
     concept: 'Custom properties store reusable values that can be referenced elsewhere with var().',
-    hint: 'Use :root and create --accent.',
+    hints: [
+      'Custom properties store a value once so you can reuse it everywhere. Their names start with two hyphens.',
+      'In a :root rule, declare --accent with a color.',
+      '`:root { --accent: #2563eb; }`',
+    ],
     code: starter,
     solution: ':root {\n  --accent: #2563eb;\n}\n',
     checks: [
@@ -511,7 +624,11 @@ const specs = [
     topic: 'Custom properties',
     objective: 'Set .cta-button background-color with var(--accent).',
     concept: 'var() reads a custom property so related components can share a design token.',
-    hint: 'Use background-color: var(--accent) on .cta-button.',
+    hints: [
+      'A stored value is read back with a function that takes the custom property name.',
+      'On .cta-button, set background-color using var() with --accent inside.',
+      '`.cta-button { background-color: var(--accent); }`',
+    ],
     code: ':root {\n  --accent: #2563eb;\n}\n',
     solution: ':root {\n  --accent: #2563eb;\n}\n\n.cta-button {\n  background-color: var(--accent);\n}\n',
     checks: [
@@ -524,7 +641,11 @@ const specs = [
     topic: 'Motion',
     objective: 'Add transition to .cta-button so its existing hover color change animates.',
     concept: 'transition smooths property changes such as hover colors.',
-    hint: 'The fixed preview already has a hover color change; add transition with a duration such as 180ms.',
+    hints: [
+      'A transition animates the change between two states instead of jumping.',
+      'Add transition to .cta-button itself, not to the hover rule, with a property and a duration.',
+      '`.cta-button { transition: background-color 180ms ease; }`',
+    ],
     code: starter,
     files: previewFiles(ctaHoverBase),
     solution: '.cta-button {\n  transition: background-color 180ms ease, transform 180ms ease;\n}\n',
@@ -538,11 +659,84 @@ const specs = [
     topic: 'Selectors',
     objective: 'Use .timeline-item:nth-child(2) to style the second timeline item.',
     concept: 'Structural pseudo-classes target elements based on their position among siblings.',
-    hint: 'Write .timeline-item:nth-child(2) and change background-color.',
+    hints: [
+      'Some pseudo-classes pick elements by their position among their siblings.',
+      'Write .timeline-item:nth-child(2) and set background-color.',
+      '`.timeline-item:nth-child(2) { background-color: #dbeafe; }`',
+    ],
     code: starter,
     solution: '.timeline-item:nth-child(2) {\n  background-color: #dbeafe;\n}\n',
     checks: [
       ['Second timeline item has a targeted style', rule('.timeline-item:nth-child(2)', { 'background-color': colorValue })],
+    ],
+  },
+  {
+    id: 'table-stripes',
+    title: 'Stripe table rows',
+    topic: 'Selectors',
+    objective: 'Use .metrics-table tr:nth-child(even) to set a background-color.',
+    concept: 'Structural selectors are useful for repeated data, such as table rows.',
+    hints: [
+      'nth-child also accepts keywords, so one rule can style every other row.',
+      'Target .metrics-table tr:nth-child(even) and set background-color.',
+      '`.metrics-table tr:nth-child(even) { background-color: #f1f5f9; }`',
+    ],
+    code: starter,
+    solution: '.metrics-table tr:nth-child(even) {\n  background-color: #f1f5f9;\n}\n',
+    checks: [
+      ['Even metric rows have a background color', rule('.metrics-table tr:nth-child(even)', { 'background-color': colorValue })],
+    ],
+  },
+  {
+    id: 'pseudo-element',
+    title: 'Add generated decoration',
+    topic: 'Pseudo-elements',
+    objective: 'Create .quote::before with a content declaration.',
+    concept: 'Pseudo-elements create style-only pieces of a component without changing HTML.',
+    hints: [
+      'Pseudo-elements add decoration that is not in the HTML. They only appear when they have content.',
+      'Write a .quote::before rule with a content declaration.',
+      '`.quote::before { content: "“"; }`',
+    ],
+    code: starter,
+    solution: '.quote::before {\n  content: "“";\n}\n',
+    checks: [
+      ['Quote has generated before content', rule('.quote::before', { content: true })],
+    ],
+  },
+  {
+    id: 'sticky-header',
+    title: 'Keep navigation visible',
+    topic: 'Positioning',
+    objective: 'Make .site-header sticky and pin it to the top.',
+    concept: 'position: sticky keeps an element in normal flow until it reaches an offset.',
+    hints: [
+      'A sticky element scrolls normally until it reaches an edge, then stays there.',
+      'On .site-header, set position to sticky and top to 0.',
+      '`.site-header { position: sticky; top: 0; }`',
+    ],
+    code: starter,
+    solution: '.site-header {\n  position: sticky;\n  top: 0;\n}\n',
+    checks: [
+      ['Site header is sticky at the top', rule('.site-header', { position: 'sticky', top: { oneOf: ['0', '0px'] } })],
+    ],
+  },
+  {
+    id: 'absolute-badge',
+    title: 'Place a badge inside a card',
+    topic: 'Positioning',
+    objective: 'Make .featured-card position: relative and .badge position: absolute.',
+    concept: 'Absolute children position against the nearest positioned ancestor.',
+    hints: [
+      'An absolute element is placed relative to its closest positioned parent.',
+      'Make .featured-card position: relative, then make .badge position: absolute with top and right.',
+      '`.featured-card { position: relative; }` and `.badge { position: absolute; top: 1rem; right: 1rem; }`',
+    ],
+    code: starter,
+    solution: '.featured-card {\n  position: relative;\n}\n\n.badge {\n  position: absolute;\n  top: 1rem;\n  right: 1rem;\n}\n',
+    checks: [
+      ['Featured card creates a positioning context', rule('.featured-card', { position: 'relative' })],
+      ['Badge is absolutely positioned', rule('.badge', { position: 'absolute' })],
     ],
   },
   {
@@ -551,7 +745,11 @@ const specs = [
     topic: 'Responsive CSS',
     objective: 'Inside a max-width media query, set the existing .card-grid columns to 1fr.',
     concept: 'Media queries let layout respond to viewport width.',
-    hint: 'The preview starts as a three-column grid; use @media (max-width: 700px) and put .card-grid inside it.',
+    hints: [
+      'Media queries apply rules only when the screen matches a condition, like a small width.',
+      'Write @media (max-width: 700px) and put a .card-grid rule inside it.',
+      '`@media (max-width: 700px) { .card-grid { grid-template-columns: 1fr; } }`',
+    ],
     code: starter,
     files: previewFiles(cardGridColumnsBase),
     solution: '@media (max-width: 700px) {\n  .card-grid {\n    grid-template-columns: 1fr;\n  }\n}\n',
@@ -565,7 +763,11 @@ const specs = [
     topic: 'Responsive CSS',
     objective: 'Inside a max-width media query, set the existing .nav-list flex-direction to column.',
     concept: 'Responsive navigation often changes direction when horizontal space is limited.',
-    hint: 'The preview starts with a flex navigation row; put .nav-list inside a max-width media query.',
+    hints: [
+      'On narrow screens, a row of links often fits better as a column.',
+      'Inside a max-width media query, set flex-direction on .nav-list.',
+      '`@media (max-width: 700px) { .nav-list { flex-direction: column; } }`',
+    ],
     code: starter,
     files: previewFiles(navFlexBase),
     solution: '@media (max-width: 700px) {\n  .nav-list {\n    flex-direction: column;\n  }\n}\n',
@@ -574,52 +776,16 @@ const specs = [
     ],
   },
   {
-    id: 'sticky-header',
-    title: 'Keep navigation visible',
-    topic: 'Positioning',
-    objective: 'Make .site-header sticky and pin it to the top.',
-    concept: 'position: sticky keeps an element in normal flow until it reaches an offset.',
-    hint: 'Use position: sticky and top: 0.',
-    code: starter,
-    solution: '.site-header {\n  position: sticky;\n  top: 0;\n}\n',
-    checks: [
-      ['Site header is sticky at the top', rule('.site-header', { position: 'sticky', top: { oneOf: ['0', '0px'] } })],
-    ],
-  },
-  {
-    id: 'absolute-badge',
-    title: 'Place a badge inside a card',
-    topic: 'Positioning',
-    objective: 'Make .featured-card position: relative and .badge position: absolute.',
-    concept: 'Absolute children position against the nearest positioned ancestor.',
-    hint: 'Set position on both selectors.',
-    code: starter,
-    solution: '.featured-card {\n  position: relative;\n}\n\n.badge {\n  position: absolute;\n  top: 1rem;\n  right: 1rem;\n}\n',
-    checks: [
-      ['Featured card creates a positioning context', rule('.featured-card', { position: 'relative' })],
-      ['Badge is absolutely positioned', rule('.badge', { position: 'absolute' })],
-    ],
-  },
-  {
-    id: 'pseudo-element',
-    title: 'Add generated decoration',
-    topic: 'Pseudo-elements',
-    objective: 'Create .quote::before with a content declaration.',
-    concept: 'Pseudo-elements create style-only pieces of a component without changing HTML.',
-    hint: 'Use .quote::before and content.',
-    code: starter,
-    solution: '.quote::before {\n  content: "“";\n}\n',
-    checks: [
-      ['Quote has generated before content', rule('.quote::before', { content: true })],
-    ],
-  },
-  {
     id: 'keyframes',
     title: 'Define a small animation',
     topic: 'Animation',
     objective: 'Create @keyframes pulse and use animation on .badge.',
     concept: '@keyframes defines animation steps; animation applies them to an element.',
-    hint: 'Name the keyframes pulse and apply animation to .badge.',
+    hints: [
+      'An animation has two parts: keyframes that describe the change, and a property that plays them.',
+      'Define @keyframes pulse with from and to steps, then set animation on .badge using the name pulse.',
+      '`@keyframes pulse { from { opacity: 0.65; } to { opacity: 1; } }` and `.badge { animation: pulse 1s infinite alternate; }`',
+    ],
     code: starter,
     solution: '@keyframes pulse {\n  from { opacity: 0.65; }\n  to { opacity: 1; }\n}\n\n.badge {\n  animation: pulse 1s ease-in-out infinite alternate;\n}\n',
     checks: [
@@ -633,24 +799,15 @@ const specs = [
     topic: 'Accessibility',
     objective: 'Inside a prefers-reduced-motion media query, set .badge animation to none.',
     concept: 'prefers-reduced-motion lets users avoid unnecessary animation.',
-    hint: 'Use @media (prefers-reduced-motion: reduce).',
+    hints: [
+      'Some people feel unwell with motion on screen. Their system can ask websites to reduce it.',
+      'Write @media (prefers-reduced-motion: reduce) and turn off the .badge animation inside it.',
+      '`@media (prefers-reduced-motion: reduce) { .badge { animation: none; } }`',
+    ],
     code: '.badge {\n  animation: pulse 1s infinite;\n}\n',
     solution: '.badge {\n  animation: pulse 1s infinite;\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .badge {\n    animation: none;\n  }\n}\n',
     checks: [
       ['Reduced-motion media query disables badge animation', mediaRule('prefers-reduced-motion:reduce', '.badge', { animation: 'none' })],
-    ],
-  },
-  {
-    id: 'table-stripes',
-    title: 'Stripe table rows',
-    topic: 'Selectors',
-    objective: 'Use .metrics-table tr:nth-child(even) to set a background-color.',
-    concept: 'Structural selectors are useful for repeated data, such as table rows.',
-    hint: 'Target even rows and add background-color.',
-    code: starter,
-    solution: '.metrics-table tr:nth-child(even) {\n  background-color: #f1f5f9;\n}\n',
-    checks: [
-      ['Even metric rows have a background color', rule('.metrics-table tr:nth-child(even)', { 'background-color': colorValue })],
     ],
   },
   {
@@ -659,7 +816,11 @@ const specs = [
     topic: 'Capstone',
     objective: 'Combine variables, layout, cards, hover state, and a responsive media query to style the fixed preview page.',
     concept: 'A complete CSS pass combines reusable values, layout rules, component styles, states, and responsive behavior.',
-    hint: 'Define --accent, center .lab-page, make .card-grid a grid, add a hover state, and include a max-width media query.',
+    hints: [
+      'Work through one requirement at a time and watch the checklist. Start with the variable.',
+      'Define --accent on :root, center .lab-page, make .card-grid a grid, add a hover rule, and finish with a max-width media query.',
+      'Reuse what you learned: `:root { --accent: #2563eb; }`, `.card-grid { display: grid; }`, a `:hover` rule, and `@media (max-width: 700px) { ... }`.',
+    ],
     code: starter,
     solution: ':root {\n  --accent: #2563eb;\n}\n\n.lab-page {\n  max-width: 72rem;\n  margin: 0 auto;\n}\n\n.card-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 1rem;\n}\n\n.preview-card {\n  padding: 1rem;\n  border: 1px solid #cbd5e1;\n  border-radius: 0.75rem;\n}\n\n.cta-button:hover {\n  background-color: var(--accent);\n}\n\n@media (max-width: 700px) {\n  .card-grid {\n    grid-template-columns: 1fr;\n  }\n}\n',
     checks: [

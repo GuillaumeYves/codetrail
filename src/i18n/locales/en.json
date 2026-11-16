@@ -38,8 +38,15 @@
     "web": "Web development"
   },
   "stacks": {
-    "html": { "description": "Semantic page structure" },
-    "css": { "description": "Visual styling and layout" }
+    "html": {
+      "description": "Semantic page structure"
+    },
+    "css": {
+      "description": "Visual styling and layout"
+    },
+    "js": {
+      "description": "Logic, data, and interactive pages"
+    }
   },
   "stages": {
     "fundamental": "Fundamental",
@@ -58,6 +65,15 @@
     "preview": "Preview",
     "editorLabel": "{file} editor"
   },
+  "editor": {
+    "placeholder": "Write your code here",
+    "loopStopped": "Loop stopped after 1 second. Check that its condition can become false."
+  },
+  "console": {
+    "title": "Console",
+    "clear": "Clear console",
+    "empty": "console.log output and errors appear here."
+  },
   "lesson": {
     "panel": "Lesson",
     "task": "What to do",
@@ -65,7 +81,8 @@
     "passed": "Passed:",
     "pending": "Pending:",
     "showHint": "Need a hint?",
-    "hideHint": "Hide hint",
+    "nextHint": "Show hint {current} of {total}",
+    "hints": "Hints",
     "mistake": "Common mistake",
     "practice": "Good practice",
     "solution": "Compare with the reference solution",
@@ -77,7 +94,8 @@
     "editorPanel": "Editor",
     "redo": "Redo this task",
     "redoTitle": "Restore this task's starter code",
-    "preview": "{course} preview"
+    "preview": "{course} preview",
+    "checking": "Checking your code"
   },
   "playground": {
     "editorPanel": "Playground editor",
@@ -90,10 +108,7 @@
     "confirmReset": "Confirm reset",
     "resetTitle": "Restore the starter files",
     "invalidLink": "That share link could not be read. Showing your saved code.",
-    "previewPanel": "Playground preview",
-    "console": "Console",
-    "clearConsole": "Clear console",
-    "consoleEmpty": "console.log output and errors appear here."
+    "previewPanel": "Playground preview"
   },
   "confirm": {
     "cancel": "Cancel",
@@ -121,7 +136,7 @@
     "items": [
       {
         "question": "How do the challenges work?",
-        "answer": "Read the task, edit the file, and watch the preview update. Requirements are checked as you type. When all of them pass, complete the challenge and compare your code with the reference solution."
+        "answer": "Read the task, edit the file, and watch the preview update. Requirements are checked as you type. Stuck? Hints open one at a time, from a gentle nudge to a near answer. When every requirement passes, complete the challenge and compare your code with the reference solution."
       },
       {
         "question": "What is the playground for?",
@@ -144,8 +159,12 @@
         "answer": "Ctrl+Enter (Cmd+Enter on Mac) completes the challenge or opens the next one once every requirement passes. In the editor, Tab indents; press Escape first to move focus out with Tab."
       },
       {
+        "question": "Can I use CodeTrail in another language?",
+        "answer": "Yes. Use the language menu in the top bar. The interface and every lesson are available in English and French, and your choice is remembered in this browser."
+      },
+      {
         "question": "Which courses are included?",
-        "answer": "An HTML course with 50 lessons and a CSS course with 40 lessons. Each course unlocks lessons in order, from fundamentals to a capstone."
+        "answer": "HTML (50 lessons), CSS (40 lessons), and JavaScript (40 lessons). Each course unlocks lessons in order, from fundamentals to a capstone, and each lesson builds on the previous ones. Start with HTML, then CSS, then JavaScript."
       }
     ]
   }

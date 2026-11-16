@@ -38,8 +38,8 @@ const assertProgressionMetadata = (trackLessons, stageSizes = expectedStageSizes
   }
 }
 
-test('HTML and CSS tracks are available', () => {
-  assert.deepEqual(Object.keys(stacks), ['html', 'css'])
+test('HTML, CSS, and JavaScript tracks are available', () => {
+  assert.deepEqual(Object.keys(stacks), ['html', 'css', 'js'])
 })
 
 test('HTML course has 50 staged beginner-to-advanced lessons', () => {
@@ -116,12 +116,12 @@ test('Shipped solutions pass their own hydrated checks', () => {
   }
 })
 
-test('HTML course starts with semantics before h1 headings', () => {
+test('HTML course starts with single tags before nesting them', () => {
   assert.deepEqual(htmlLessons.slice(0, 4).map((lesson) => lesson.id), [
     'html-semantic-paragraph',
     'html-paired-tags',
+    'html-heading-paragraph',
     'html-nesting',
-    'html-emphasis',
   ])
   assert.ok(
     htmlLessons.findIndex((lesson) => lesson.id === 'html-semantic-paragraph')

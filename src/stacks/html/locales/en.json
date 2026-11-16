@@ -9,7 +9,11 @@
       "topic": "Semantics",
       "summary": "HTML is semantic: tags describe what content means. A paragraph is not just text on a new line; <p> tells the browser this content is a paragraph.",
       "objective": "Inside body, create one paragraph element with any text inside it. Use an opening <p> tag and a matching closing </p> tag.",
-      "hint": "Use an opening p tag and a closing p tag around a short sentence of your own.",
+      "hints": [
+        "A paragraph needs two tags: one that opens it and one that closes it, with your text in between.",
+        "Inside body, wrap a sentence of your own in a p element.",
+        "It looks like `<p>Your sentence here.</p>`."
+      ],
       "checks": [
         "A paragraph element with text exists in body"
       ]
@@ -19,9 +23,29 @@
       "topic": "Opening and closing tags",
       "summary": "Paired tags must be closed in the right place. Closing tags tell the browser where an element ends.",
       "objective": "Create two separate paragraph elements. Each paragraph must have its own opening <p> tag and closing </p> tag.",
-      "hint": "Write two sibling paragraphs, not one paragraph containing another paragraph.",
+      "hints": [
+        "Each paragraph is its own element, so each one needs its own pair of tags.",
+        "Write two sibling paragraphs, one after the other, not one paragraph inside another.",
+        "`<p>First idea.</p>` then, on the next line, `<p>Second idea.</p>`."
+      ],
       "checks": [
         "Two paragraph elements with text exist"
+      ]
+    },
+    "html-heading-paragraph": {
+      "title": "Add a page heading",
+      "topic": "Headings",
+      "summary": "Headings create a content outline. h1 is usually the main heading for the page or current view.",
+      "objective": "Create one h1 heading and one paragraph after it. The text can be yours, but both elements must contain something.",
+      "hints": [
+        "A heading names the content that follows it, so it comes first.",
+        "Use h1 for the main heading, then add a p element after it.",
+        "`<h1>Your title</h1>` followed by `<p>Your sentence.</p>`."
+      ],
+      "checks": [
+        "Heading appears before paragraph in body",
+        "Heading has text",
+        "Paragraph has text"
       ]
     },
     "html-nesting": {
@@ -29,7 +53,11 @@
       "topic": "Nesting",
       "summary": "Elements can live inside other elements. Correct nesting means the inner element opens and closes before the outer element closes.",
       "objective": "Create one paragraph and use strong around one meaningful word or phrase inside it.",
-      "hint": "Keep the strong element inside the paragraph, then write your own sentence around it.",
+      "hints": [
+        "An element can sit inside another one. The inner element must close before the outer one does.",
+        "Write a paragraph first, then wrap one important word inside it with strong.",
+        "`<p>This is <strong>important</strong>.</p>`"
+      ],
       "checks": [
         "Strong text is nested inside a paragraph"
       ]
@@ -39,33 +67,13 @@
       "topic": "Inline semantics",
       "summary": "Semantic inline elements explain meaning. em means stressed emphasis; it is not just a way to make text italic.",
       "objective": "Create a paragraph that uses em around one stressed word or phrase you choose.",
-      "hint": "Put the em element inside a paragraph, around the word or phrase that should be stressed.",
+      "hints": [
+        "Emphasis changes how a sentence sounds, like stressing a word when you speak.",
+        "Inside a paragraph, wrap the stressed word or phrase with em.",
+        "`<p>Read it <em>carefully</em>.</p>`"
+      ],
       "checks": [
         "Emphasis is nested inside a paragraph"
-      ]
-    },
-    "html-heading-paragraph": {
-      "title": "Add a page heading",
-      "topic": "Headings",
-      "summary": "Headings create a content outline. h1 is usually the main heading for the page or current view.",
-      "objective": "Create one h1 heading and one paragraph after it. The text can be yours, but both elements must contain something.",
-      "hint": "Place <h1> before <p>.",
-      "checks": [
-        "Heading appears before paragraph in body",
-        "Heading has text",
-        "Paragraph has text"
-      ]
-    },
-    "html-document-title": {
-      "title": "Name the browser tab",
-      "topic": "Document structure",
-      "summary": "head contains metadata for the browser. body contains the content people see on the page.",
-      "objective": "Change the title element in head to a page-specific title, then keep a visible h1 in body.",
-      "hint": "Edit the existing title in head, then add a visible heading in body. The title and heading text can be yours.",
-      "checks": [
-        "Title has text in head",
-        "Starter title was changed",
-        "Visible heading remains in body"
       ]
     },
     "html-attributes": {
@@ -73,34 +81,15 @@
       "topic": "Attributes",
       "summary": "Attributes add extra information to an element. Some attributes configure behavior; others provide names or reusable hooks.",
       "objective": "Create a section with a non-empty id and at least two class names. Add any text inside it.",
-      "hint": "Put id and class on the opening section tag. Separate multiple class names with spaces.",
+      "hints": [
+        "Attributes add extra information to an element. They always go in the opening tag.",
+        "Give the opening section tag an id, and a class attribute with two names separated by a space.",
+        "`<section id=\"intro\" class=\"panel featured\">Welcome!</section>`"
+      ],
       "checks": [
         "Section has a non-empty id",
         "Section has at least two classes",
         "Section contains text"
-      ]
-    },
-    "html-comments": {
-      "title": "Leave a useful source note",
-      "topic": "Comments",
-      "summary": "Comments explain intent to people reading the source. They are not rendered as visible page content.",
-      "objective": "Add an HTML comment before a main element to describe the main content region.",
-      "hint": "Use HTML comment syntax before main. Comments start with <!-- and end with -->.",
-      "checks": [
-        "A comment exists before main"
-      ]
-    },
-    "html-entities": {
-      "title": "Show reserved characters",
-      "topic": "Entities",
-      "summary": "Some characters have special meaning in HTML source. Character references let you display them as text.",
-      "objective": "Inside a paragraph, display a less-than sign and an ampersand as text by using entities for < and &.",
-      "hint": "Use &lt; for a visible less-than sign and &amp; for a visible ampersand inside a paragraph.",
-      "checks": [
-        "Less-than entity is used",
-        "Ampersand entity is used",
-        "Less-than entity is inside a paragraph",
-        "Ampersand entity is inside a paragraph"
       ]
     },
     "html-link": {
@@ -108,7 +97,11 @@
       "topic": "Links",
       "summary": "Links connect documents. The href attribute stores the destination; the text should tell users where the link goes.",
       "objective": "Create an anchor linking to https://developer.mozilla.org/. Put any visible text inside the link.",
-      "hint": "Use an a element with href=\"https://developer.mozilla.org/\".",
+      "hints": [
+        "Links use the anchor element, and the destination goes in an attribute.",
+        "Use an a element and put the address in its href attribute. The visible text goes between the tags.",
+        "`<a href=\"https://developer.mozilla.org/\">Read the docs</a>`"
+      ],
       "checks": [
         "Anchor has the MDN URL",
         "Link has visible text"
@@ -119,7 +112,11 @@
       "topic": "Images",
       "summary": "Images need alternative text so their meaning remains available when the image cannot be seen or loaded.",
       "objective": "Add an image with a non-empty src and a non-empty alt attribute.",
-      "hint": "The src points to the image file. The alt text should describe the image purpose in your own words.",
+      "hints": [
+        "Images have no closing tag. Everything they need goes in attributes.",
+        "Use img with src for the file and alt to describe the image for people who cannot see it.",
+        "`<img src=\"photo.png\" alt=\"A student writing code\">`"
+      ],
       "checks": [
         "Image source is set",
         "Image has non-empty alt text"
@@ -130,10 +127,61 @@
       "topic": "Buttons",
       "summary": "button represents an action. An explicit type prevents accidental form submission later.",
       "objective": "Create a button with type=\"button\" and any visible text.",
-      "hint": "Use <button type=\"button\">Start lesson</button> or another clear label.",
+      "hints": [
+        "A real button element works with the keyboard and screen readers without extra code.",
+        "Use a button element with type=\"button\" and a clear label between the tags.",
+        "`<button type=\"button\">Start lesson</button>`"
+      ],
       "checks": [
         "Button type is explicit",
         "Button has visible text"
+      ]
+    },
+    "html-comments": {
+      "title": "Leave a useful source note",
+      "topic": "Comments",
+      "summary": "Comments explain intent to people reading the source. They are not rendered as visible page content.",
+      "objective": "Add an HTML comment before a main element to describe the main content region.",
+      "hints": [
+        "Comments are notes for people reading the code. The browser does not display them.",
+        "Add a comment on the line before a main element. Comments start with `<!--` and end with `-->`.",
+        "`<!-- Main content -->` followed by `<main>Course content</main>`."
+      ],
+      "checks": [
+        "A comment exists before main"
+      ]
+    },
+    "html-entities": {
+      "title": "Show reserved characters",
+      "topic": "Entities",
+      "summary": "Some characters have special meaning in HTML source. Character references let you display them as text.",
+      "objective": "Inside a paragraph, display a less-than sign and an ampersand as text by using entities for < and &.",
+      "hints": [
+        "Some characters have a special meaning in HTML, so they need a code to be shown as text.",
+        "Inside a paragraph, write `&lt;` where you want a less-than sign and `&amp;` where you want an ampersand.",
+        "`<p>HTML &lt; CSS &amp; JavaScript</p>`"
+      ],
+      "checks": [
+        "Less-than entity is used",
+        "Ampersand entity is used",
+        "Less-than entity is inside a paragraph",
+        "Ampersand entity is inside a paragraph"
+      ]
+    },
+    "html-document-title": {
+      "title": "Name the browser tab",
+      "topic": "Document structure",
+      "summary": "head contains metadata for the browser. body contains the content people see on the page.",
+      "objective": "Change the title element in head to a page-specific title, then keep a visible h1 in body.",
+      "hints": [
+        "The title shows in the browser tab, not on the page. It lives in head.",
+        "Change the text of the existing title element in head, then add an h1 in body.",
+        "`<title>My HTML course</title>` in head, and `<h1>HTML essentials</h1>` in body."
+      ],
+      "checks": [
+        "Title has text in head",
+        "Starter title was changed",
+        "Visible heading remains in body"
       ]
     },
     "html-lang-meta": {
@@ -141,11 +189,114 @@
       "topic": "Metadata",
       "summary": "Document metadata helps browsers, search engines, translators, and assistive technology understand the page.",
       "objective": "Make sure html has lang=\"en\", head has UTF-8 charset, and head has a responsive viewport meta tag.",
-      "hint": "Put lang on html and both meta elements inside head.",
+      "hints": [
+        "Every page should say which language it uses, how its text is encoded, and how it fits on phones.",
+        "Put lang=\"en\" on the html tag, then add a charset meta and a viewport meta inside head.",
+        "`<html lang=\"en\">`, `<meta charset=\"UTF-8\">`, and `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">`."
+      ],
       "checks": [
         "English language is declared",
         "UTF-8 is declared in head",
         "Responsive viewport exists in head"
+      ]
+    },
+    "html-unordered-list": {
+      "title": "Group related items",
+      "topic": "Lists",
+      "summary": "Unordered lists group items where sequence does not matter.",
+      "objective": "Create a ul containing at least three li items for things someone can learn.",
+      "hints": [
+        "Use an unordered list when the order of the items does not matter.",
+        "Write one ul, then put each item in its own li inside it.",
+        "`<ul><li>Semantics</li><li>Forms</li><li>Accessibility</li></ul>`"
+      ],
+      "checks": [
+        "Unordered list contains at least three items"
+      ]
+    },
+    "html-ordered-list": {
+      "title": "Describe ordered steps",
+      "topic": "Lists",
+      "summary": "Ordered lists communicate sequence, ranking, or procedure. Source order matters.",
+      "objective": "Create an ol with at least three li items that describe steps in a process you choose.",
+      "hints": [
+        "When steps must happen in a sequence, the list type should say so.",
+        "Use one ol and put each step in its own li, in the right order.",
+        "`<ol><li>Plan</li><li>Build</li><li>Test</li></ol>`"
+      ],
+      "checks": [
+        "Ordered list contains at least three written steps"
+      ]
+    },
+    "html-description-list": {
+      "title": "Define terms",
+      "topic": "Lists",
+      "summary": "Description lists pair terms with descriptions, metadata names with values, or question-and-answer style content.",
+      "objective": "Create a dl with at least two dt terms and two dd descriptions.",
+      "hints": [
+        "A description list pairs each term with its meaning, like a small glossary.",
+        "Inside one dl, write a dt for each term followed by a dd with its description.",
+        "`<dl><dt>HTML</dt><dd>Structure</dd><dt>CSS</dt><dd>Style</dd></dl>`"
+      ],
+      "checks": [
+        "Description list contains at least two terms and descriptions"
+      ]
+    },
+    "html-code-pre": {
+      "title": "Show code as code",
+      "topic": "Code content",
+      "summary": "code marks computer code. pre preserves whitespace and line breaks for preformatted text.",
+      "objective": "Create a pre element containing a code element with any short code sample.",
+      "hints": [
+        "Code needs two things: a tag that marks it as code and one that keeps its spacing.",
+        "Use pre on the outside to keep spacing, and code on the inside to mark the content as code.",
+        "`<pre><code>const ready = true;</code></pre>`"
+      ],
+      "checks": [
+        "Code block is nested correctly"
+      ]
+    },
+    "html-blockquote": {
+      "title": "Quote another source",
+      "topic": "Quotations",
+      "summary": "blockquote represents a longer quotation from another source. cite can point to the source URL.",
+      "objective": "Create a blockquote with cite=\"https://developer.mozilla.org/\" and at least one paragraph inside.",
+      "hints": [
+        "A long quotation gets its own block element, and its source can be recorded in an attribute.",
+        "Use blockquote with a cite attribute set to the source URL, then put a p inside it.",
+        "`<blockquote cite=\"https://developer.mozilla.org/\"><p>Your quote.</p></blockquote>`"
+      ],
+      "checks": [
+        "Blockquote has source and paragraph"
+      ]
+    },
+    "html-figure": {
+      "title": "Caption media",
+      "topic": "Figures",
+      "summary": "figure groups self-contained media with an optional caption. figcaption explains the figure.",
+      "objective": "Create a figure containing an image with a non-empty src and a meaningful figcaption.",
+      "hints": [
+        "A figure groups an image with the caption that explains it.",
+        "Put an img and a figcaption inside one figure element.",
+        "`<figure><img src=\"photo.png\" alt=\"A desk\"><figcaption>Your caption</figcaption></figure>`"
+      ],
+      "checks": [
+        "Figure contains the image and caption together"
+      ]
+    },
+    "html-time": {
+      "title": "Make dates machine-readable",
+      "topic": "Machine-readable text",
+      "summary": "time connects human-readable text with a standardized value software can parse.",
+      "objective": "Create a time element with a YYYY-MM-DD datetime value and visible date text.",
+      "hints": [
+        "People write dates in many formats. Machines need one exact format.",
+        "Wrap the visible date in a time element and add a datetime attribute in YYYY-MM-DD form.",
+        "`<time datetime=\"2026-06-22\">June 22, 2026</time>`"
+      ],
+      "checks": [
+        "Machine date uses YYYY-MM-DD",
+        "Visible date text exists"
       ]
     },
     "html-page-regions": {
@@ -153,7 +304,11 @@
       "topic": "Landmarks",
       "summary": "Landmark elements divide a page into major regions. They make the structure easier for people and assistive technology to navigate.",
       "objective": "Create header, main, and footer elements in that order inside body. Put a little text in each region.",
-      "hint": "Place the three elements as siblings inside body.",
+      "hints": [
+        "Most pages share the same big regions: a top area, the main content, and a bottom area.",
+        "Inside body, add header, then main, then footer as siblings, each with some text.",
+        "`<header>Site name</header>`, `<main>Content</main>`, and `<footer>Contact</footer>`."
+      ],
       "checks": [
         "Landmarks are in body order",
         "Each landmark contains text"
@@ -164,7 +319,11 @@
       "topic": "Navigation",
       "summary": "nav identifies a major set of navigation links. A label distinguishes this navigation from other nav regions.",
       "objective": "Create a nav with a non-empty aria-label containing links to / and /lessons.",
-      "hint": "Give nav an aria-label that names this navigation region, then nest the two links inside it.",
+      "hints": [
+        "A navigation region groups the main links of a site, and a label says which navigation it is.",
+        "Create a nav with an aria-label, then put a link to / and a link to /lessons inside it.",
+        "`<nav aria-label=\"Primary\"><a href=\"/\">Home</a><a href=\"/lessons\">Lessons</a></nav>`"
+      ],
       "checks": [
         "Labelled navigation contains both links"
       ]
@@ -174,7 +333,11 @@
       "topic": "Articles",
       "summary": "article is for content that makes sense as a self-contained piece, such as a post, lesson, card, or news item.",
       "objective": "Inside main, create an article with one h1 and one paragraph.",
-      "hint": "Nest article inside main, then nest h1 and p inside article.",
+      "hints": [
+        "An article is content that makes sense on its own, like a blog post. It belongs in the main region.",
+        "Put an article inside main, then put an h1 and a p inside the article.",
+        "`<main><article><h1>Title</h1><p>Text.</p></article></main>`"
+      ],
       "checks": [
         "Main contains an article with heading and paragraph"
       ]
@@ -184,7 +347,11 @@
       "topic": "Sections",
       "summary": "section groups a themed part of a document. A section normally needs a heading that explains its topic.",
       "objective": "Create an article containing two section elements. Each section should have an h2.",
-      "hint": "Put two section elements inside article, and put an h2 in each section.",
+      "hints": [
+        "Long content is easier to follow when it is split into themed parts, each with its own heading.",
+        "Inside one article, add two section elements, and start each section with an h2.",
+        "`<article><section><h2>Part one</h2></section><section><h2>Part two</h2></section></article>`"
+      ],
       "checks": [
         "Article contains two titled sections"
       ]
@@ -194,80 +361,13 @@
       "topic": "Complementary content",
       "summary": "aside represents related but secondary content, such as a tip, callout, sidebar, or related link list.",
       "objective": "Inside main, add an article and an aside. The aside should contain a short tip.",
-      "hint": "Put both article and aside inside main.",
+      "hints": [
+        "Side content, like a tip, relates to the main content without being part of it.",
+        "Inside main, add an article for the content and an aside next to it for the tip.",
+        "`<main><article><h1>Lesson</h1></article><aside>Tip: read tag names out loud.</aside></main>`"
+      ],
       "checks": [
         "Main contains article and aside"
-      ]
-    },
-    "html-unordered-list": {
-      "title": "Group related items",
-      "topic": "Lists",
-      "summary": "Unordered lists group items where sequence does not matter.",
-      "objective": "Create a ul containing at least three li items for things someone can learn.",
-      "hint": "Nest three li elements inside one ul.",
-      "checks": [
-        "Unordered list contains at least three items"
-      ]
-    },
-    "html-ordered-list": {
-      "title": "Describe ordered steps",
-      "topic": "Lists",
-      "summary": "Ordered lists communicate sequence, ranking, or procedure. Source order matters.",
-      "objective": "Create an ol with at least three li items that describe steps in a process you choose.",
-      "hint": "Use one ol and put each step in its own li. Ordered lists communicate sequence through source order.",
-      "checks": [
-        "Ordered list contains at least three written steps"
-      ]
-    },
-    "html-description-list": {
-      "title": "Define terms",
-      "topic": "Lists",
-      "summary": "Description lists pair terms with descriptions, metadata names with values, or question-and-answer style content.",
-      "objective": "Create a dl with at least two dt terms and two dd descriptions.",
-      "hint": "Use dt for each term and dd for the description that follows it.",
-      "checks": [
-        "Description list contains at least two terms and descriptions"
-      ]
-    },
-    "html-figure": {
-      "title": "Caption media",
-      "topic": "Figures",
-      "summary": "figure groups self-contained media with an optional caption. figcaption explains the figure.",
-      "objective": "Create a figure containing an image with a non-empty src and a meaningful figcaption.",
-      "hint": "Nest img and figcaption inside figure.",
-      "checks": [
-        "Figure contains the image and caption together"
-      ]
-    },
-    "html-blockquote": {
-      "title": "Quote another source",
-      "topic": "Quotations",
-      "summary": "blockquote represents a longer quotation from another source. cite can point to the source URL.",
-      "objective": "Create a blockquote with cite=\"https://developer.mozilla.org/\" and at least one paragraph inside.",
-      "hint": "Nest a p element inside blockquote.",
-      "checks": [
-        "Blockquote has source and paragraph"
-      ]
-    },
-    "html-time": {
-      "title": "Make dates machine-readable",
-      "topic": "Machine-readable text",
-      "summary": "time connects human-readable text with a standardized value software can parse.",
-      "objective": "Create a time element with a YYYY-MM-DD datetime value and visible date text.",
-      "hint": "Put datetime on the opening time tag.",
-      "checks": [
-        "Machine date uses YYYY-MM-DD",
-        "Visible date text exists"
-      ]
-    },
-    "html-details": {
-      "title": "Create native disclosure",
-      "topic": "Interactive HTML",
-      "summary": "details and summary provide disclosure behavior without JavaScript.",
-      "objective": "Create details with a summary question and a paragraph answer.",
-      "hint": "Put summary first inside details, then a paragraph.",
-      "checks": [
-        "Disclosure contains summary first and a paragraph answer"
       ]
     },
     "html-address": {
@@ -275,9 +375,41 @@
       "topic": "Contact semantics",
       "summary": "address represents contact information for the nearest article or page.",
       "objective": "Create an address element containing a mailto link to hello@example.com.",
-      "hint": "Put an a element with href=\"mailto:hello@example.com\" inside address.",
+      "hints": [
+        "Contact details have their own element, and email links use a special kind of URL.",
+        "Put an a element inside address, with an href that starts with mailto: followed by the email.",
+        "`<address><a href=\"mailto:hello@example.com\">hello@example.com</a></address>`"
+      ],
       "checks": [
         "Address contains email link"
+      ]
+    },
+    "html-table": {
+      "title": "Build a data table",
+      "topic": "Tables",
+      "summary": "Tables express relationships in genuinely tabular data. They should not be used for page layout.",
+      "objective": "Create a table with at least two header cells and at least two data cells.",
+      "hints": [
+        "Tables are built row by row. Each row holds cells, and header cells label the data.",
+        "Inside table, add a tr with th header cells, then another tr with td data cells.",
+        "`<table><tr><th>Name</th><th>Score</th></tr><tr><td>Ada</td><td>95</td></tr></table>`"
+      ],
+      "checks": [
+        "Table contains header and data rows"
+      ]
+    },
+    "html-table-scope": {
+      "title": "Clarify table headers",
+      "topic": "Tables",
+      "summary": "caption names a table. scope helps assistive technology connect headers to cells.",
+      "objective": "Create a table with a visible caption and at least two column headers that use scope=\"col\".",
+      "hints": [
+        "A caption names the table, and scope says which cells a header describes.",
+        "Put caption first inside table, then add th cells with scope=\"col\" in the first row.",
+        "`<table><caption>Results</caption><tr><th scope=\"col\">Name</th><th scope=\"col\">Score</th></tr></table>`"
+      ],
+      "checks": [
+        "Table contains caption and scoped column headers"
       ]
     },
     "html-form-label": {
@@ -285,7 +417,11 @@
       "topic": "Forms",
       "summary": "Labels give form controls an accessible name and a larger clickable target.",
       "objective": "Create a text input and connect it to a visible label with matching for and id values.",
-      "hint": "Choose an id for the input, then use the same value in the label for attribute.",
+      "hints": [
+        "A label connects to its input through matching values, so clicking the label focuses the field.",
+        "Give the input an id, then use the same value in the for attribute of the label.",
+        "`<label for=\"name\">Name</label><input id=\"name\" name=\"name\" type=\"text\">`"
+      ],
       "checks": [
         "Label is connected to the text input"
       ]
@@ -295,7 +431,11 @@
       "topic": "Forms",
       "summary": "form groups controls and defines where and how values are submitted.",
       "objective": "Create a form that posts to a non-empty action URL with an email input and a submit button.",
-      "hint": "Put action and method on form, then nest the email input and submit button inside it.",
+      "hints": [
+        "A form needs to know where to send its data and how, and it needs a button to send it.",
+        "Add action and method=\"post\" to the form, then put an email input and a submit button inside.",
+        "`<form action=\"/signup\" method=\"post\"><input type=\"email\" name=\"email\"><button type=\"submit\">Sign up</button></form>`"
+      ],
       "checks": [
         "Signup form contains the email field and submit button"
       ]
@@ -305,10 +445,29 @@
       "topic": "Forms",
       "summary": "Specific input types give browsers validation hints and better mobile keyboards.",
       "objective": "Inside a form, add required email and password inputs. Give each input a non-empty name.",
-      "hint": "Use the email and password input types, add required, and include name values so the form can submit data.",
+      "hints": [
+        "The type of an input changes the keyboard on phones and how the browser validates it.",
+        "Inside a form, add an email input and a password input, each with a name and the required attribute.",
+        "`<input type=\"email\" name=\"email\" required>` and `<input type=\"password\" name=\"password\" required>`"
+      ],
       "checks": [
         "Form contains required email input",
         "Form contains required password input"
+      ]
+    },
+    "html-checkbox": {
+      "title": "Represent an agreement",
+      "topic": "Forms",
+      "summary": "Checkboxes represent independent on/off choices and can be required before submission.",
+      "objective": "Create a required checkbox with a name, an id, and a visible label connected to it.",
+      "hints": [
+        "A checkbox is an input like any other, so it connects to its label the same way.",
+        "Create an input with type=\"checkbox\", a name, an id, and required, then a label whose for matches the id.",
+        "`<input id=\"terms\" type=\"checkbox\" name=\"terms\" required><label for=\"terms\">I agree</label>`"
+      ],
+      "checks": [
+        "Required checkbox has id and name",
+        "Checkbox label is connected"
       ]
     },
     "html-textarea-select": {
@@ -316,7 +475,11 @@
       "topic": "Forms",
       "summary": "textarea collects multi-line text. select limits users to known option values.",
       "objective": "Create a labelled textarea with rows=\"4\" and a labelled select with at least two options.",
-      "hint": "Connect labels with for/id, give each control a name, and put option elements inside select.",
+      "hints": [
+        "Long text needs a multi-line field, and a fixed list of choices fits in a dropdown.",
+        "Add a textarea with rows=\"4\" and a select with option elements inside. Give both a label, an id, and a name.",
+        "`<label for=\"bio\">Bio</label><textarea id=\"bio\" name=\"bio\" rows=\"4\"></textarea>`, then the same pattern with select and two option elements."
+      ],
       "checks": [
         "Textarea is labelled and has rows",
         "Select is labelled and contains at least two options",
@@ -328,20 +491,13 @@
       "topic": "Forms",
       "summary": "fieldset groups related controls. legend gives the group an accessible name.",
       "objective": "Group at least two radio buttons in a fieldset with a visible legend.",
-      "hint": "Place legend first, then add labelled radio inputs that share a meaningful name.",
+      "hints": [
+        "Radio buttons that answer the same question belong together, under a shared caption.",
+        "Wrap the radios in a fieldset, start it with a legend, and give every radio the same name.",
+        "`<fieldset><legend>Theme</legend><label><input type=\"radio\" name=\"theme\" value=\"light\">Light</label> ...</fieldset>`"
+      ],
       "checks": [
         "Fieldset contains a legend and at least two labelled radios with the same name"
-      ]
-    },
-    "html-checkbox": {
-      "title": "Represent an agreement",
-      "topic": "Forms",
-      "summary": "Checkboxes represent independent on/off choices and can be required before submission.",
-      "objective": "Create a required checkbox with a name, an id, and a visible label connected to it.",
-      "hint": "Choose an id for the checkbox, then use the same value in the label for attribute.",
-      "checks": [
-        "Required checkbox has id and name",
-        "Checkbox label is connected"
       ]
     },
     "html-validation": {
@@ -349,7 +505,11 @@
       "topic": "Forms",
       "summary": "Native constraint attributes establish a useful first validation layer in the browser. Server validation is still required.",
       "objective": "Create a named input with required, minlength, maxlength, and pattern constraints.",
-      "hint": "Put all constraints on one input. Use numeric minlength and maxlength values, and write a non-empty pattern.",
+      "hints": [
+        "The browser can check a field before the form is sent, using attributes on the input.",
+        "On one named input, add required, minlength, maxlength, and a pattern.",
+        "`<input name=\"username\" required minlength=\"3\" maxlength=\"20\" pattern=\"[A-Za-z]+\">`"
+      ],
       "checks": [
         "Input has native constraints"
       ]
@@ -359,30 +519,14 @@
       "topic": "Forms",
       "summary": "autocomplete tokens tell browsers what a field represents so they can fill it accurately.",
       "objective": "Add a personal-name input and an email input with autocomplete=\"name\" and autocomplete=\"email\". Give both fields a non-empty name attribute.",
-      "hint": "Match each input purpose with the correct autocomplete token.",
+      "hints": [
+        "Browsers can fill in forms for people, as long as each field says what it expects.",
+        "Add autocomplete=\"name\" to the name input and autocomplete=\"email\" to the email input. Both need a name.",
+        "`<input name=\"name\" autocomplete=\"name\">` and `<input type=\"email\" name=\"email\" autocomplete=\"email\">`"
+      ],
       "checks": [
         "Personal-name autofill token exists",
         "Email autofill token exists"
-      ]
-    },
-    "html-table": {
-      "title": "Build a data table",
-      "topic": "Tables",
-      "summary": "Tables express relationships in genuinely tabular data. They should not be used for page layout.",
-      "objective": "Create a table with at least two header cells and at least two data cells.",
-      "hint": "Use table, tr, th, and td.",
-      "checks": [
-        "Table contains header and data rows"
-      ]
-    },
-    "html-table-scope": {
-      "title": "Clarify table headers",
-      "topic": "Tables",
-      "summary": "caption names a table. scope helps assistive technology connect headers to cells.",
-      "objective": "Create a table with a visible caption and at least two column headers that use scope=\"col\".",
-      "hint": "Put caption inside table, then add th elements with scope.",
-      "checks": [
-        "Table contains caption and scoped column headers"
       ]
     },
     "html-audio": {
@@ -390,7 +534,11 @@
       "topic": "Media",
       "summary": "audio embeds sound. source provides media candidates. Fallback text helps when the element is unsupported.",
       "objective": "Create an audio element with controls, a source with type audio/mpeg, and fallback text.",
-      "hint": "Nest source and fallback text inside audio.",
+      "hints": [
+        "Media elements let the browser pick a file it can play, and show a message when it cannot.",
+        "Add controls to audio, then put a source with type=\"audio/mpeg\" and some fallback text inside it.",
+        "`<audio controls><source src=\"lesson.mp3\" type=\"audio/mpeg\">Audio is not supported.</audio>`"
+      ],
       "checks": [
         "Audio element contains its MPEG source and fallback text"
       ]
@@ -400,7 +548,11 @@
       "topic": "Media",
       "summary": "Videos need captions so spoken content is available without audio.",
       "objective": "Create a video with controls, a source, and a captions track with srclang=\"en\".",
-      "hint": "Nest source and track inside video.",
+      "hints": [
+        "Captions make a video usable for people who cannot hear it. They come from a track file.",
+        "Inside a video with controls, add a source, then a track with kind=\"captions\" and srclang=\"en\".",
+        "`<video controls><source src=\"lesson.mp4\" type=\"video/mp4\"><track kind=\"captions\" src=\"captions.vtt\" srclang=\"en\"></video>`"
+      ],
       "checks": [
         "Video contains source and English captions track"
       ]
@@ -410,9 +562,41 @@
       "topic": "Responsive media",
       "summary": "picture lets the browser choose from different image sources for different conditions.",
       "objective": "Create a picture with a source for min-width screens and an img fallback with non-empty src and alt text.",
-      "hint": "Put source first and img last inside picture.",
+      "hints": [
+        "The picture element lets the browser choose a different image depending on the screen.",
+        "Inside picture, put a source with a media query and a srcset first, then an img as the fallback.",
+        "`<picture><source media=\"(min-width: 700px)\" srcset=\"wide.webp\"><img src=\"small.jpg\" alt=\"A workspace\"></picture>`"
+      ],
       "checks": [
         "Picture contains the wide source and fallback image"
+      ]
+    },
+    "html-description-meta": {
+      "title": "Summarize the page for search",
+      "topic": "Metadata",
+      "summary": "A meta description summarizes page content for search engines and link previews.",
+      "objective": "Add a meta description in head with non-empty content that summarizes the page.",
+      "hints": [
+        "Search engines and link previews show a short summary of the page. It lives in head.",
+        "Add a meta element in head with name=\"description\" and your summary in content.",
+        "`<meta name=\"description\" content=\"Learn practical HTML fundamentals\">`"
+      ],
+      "checks": [
+        "Meta description has content in head"
+      ]
+    },
+    "html-canonical": {
+      "title": "Declare the canonical URL",
+      "topic": "Metadata",
+      "summary": "A canonical URL tells search engines which URL is the preferred version of a page.",
+      "objective": "Add a canonical link in head that points to an absolute http or https URL.",
+      "hints": [
+        "When the same page has several addresses, one link tells search engines which address is the real one.",
+        "Add a link element in head with rel=\"canonical\" and a full https URL in href.",
+        "`<link rel=\"canonical\" href=\"https://example.com/lessons/html\">`"
+      ],
+      "checks": [
+        "Canonical URL exists in head"
       ]
     },
     "html-skip-link": {
@@ -420,7 +604,11 @@
       "topic": "Accessibility",
       "summary": "Skip links help keyboard and assistive technology users bypass repeated navigation.",
       "objective": "Create a skip link before header that points to the id of the main content.",
-      "hint": "Choose an id for main, then make the skip link href use # followed by that same id.",
+      "hints": [
+        "Keyboard users should not have to go through the whole header on every page.",
+        "Give main an id, then add a link before header whose href is # followed by that id.",
+        "`<a href=\"#content\">Skip to content</a>` before header, and `<main id=\"content\">` after it."
+      ],
       "checks": [
         "Skip link targets main content",
         "Skip link appears before header and main"
@@ -431,9 +619,27 @@
       "topic": "Accessibility",
       "summary": "aria-current tells assistive technology which item in a set represents the current page or step.",
       "objective": "Inside a nav, create a link to / and mark it with aria-current=\"page\".",
-      "hint": "Put aria-current on the anchor that represents the current page.",
+      "hints": [
+        "In a navigation, people should know which link matches the page they are on.",
+        "Inside a nav, add a link to / with the aria-current attribute set to page.",
+        "`<nav><a href=\"/\" aria-current=\"page\">Home</a></nav>`"
+      ],
       "checks": [
         "Current page link is inside navigation"
+      ]
+    },
+    "html-details": {
+      "title": "Create native disclosure",
+      "topic": "Interactive HTML",
+      "summary": "details and summary provide disclosure behavior without JavaScript.",
+      "objective": "Create details with a summary question and a paragraph answer.",
+      "hints": [
+        "HTML has a built-in element that shows and hides content without any JavaScript.",
+        "Inside details, put a summary first with the question, then a p with the answer.",
+        "`<details><summary>What is HTML?</summary><p>It structures web content.</p></details>`"
+      ],
+      "checks": [
+        "Disclosure contains summary first and a paragraph answer"
       ]
     },
     "html-aria-expanded": {
@@ -441,10 +647,28 @@
       "topic": "Accessibility",
       "summary": "ARIA can expose state and relationships when native HTML does not already provide them.",
       "objective": "Create a button with aria-expanded=\"false\" and aria-controls pointing to a target element id.",
-      "hint": "Choose an id for the controlled content, then use the same value in the button aria-controls attribute.",
+      "hints": [
+        "A button that shows or hides content should say whether that content is open, and which content it controls.",
+        "Give the controlled element an id. On the button, set aria-expanded=\"false\" and aria-controls to that id.",
+        "`<button type=\"button\" aria-expanded=\"false\" aria-controls=\"menu\">Menu</button><nav id=\"menu\">Links</nav>`"
+      ],
       "checks": [
         "Button exposes collapsed state",
         "Button controls an existing target"
+      ]
+    },
+    "html-dialog": {
+      "title": "Create a native dialog",
+      "topic": "Dialogs",
+      "summary": "dialog represents modal or non-modal dialog content and provides native semantics.",
+      "objective": "Create an open dialog containing an h2 and a close button with type=\"button\".",
+      "hints": [
+        "HTML has a native element for dialogs. The open attribute shows it right away.",
+        "Create a dialog with the open attribute, then put an h2 and a button with type=\"button\" inside.",
+        "`<dialog open><h2>Lesson complete</h2><button type=\"button\">Close</button></dialog>`"
+      ],
+      "checks": [
+        "Open dialog contains its title and close button"
       ]
     },
     "html-progress-meter": {
@@ -452,7 +676,11 @@
       "topic": "Status semantics",
       "summary": "progress represents task completion. meter represents a scalar measurement within a known range.",
       "objective": "Create progress and meter elements with numeric values, ranges, and fallback text.",
-      "hint": "Both elements should include fallback text between their tags.",
+      "hints": [
+        "Progress shows how far a task has gone. Meter shows a measurement within a known range.",
+        "Add a progress with value and max, and a meter with min, max, and value. Put fallback text inside each.",
+        "`<progress value=\"30\" max=\"50\">30 of 50</progress>` and `<meter min=\"0\" max=\"100\" value=\"75\">75%</meter>`"
+      ],
       "checks": [
         "Progress has numeric value and max",
         "Meter has numeric range and value"
@@ -463,49 +691,13 @@
       "topic": "Templates",
       "summary": "template stores markup that is not rendered immediately. Scripts can clone it later.",
       "objective": "Create a template with a non-empty id containing an article with an h2.",
-      "hint": "Nest article and h2 inside template.",
+      "hints": [
+        "A template holds markup that is not displayed, ready to be copied later with JavaScript.",
+        "Give a template element an id, then put an article with an h2 inside it.",
+        "`<template id=\"lesson-card\"><article><h2>Lesson title</h2></article></template>`"
+      ],
       "checks": [
         "Named template contains article card markup"
-      ]
-    },
-    "html-dialog": {
-      "title": "Create a native dialog",
-      "topic": "Dialogs",
-      "summary": "dialog represents modal or non-modal dialog content and provides native semantics.",
-      "objective": "Create an open dialog containing an h2 and a close button with type=\"button\".",
-      "hint": "Add open for preview and nest the heading and button.",
-      "checks": [
-        "Open dialog contains its title and close button"
-      ]
-    },
-    "html-code-pre": {
-      "title": "Show code as code",
-      "topic": "Code content",
-      "summary": "code marks computer code. pre preserves whitespace and line breaks for preformatted text.",
-      "objective": "Create a pre element containing a code element with any short code sample.",
-      "hint": "Nest code inside pre, not the other way around.",
-      "checks": [
-        "Code block is nested correctly"
-      ]
-    },
-    "html-description-meta": {
-      "title": "Summarize the page for search",
-      "topic": "Metadata",
-      "summary": "A meta description summarizes page content for search engines and link previews.",
-      "objective": "Add a meta description in head with non-empty content that summarizes the page.",
-      "hint": "Put the meta tag inside head.",
-      "checks": [
-        "Meta description has content in head"
-      ]
-    },
-    "html-canonical": {
-      "title": "Declare the canonical URL",
-      "topic": "Metadata",
-      "summary": "A canonical URL tells search engines which URL is the preferred version of a page.",
-      "objective": "Add a canonical link in head that points to an absolute http or https URL.",
-      "hint": "Put <link rel=\"canonical\" href=\"...\"> inside head.",
-      "checks": [
-        "Canonical URL exists in head"
       ]
     },
     "html-safe-scripts": {
@@ -513,7 +705,11 @@
       "topic": "Scripts",
       "summary": "defer avoids blocking HTML parsing for classic scripts. Module scripts defer automatically. noscript explains what happens without scripting.",
       "objective": "In head, load one deferred classic script and one module script. In body, add noscript fallback text.",
-      "hint": "Put both script tags in head and noscript in body.",
+      "hints": [
+        "Scripts in head can stop the page from showing. Some attributes let the page load first.",
+        "In head, add one script with defer and one with type=\"module\". In body, add a noscript message.",
+        "`<script src=\"app.js\" defer></script>` and `<script type=\"module\" src=\"main.js\"></script>` in head, `<noscript>JavaScript is required.</noscript>` in body."
+      ],
       "checks": [
         "Deferred classic script exists in head",
         "Module script exists in head",
@@ -525,7 +721,11 @@
       "topic": "Capstone",
       "summary": "A production page combines semantic structure, accessible navigation, meaningful content, metadata, and usable forms.",
       "objective": "Build a complete page body with a skip link, header/nav, main article, labelled signup form, and footer.",
-      "hint": "Choose an id for main, point the skip link to that id, and nest the article and form inside main.",
+      "hints": [
+        "Build it in the order a visitor meets it: skip link, header, main content, then footer.",
+        "Give main an id for the skip link. Inside main, put an article and a form with a labelled email input.",
+        "Start with `<a href=\"#content\">Skip to content</a>`, then `<header><nav aria-label=\"Primary\">...</nav></header>`, `<main id=\"content\">...</main>`, and `<footer>`."
+      ],
       "checks": [
         "Skip link targets main",
         "Header contains labelled navigation with a link",

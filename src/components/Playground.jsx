@@ -1,8 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { Check, Eraser, Link2, RotateCcw } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { Check, Link2, RotateCcw } from 'lucide-react'
 import CodeEditor from './CodeEditor.jsx'
 import Preview from './Preview.jsx'
+import Console from './Console.jsx'
+import useConsoleLogs from './useConsoleLogs.js'
 import { PLAYGROUND_TEMPLATE, decodeShare, encodeShare, loadPlayground, savePlayground } from '../core/playground.js'
+import { protectLoops } from '../core/loopGuard.js'
 import { useI18n } from '../i18n/index.js'
 
 const FILES = [
@@ -10,7 +13,6 @@ const FILES = [
   { id: 'css', name: 'styles.css', language: 'css' },
   { id: 'js', name: 'script.js', language: 'javascript' },
 ]
-const MAX_LOGS = 200
 const SAVE_DELAY = 300
 const STATUS_TIME = 2500
 
@@ -21,13 +23,13 @@ export default function Playground({ shared }) {
   const [files, setFiles] = useState(loadPlayground)
   const [activeFile, setActiveFile] = useState('html')
   const [revision, setRevision] = useState(0)
-  const [logs, setLogs] = useState([])
+  const { logs, addLog, clearLogs } = useConsoleLogs()
   const [status, setStatus] = useState(null)
   const [confirmReset, setConfirmReset] = useState(false)
   const dirty = useRef(false)
   const latestFiles = useRef(files)
-  const nextLogId = useRef(0)
-  const consoleList = useRef(null)
+  const loopMessage = t('editor.loopStopped')
+  const guardedJs = useMemo(() => protectLoops(files.js, loopMessage), [files.js, loopMessage])
 
   // Open code from a share link without overwriting saved work until it is edited.
   useEffect(() => {
@@ -71,24 +73,12 @@ export default function Playground({ shared }) {
     return () => clearTimeout(timer)
   }, [confirmReset])
 
-  // Keep the newest console line in view.
-  useEffect(() => {
-    const list = consoleList.current
-    if (list) list.scrollTop = list.scrollHeight
-  }, [logs])
-
   const edit = (id) => (value) => {
     // First edit of shared code: drop the share hash so a reload keeps the edits.
     if (!dirty.current && shared) history.replaceState(null, '', '#/playground')
     dirty.current = true
     setFiles((current) => ({ ...current, [id]: value }))
   }
-
-  const addLog = useCallback((entry) => {
-    const item = { ...entry, id: ++nextLogId.current }
-    setLogs((current) => [...current.slice(1 - MAX_LOGS), item])
-  }, [])
-  const clearLogs = useCallback(() => setLogs([]), [])
 
   const share = async () => {
     const url = `${location.href.split('#')[0]}#/playground/${await encodeShare(files)}`
@@ -165,6 +155,7 @@ export default function Playground({ shared }) {
               value={files[file.id]}
               language={file.language}
               label={t('common.editorLabel', { file: file.name })}
+              placeholder={t('editor.placeholder')}
               onChange={edit(file.id)}
             />
           </div>
@@ -182,28 +173,13 @@ export default function Playground({ shared }) {
           key={revision}
           html={files.html}
           css={files.css}
-          js={files.js}
+          js={guardedJs}
           delay={400}
           title={t('playground.previewPanel')}
           onLog={addLog}
           onReload={clearLogs}
         />
-        <div className="console">
-          <div className="console-bar">
-            <span>
-              {t('playground.console')} {logs.length > 0 && <b>{logs.length}</b>}
-            </span>
-            <button type="button" onClick={clearLogs} aria-label={t('playground.clearConsole')} title={t('playground.clearConsole')}>
-              <Eraser size={13} />
-            </button>
-          </div>
-          <div className="console-list" ref={consoleList} role="log">
-            {logs.length === 0 && <p className="console-empty">{t('playground.consoleEmpty')}</p>}
-            {logs.map((log) => (
-              <pre key={log.id} className={`log log-${log.level}`}>{log.text}</pre>
-            ))}
-          </div>
-        </div>
+        <Console logs={logs} onClear={clearLogs} />
       </section>
     </div>
   )

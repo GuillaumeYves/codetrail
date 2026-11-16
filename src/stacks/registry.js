@@ -1,12 +1,14 @@
 // App-facing stack loader. Structure, check runtime, and lesson text load on first use, then stay cached.
 import { htmlStackMeta } from './html/meta.js'
 import { cssStackMeta } from './css/meta.js'
+import { jsStackMeta } from './js/meta.js'
 import { localizeLessons, mergeLessonText } from '../core/lessonText.js'
 import { DEFAULT_LOCALE } from '../i18n/format.js'
 
 const stackDefinitions = {
   html: htmlStackMeta,
   css: cssStackMeta,
+  js: jsStackMeta,
 }
 
 const publicStackMeta = ({ dataUrl, localeUrl, runtimeLoader, ...meta }) => meta

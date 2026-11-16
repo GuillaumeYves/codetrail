@@ -1,0 +1,51 @@
+/* Base look for JavaScript lesson pages. The learner script changes the page, not this file. */
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #0d1117; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+h1, h2, p { margin-top: 0; }
+.card {
+  max-width: 30rem;
+  padding: 1.5rem;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  background: #161b22;
+  transition: border-color .2s, box-shadow .2s;
+}
+.card.highlight { border-color: #58a6ff; box-shadow: 0 0 0 4px rgba(88, 166, 255, .2); }
+.subtitle, label { color: #8b949e; }
+.big { margin: 0; font-size: 3rem; font-weight: 800; }
+button {
+  padding: .55rem 1rem;
+  border: 1px solid #238636;
+  border-radius: 8px;
+  background: #238636;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+input {
+  width: 100%;
+  margin: .4rem 0 .8rem;
+  padding: .55rem .7rem;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: #0d1117;
+  color: #e6edf3;
+  font: inherit;
+}
+form { display: grid; gap: .25rem; margin-bottom: 1rem; }
+form button { justify-self: start; }
+ul { padding-left: 1.2rem; }
+li { margin-block: .35rem; cursor: default; }
+li.done { color: #8b949e; text-decoration: line-through; }
+.menu { display: none; margin: .8rem 0 0; padding: .5rem 1rem; border: 1px solid #30363d; border-radius: 8px; list-style: none; }
+.menu.open { display: block; }
+output { font-weight: 800; }

@@ -1,0 +1,681 @@
+{
+  "shared": {
+    "commonMistake": "Read the console under the preview first. One red error stops the rest of the script, so fix the first error before anything else.",
+    "bestPractice": "Write the smallest piece of {topic} code that works, run it, then improve names and structure once every check passes.",
+    "runsCheck": "Your code runs without errors"
+  },
+  "lessons": {
+    "js-console-log": {
+      "title": "Say hello",
+      "topic": "Console",
+      "summary": "console.log prints a value in the console under the preview. It is the quickest way to see what your code is doing.",
+      "objective": "Print the exact text Hello, world! to the console with console.log.",
+      "hints": [
+        "Text in JavaScript goes between quotes, and console.log prints whatever you give it.",
+        "Call console.log and put the text Hello, world! inside the parentheses, in quotes.",
+        "`console.log('Hello, world!')`"
+      ],
+      "checks": [
+        "Uses console.log",
+        "The console shows Hello, world!"
+      ]
+    },
+    "js-const": {
+      "title": "Store a value",
+      "topic": "Variables",
+      "summary": "A variable gives a value a name so you can use it again. const creates a name that always points to the same value.",
+      "objective": "Declare a constant named name that holds your first name as text, then print name to the console.",
+      "hints": [
+        "A variable is a label for a value. Declare it once, then use its name anywhere after.",
+        "Write const, the name name, then = and your first name in quotes. Then pass name to console.log, without quotes.",
+        "`const name = 'Ada'` then `console.log(name)`"
+      ],
+      "commonMistake": "console.log('name') prints the word name, not the value. Quotes make text; without quotes, JavaScript uses the variable.",
+      "checks": [
+        "name is declared with const",
+        "name holds some text",
+        "The console shows the value of name"
+      ]
+    },
+    "js-let": {
+      "title": "Change a value",
+      "topic": "Variables",
+      "summary": "let creates a variable that can get a new value later. Use it only when a value really needs to change.",
+      "objective": "Declare score with let and start it at 0. On a later line, add 10 to score, then print score.",
+      "hints": [
+        "A const cannot be reassigned, so a changing score needs the other keyword.",
+        "Start with let score = 0, then reassign it with score = score + 10 or the shorter score += 10.",
+        "`let score = 0`, then `score += 10`, then `console.log(score)`"
+      ],
+      "bestPractice": "Use const by default and let only when the value must change, like a score or a counter. It tells readers which values move.",
+      "checks": [
+        "score is declared with let",
+        "score starts at 0",
+        "score is updated after it is declared",
+        "The console shows 10"
+      ]
+    },
+    "js-numbers": {
+      "title": "Do the math",
+      "topic": "Numbers",
+      "summary": "JavaScript does arithmetic with +, -, * and /. Storing results in well named constants keeps calculations readable.",
+      "objective": "Using price and quantity, create a constant named total equal to price times quantity, then print total.",
+      "hints": [
+        "Multiplication uses the star symbol, and variable names work inside calculations.",
+        "Declare const total and set it to price * quantity, then print it.",
+        "`const total = price * quantity` then `console.log(total)`"
+      ],
+      "checks": [
+        "total is declared with const",
+        "total is calculated from price and quantity",
+        "total equals 36",
+        "The console shows 36"
+      ]
+    },
+    "js-template-literals": {
+      "title": "Build a sentence",
+      "topic": "Strings",
+      "summary": "Template literals use backticks and ${} to place values inside text. They read more clearly than joining strings with +.",
+      "objective": "Create a constant named greeting with a template literal that uses name to produce Hello, Ada! Then print greeting.",
+      "hints": [
+        "Backticks create a string that can hold values inside ${ }.",
+        "Write const greeting = followed by a backtick string that contains ${name}.",
+        "``const greeting = `Hello, ${name}!` `` then `console.log(greeting)`"
+      ],
+      "checks": [
+        "greeting uses a template literal with name inside",
+        "greeting is Hello, Ada!",
+        "The console shows Hello, Ada!"
+      ]
+    },
+    "js-string-methods": {
+      "title": "Clean up text",
+      "topic": "Strings",
+      "summary": "Strings come with built-in methods. Chaining them cleans text step by step, and the original string never changes.",
+      "objective": "city has extra spaces. Create a constant named clean that trims the spaces and turns the text to uppercase, then print clean.",
+      "hints": [
+        "Methods are called with a dot after a value. Each one returns a new string.",
+        "trim() removes the spaces around text and toUpperCase() changes the case. You can chain them.",
+        "`const clean = city.trim().toUpperCase()`"
+      ],
+      "checks": [
+        "Uses trim()",
+        "Uses toUpperCase()",
+        "clean is PARIS",
+        "The console shows PARIS"
+      ]
+    },
+    "js-comparisons": {
+      "title": "Compare values",
+      "topic": "Booleans",
+      "summary": "Comparisons answer with true or false. Use === to compare values, because == converts types in surprising ways.",
+      "objective": "Using age, create isAdult (true when age is 18 or more) and isTwenty (true when age is exactly 20, using ===). Print both.",
+      "hints": [
+        "A comparison is a question that JavaScript answers with true or false.",
+        "Use >= for \"18 or more\" and === for \"exactly 20\". Store each answer in a constant.",
+        "`const isAdult = age >= 18` and `const isTwenty = age === 20`"
+      ],
+      "commonMistake": "== converts types before comparing, so \"20\" == 20 is true. === compares the type too, which avoids surprises.",
+      "checks": [
+        "Uses >= for isAdult",
+        "isAdult is true",
+        "Uses === for isTwenty",
+        "isTwenty is true",
+        "Does not use =="
+      ]
+    },
+    "js-functions": {
+      "title": "Write a function",
+      "topic": "Functions",
+      "summary": "A function packages steps under a name. Parameters receive input, and return sends a result back to the caller.",
+      "objective": "Write a function named greet that takes a name and returns Hello, then the name and an exclamation mark. greet('Ada') returns Hello, Ada!",
+      "hints": [
+        "A function receives input through parameters and gives back a value with return.",
+        "Declare function greet(name) and return a template literal that uses name.",
+        "``function greet(name) { return `Hello, ${name}!` }``"
+      ],
+      "commonMistake": "console.log inside a function only prints. return is what hands the value back to the code that called the function.",
+      "checks": [
+        "greet is declared as a function",
+        "greet returns a value",
+        "greet('Ada') returns Hello, Ada!",
+        "greet('Linus') returns Hello, Linus!"
+      ]
+    },
+    "js-if-else": {
+      "title": "Make a decision",
+      "topic": "Conditionals",
+      "summary": "if runs code only when a condition is true, and else covers every other case. Inside a function, each branch can return its own result.",
+      "objective": "Write a function named getAdvice that takes a temperature. Return Stay cool when it is above 25, otherwise return Enjoy the sun.",
+      "hints": [
+        "Decide which question to ask about the temperature, then what to answer in each case.",
+        "Inside the function, use if (temperature > 25) to return one text, and else to return the other.",
+        "`if (temperature > 25) { return 'Stay cool' } else { return 'Enjoy the sun' }`"
+      ],
+      "checks": [
+        "Uses an if statement",
+        "getAdvice(30) returns Stay cool",
+        "getAdvice(18) returns Enjoy the sun",
+        "getAdvice(25) returns Enjoy the sun"
+      ]
+    },
+    "js-arrow-functions": {
+      "title": "Use a shorter function",
+      "topic": "Functions",
+      "summary": "Arrow functions are a compact way to write small functions. When the body is one expression, its value is returned automatically.",
+      "objective": "Create a constant named double that holds an arrow function. It takes a number and returns that number times 2.",
+      "hints": [
+        "An arrow function is a value, so it can be stored in a constant like any other value.",
+        "Write const double = (number) => followed by the calculation. One expression needs no braces.",
+        "`const double = (number) => number * 2`"
+      ],
+      "checks": [
+        "double is declared with const",
+        "Uses an arrow function",
+        "double(4) returns 8",
+        "double(-3) returns -6"
+      ]
+    },
+    "js-arrays": {
+      "title": "Make a list",
+      "topic": "Arrays",
+      "summary": "An array holds an ordered list of values. Positions start at 0, and length tells you how many items there are.",
+      "objective": "Create a constant array named fruits with at least three strings. Print the first item using its index, then print the length.",
+      "hints": [
+        "Arrays use square brackets, with items separated by commas. The first position is 0, not 1.",
+        "Declare const fruits with three strings. fruits[0] is the first item and fruits.length is the count.",
+        "`console.log(fruits[0])` and `console.log(fruits.length)`"
+      ],
+      "checks": [
+        "fruits is declared with const",
+        "fruits is an array with at least three items",
+        "The console shows the first fruit",
+        "The console shows how many fruits there are"
+      ]
+    },
+    "js-array-push": {
+      "title": "Add to a list",
+      "topic": "Arrays",
+      "summary": "push adds an item to the end of an array. A const array can still change its contents: const only stops the name from pointing elsewhere.",
+      "objective": "Add the text Practice to the end of tasks with push, then print the length of tasks.",
+      "hints": [
+        "Arrays have methods that change them in place.",
+        "Call push on tasks and pass the text Practice.",
+        "`tasks.push('Practice')` then `console.log(tasks.length)`"
+      ],
+      "commonMistake": "tasks = [...] fails on a const array. push changes the existing array instead of replacing it.",
+      "checks": [
+        "Uses push",
+        "tasks now holds Read and Practice",
+        "The console shows 2"
+      ]
+    },
+    "js-for-loop": {
+      "title": "Repeat with a loop",
+      "topic": "Loops",
+      "summary": "A for loop repeats code a set number of times. It has a start, a condition to keep going, and a step.",
+      "objective": "Use a for loop to print the numbers 1 to 5, one per line.",
+      "hints": [
+        "A loop needs three parts: where to start, when to stop, and how to move to the next step.",
+        "Start a counter at 1, keep going while it is 5 or less, and add 1 each time. Print the counter inside the loop.",
+        "`for (let i = 1; i <= 5; i++) { console.log(i) }`"
+      ],
+      "commonMistake": "A condition that never becomes false loops forever. If the preview stops your loop, check that the counter moves toward the end.",
+      "checks": [
+        "Uses a for loop with a counter",
+        "The console shows 1 to 5 in order"
+      ]
+    },
+    "js-for-of": {
+      "title": "Visit every item",
+      "topic": "Loops",
+      "summary": "for...of walks through each item of an array without managing an index. It is the clearest loop when you need every value.",
+      "objective": "Use a for...of loop to print each name in names.",
+      "hints": [
+        "When you need each item and not its position, there is a loop made for that.",
+        "Write for (const name of names) and print name inside the loop.",
+        "`for (const name of names) { console.log(name) }`"
+      ],
+      "checks": [
+        "Uses a for...of loop",
+        "The console shows Ada, Grace, and Linus in order"
+      ]
+    },
+    "js-while": {
+      "title": "Loop until done",
+      "topic": "Loops",
+      "summary": "A while loop repeats as long as its condition is true. It fits cases where you do not know the number of steps ahead of time.",
+      "objective": "Starting from count = 3, use a while loop to print 3, 2, 1, then print Liftoff! after the loop.",
+      "hints": [
+        "Each pass through the loop must bring the condition closer to false, or it never ends.",
+        "Loop while count > 0: print count, then lower it with count--. Print Liftoff! after the closing brace.",
+        "`while (count > 0) { console.log(count); count-- }` then `console.log('Liftoff!')`"
+      ],
+      "checks": [
+        "Uses a while loop",
+        "The console shows 3, 2, 1, Liftoff!"
+      ]
+    },
+    "js-objects": {
+      "title": "Describe a thing",
+      "topic": "Objects",
+      "summary": "An object groups related values under named keys. Dot notation reads a value by its key.",
+      "objective": "Create a constant object named book with a title (text), an author (text), and pages (a number). Print the title with dot notation.",
+      "hints": [
+        "Objects use curly braces, with key: value pairs separated by commas.",
+        "Write const book = { title: ..., author: ..., pages: ... }, then print book.title.",
+        "`const book = { title: 'Dune', author: 'Frank Herbert', pages: 412 }`"
+      ],
+      "checks": [
+        "book.title is text",
+        "book.author is text",
+        "book.pages is a number",
+        "Reads the title with dot notation",
+        "The console shows the title"
+      ]
+    },
+    "js-object-update": {
+      "title": "Update an object",
+      "topic": "Objects",
+      "summary": "Properties can be changed or added after an object is created, even when the object is a const.",
+      "objective": "Change the role of user to mentor and add a new property active set to true, without rewriting the object.",
+      "hints": [
+        "Assigning to a property works like assigning to a variable.",
+        "Use user.role = ... to change the role, and user.active = ... to add a new key.",
+        "`user.role = 'mentor'` and `user.active = true`"
+      ],
+      "checks": [
+        "Updates role with dot notation",
+        "user.role is mentor",
+        "user.active is true",
+        "user.name is still Ada"
+      ]
+    },
+    "js-cart-total": {
+      "title": "Add up a cart",
+      "topic": "Loops",
+      "summary": "Loops and objects work well together. A total variable collects a running sum while the loop visits each item.",
+      "objective": "Write a function named totalPrice that takes an array of items and returns the sum of their price properties. An empty array returns 0.",
+      "hints": [
+        "Start a total at 0, then add to it once per item.",
+        "Inside totalPrice, declare let total = 0, loop over items with for...of, add item.price, then return total.",
+        "`let total = 0; for (const item of items) { total += item.price } return total`"
+      ],
+      "checks": [
+        "Uses a loop",
+        "totalPrice(cart) returns 47",
+        "totalPrice([]) returns 0",
+        "Works with any items"
+      ]
+    },
+    "js-logical-operators": {
+      "title": "Combine conditions",
+      "topic": "Conditionals",
+      "summary": "&& needs both sides to be true, while || needs only one. They let one line express a whole rule.",
+      "objective": "Write a function named canEnter that takes age and hasTicket. Return true only when age is 18 or more and hasTicket is true.",
+      "hints": [
+        "The rule has two parts that must both be true.",
+        "Return age >= 18 combined with hasTicket using &&.",
+        "`return age >= 18 && hasTicket`"
+      ],
+      "checks": [
+        "Uses &&",
+        "canEnter(20, true) is true",
+        "canEnter(20, false) is false",
+        "canEnter(16, true) is false"
+      ]
+    },
+    "js-default-params": {
+      "title": "Format a price",
+      "topic": "Functions",
+      "summary": "Default parameters give a value when the caller leaves one out. toFixed(2) shows a number with two decimals.",
+      "objective": "Write a function named formatPrice that takes amount and currency, with currency defaulting to EUR. Return the amount with two decimals, a space, then the currency, like 5.00 EUR.",
+      "hints": [
+        "A parameter can have a fallback value written right in the parameter list.",
+        "Declare function formatPrice(amount, currency = 'EUR') and use amount.toFixed(2) in a template literal.",
+        "``return `${amount.toFixed(2)} ${currency}` ``"
+      ],
+      "checks": [
+        "currency defaults to EUR",
+        "formatPrice(5) returns 5.00 EUR",
+        "formatPrice(3.5, 'USD') returns 3.50 USD"
+      ]
+    },
+    "js-map": {
+      "title": "Transform every item",
+      "topic": "Array methods",
+      "summary": "map creates a new array by running a function on each item. The original array stays the same.",
+      "objective": "Create a constant named doubled that uses map on numbers to double every value.",
+      "hints": [
+        "map calls your function once per item and collects what it returns.",
+        "Call numbers.map with an arrow function that returns the number times 2.",
+        "`const doubled = numbers.map((number) => number * 2)`"
+      ],
+      "checks": [
+        "Uses map",
+        "doubled is [2, 4, 6, 8]",
+        "numbers is unchanged"
+      ]
+    },
+    "js-filter": {
+      "title": "Keep what matches",
+      "topic": "Array methods",
+      "summary": "filter builds a new array with only the items for which your function returns true.",
+      "objective": "Create a constant named passing with only the scores that are 50 or more, using filter.",
+      "hints": [
+        "filter asks a yes or no question about each item.",
+        "Call scores.filter with an arrow function that returns score >= 50.",
+        "`const passing = scores.filter((score) => score >= 50)`"
+      ],
+      "checks": [
+        "Uses filter",
+        "passing is [72, 90, 51]",
+        "scores is unchanged"
+      ]
+    },
+    "js-find-includes": {
+      "title": "Search a list",
+      "topic": "Array methods",
+      "summary": "find returns the first item that matches, or undefined. includes tells you whether a value is in the array at all.",
+      "objective": "Create admin with the first user whose role is admin, using find. Then create hasGuest, true when roles includes guest.",
+      "hints": [
+        "One method returns a matching item, the other returns true or false.",
+        "Use users.find with a function that checks user.role === 'admin', and roles.includes('guest').",
+        "`const admin = users.find((user) => user.role === 'admin')` and `const hasGuest = roles.includes('guest')`"
+      ],
+      "checks": [
+        "Uses find",
+        "admin is Grace",
+        "Uses includes",
+        "hasGuest is false"
+      ]
+    },
+    "js-reduce": {
+      "title": "Reduce to one value",
+      "topic": "Array methods",
+      "summary": "reduce walks through an array while carrying a running result. It turns a list into a single value, like a total.",
+      "objective": "Create a constant named total that uses reduce to add up prices. Start the total at 0.",
+      "hints": [
+        "reduce gives your function the running result and the current item.",
+        "Call prices.reduce with (sum, price) => sum + price, and pass 0 as the second argument.",
+        "`const total = prices.reduce((sum, price) => sum + price, 0)`"
+      ],
+      "commonMistake": "Without a starting value, reduce uses the first item and fails on an empty array. Always pass the starting value.",
+      "checks": [
+        "Uses reduce",
+        "Starts the total at 0",
+        "total is 43"
+      ]
+    },
+    "js-destructuring": {
+      "title": "Unpack values",
+      "topic": "Destructuring",
+      "summary": "Destructuring pulls values out of objects and arrays into variables in one step.",
+      "objective": "From movie, destructure title and year into constants. From ranking, destructure the first two items into first and second.",
+      "hints": [
+        "The shape on the left of = mirrors the shape of the value on the right.",
+        "Curly braces unpack object keys by name. Square brackets unpack array items by position.",
+        "`const { title, year } = movie` and `const [first, second] = ranking`"
+      ],
+      "checks": [
+        "Destructures an object",
+        "title is Arrival and year is 2016",
+        "Destructures an array",
+        "first is Ada and second is Grace"
+      ]
+    },
+    "js-spread": {
+      "title": "Combine and copy",
+      "topic": "Spread syntax",
+      "summary": "The spread syntax ... copies the items of an array or the keys of an object into a new one, leaving the original untouched.",
+      "objective": "Create allTags by spreading frontend and backend into one new array. Then create updated, a copy of settings with theme set to dark.",
+      "hints": [
+        "Three dots inside brackets or braces copy the contents of another array or object.",
+        "Write [...frontend, ...backend] for the array, and { ...settings, theme: 'dark' } for the object.",
+        "`const allTags = [...frontend, ...backend]` and `const updated = { ...settings, theme: 'dark' }`"
+      ],
+      "checks": [
+        "Uses the spread syntax",
+        "allTags holds all four tags in order",
+        "updated has theme dark and keeps fontSize",
+        "settings is unchanged"
+      ]
+    },
+    "js-dom-select": {
+      "title": "Change the page",
+      "topic": "DOM",
+      "summary": "The DOM is the page as JavaScript sees it. querySelector finds an element with a CSS selector, and textContent changes its text.",
+      "objective": "Select the element with the id title and change its text to Hello, DOM!",
+      "hints": [
+        "JavaScript finds elements with the same selectors you use in CSS.",
+        "Use document.querySelector('#title') and set its textContent.",
+        "`document.querySelector('#title').textContent = 'Hello, DOM!'`"
+      ],
+      "checks": [
+        "Uses querySelector",
+        "The title says Hello, DOM!"
+      ]
+    },
+    "js-dom-class": {
+      "title": "Switch a style",
+      "topic": "DOM",
+      "summary": "classList adds and removes CSS classes. Switching classes keeps the look in CSS and the behavior in JavaScript.",
+      "objective": "Select the card with the id lesson-card and add the class highlight with classList.",
+      "hints": [
+        "The styles for highlight already exist. Your code only needs to add the class.",
+        "Select the card with querySelector, then call classList.add('highlight').",
+        "`document.querySelector('#lesson-card').classList.add('highlight')`"
+      ],
+      "commonMistake": "Setting element.style mixes design into your script. Adding a class keeps the design in CSS, where it is easy to change.",
+      "checks": [
+        "Uses classList.add",
+        "The card has the highlight class"
+      ]
+    },
+    "js-dom-events": {
+      "title": "Respond to a click",
+      "topic": "Events",
+      "summary": "addEventListener runs a function when something happens, like a click. This is how pages become interactive.",
+      "objective": "When the #add button is clicked, increase count by 1 and show the new value in #count.",
+      "hints": [
+        "Keep the count in a variable, then update the page every time it changes.",
+        "Call button.addEventListener('click', ...). Inside the function, add 1 to count and write it to output.textContent.",
+        "`button.addEventListener('click', () => { count++; output.textContent = count })`"
+      ],
+      "checks": [
+        "Uses addEventListener",
+        "The count starts at 0",
+        "One click shows 1",
+        "Another click shows 2"
+      ]
+    },
+    "js-dom-create": {
+      "title": "Build a list",
+      "topic": "DOM",
+      "summary": "createElement makes a new element and append puts it on the page. Together they turn data into markup.",
+      "objective": "For each item in skills, create an li with the skill as its text and append it to the #skills list.",
+      "hints": [
+        "Loop over the data and create one element per item.",
+        "Inside a for...of loop, call document.createElement('li'), set its textContent, then list.append(item).",
+        "`const item = document.createElement('li'); item.textContent = skill; list.append(item)`"
+      ],
+      "checks": [
+        "Uses document.createElement",
+        "The list shows HTML, CSS, and JavaScript"
+      ]
+    },
+    "js-dom-input": {
+      "title": "React to typing",
+      "topic": "Events",
+      "summary": "The input event fires on every keystroke. Reading the field value lets the page react while the person types.",
+      "objective": "When someone types in #name, show Hello, then their name and an exclamation mark in #greeting.",
+      "hints": [
+        "Listen for the event that fires while the person types, then read what is in the field.",
+        "Use field.addEventListener('input', ...) and read field.value inside the function.",
+        "``field.addEventListener('input', () => { greeting.textContent = `Hello, ${field.value}!` })``"
+      ],
+      "checks": [
+        "Listens for the input event",
+        "Typing Ada shows Hello, Ada!",
+        "Typing Grace shows Hello, Grace!"
+      ]
+    },
+    "js-dom-toggle": {
+      "title": "Open a menu",
+      "topic": "Events",
+      "summary": "A toggle flips between two states. Updating aria-expanded along with the class keeps the menu accessible, as in the HTML course.",
+      "objective": "When #menu-button is clicked, toggle the class open on #menu and set aria-expanded on the button to true or false to match.",
+      "hints": [
+        "The class and the aria-expanded value must always agree.",
+        "classList.toggle('open') returns true when it added the class. Pass that value to setAttribute.",
+        "`const isOpen = menu.classList.toggle('open'); button.setAttribute('aria-expanded', isOpen)`"
+      ],
+      "checks": [
+        "Uses classList.toggle",
+        "The menu starts closed",
+        "A click opens the menu",
+        "The button reports aria-expanded=\"true\"",
+        "A second click closes the menu again",
+        "The button reports aria-expanded=\"false\""
+      ]
+    },
+    "js-form-submit": {
+      "title": "Handle a form",
+      "topic": "Forms",
+      "summary": "A submitted form reloads the page by default. preventDefault stops that, so JavaScript can use the data instead.",
+      "objective": "When #task-form is submitted, stop the page reload, add the text of #task as a new li in #tasks, then clear the field.",
+      "hints": [
+        "Listen to the form itself, not the button, so pressing Enter works too.",
+        "In a submit listener, call event.preventDefault(), create an li from input.value, append it, then set input.value to an empty string.",
+        "`form.addEventListener('submit', (event) => { event.preventDefault(); ... })`"
+      ],
+      "checks": [
+        "Submitting stops the page reload",
+        "The task appears in the list",
+        "The field is cleared"
+      ]
+    },
+    "js-classes": {
+      "title": "Create a class",
+      "topic": "Classes",
+      "summary": "A class is a blueprint for objects that share behavior. The constructor sets the starting state, and methods act on it.",
+      "objective": "Create a class named Counter. Its constructor sets count to 0, and its increment method adds 1 to count and returns the new value.",
+      "hints": [
+        "Inside a class, this refers to the object being created or used.",
+        "Inside class Counter, write constructor() { this.count = 0 } and an increment() method.",
+        "`increment() { this.count += 1; return this.count }`"
+      ],
+      "checks": [
+        "Counter is a class",
+        "A new Counter starts at 0",
+        "increment returns 1, then 2",
+        "Each counter keeps its own count"
+      ]
+    },
+    "js-errors": {
+      "title": "Handle errors",
+      "topic": "Errors",
+      "summary": "throw stops a function when something is wrong, and try...catch lets the caller recover instead of crashing.",
+      "objective": "Make parseAge throw an Error when the text is not a number. Then write readAge, which returns parseAge(text), or null when parseAge throws.",
+      "hints": [
+        "Number.isNaN tells you when a conversion to a number failed.",
+        "In parseAge, throw new Error(...) when Number.isNaN(age). In readAge, call parseAge inside try and return null in catch.",
+        "`try { return parseAge(text) } catch { return null }`"
+      ],
+      "checks": [
+        "parseAge('42') returns 42",
+        "parseAge('abc') throws an Error",
+        "Uses try...catch",
+        "readAge('7') returns 7",
+        "readAge('abc') returns null"
+      ]
+    },
+    "js-json": {
+      "title": "Read and write JSON",
+      "topic": "JSON",
+      "summary": "JSON is the text format programs use to exchange data. JSON.parse turns text into values, and JSON.stringify does the opposite.",
+      "objective": "Turn text into an object named data with JSON.parse. Then turn settings into a JSON string named output with JSON.stringify.",
+      "hints": [
+        "One method reads JSON text, the other writes it.",
+        "Use JSON.parse(text) for data and JSON.stringify(settings) for output.",
+        "`const data = JSON.parse(text)` and `const output = JSON.stringify(settings)`"
+      ],
+      "checks": [
+        "Uses JSON.parse",
+        "data.name is Ada and data.level is 3",
+        "Uses JSON.stringify",
+        "output is the JSON text of settings"
+      ]
+    },
+    "js-closures": {
+      "title": "Remember with a closure",
+      "topic": "Closures",
+      "summary": "A function keeps access to the variables around it, even after the outer function has returned. This is called a closure.",
+      "objective": "Write createCounter, which keeps a private count and returns a function. Each call of that function adds 1 and returns the new count.",
+      "hints": [
+        "The inner function can still see the variables of the function that created it.",
+        "Inside createCounter, declare let count = 0, then return an arrow function that adds 1 to count and returns it.",
+        "`function createCounter() { let count = 0; return () => { count += 1; return count } }`"
+      ],
+      "checks": [
+        "createCounter returns a function",
+        "Calls return 1, 2, then 3",
+        "Each counter is independent"
+      ]
+    },
+    "js-promises": {
+      "title": "Wait with a promise",
+      "topic": "Promises",
+      "summary": "A promise stands for a value that arrives later. Wrapping setTimeout in a promise is the simplest way to see one in action.",
+      "objective": "Write wait(ms), which returns a promise that resolves with the text done after ms milliseconds.",
+      "hints": [
+        "new Promise takes a function that receives resolve. Call resolve when the work is finished.",
+        "Return new Promise, and inside it use setTimeout to call resolve('done') after ms.",
+        "`return new Promise((resolve) => setTimeout(() => resolve('done'), ms))`"
+      ],
+      "checks": [
+        "Creates a promise",
+        "Uses setTimeout",
+        "wait returns a promise",
+        "wait(10) resolves with done"
+      ]
+    },
+    "js-async-await": {
+      "title": "Await a result",
+      "topic": "Async functions",
+      "summary": "An async function can pause with await until a promise settles. The code still reads from top to bottom.",
+      "objective": "Write an async function named showScore that awaits getScore(), shows the score in #score, and returns it. Then call showScore().",
+      "hints": [
+        "await only works inside a function marked async.",
+        "Declare async function showScore(), then const score = await getScore(). Set the text of #score and return score.",
+        "`const score = await getScore(); document.querySelector('#score').textContent = score; return score`"
+      ],
+      "checks": [
+        "showScore is an async function",
+        "Uses await",
+        "The page shows 42",
+        "showScore() resolves with 42"
+      ]
+    },
+    "js-capstone": {
+      "title": "Build a to-do list",
+      "topic": "Capstone",
+      "summary": "Bring it all together: events, the DOM, conditions, and state in one small app.",
+      "objective": "Make the form add trimmed, non-empty tasks to #todos and clear the field. Keep #summary showing 1 task or N tasks. Clicking a task toggles the class done.",
+      "hints": [
+        "Solve it in small steps: add tasks first, then clear the field, then the summary, then the click.",
+        "In the submit listener: preventDefault, trim the value, stop if it is empty, create an li with its own click listener, append it, clear the field, and update the summary.",
+        "``const count = list.children.length; summary.textContent = count === 1 ? '1 task' : `${count} tasks` ``"
+      ],
+      "checks": [
+        "Submitting stops the page reload",
+        "The task is added without extra spaces",
+        "The field is cleared",
+        "The summary says 1 task",
+        "Empty tasks are ignored",
+        "The summary says 2 tasks after a second task",
+        "Clicking a task marks it done"
+      ]
+    }
+  }
+}

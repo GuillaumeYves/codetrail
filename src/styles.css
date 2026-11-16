@@ -182,7 +182,10 @@ button { color: inherit; }
 .best-practice-card p { margin: 5px 0 0; color: #aff5b4; font-size: 10px; line-height: 1.55; }
 .hint-button { display: flex; align-items: center; gap: 7px; padding: 0; border: 0; background: none; font-size: 11px; font-weight: 700; cursor: pointer; }
 .hint-button svg { color: #d29922; }
-.hint-copy { scroll-margin-bottom: 20px; padding: 12px; border: 1px solid var(--warning-line); border-radius: 8px; background: var(--warning-surface); color: var(--warning); font-size: 11px; line-height: 1.6; }
+.hint-list { display: grid; gap: 8px; margin: 0 0 12px; padding: 0; list-style: none; counter-reset: hint; }
+.hint-list li { counter-increment: hint; display: flex; gap: 9px; scroll-margin-bottom: 20px; padding: 10px 12px; border: 1px solid var(--warning-line); border-radius: 8px; background: var(--warning-surface); color: var(--warning); font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
+.hint-list li::before { content: counter(hint); flex: 0 0 auto; font: 700 10px/1.75 'JetBrains Mono', monospace; opacity: .7; }
+.hint-list code { padding: 1px 4px; border-radius: 4px; background: rgba(0, 0, 0, .35); color: #f0d48a; font: 400 10.5px 'JetBrains Mono', monospace; }
 .lesson-action { min-height: 66px; padding: 12px 24px; display: flex; align-items: center; border-top: 1px solid var(--line); }
 .lesson-action > p { width: 100%; margin: 0; color: var(--muted); text-align: center; font-size: 10px; }
 .complete-button { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border: 1px solid rgba(240, 246, 252, .1); border-radius: 8px; background: #238636; color: #fff; font-size: 11px; font-weight: 700; cursor: pointer; }
@@ -232,6 +235,9 @@ button { color: inherit; }
 .console-bar button:hover { background: var(--code-subtle); color: var(--code-ink); }
 .console-list { flex: 1; min-height: 0; overflow: auto; padding: 6px 0; }
 .console-empty { margin: 8px 16px; color: var(--code-muted); font-size: 11px; }
+/* Lessons without a page: the frame still runs the script but the console takes the space. */
+.console-only .preview-frame { flex: 0 0 0; height: 0; }
+.console-only .console { flex: 1; height: auto; border-top: 0; }
 .log { margin: 0; padding: 4px 16px; border-bottom: 1px solid rgba(48, 54, 61, .5); color: var(--code-ink); font: 400 11px/1.5 'JetBrains Mono', monospace; white-space: pre-wrap; word-break: break-word; }
 .log-warn { background: var(--code-warning-surface); color: var(--code-warning); }
 .log-error { background: rgba(248, 81, 73, .08); color: var(--code-danger); }

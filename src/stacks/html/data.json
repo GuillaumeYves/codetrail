@@ -48,59 +48,11 @@
       ]
     },
     {
-      "id": "html-nesting",
+      "id": "html-heading-paragraph",
       "number": "03",
       "group": "fundamental",
       "difficulty": 3,
       "stageStep": 3,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <p>This detail is <strong>important</strong>.</p>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "p",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "strong",
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-emphasis",
-      "number": "04",
-      "group": "fundamental",
-      "difficulty": 4,
-      "stageStep": 4,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <p>Read the markup <em>carefully</em>.</p>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "p",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "em",
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-heading-paragraph",
-      "number": "05",
-      "group": "fundamental",
-      "difficulty": 5,
-      "stageStep": 5,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <h1>Learning HTML</h1>\n  <p>Semantic markup makes pages easier to understand.</p>\n</body>\n</html>",
@@ -132,39 +84,47 @@
       ]
     },
     {
-      "id": "html-document-title",
-      "number": "06",
+      "id": "html-nesting",
+      "number": "04",
       "group": "fundamental",
-      "difficulty": 6,
-      "stageStep": 6,
+      "difficulty": 4,
+      "stageStep": 4,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>My HTML course</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <h1>HTML essentials</h1>\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <p>This detail is <strong>important</strong>.</p>\n</body>\n</html>",
       "file": "/index.html",
       "checks": [
         {
           "type": "html-element",
-          "tag": "head",
+          "tag": "p",
           "children": [
             {
               "type": "html-element",
-              "tag": "title",
+              "tag": "strong",
               "minTextLength": 1
             }
           ]
-        },
-        {
-          "type": "not-regex",
-          "pattern": "<title>\\s*CodeTrail\\s*<\\/title>",
-          "flags": "i"
-        },
+        }
+      ]
+    },
+    {
+      "id": "html-emphasis",
+      "number": "05",
+      "group": "fundamental",
+      "difficulty": 5,
+      "stageStep": 5,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <p>Read the markup <em>carefully</em>.</p>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
         {
           "type": "html-element",
-          "tag": "body",
+          "tag": "p",
           "children": [
             {
               "type": "html-element",
-              "tag": "h1",
+              "tag": "em",
               "minTextLength": 1
             }
           ]
@@ -173,10 +133,10 @@
     },
     {
       "id": "html-attributes",
-      "number": "07",
+      "number": "06",
       "group": "fundamental",
-      "difficulty": 7,
-      "stageStep": 7,
+      "difficulty": 6,
+      "stageStep": 6,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <section id=\"intro\" class=\"panel featured\">Welcome to the course.</section>\n</body>\n</html>",
@@ -208,11 +168,95 @@
       ]
     },
     {
-      "id": "html-comments",
+      "id": "html-link",
+      "number": "07",
+      "group": "fundamental",
+      "difficulty": 7,
+      "stageStep": 7,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <a href=\"https://developer.mozilla.org/\">Read HTML docs on MDN</a>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "a",
+          "attrs": {
+            "href": {
+              "value": "https://developer.mozilla.org/",
+              "mode": "url"
+            }
+          }
+        },
+        {
+          "type": "html-element",
+          "tag": "a",
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-image-alt",
       "number": "08",
       "group": "fundamental",
       "difficulty": 8,
       "stageStep": 8,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <img src=\"learner.png\" alt=\"Student learning HTML\">\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "img",
+          "attrs": {
+            "src": {
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "html-element",
+          "tag": "img",
+          "attrs": {
+            "alt": {
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "html-button",
+      "number": "09",
+      "group": "fundamental",
+      "difficulty": 9,
+      "stageStep": 9,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <button type=\"button\">Start lesson</button>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "button",
+          "attrs": {
+            "type": "button"
+          }
+        },
+        {
+          "type": "html-element",
+          "tag": "button",
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-comments",
+      "number": "10",
+      "group": "fundamental",
+      "difficulty": 10,
+      "stageStep": 10,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <!-- Main content -->\n  <main>Course content</main>\n</body>\n</html>",
@@ -228,10 +272,10 @@
     },
     {
       "id": "html-entities",
-      "number": "09",
+      "number": "11",
       "group": "fundamental",
-      "difficulty": 9,
-      "stageStep": 9,
+      "difficulty": 11,
+      "stageStep": 11,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <p>HTML &lt; CSS &amp; JavaScript</p>\n</body>\n</html>",
@@ -260,86 +304,42 @@
       ]
     },
     {
-      "id": "html-link",
-      "number": "10",
-      "group": "fundamental",
-      "difficulty": 10,
-      "stageStep": 10,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <a href=\"https://developer.mozilla.org/\">Read HTML docs on MDN</a>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "a",
-          "attrs": {
-            "href": {
-              "value": "https://developer.mozilla.org/",
-              "mode": "url"
-            }
-          }
-        },
-        {
-          "type": "html-element",
-          "tag": "a",
-          "minTextLength": 1
-        }
-      ]
-    },
-    {
-      "id": "html-image-alt",
-      "number": "11",
-      "group": "fundamental",
-      "difficulty": 11,
-      "stageStep": 11,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <img src=\"learner.png\" alt=\"Student learning HTML\">\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "img",
-          "attrs": {
-            "src": {
-              "minLength": 1
-            }
-          }
-        },
-        {
-          "type": "html-element",
-          "tag": "img",
-          "attrs": {
-            "alt": {
-              "minLength": 1
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "html-button",
+      "id": "html-document-title",
       "number": "12",
       "group": "fundamental",
       "difficulty": 12,
       "stageStep": 12,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <button type=\"button\">Start lesson</button>\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>My HTML course</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <h1>HTML essentials</h1>\n</body>\n</html>",
       "file": "/index.html",
       "checks": [
         {
           "type": "html-element",
-          "tag": "button",
-          "attrs": {
-            "type": "button"
-          }
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "title",
+              "minTextLength": 1
+            }
+          ]
+        },
+        {
+          "type": "not-regex",
+          "pattern": "<title>\\s*CodeTrail\\s*<\\/title>",
+          "flags": "i"
         },
         {
           "type": "html-element",
-          "tag": "button",
-          "minTextLength": 1
+          "tag": "body",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "h1",
+              "minTextLength": 1
+            }
+          ]
         }
       ]
     },
@@ -394,11 +394,206 @@
       ]
     },
     {
-      "id": "html-page-regions",
+      "id": "html-unordered-list",
       "number": "14",
       "group": "basic",
       "difficulty": 14,
       "stageStep": 1,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <ul>\n    <li>Semantics</li>\n    <li>Forms</li>\n    <li>Accessibility</li>\n  </ul>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "ul",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "li",
+              "min": 3,
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-ordered-list",
+      "number": "15",
+      "group": "basic",
+      "difficulty": 15,
+      "stageStep": 2,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <ol><li>Plan</li><li>Build</li><li>Test</li></ol>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "ol",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "li",
+              "min": 3,
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-description-list",
+      "number": "16",
+      "group": "basic",
+      "difficulty": 16,
+      "stageStep": 3,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <dl><dt>HTML</dt><dd>Structure</dd><dt>CSS</dt><dd>Presentation</dd></dl>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "dl",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "dt",
+              "min": 2,
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "dd",
+              "min": 2,
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-code-pre",
+      "number": "17",
+      "group": "basic",
+      "difficulty": 17,
+      "stageStep": 4,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <pre><code>const ready = true;</code></pre>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "pre",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "code",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-blockquote",
+      "number": "18",
+      "group": "basic",
+      "difficulty": 18,
+      "stageStep": 5,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <blockquote cite=\"https://developer.mozilla.org/\"><p>HTML structures web content.</p></blockquote>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "blockquote",
+          "attrs": {
+            "cite": {
+              "value": "https://developer.mozilla.org/",
+              "mode": "url"
+            }
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "p",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-figure",
+      "number": "19",
+      "group": "basic",
+      "difficulty": 19,
+      "stageStep": 6,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <figure><img src=\"learner.png\" alt=\"Student learning HTML\"><figcaption>Learning in progress</figcaption></figure>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "figure",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "img",
+              "attrs": {
+                "src": {
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "html-element",
+              "tag": "figcaption",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-time",
+      "number": "20",
+      "group": "basic",
+      "difficulty": 20,
+      "stageStep": 7,
+      "stageSize": 13,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <time datetime=\"2026-06-22\">June 22, 2026</time>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "time",
+          "attrs": {
+            "datetime": {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            }
+          }
+        },
+        {
+          "type": "html-element",
+          "tag": "time",
+          "minTextLength": 1
+        }
+      ]
+    },
+    {
+      "id": "html-page-regions",
+      "number": "21",
+      "group": "basic",
+      "difficulty": 21,
+      "stageStep": 8,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <header>CodeTrail</header>\n  <main>HTML course content</main>\n  <footer>Keep learning</footer>\n</body>\n</html>",
@@ -443,10 +638,10 @@
     },
     {
       "id": "html-navigation",
-      "number": "15",
+      "number": "22",
       "group": "basic",
-      "difficulty": 15,
-      "stageStep": 2,
+      "difficulty": 22,
+      "stageStep": 9,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <nav aria-label=\"Primary\"><a href=\"/\">Home</a><a href=\"/lessons\">Lessons</a></nav>\n</body>\n</html>",
@@ -483,10 +678,10 @@
     },
     {
       "id": "html-main-article",
-      "number": "16",
+      "number": "23",
       "group": "basic",
-      "difficulty": 16,
-      "stageStep": 3,
+      "difficulty": 23,
+      "stageStep": 10,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <main><article><h1>Learn semantic HTML</h1><p>Articles group independent content.</p></article></main>\n</body>\n</html>",
@@ -518,10 +713,10 @@
     },
     {
       "id": "html-sections",
-      "number": "17",
+      "number": "24",
       "group": "basic",
-      "difficulty": 17,
-      "stageStep": 4,
+      "difficulty": 24,
+      "stageStep": 11,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <article><section><h2>Structure</h2><p>HTML gives meaning.</p></section><section><h2>Practice</h2><p>Small steps build skill.</p></section></article>\n</body>\n</html>",
@@ -549,10 +744,10 @@
     },
     {
       "id": "html-aside",
-      "number": "18",
+      "number": "25",
       "group": "basic",
-      "difficulty": 18,
-      "stageStep": 5,
+      "difficulty": 25,
+      "stageStep": 12,
       "stageSize": 13,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <main><article><h1>HTML practice</h1></article><aside>Tip: read tag names out loud.</aside></main>\n</body>\n</html>",
@@ -569,213 +764,6 @@
             {
               "type": "html-element",
               "tag": "aside",
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-unordered-list",
-      "number": "19",
-      "group": "basic",
-      "difficulty": 19,
-      "stageStep": 6,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <ul>\n    <li>Semantics</li>\n    <li>Forms</li>\n    <li>Accessibility</li>\n  </ul>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "ul",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "li",
-              "min": 3,
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-ordered-list",
-      "number": "20",
-      "group": "basic",
-      "difficulty": 20,
-      "stageStep": 7,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <ol><li>Plan</li><li>Build</li><li>Test</li></ol>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "ol",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "li",
-              "min": 3,
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-description-list",
-      "number": "21",
-      "group": "basic",
-      "difficulty": 21,
-      "stageStep": 8,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <dl><dt>HTML</dt><dd>Structure</dd><dt>CSS</dt><dd>Presentation</dd></dl>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "dl",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "dt",
-              "min": 2,
-              "minTextLength": 1
-            },
-            {
-              "type": "html-element",
-              "tag": "dd",
-              "min": 2,
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-figure",
-      "number": "22",
-      "group": "basic",
-      "difficulty": 22,
-      "stageStep": 9,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <figure><img src=\"learner.png\" alt=\"Student learning HTML\"><figcaption>Learning in progress</figcaption></figure>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "figure",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "img",
-              "attrs": {
-                "src": {
-                  "minLength": 1
-                }
-              }
-            },
-            {
-              "type": "html-element",
-              "tag": "figcaption",
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-blockquote",
-      "number": "23",
-      "group": "basic",
-      "difficulty": 23,
-      "stageStep": 10,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <blockquote cite=\"https://developer.mozilla.org/\"><p>HTML structures web content.</p></blockquote>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "blockquote",
-          "attrs": {
-            "cite": {
-              "value": "https://developer.mozilla.org/",
-              "mode": "url"
-            }
-          },
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "p",
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-time",
-      "number": "24",
-      "group": "basic",
-      "difficulty": 24,
-      "stageStep": 11,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <time datetime=\"2026-06-22\">June 22, 2026</time>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "time",
-          "attrs": {
-            "datetime": {
-              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-            }
-          }
-        },
-        {
-          "type": "html-element",
-          "tag": "time",
-          "minTextLength": 1
-        }
-      ]
-    },
-    {
-      "id": "html-details",
-      "number": "25",
-      "group": "basic",
-      "difficulty": 25,
-      "stageStep": 12,
-      "stageSize": 13,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <details><summary>What is HTML?</summary><p>HTML structures web content.</p></details>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "details",
-          "children": [
-            {
-              "type": "html-order",
-              "tags": [
-                "summary",
-                "p"
-              ]
-            },
-            {
-              "type": "html-element",
-              "tag": "summary",
-              "minTextLength": 1
-            },
-            {
-              "type": "html-element",
-              "tag": "p",
               "minTextLength": 1
             }
           ]
@@ -810,11 +798,87 @@
       ]
     },
     {
-      "id": "html-form-label",
+      "id": "html-table",
       "number": "27",
       "group": "intermediate",
       "difficulty": 27,
       "stageStep": 1,
+      "stageSize": 12,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <table><tr><th>Name</th><th>Score</th></tr><tr><td>Ada</td><td>95</td></tr></table>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "table",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "tr",
+              "children": [
+                {
+                  "type": "html-element",
+                  "tag": "th",
+                  "min": 2,
+                  "minTextLength": 1
+                }
+              ]
+            },
+            {
+              "type": "html-element",
+              "tag": "tr",
+              "children": [
+                {
+                  "type": "html-element",
+                  "tag": "td",
+                  "min": 2,
+                  "minTextLength": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-table-scope",
+      "number": "28",
+      "group": "intermediate",
+      "difficulty": 28,
+      "stageStep": 2,
+      "stageSize": 12,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <table><caption>Results</caption><tr><th scope=\"col\">Name</th><th scope=\"col\">Score</th></tr></table>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "table",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "caption",
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "th",
+              "attrs": {
+                "scope": "col"
+              },
+              "min": 2,
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-form-label",
+      "number": "29",
+      "group": "intermediate",
+      "difficulty": 29,
+      "stageStep": 3,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <label for=\"name\">Name</label><input id=\"name\" name=\"name\" type=\"text\">\n</body>\n</html>",
@@ -831,10 +895,10 @@
     },
     {
       "id": "html-form-submit",
-      "number": "28",
+      "number": "30",
       "group": "intermediate",
-      "difficulty": 28,
-      "stageStep": 2,
+      "difficulty": 30,
+      "stageStep": 4,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <form action=\"/signup\" method=\"post\"><label>Email <input type=\"email\" name=\"email\"></label><button type=\"submit\">Sign up</button></form>\n</body>\n</html>",
@@ -874,10 +938,10 @@
     },
     {
       "id": "html-input-types",
-      "number": "29",
+      "number": "31",
       "group": "intermediate",
-      "difficulty": 29,
-      "stageStep": 3,
+      "difficulty": 31,
+      "stageStep": 5,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <form><input type=\"email\" name=\"email\" required><input type=\"password\" name=\"password\" required></form>\n</body>\n</html>",
@@ -920,11 +984,46 @@
       ]
     },
     {
-      "id": "html-textarea-select",
-      "number": "30",
+      "id": "html-checkbox",
+      "number": "32",
       "group": "intermediate",
-      "difficulty": 30,
-      "stageStep": 4,
+      "difficulty": 32,
+      "stageStep": 6,
+      "stageSize": 12,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <input id=\"terms\" type=\"checkbox\" name=\"terms\" required><label for=\"terms\">I agree</label>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "input",
+          "attrs": {
+            "id": {
+              "minLength": 1
+            },
+            "type": "checkbox",
+            "name": {
+              "minLength": 1
+            },
+            "required": true
+          }
+        },
+        {
+          "type": "html-label-control",
+          "tag": "input",
+          "attrs": {
+            "type": "checkbox",
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "html-textarea-select",
+      "number": "33",
+      "group": "intermediate",
+      "difficulty": 33,
+      "stageStep": 7,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <label for=\"bio\">Biography</label><textarea id=\"bio\" name=\"bio\" rows=\"4\"></textarea>\n  <label for=\"level\">Level</label><select id=\"level\" name=\"level\"><option value=\"beginner\">Beginner</option><option value=\"intermediate\">Intermediate</option></select>\n</body>\n</html>",
@@ -973,10 +1072,10 @@
     },
     {
       "id": "html-fieldsets",
-      "number": "31",
+      "number": "34",
       "group": "intermediate",
-      "difficulty": 31,
-      "stageStep": 5,
+      "difficulty": 34,
+      "stageStep": 8,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <fieldset><legend>Theme</legend><label><input type=\"radio\" name=\"theme\" value=\"light\">Light</label><label><input type=\"radio\" name=\"theme\" value=\"dark\">Dark</label></fieldset>\n</body>\n</html>",
@@ -988,46 +1087,11 @@
       ]
     },
     {
-      "id": "html-checkbox",
-      "number": "32",
-      "group": "intermediate",
-      "difficulty": 32,
-      "stageStep": 6,
-      "stageSize": 12,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <input id=\"terms\" type=\"checkbox\" name=\"terms\" required><label for=\"terms\">I agree</label>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "input",
-          "attrs": {
-            "id": {
-              "minLength": 1
-            },
-            "type": "checkbox",
-            "name": {
-              "minLength": 1
-            },
-            "required": true
-          }
-        },
-        {
-          "type": "html-label-control",
-          "tag": "input",
-          "attrs": {
-            "type": "checkbox",
-            "required": true
-          }
-        }
-      ]
-    },
-    {
       "id": "html-validation",
-      "number": "33",
+      "number": "35",
       "group": "intermediate",
-      "difficulty": 33,
-      "stageStep": 7,
+      "difficulty": 35,
+      "stageStep": 9,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <label for=\"username\">Username</label><input id=\"username\" name=\"username\" required minlength=\"3\" maxlength=\"20\" pattern=\"[A-Za-z]+\">\n</body>\n</html>",
@@ -1056,10 +1120,10 @@
     },
     {
       "id": "html-autocomplete",
-      "number": "34",
+      "number": "36",
       "group": "intermediate",
-      "difficulty": 34,
-      "stageStep": 8,
+      "difficulty": 36,
+      "stageStep": 10,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <input name=\"name\" autocomplete=\"name\"><input type=\"email\" name=\"email\" autocomplete=\"email\">\n</body>\n</html>",
@@ -1085,82 +1149,6 @@
             },
             "autocomplete": "email"
           }
-        }
-      ]
-    },
-    {
-      "id": "html-table",
-      "number": "35",
-      "group": "intermediate",
-      "difficulty": 35,
-      "stageStep": 9,
-      "stageSize": 12,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <table><tr><th>Name</th><th>Score</th></tr><tr><td>Ada</td><td>95</td></tr></table>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "table",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "tr",
-              "children": [
-                {
-                  "type": "html-element",
-                  "tag": "th",
-                  "min": 2,
-                  "minTextLength": 1
-                }
-              ]
-            },
-            {
-              "type": "html-element",
-              "tag": "tr",
-              "children": [
-                {
-                  "type": "html-element",
-                  "tag": "td",
-                  "min": 2,
-                  "minTextLength": 1
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-table-scope",
-      "number": "36",
-      "group": "intermediate",
-      "difficulty": 36,
-      "stageStep": 10,
-      "stageSize": 12,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <table><caption>Results</caption><tr><th scope=\"col\">Name</th><th scope=\"col\">Score</th></tr></table>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "table",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "caption",
-              "minTextLength": 1
-            },
-            {
-              "type": "html-element",
-              "tag": "th",
-              "attrs": {
-                "scope": "col"
-              },
-              "min": 2,
-              "minTextLength": 1
-            }
-          ]
         }
       ]
     },
@@ -1291,11 +1279,69 @@
       ]
     },
     {
-      "id": "html-skip-link",
+      "id": "html-description-meta",
       "number": "40",
       "group": "advanced",
       "difficulty": 40,
       "stageStep": 2,
+      "stageSize": 12,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>HTML fundamentals</title>\n  <meta name=\"description\" content=\"Learn practical HTML fundamentals\">\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <h1>HTML fundamentals</h1>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "meta",
+              "attrs": {
+                "name": "description",
+                "content": {
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-canonical",
+      "number": "41",
+      "group": "advanced",
+      "difficulty": 41,
+      "stageStep": 3,
+      "stageSize": 12,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Canonical page</title>\n  <link rel=\"canonical\" href=\"https://example.com/lessons/html\">\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <h1>Canonical page</h1>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "head",
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "link",
+              "attrs": {
+                "rel": "canonical",
+                "href": {
+                  "pattern": "^https?:\\/\\/.+"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-skip-link",
+      "number": "42",
+      "group": "advanced",
+      "difficulty": 42,
+      "stageStep": 4,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <a href=\"#content\">Skip to content</a>\n  <header>Navigation</header>\n  <main id=\"content\">Main lesson content</main>\n</body>\n</html>",
@@ -1328,10 +1374,10 @@
     },
     {
       "id": "html-aria-current",
-      "number": "41",
+      "number": "43",
       "group": "advanced",
-      "difficulty": 41,
-      "stageStep": 3,
+      "difficulty": 43,
+      "stageStep": 5,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <nav><a href=\"/\" aria-current=\"page\">Home</a><a href=\"/lessons\">Lessons</a></nav>\n</body>\n</html>",
@@ -1355,11 +1401,47 @@
       ]
     },
     {
-      "id": "html-aria-expanded",
-      "number": "42",
+      "id": "html-details",
+      "number": "44",
       "group": "advanced",
-      "difficulty": 42,
-      "stageStep": 4,
+      "difficulty": 44,
+      "stageStep": 6,
+      "stageSize": 12,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <details><summary>What is HTML?</summary><p>HTML structures web content.</p></details>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "details",
+          "children": [
+            {
+              "type": "html-order",
+              "tags": [
+                "summary",
+                "p"
+              ]
+            },
+            {
+              "type": "html-element",
+              "tag": "summary",
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "p",
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-aria-expanded",
+      "number": "45",
+      "group": "advanced",
+      "difficulty": 45,
+      "stageStep": 7,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <button type=\"button\" aria-expanded=\"false\" aria-controls=\"menu\">Menu</button><nav id=\"menu\">Menu links</nav>\n</body>\n</html>",
@@ -1391,11 +1473,46 @@
       ]
     },
     {
-      "id": "html-progress-meter",
-      "number": "43",
+      "id": "html-dialog",
+      "number": "46",
       "group": "advanced",
-      "difficulty": 43,
-      "stageStep": 5,
+      "difficulty": 46,
+      "stageStep": 8,
+      "stageSize": 12,
+      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <dialog open><h2>Lesson complete</h2><button type=\"button\">Close</button></dialog>\n</body>\n</html>",
+      "file": "/index.html",
+      "checks": [
+        {
+          "type": "html-element",
+          "tag": "dialog",
+          "attrs": {
+            "open": true
+          },
+          "children": [
+            {
+              "type": "html-element",
+              "tag": "h2",
+              "minTextLength": 1
+            },
+            {
+              "type": "html-element",
+              "tag": "button",
+              "attrs": {
+                "type": "button"
+              },
+              "minTextLength": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "html-progress-meter",
+      "number": "47",
+      "group": "advanced",
+      "difficulty": 47,
+      "stageStep": 9,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <progress value=\"30\" max=\"50\">30 of 50</progress>\n  <meter min=\"0\" max=\"100\" value=\"75\">75%</meter>\n</body>\n</html>",
@@ -1434,10 +1551,10 @@
     },
     {
       "id": "html-template",
-      "number": "44",
+      "number": "48",
       "group": "advanced",
-      "difficulty": 44,
-      "stageStep": 6,
+      "difficulty": 48,
+      "stageStep": 10,
       "stageSize": 12,
       "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
       "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <template id=\"lesson-card\"><article><h2>Lesson title</h2></article></template>\n</body>\n</html>",
@@ -1462,123 +1579,6 @@
                   "minTextLength": 1
                 }
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-dialog",
-      "number": "45",
-      "group": "advanced",
-      "difficulty": 45,
-      "stageStep": 7,
-      "stageSize": 12,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <dialog open><h2>Lesson complete</h2><button type=\"button\">Close</button></dialog>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "dialog",
-          "attrs": {
-            "open": true
-          },
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "h2",
-              "minTextLength": 1
-            },
-            {
-              "type": "html-element",
-              "tag": "button",
-              "attrs": {
-                "type": "button"
-              },
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-code-pre",
-      "number": "46",
-      "group": "advanced",
-      "difficulty": 46,
-      "stageStep": 8,
-      "stageSize": 12,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <pre><code>const ready = true;</code></pre>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "pre",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "code",
-              "minTextLength": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-description-meta",
-      "number": "47",
-      "group": "advanced",
-      "difficulty": 47,
-      "stageStep": 9,
-      "stageSize": 12,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>HTML fundamentals</title>\n  <meta name=\"description\" content=\"Learn practical HTML fundamentals\">\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <h1>HTML fundamentals</h1>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "head",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "meta",
-              "attrs": {
-                "name": "description",
-                "content": {
-                  "minLength": 1
-                }
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "html-canonical",
-      "number": "48",
-      "group": "advanced",
-      "difficulty": 48,
-      "stageStep": 10,
-      "stageSize": 12,
-      "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CodeTrail</title>\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
-      "solution": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Canonical page</title>\n  <link rel=\"canonical\" href=\"https://example.com/lessons/html\">\n  <link rel=\"stylesheet\" href=\"/styles.css\">\n</head>\n<body>\n  <h1>Canonical page</h1>\n</body>\n</html>",
-      "file": "/index.html",
-      "checks": [
-        {
-          "type": "html-element",
-          "tag": "head",
-          "children": [
-            {
-              "type": "html-element",
-              "tag": "link",
-              "attrs": {
-                "rel": "canonical",
-                "href": {
-                  "pattern": "^https?:\\/\\/.+"
-                }
-              }
             }
           ]
         }

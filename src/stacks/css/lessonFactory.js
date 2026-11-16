@@ -39,7 +39,7 @@ export function createCssLessons(specs) {
     topic: spec.topic,
     summary: spec.summary ?? spec.concept,
     objective: spec.objective,
-    hint: spec.hint,
+    hints: spec.hints,
     // Left undefined to use the shared text.
     commonMistake: spec.mistake,
     bestPractice: spec.bestPractice,

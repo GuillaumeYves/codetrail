@@ -4,7 +4,7 @@ import { mkdir, readdir, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { sourceStacks } from '../src/stacks/sourceRegistry.js'
 
-const TEXT_FIELDS = new Set(['title', 'topic', 'summary', 'objective', 'hint', 'commonMistake', 'bestPractice'])
+const TEXT_FIELDS = new Set(['title', 'topic', 'summary', 'objective', 'hints', 'commonMistake', 'bestPractice'])
 const AUTHORING_FIELDS = new Set(['concept', 'expectedResult', 'learningSteps', 'notes'])
 
 const writeJson = (path, value) => writeFile(path, `${JSON.stringify(value, null, 2)}\n`, 'utf8')

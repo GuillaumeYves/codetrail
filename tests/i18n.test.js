@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import { readFile, readdir } from 'node:fs/promises'
 import { createTranslator, format, lookup, pickLocale } from '../src/i18n/format.js'
 import { localizeLessons, mergeLessonText } from '../src/core/lessonText.js'
+import { codeSpans } from '../src/core/codeSpans.js'
 import { loadStack, stackIds, stacks } from '../src/stacks/registry.js'
 
 const root = new URL('../', import.meta.url)
@@ -79,7 +80,15 @@ test('interface translations only use English keys with the same placeholders', 
   }
 })
 
-const LESSON_FIELDS = ['title', 'topic', 'summary', 'objective', 'hint', 'commonMistake', 'bestPractice', 'checks']
+// English fallback is a safety net; a shipped language must still cover every string.
+test('shipped interface translations cover every English key', async () => {
+  for (const file of await jsonFiles('src/i18n/locales/')) {
+    const keys = Object.keys(flatten(await readJson(`src/i18n/locales/${file}`)))
+    assert.deepEqual(Object.keys(enKeys).filter((key) => !keys.includes(key)), [], `${file} is missing keys`)
+  }
+})
+
+const LESSON_FIELDS =['title', 'topic', 'summary', 'objective', 'hints', 'commonMistake', 'bestPractice', 'checks']
 
 for (const id of stackIds) {
   test(`${id}: data.json holds structure only and English covers every lesson`, async () => {
@@ -91,16 +100,21 @@ for (const id of stackIds) {
       assert.deepEqual(LESSON_FIELDS.slice(0, -1).filter((field) => field in lesson), [], lesson.id)
       assert.equal(lesson.checks.every((check) => !('label' in check)), true, lesson.id)
       const text = english.lessons[lesson.id]
-      for (const field of ['title', 'topic', 'summary', 'objective', 'hint']) {
+      for (const field of ['title', 'topic', 'summary', 'objective']) {
         assert.ok(text?.[field]?.length > 0, `${lesson.id} needs ${field}`)
       }
+      // Hints go from a nudge to a near answer.
+      assert.equal(text.hints?.length, 3, `${lesson.id} needs three hints`)
+      assert.equal(text.hints.every((hint) => hint.trim().length > 0), true, lesson.id)
+      const stray = text.hints.flatMap(codeSpans).filter((part) => !part.code && part.text.includes('`'))
+      assert.deepEqual(stray, [], `${lesson.id} has an unbalanced code span`)
       assert.equal(text.checks.length, lesson.checks.length, `${lesson.id} check labels`)
       assert.equal(text.checks.every((label) => label.length > 0), true, lesson.id)
     }
     assert.deepEqual(Object.keys(english.lessons), data.lessons.map((lesson) => lesson.id))
   })
 
-  test(`${id}: course translations match the English structure`, async () => {
+  test(`${id}: course translations match the English structure and cover every lesson`, async () => {
     const english = await readJson(`src/stacks/${id}/locales/en.json`)
     for (const file of await jsonFiles(`src/stacks/${id}/locales/`)) {
       if (file === 'en.json') continue
@@ -113,6 +127,23 @@ for (const id of stackIds) {
         assert.ok(lessonId in english.lessons, `${file}: unknown lesson ${lessonId}`)
         assert.deepEqual(Object.keys(text).filter((field) => !LESSON_FIELDS.includes(field)), [], `${file}: ${lessonId}`)
         assert.ok((text.checks?.length ?? 0) <= english.lessons[lessonId].checks.length, `${file}: ${lessonId} has extra checks`)
+        assert.ok((text.hints?.length ?? 0) <= english.lessons[lessonId].hints.length, `${file}: ${lessonId} has extra hints`)
+        // Sample text inside code may be translated, but every hint keeps its code spans, balanced.
+        const spans = (hints) => (hints ?? []).map((hint) => codeSpans(hint).filter((part) => part.code).length)
+        assert.deepEqual(spans(text.hints), spans(english.lessons[lessonId].hints).slice(0, text.hints?.length ?? 0), `${file}: ${lessonId} hint code`)
+        const stray = (text.hints ?? []).flatMap(codeSpans).filter((part) => !part.code && part.text.includes('`'))
+        assert.deepEqual(stray, [], `${file}: ${lessonId} has an unbalanced code span`)
+      }
+
+      // Completeness: every lesson, shared string, hint, and check label is translated.
+      assert.deepEqual(Object.keys(english.shared).filter((key) => !translation.shared?.[key]), [], `${file}: shared text`)
+      for (const [lessonId, source] of Object.entries(english.lessons)) {
+        const text = translation.lessons?.[lessonId] ?? {}
+        const missing = Object.keys(source).filter((field) => {
+          if (Array.isArray(source[field])) return text[field]?.length !== source[field].length || text[field].some((item) => !item)
+          return !text[field]
+        })
+        assert.deepEqual(missing, [], `${file}: ${lessonId} is missing fields`)
       }
     }
   })

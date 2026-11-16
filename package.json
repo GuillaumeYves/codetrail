@@ -1,30 +1,45 @@
 {
   "name": "codetrail",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "scripts": {
+    "generate:stacks": "node scripts/generateStackJson.mjs",
+    "predev": "npm run generate:stacks",
     "dev": "vite",
+    "prebuild": "npm run generate:stacks",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "generate:stacks": "node scripts/generateStackJson.mjs",
-    "test": "node --test"
+    "pretest": "npm run generate:stacks",
+    "test": "node --test",
+    "check": "npm run lint && npm test && npm run build"
   },
   "dependencies": {
-    "@codesandbox/sandpack-react": "latest",
+    "@codemirror/autocomplete": "^6.20.3",
+    "@codemirror/commands": "^6.10.3",
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-html": "^6.4.11",
+    "@codemirror/lang-javascript": "^6.2.5",
+    "@codemirror/language": "^6.12.3",
+    "@codemirror/state": "^6.6.0",
+    "@codemirror/view": "^6.43.1",
+    "@lezer/highlight": "^1.2.3",
     "devicon": "^2.17.0",
-    "lucide-react": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "lucide-react": "^1.21.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
-    "@eslint/js": "latest",
-    "@vitejs/plugin-react": "latest",
-    "eslint": "latest",
-    "eslint-plugin-react-hooks": "latest",
-    "eslint-plugin-react-refresh": "latest",
-    "globals": "latest",
-    "vite": "latest"
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-react": "^6.0.2",
+    "eslint": "^10.5.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.6.0",
+    "vite": "^8.0.16"
   }
 }

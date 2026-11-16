@@ -7,7 +7,6 @@ const previewHtml = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Preview Lab</title>
   <link rel="stylesheet" href="/styles.css">
-  <script type="module" src="/index.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -99,9 +98,9 @@ const previewHtml = `<!doctype html>
 </body>
 </html>`
 
+// Fixed markup plus optional lesson base styles. styles.css is the learner file.
 const previewFiles = (baseCss = '') => ({
   '/index.html': previewHtml,
-  '/index.js': 'import "./base.css";\nimport "./styles.css";\n',
   '/base.css': baseCss,
 })
 

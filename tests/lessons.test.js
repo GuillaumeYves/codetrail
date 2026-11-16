@@ -63,10 +63,12 @@ test('HTML source keeps authoring guidance and canonical solutions', () => {
   assert.equal(htmlSourceLessons.every((lesson) => lesson.solution.length > 20), true)
 })
 
-test('HTML runtime payload excludes unused authoring-only fields', () => {
-  const unusedFields = ['concept', 'expectedResult', 'learningSteps', 'notes', 'solution']
+const authoringOnlyFields = ['concept', 'expectedResult', 'learningSteps', 'notes']
+
+test('HTML runtime payload excludes authoring-only fields and ships the reference solution', () => {
   for (const lesson of htmlLessons) {
-    assert.deepEqual(unusedFields.filter((field) => field in lesson), [])
+    assert.deepEqual(authoringOnlyFields.filter((field) => field in lesson), [])
+    assert.equal(typeof lesson.solution, 'string')
   }
 })
 
@@ -79,9 +81,8 @@ test('CSS course has 40 staged lessons with fixed HTML preview files', () => {
   )
   assert.equal(cssLessons.every((lesson) => lesson.file === '/styles.css'), true)
   assert.equal(cssLessons.every((lesson) => lesson.files?.['/index.html']?.includes('<link rel="stylesheet" href="/styles.css">')), true)
-  assert.equal(cssLessons.every((lesson) => lesson.files?.['/index.html']?.includes('<script type="module" src="/index.js"></script>')), true)
-  assert.equal(cssLessons.every((lesson) => lesson.files?.['/index.js']?.includes('import "./styles.css";')), true)
-  assert.equal(cssLessons.every((lesson) => lesson.files?.['/index.js']?.indexOf('import "./base.css";') < lesson.files?.['/index.js']?.indexOf('import "./styles.css";')), true)
+  assert.equal(cssLessons.every((lesson) => typeof lesson.files?.['/base.css'] === 'string'), true)
+  assert.equal(cssLessons.some((lesson) => '/index.js' in lesson.files), false)
   const lessonById = (id) => cssLessons.find((lesson) => lesson.id === id)
   assert.equal(lessonById('css-border-color')?.files?.['/base.css']?.includes('border: 2px solid transparent;'), true)
   assert.equal(lessonById('css-radius')?.files?.['/base.css']?.includes('border: 1px solid #cbd5e1;'), true)
@@ -100,11 +101,18 @@ test('CSS source keeps canonical solutions for regression checks', () => {
   assert.equal(cssSourceLessons.every((lesson) => lesson.solution.length > 20), true)
 })
 
-test('CSS runtime payload excludes unused authoring-only fields and keeps preview files', () => {
-  const unusedFields = ['concept', 'expectedResult', 'learningSteps', 'notes', 'solution']
+test('CSS runtime payload excludes authoring-only fields and keeps preview files', () => {
   for (const lesson of cssLessons) {
-    assert.deepEqual(unusedFields.filter((field) => field in lesson), [])
+    assert.deepEqual(authoringOnlyFields.filter((field) => field in lesson), [])
+    assert.equal(typeof lesson.solution, 'string')
     assert.equal(typeof lesson.files?.['/index.html'], 'string')
+  }
+})
+
+test('Shipped solutions pass their own hydrated checks', () => {
+  for (const lesson of [...htmlLessons, ...cssLessons]) {
+    const failed = lesson.checks.filter((check) => !check.test(lesson.solution)).map((check) => check.label)
+    assert.deepEqual(failed, [], lesson.id)
   }
 })
 

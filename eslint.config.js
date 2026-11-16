@@ -6,11 +6,12 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 export default [
   { ignores: ['dist'] },
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['**/*.{js,jsx,mjs}'],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       globals: globals.browser,
-      parserOptions: { ecmaVersion: 'latest', ecmaFeatures: { jsx: true }, sourceType: 'module' },
+      parserOptions: { ecmaFeatures: { jsx: true } },
     },
     plugins: {
       'react-hooks': reactHooks,
@@ -19,7 +20,12 @@ export default [
     rules: {
       ...js.configs.recommended.rules,
       ...reactHooks.configs.flat['recommended-latest'].rules,
+      'no-unused-vars': ['error', { ignoreRestSiblings: true }],
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
+  },
+  {
+    files: ['scripts/**', 'tests/**', '*.config.js'],
+    languageOptions: { globals: globals.node },
   },
 ]

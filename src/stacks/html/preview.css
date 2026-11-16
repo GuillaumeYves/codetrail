@@ -1,0 +1,93 @@
+/* Base look for HTML lesson previews. Learner styles load after this. */
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #0d1117; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+h1, h2, h3, p { margin-top: 0; }
+p { max-width: 60ch; line-height: 1.55; }
+a { color: #58a6ff; }
+img, video { max-width: 100%; }
+main, article, section, form, table, figure, details, dialog, template, header, footer, nav, aside {
+  max-width: 48rem;
+}
+header, main, footer, section, article, aside, nav, figure, form, details, dialog {
+  margin-block: 1rem;
+}
+nav, .toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+}
+ul, ol { padding-left: 1.35rem; }
+li { margin-block: .35rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid #30363d;
+  border-radius: .75rem;
+}
+th, td {
+  padding: .7rem .8rem;
+  border: 1px solid #30363d;
+  text-align: left;
+}
+th { background: #161b22; }
+form {
+  display: grid;
+  gap: .8rem;
+  max-width: 26rem;
+}
+label { display: grid; gap: .35rem; }
+input, select, textarea, button {
+  padding: .65rem .75rem;
+  border: 1px solid #484f58;
+  border-radius: .45rem;
+  background: #161b22;
+  color: inherit;
+  font: inherit;
+}
+button {
+  width: max-content;
+  border-color: #238636;
+  background: #238636;
+  color: #fff;
+  cursor: pointer;
+}
+figure {
+  padding: 1rem;
+  border: 1px solid #30363d;
+  border-radius: .75rem;
+  background: #161b22;
+}
+figcaption, small, caption { color: #8b949e; }
+blockquote {
+  margin-inline: 0;
+  padding-left: 1rem;
+  border-left: 3px solid #58a6ff;
+  color: #c9d1d9;
+}
+pre, code {
+  border-radius: .4rem;
+  background: #161b22;
+  color: #e6edf3;
+  font-family: "JetBrains Mono", Consolas, monospace;
+}
+pre {
+  max-width: 100%;
+  overflow: auto;
+  padding: 1rem;
+}
+.card {
+  padding: 1rem;
+  border: 1px solid #30363d;
+  border-radius: .75rem;
+  background: #161b22;
+}
